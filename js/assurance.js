@@ -162,7 +162,7 @@
       });
 
       // Draw grid polygon
-      if (grid.geometry && grid.geometry.coordinates && grid.geometry.coordinates[0]) {
+      if (grid && grid.geometry && grid.geometry.coordinates && grid.geometry.coordinates[0] && grid.geometry.coordinates[0].length >= 3) {
         const path = grid.geometry.coordinates[0].map(c => [c[0], c[1]]);
         const poly = new AMap.Polygon({
           path,
@@ -175,13 +175,15 @@
         amap.setFitView([poly], false, [60, 60, 60, 60]);
 
         // Grid label
-        const label = new AMap.Text({
-          text: `<div style="color:#e2e8f0;font-size:13px;font-weight:500;text-shadow:0 0 6px rgba(0,0,0,0.8);white-space:nowrap;padding:2px 6px;background:rgba(10,22,40,0.6);border-radius:4px;border:1px solid rgba(0,212,255,0.15);">${grid.name}</div>`,
-          position: grid.center,
-          offset: new AMap.Pixel(0, -10),
-          anchor: 'center'
-        });
-        amap.add(label);
+        if (grid.center) {
+          const label = new AMap.Text({
+            text: `<div style="color:#e2e8f0;font-size:13px;font-weight:500;text-shadow:0 0 6px rgba(0,0,0,0.8);white-space:nowrap;padding:2px 6px;background:rgba(10,22,40,0.6);border-radius:4px;border:1px solid rgba(0,212,255,0.15);">${grid.name || ''}</div>`,
+            position: grid.center,
+            offset: new AMap.Pixel(0, -10),
+            anchor: 'center'
+          });
+          amap.add(label);
+        }
       }
 
       // Cell marker (red = quality issue)

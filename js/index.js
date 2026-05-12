@@ -309,6 +309,15 @@ function bindEvents() {
       document.querySelectorAll('.scope-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       currentFilter.scope = btn.dataset.value;
+      renderAll();
+    });
+  });
+
+  // Time toggle
+  document.querySelectorAll('.time-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.time-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
     });
   });
 
