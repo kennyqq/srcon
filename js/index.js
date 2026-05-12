@@ -83,7 +83,7 @@ function renderMap() {
 
     // Grid name label
     const label = new AMap.Text({
-      text: `<div style="color:#ffffff;font-size:12px;font-weight:500;text-shadow:0 0 6px rgba(0,0,0,0.8);white-space:nowrap;padding:2px 6px;background:rgba(10,22,40,0.6);border-radius:4px;border:1px solid rgba(0,212,255,0.15);">${g.name}</div>`,
+      text: `<div style="color:#ffffff;font-size:12px;font-weight:500;text-shadow:0 0 6px rgba(0,0,0,0.8);white-space:nowrap;padding:2px 6px;background:rgba(10,22,40,0.6);border-radius:4px;border:1px solid rgba(59,130,246,0.15);">${g.name}</div>`,
       position: g.center,
       offset: new AMap.Pixel(0, -10),
       anchor: 'center'
@@ -150,7 +150,7 @@ function renderCharts() {
     tooltip: {
       trigger: 'item',
       backgroundColor: '#0d1e36',
-      borderColor: 'rgba(0,212,255,0.2)',
+      borderColor: 'rgba(59,130,246,0.2)',
       textStyle: { color: '#ffffff', fontSize: 11 }
     },
     legend: {
@@ -269,7 +269,7 @@ function showAgent(type) {
       <div style="font-size:12px;font-weight:600;color:#ffffff;margin-bottom:8px;display:flex;align-items:center;gap:6px;">
         <span style="width:3px;height:14px;background:#3b82f6;border-radius:2px;display:inline-block;"></span>结论
       </div>
-      <div style="background:rgba(0,212,255,0.08);border-left:3px solid #3b82f6;padding:10px 12px;border-radius:0 6px 6px 0;font-size:12px;color:#ffffff;line-height:1.6;">${content.conclusion}</div>
+      <div style="background:rgba(59,130,246,0.08);border-left:3px solid #3b82f6;padding:10px 12px;border-radius:0 6px 6px 0;font-size:12px;color:#ffffff;line-height:1.6;">${content.conclusion}</div>
     </div>
     <div style="margin-bottom:16px;">
       <div style="font-size:12px;font-weight:600;color:#ffffff;margin-bottom:8px;display:flex;align-items:center;gap:6px;">

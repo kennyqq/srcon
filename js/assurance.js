@@ -128,8 +128,8 @@
           lineStyle: { width: 1.5, color: '#3b82f6' },
           areaStyle: {
             color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-              { offset: 0, color: 'rgba(0,212,255,0.2)' },
-              { offset: 1, color: 'rgba(0,212,255,0)' }
+              { offset: 0, color: 'rgba(59,130,246,0.2)' },
+              { offset: 1, color: 'rgba(59,130,246,0)' }
             ])
           }
         },
@@ -177,7 +177,7 @@
         // Grid label
         if (grid.center) {
           const label = new AMap.Text({
-            text: `<div style="color:#ffffff;font-size:13px;font-weight:500;text-shadow:0 0 6px rgba(0,0,0,0.8);white-space:nowrap;padding:2px 6px;background:rgba(10,22,40,0.6);border-radius:4px;border:1px solid rgba(0,212,255,0.15);">${grid.name || ''}</div>`,
+            text: `<div style="color:#ffffff;font-size:13px;font-weight:500;text-shadow:0 0 6px rgba(0,0,0,0.8);white-space:nowrap;padding:2px 6px;background:rgba(10,22,40,0.6);border-radius:4px;border:1px solid rgba(59,130,246,0.15);">${grid.name || ''}</div>`,
             position: grid.center,
             offset: new AMap.Pixel(0, -10),
             anchor: 'center'
