@@ -1,5 +1,5 @@
 /* ============================================
-   SRCON Demo - Common Styles (HLD Aligned)
+   SRCON Demo — Common Styles (Skill v1.0 Aligned)
    ============================================ */
 
 * {
@@ -11,10 +11,10 @@
 html, body {
   width: 100%;
   height: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
   font-size: 14px;
-  color: #e2e8f0;
-  background: #0a1628;
+  color: #e5e7eb;
+  background: #0B0F19;
   overflow: hidden;
 }
 
@@ -27,13 +27,19 @@ html, body {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 212, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 2px;
+}
+
+/* Utility */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
 }
 
 /* ECharts tooltip dark theme override */
 .echarts-tooltip {
-  background: #0d1e36 !important;
-  border: 1px solid rgba(0, 212, 255, 0.2) !important;
-  color: #e2e8f0 !important;
+  background: #1a1f2e !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #e5e7eb !important;
+  border-radius: 8px !important;
 }

@@ -163,6 +163,138 @@
     </aside>
   </div>
 
+  <!-- 保障闭环解读 Modal -->
+  <div class="assurance-modal" id="assuranceModal">
+    <div class="assurance-modal-content">
+      <div class="assurance-modal-header">
+        <span class="assurance-modal-title">保障闭环解读</span>
+        <button class="assurance-modal-close" onclick="hideAssuranceModal()"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="assurance-modal-tabs">
+        <button class="am-tab active" data-tab="metrics" onclick="switchModalTab('metrics')">指标详情</button>
+        <button class="am-tab" data-tab="overview" onclick="switchModalTab('overview')">问题概述</button>
+        <div class="am-toggle">
+          <span>联动地图高亮</span>
+          <div class="toggle-switch active" onclick="this.classList.toggle('active')"><div class="toggle-knob"></div></div>
+        </div>
+      </div>
+      <div class="assurance-modal-body">
+        <!-- Tab: 指标详情 -->
+        <div class="am-tab-content active" id="tab-metrics">
+          <div class="modal-metric-charts">
+            <div class="modal-metric-item">
+              <div class="modal-metric-label">
+                <span class="mm-tag">异常事件 6个</span>
+                <span class="mm-threshold">门限 -105 dBm</span>
+              </div>
+              <div class="modal-metric-chart" id="modalChartRSRP"></div>
+            </div>
+            <div class="modal-metric-item">
+              <div class="modal-metric-label">
+                <span class="mm-tag">异常事件 6个</span>
+                <span class="mm-threshold">门限 3 dB</span>
+              </div>
+              <div class="modal-metric-chart" id="modalChartSINR"></div>
+            </div>
+            <div class="modal-metric-item">
+              <div class="modal-metric-label">
+                <span class="mm-tag">异常事件 6个</span>
+                <span class="mm-threshold">门限 100 ms</span>
+              </div>
+              <div class="modal-metric-chart" id="modalChartDelay"></div>
+            </div>
+          </div>
+          <div class="modal-event-list">
+            <div class="modal-event-title">关联事件列表（6）</div>
+            <table class="modal-event-table">
+              <thead><tr><th>时间</th><th>事件类型</th><th>小区</th><th>关联地图点</th></tr></thead>
+              <tbody>
+                <tr><td>18:06:14</td><td>乒乓/频繁切换</td><td>5859634/263</td><td><span class="map-dot"></span> 查看</td></tr>
+                <tr><td>18:13:27</td><td>乒乓/频繁切换</td><td>5859634/8</td><td><span class="map-dot"></span> 查看</td></tr>
+                <tr><td>18:22:01</td><td>乒乓/频繁切换</td><td>5859634/263</td><td><span class="map-dot"></span> 查看</td></tr>
+                <tr><td>18:29:45</td><td>乒乓/频繁切换</td><td>5859634/64</td><td><span class="map-dot"></span> 查看</td></tr>
+                <tr><td>18:37:12</td><td>乒乓/频繁切换</td><td>5859634/15</td><td><span class="map-dot"></span> 查看</td></tr>
+                <tr><td>18:48:33</td><td>乒乓/频繁切换</td><td>5859634/263</td><td><span class="map-dot"></span> 查看</td></tr>
+              </tbody>
+            </table>
+            <div class="modal-event-paging">共 6 条 <span class="page-num active">1</span></div>
+          </div>
+        </div>
+
+        <!-- Tab: 问题概述 -->
+        <div class="am-tab-content" id="tab-overview">
+          <div class="overview-desc">在测试区多点位用户出现乒乓/频繁切换，伴随RLC掉线。根因定位为切换相关参数 CellIndividualOffsetDB0 配置偏低，导致邻区小区偏置过小，切换门限被频繁触发。</div>
+          <div class="detail-tags" style="margin-bottom:16px;">
+            <span class="detail-tag tag-red"><i class="fas fa-exclamation-circle"></i> 频繁切换</span>
+            <span class="detail-tag tag-orange"><i class="fas fa-map-marker-alt"></i> 邻区偏置</span>
+            <span class="detail-tag tag-purple"><i class="fas fa-cogs"></i> 参数冲突</span>
+          </div>
+          <div class="detail-section-title">证据链</div>
+          <div class="evidence-grid">
+            <div class="evidence-card">
+              <div class="evidence-title"><i class="fas fa-chart-line"></i> KPI指标</div>
+              <ul class="evidence-list"><li>乒乓/频繁切换占比 <strong>50%</strong></li><li>RLF次数 <strong>17</strong>（占比26.9%）</li><li>RRC重建率 <strong>3.8%</strong></li></ul>
+              <a class="evidence-link" href="#" onclick="switchModalTab('metrics');return false;"><i class="fas fa-angle-right"></i> 查看指标详情</a>
+            </div>
+            <div class="evidence-card">
+              <div class="evidence-title"><i class="fas fa-exchange-alt"></i> 信令回溯</div>
+              <ul class="evidence-list"><li>往返切换次数 <strong>32次</strong></li><li>HO Failure 原因 TimeOut/HO Failure</li><li>切换失败率 <strong>21.3%</strong></li></ul>
+              <a class="evidence-link" href="#"><i class="fas fa-angle-right"></i> 查看信令详情</a>
+            </div>
+            <div class="evidence-card">
+              <div class="evidence-title"><i class="fas fa-project-diagram"></i> 邻区关系</div>
+              <ul class="evidence-list"><li>邻区253偏置 <strong>+0 dB</strong></li><li>与63主时偏置差 <strong>0 dB</strong></li><li>切换门限被反复触发</li></ul>
+              <a class="evidence-link" href="#"><i class="fas fa-angle-right"></i> 查看邻区关系</a>
+            </div>
+            <div class="evidence-card">
+              <div class="evidence-title"><i class="fas fa-map-marked-alt"></i> 地图事件</div>
+              <ul class="evidence-list"><li>涉及小区 <strong>5个</strong></li><li>事件点位 <strong>23个</strong></li><li>主要集中 <strong>道路/商圈</strong></li></ul>
+              <a class="evidence-link" href="#"><i class="fas fa-angle-right"></i> 查看地图事件</a>
+            </div>
+          </div>
+          <div class="detail-section-title" style="margin-top:16px;">参数说明</div>
+          <div class="param-table-wrap">
+            <table class="param-table">
+              <thead><tr><th>参数名</th><th>当前小区值</th><th>建议小区值</th><th>作用说明</th><th>建议方向</th></tr></thead>
+              <tbody>
+                <tr><td>CellIndividualOffsetDB0</td><td class="param-current">DB0 (0 dB)</td><td class="param-suggest">DB1 ~ DB2 (1~2 dB)</td><td>当前小区相对邻区的切换偏置（越大越倾向驻留）</td><td class="param-dir">上调</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="param-explain"><strong>为何建议从 DB0 调到 DB1~DB2：</strong><br>当前邻区偏置过小（0 dB），与邻区253偏置差为0 dB，导致UE在服务小区与邻区间来回摆动。将 CellIndividualOffsetDB0 上调至 1~2 dB，可抬高切换门限，降低不必要切换，提升驻留稳定性。</div>
+          <div class="detail-section-title" style="margin-top:16px;">风险评估</div>
+          <div class="risk-grid">
+            <div class="risk-item"><span class="risk-label">影响范围</span><span class="risk-value">5个小区 / 23个事件点</span></div>
+            <div class="risk-item"><span class="risk-label">业务影响</span><span class="risk-value">中：切换稳定性提升，可能增加驻留</span></div>
+            <div class="risk-item"><span class="risk-label">回滚方案</span><span class="risk-value">支持（建议观察30~60分钟不良率）</span></div>
+            <div class="risk-item"><span class="risk-label">预期收益</span><span class="risk-value">频繁切换次数 ↓ 40%+，RLF次数 ↓ 30%+</span></div>
+          </div>
+          <div class="detail-section-title" style="margin-top:16px;">建议动作</div>
+          <div class="action-grid">
+            <div class="action-block">
+              <div class="action-block-title">脚本草草案（仅供参考，需人工复核）</div>
+              <div class="code-block">
+                <div class="code-line"><span class="code-comment">// 调整切换偏置，提升驻留稳定性</span></div>
+                <div class="code-line">SET PARAM CellIndividualOffsetDB0 DB1;</div>
+                <div class="code-line">APPLY CELL 5859634/263;</div>
+                <div class="code-line">COMMIT;</div>
+              </div>
+            </div>
+            <div class="action-block">
+              <div class="action-block-title">人工策略建议</div>
+              <div class="action-text">优先在5个影响小区试点上调为 DB1，观察 30~60 分钟 KPI。<br>若乒乓/切换次数改善不明显，可继续上调至 DB2；<br>若出现泛服务或覆盖告警，及时回滚至 DB0。</div>
+            </div>
+          </div>
+          <div class="modal-footer-btns">
+            <button class="mf-btn mf-btn-outline" onclick="hideAssuranceModal()">关闭</button>
+            <button class="mf-btn mf-btn-primary"><i class="fas fa-plus"></i> 加入脚本草案</button>
+            <button class="mf-btn mf-btn-primary"><i class="fas fa-file-signature"></i> 提交保障草案</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="js/data.js"></script>
   <script src="js/common.js"></script>
   <script src="js/assurance.js"></script>

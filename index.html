@@ -30,11 +30,11 @@
             </linearGradient>
           </defs>
         </svg>
-        <span>Agentic 网优数字员工</span>
+        <span>体验运营管家</span>
       </div>
     </div>
     <div class="header-center">
-      <h1 class="page-title">特征群组主动关怀</h1>
+      <h1 class="page-title">用户体验运营</h1>
     </div>
     <div class="header-right">
       <div class="time-toggle">
@@ -70,41 +70,58 @@
 
   <!-- Top KPI + Charts Row -->
   <section class="top-metrics-row">
-    <!-- KPI Cards -->
-    <div class="kpi-card-v2">
-      <div class="kpi-label">通讯事件数</div>
-      <div class="kpi-value" id="kpiEvents">--</div>
-    </div>
-    <div class="kpi-card-v2">
-      <div class="kpi-label">对象数</div>
-      <div class="kpi-value" id="kpiUsers">--</div>
-    </div>
-    <div class="kpi-card-v2">
-      <div class="kpi-label">质差事件数</div>
-      <div class="kpi-value" id="kpiQualityEvents">--</div>
-    </div>
-    <div class="kpi-card-v2">
-      <div class="kpi-label">质差比例</div>
-      <div class="kpi-value rate" id="kpiRate">--</div>
+    <!-- KPI Big Card -->
+    <div class="kpi-big-card">
+      <div class="kpi-big-item">
+        <div class="kpi-label">通讯事件数</div>
+        <div class="kpi-value" id="kpiEvents">--</div>
+      </div>
+      <div class="kpi-big-divider"></div>
+      <div class="kpi-big-item">
+        <div class="kpi-label">对象数</div>
+        <div class="kpi-value" id="kpiUsers">--</div>
+      </div>
+      <div class="kpi-big-divider"></div>
+      <div class="kpi-big-item">
+        <div class="kpi-label">质差事件数</div>
+        <div class="kpi-value" id="kpiQualityEvents">--</div>
+      </div>
+      <div class="kpi-big-divider"></div>
+      <div class="kpi-big-item">
+        <div class="kpi-label">质差比例</div>
+        <div class="kpi-value rate" id="kpiRate">--</div>
+      </div>
     </div>
 
     <!-- Donut Charts -->
     <div class="mini-chart-card">
-      <div class="mini-chart-title">智能板业务质差类型分布</div>
+      <div class="mini-chart-header">
+        <span class="mini-chart-title">智能板业务质差类型分布</span>
+        <a class="chart-link" href="#" onclick="showAgent('business');return false;">详情</a>
+      </div>
       <div class="mini-chart-body" id="chartBusiness"></div>
     </div>
     <div class="mini-chart-card">
-      <div class="mini-chart-title">异常模式类型分布</div>
+      <div class="mini-chart-header">
+        <span class="mini-chart-title">异常模式类型分布</span>
+        <a class="chart-link" href="#" onclick="showAgent('abnormal');return false;">详情</a>
+      </div>
       <div class="mini-chart-body" id="chartAbnormal"></div>
     </div>
     <div class="mini-chart-card">
-      <div class="mini-chart-title">网络根因类型分布</div>
+      <div class="mini-chart-header">
+        <span class="mini-chart-title">网络根因类型分布</span>
+        <a class="chart-link" href="#" onclick="showAgent('rootcause');return false;">详情</a>
+      </div>
       <div class="mini-chart-body" id="chartRootcause"></div>
     </div>
 
     <!-- Optimization Summary -->
     <div class="opt-summary-card">
-      <div class="opt-summary-title">优化方案</div>
+      <div class="opt-summary-header">
+        <span class="opt-summary-title">优化方案</span>
+        <a class="chart-link" href="#" onclick="showAgent('policy');return false;">解读</a>
+      </div>
       <div class="opt-summary-total">
         <span class="opt-total-num" id="optTotal">--</span>
         <span class="opt-total-label">总数</span>
@@ -170,11 +187,9 @@
       <!-- Map Legend -->
       <div class="map-legend-v2">
         <div class="legend-title">图例 <i class="fas fa-info-circle"></i></div>
-        <div class="legend-item"><span class="legend-dot" style="background:#22c55e;"></span>绿色 ≤2%</div>
-        <div class="legend-item"><span class="legend-dot" style="background:#84cc16;"></span>浅绿 2%-4%</div>
-        <div class="legend-item"><span class="legend-dot" style="background:#eab308;"></span>黄色 4%-6%</div>
-        <div class="legend-item"><span class="legend-dot" style="background:#f97316;"></span>橙色 6%-8%</div>
-        <div class="legend-item"><span class="legend-dot" style="background:#ef4444;"></span>红色 >8%</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#22c55e;"></span>绿色 正常</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#eab308;"></span>黄色 关注</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#ef4444;"></span>红色 质差</div>
       </div>
     </div>
 
@@ -204,7 +219,7 @@
     </aside>
   </div>
 
-  <!-- Agent Panel (Overlay) -->
+  <!-- Agent Panel (Overlay for donut detail) -->
   <div class="agent-overlay" id="agentOverlay">
     <div class="agent-panel-v2">
       <div class="agent-panel-header">
@@ -215,6 +230,86 @@
         <button class="agent-close" id="closeAgent"><i class="fas fa-times"></i></button>
       </div>
       <div class="agent-panel-body" id="agentBody"></div>
+    </div>
+  </div>
+
+  <!-- Left Slide Panel: 智能体分析 -->
+  <div class="slide-panel slide-left" id="agentAnalysisPanel">
+    <div class="slide-panel-header">
+      <span class="slide-panel-title"><i class="fas fa-robot"></i> 智能体分析</span>
+      <button class="slide-panel-close" onclick="hideAgentAnalysis()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="slide-panel-body">
+      <div class="agent-section">
+        <p style="font-size:12px;color:#94a3b8;line-height:1.8;">当前 5QI=8 / 黄浦区 质差风险显著偏高，弱覆盖、低SINR与切换失败是主要异常模式，建议优先核查高风险工单并进入策略审核流程。</p>
+      </div>
+      <div class="agent-audit-item">
+        <div class="agent-audit-header">
+          <span class="agent-audit-title">异常话单分析</span>
+          <span class="agent-audit-status">待审核</span>
+        </div>
+        <ul class="agent-audit-list">
+          <li>样本总数 4,875</li>
+          <li>异常集中时段 17:10-17:40</li>
+          <li>Top3 异常模式：弱覆盖、低SINR、切换失败</li>
+        </ul>
+      </div>
+      <div class="agent-audit-item">
+        <div class="agent-audit-header">
+          <span class="agent-audit-title">网络根因审核</span>
+          <span class="agent-audit-status">待审核</span>
+        </div>
+        <ul class="agent-audit-list">
+          <li>根因集中于覆盖参数、邻区关系、RF参数</li>
+          <li>涉及高风险小区 5856583/257、5858212/128</li>
+        </ul>
+      </div>
+      <div class="agent-audit-item">
+        <div class="agent-audit-header">
+          <span class="agent-audit-title">优化建议审核</span>
+          <span class="agent-audit-status">待审核</span>
+        </div>
+        <ul class="agent-audit-list">
+          <li>当前区域存在 3,264 条策略草案</li>
+          <li>建议优先审核 RM优化、L2参数优化、CPO优化</li>
+        </ul>
+      </div>
+      <div class="agent-chat-input">
+        <input type="text" placeholder="请输入问题">
+        <button class="agent-chat-send">发送</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Slide Panel: 质差区域优化建议审核 -->
+  <div class="slide-panel slide-right" id="optReviewPanel">
+    <div class="slide-panel-header">
+      <span class="slide-panel-title">质差区域优化建议审核</span>
+      <button class="slide-panel-close" onclick="hideOptReview()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="slide-panel-body">
+      <div class="opt-review-intro">
+        该区域优化调整分析如下：本方案基于现有网络资源，通过精细化的参数调整，在不增加硬件投入前提下，快速改善网络性能，缓解当前用户体验问题。核心措施：共涉及15个小区86个参数调整，主要针对上行弱覆盖和下行弱覆盖问题（合计占比84.25%），重点解决"关键特性未打开/参数配置不合理"这一主要根因（占比50.72%）。优化措施需要联合周边小区一起评估和优化，特别关注万科华尔兹花园和上海环境标志产品认证中心等重点区域的覆盖质量。
+      </div>
+      <div class="opt-review-search">
+        <select><option>小区名称</option></select>
+        <input type="text" placeholder="请输入">
+      </div>
+      <table class="opt-review-table">
+        <thead>
+          <tr><th>小区名称</th><th>小区ID</th><th>PCI</th><th>频点</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>CUDU0015684徐铁桔2.1 (...</td><td>1026</td><td>554</td><td>426030</td></tr>
+          <tr class="highlight"><td>CUDU0020558徐假日-800M-...</td><td>1546</td><td>394</td><td>174750</td></tr>
+          <tr><td>CUDU0007600徐电气-5G_1</td><td>7</td><td>642</td><td>627264</td></tr>
+          <tr><td>CUDU0020558徐假日-800M-...</td><td>1547</td><td>395</td><td>174750</td></tr>
+        </tbody>
+      </table>
+      <div class="opt-review-section">
+        <div class="opt-review-section-title">异常模式分析</div>
+        <p class="opt-review-text">从质差类型分布来看，下行弱覆盖占比最高，达到53.15%，上行DMRS弱覆盖次之为45.45%，上行SRS弱覆盖为34.27%，CCE资源不足为29.37%。主要异常模式集中在覆盖类问题，其中下行弱覆盖与上行弱覆盖类问题（包括上行DMRS弱覆盖和上行SRS弱覆盖）共同构成质差主导因素。</p>
+      </div>
     </div>
   </div>
 

@@ -50,7 +50,7 @@ const COMMON = {
         orient: 'vertical',
         right: 10,
         top: 'center',
-        textStyle: { color: '#94a3b8', fontSize: 11 },
+        textStyle: { color: '#9ca3af', fontSize: 11 },
         itemWidth: 10,
         itemHeight: 10,
         itemGap: 8,
@@ -105,13 +105,13 @@ const COMMON = {
         type: 'category',
         data: data.map(d => d.name),
         axisLine: { lineStyle: { color: '#334155' } },
-        axisLabel: { color: '#94a3b8', fontSize: 11, rotate: 30 }
+        axisLabel: { color: '#9ca3af', fontSize: 11, rotate: 30 }
       },
       yAxis: {
         type: 'value',
         axisLine: { show: false },
         splitLine: { lineStyle: { color: '#334155', type: 'dashed' } },
-        axisLabel: { color: '#94a3b8', fontSize: 11 }
+        axisLabel: { color: '#9ca3af', fontSize: 11 }
       },
       series: [{
         type: 'bar',
@@ -137,7 +137,7 @@ const COMMON = {
       },
       legend: {
         data: seriesData.map(s => s.name),
-        textStyle: { color: '#94a3b8', fontSize: 11 },
+        textStyle: { color: '#9ca3af', fontSize: 11 },
         top: 0
       },
       grid: { left: '3%', right: '4%', bottom: '3%', top: '15%', containLabel: true },
@@ -146,13 +146,13 @@ const COMMON = {
         boundaryGap: false,
         data: seriesData[0]?.data.map((_, i) => `${i}:00`) || [],
         axisLine: { lineStyle: { color: '#334155' } },
-        axisLabel: { color: '#94a3b8', fontSize: 11 }
+        axisLabel: { color: '#9ca3af', fontSize: 11 }
       },
       yAxis: {
         type: 'value',
         axisLine: { show: false },
         splitLine: { lineStyle: { color: '#334155', type: 'dashed' } },
-        axisLabel: { color: '#94a3b8', fontSize: 11 }
+        axisLabel: { color: '#9ca3af', fontSize: 11 }
       },
       series: seriesData.map((s, idx) => ({
         name: s.name,

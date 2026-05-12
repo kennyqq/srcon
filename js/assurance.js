@@ -17,7 +17,7 @@
     const woList = DATA.workOrders[qk] || [];
     const wo = orderId ? woList.find(w => w.id === orderId) : woList[0];
     if (!wo) {
-      document.querySelector('.analysis-dashboard').innerHTML = '<div style="color:#94a3b8;text-align:center;padding:60px;">未找到工单数据</div>';
+      document.querySelector('.analysis-dashboard').innerHTML = '<div style="color:#9ca3af;text-align:center;padding:60px;">未找到工单数据</div>';
       return;
     }
 
@@ -89,7 +89,7 @@
         radius: ['45%', '70%'],
         center: ['50%', '55%'],
         avoidLabelOverlap: false,
-        label: { show: true, fontSize: 10, color: '#94a3b8' },
+        label: { show: true, fontSize: 10, color: '#9ca3af' },
         labelLine: { show: true, lineStyle: { color: 'rgba(255,255,255,0.2)' } },
         data,
         color: ['#eab308', '#8b5cf6', '#ef4444', '#06b6d4', '#22c55e']
@@ -125,7 +125,7 @@
           data: seriesData,
           smooth: true,
           symbol: 'none',
-          lineStyle: { width: 1.5, color: '#00d4ff' },
+          lineStyle: { width: 1.5, color: '#3b82f6' },
           areaStyle: {
             color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
               { offset: 0, color: 'rgba(0,212,255,0.2)' },
@@ -166,9 +166,9 @@
         const path = grid.geometry.coordinates[0].map(c => [c[0], c[1]]);
         const poly = new AMap.Polygon({
           path,
-          strokeColor: '#00d4ff',
+          strokeColor: '#3b82f6',
           strokeWeight: 2,
-          fillColor: '#00d4ff',
+          fillColor: '#3b82f6',
           fillOpacity: 0.1
         });
         amap.add(poly);
@@ -177,7 +177,7 @@
         // Grid label
         if (grid.center) {
           const label = new AMap.Text({
-            text: `<div style="color:#e2e8f0;font-size:13px;font-weight:500;text-shadow:0 0 6px rgba(0,0,0,0.8);white-space:nowrap;padding:2px 6px;background:rgba(10,22,40,0.6);border-radius:4px;border:1px solid rgba(0,212,255,0.15);">${grid.name || ''}</div>`,
+            text: `<div style="color:#ffffff;font-size:13px;font-weight:500;text-shadow:0 0 6px rgba(0,0,0,0.8);white-space:nowrap;padding:2px 6px;background:rgba(10,22,40,0.6);border-radius:4px;border:1px solid rgba(0,212,255,0.15);">${grid.name || ''}</div>`,
             position: grid.center,
             offset: new AMap.Pixel(0, -10),
             anchor: 'center'
