@@ -143,10 +143,8 @@ function renderMap() {
 }
 
 function getRateColor(rate) {
-  if (rate <= 2) return '#22c55e';
-  if (rate <= 4) return '#84cc16';
-  if (rate <= 6) return '#eab308';
-  if (rate <= 8) return '#f97316';
+  if (rate <= 4) return '#22c55e';
+  if (rate <= 8) return '#eab308';
   return '#ef4444';
 }
 
