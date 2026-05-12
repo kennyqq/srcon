@@ -51,8 +51,11 @@ function renderMap() {
   polygons.forEach(p => { if (map) map.remove(p); });
   polygons = [];
 
-  const grids = SRCON_DATA.getFilteredGrids(currentFilter.district, currentFilter.group);
+  let grids = SRCON_DATA.getFilteredGrids(currentFilter.district, currentFilter.group);
   const qk = currentFilter.group === 'all' ? '5qi8' : currentFilter.group;
+  if (currentFilter.scope === 'quality') {
+    grids = grids.filter(g => (g.stats[qk].rate || 0) > 2);
+  }
 
   grids.forEach(g => {
     const stats = g.stats[qk];
@@ -154,7 +157,11 @@ function initCharts() {
   charts.business = echarts.init(document.getElementById('chartBusiness'));
   charts.abnormal = echarts.init(document.getElementById('chartAbnormal'));
   charts.rootcause = echarts.init(document.getElementById('chartRootcause'));
-  window.addEventListener('resize', () => Object.values(charts).forEach(c => c && c.resize()));
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => Object.values(charts).forEach(c => c && c.resize()), 150);
+  });
 }
 
 function renderCharts() {
@@ -207,15 +214,40 @@ function renderCharts() {
 // ============================================================
 // KPI
 // ============================================================
+function animateNumber(el, target, duration = 600, suffix = '') {
+  const start = performance.now();
+  const from = 0;
+  function step(now) {
+    const p = Math.min((now - start) / duration, 1);
+    const val = Math.floor(from + (target - from) * (1 - Math.pow(1 - p, 3)));
+    el.textContent = COMMON.formatNumber(val) + suffix;
+    if (p < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
 function renderKPI() {
   const qk = currentFilter.group === 'all' ? '5qi8' : currentFilter.group;
-  const kpi = SRCON_DATA.aggregateKPI(currentFilter.district, qk);
-  document.getElementById('kpiEvents').textContent = COMMON.formatNumber(kpi.events);
-  document.getElementById('kpiUsers').textContent = COMMON.formatNumber(kpi.users);
-  document.getElementById('kpiQualityEvents').textContent = COMMON.formatNumber(kpi.qualityEvents);
-  document.getElementById('kpiRate').textContent = kpi.rate + '%';
+  let grids = SRCON_DATA.getFilteredGrids(currentFilter.district, qk);
+  if (currentFilter.scope === 'quality') {
+    grids = grids.filter(g => (g.stats[qk].rate || 0) > 2);
+  }
+  let events = 0, users = new Set(), qualityEvents = 0;
+  grids.forEach(g => {
+    const s = g.stats[qk];
+    if (s) {
+      events += s.events || 0;
+      users.add(g.id);
+      qualityEvents += s.qualityEvents || 0;
+    }
+  });
+  const rate = events > 0 ? parseFloat((qualityEvents / events * 100).toFixed(2)) : 0;
+  animateNumber(document.getElementById('kpiEvents'), events, 600);
+  animateNumber(document.getElementById('kpiUsers'), users.size, 600);
+  animateNumber(document.getElementById('kpiQualityEvents'), qualityEvents, 600);
+  document.getElementById('kpiRate').textContent = rate + '%';
   const rateEl = document.getElementById('kpiRate');
-  rateEl.style.color = getRateColor(parseFloat(kpi.rate));
+  rateEl.style.color = getRateColor(rate);
 }
 
 // ============================================================
@@ -248,6 +280,11 @@ function renderWorkOrders() {
   const qk = currentFilter.group === 'all' ? '5qi8' : currentFilter.group;
   let orders = SRCON_DATA.workOrders[qk] || [];
   const container = document.getElementById('workOrderList');
+
+  // Scope filter
+  if (currentFilter.scope === 'quality') {
+    orders = orders.filter(o => (o.qualityEvents || 0) > 0);
+  }
 
   // Search filter
   if (woSearch) {
@@ -396,6 +433,15 @@ function bindEvents() {
     const totalPages = Math.ceil(orders.length / woPage.size);
     if (woPage.current < totalPages) { woPage.current++; renderWorkOrders(); }
   });
+
+  // Legend info tooltip
+  const legendInfoBtn = document.getElementById('legendInfoBtn');
+  const legendTooltip = document.getElementById('legendTooltip');
+  if (legendInfoBtn && legendTooltip) {
+    legendInfoBtn.addEventListener('click', () => {
+      legendTooltip.style.display = legendTooltip.style.display === 'none' ? 'block' : 'none';
+    });
+  }
 
   // Agent
   document.getElementById('agentBtn').addEventListener('click', () => showAgent('policy'));

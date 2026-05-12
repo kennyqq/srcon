@@ -186,10 +186,13 @@
       <div id="map"></div>
       <!-- Map Legend -->
       <div class="map-legend-v2">
-        <div class="legend-title">图例 <i class="fas fa-info-circle"></i></div>
-        <div class="legend-item"><span class="legend-dot" style="background:#22c55e;"></span>绿色 正常</div>
-        <div class="legend-item"><span class="legend-dot" style="background:#eab308;"></span>黄色 关注</div>
-        <div class="legend-item"><span class="legend-dot" style="background:#ef4444;"></span>红色 质差</div>
+        <div class="legend-title">图例 <i class="fas fa-info-circle" id="legendInfoBtn" style="cursor:pointer;"></i></div>
+        <div class="legend-item"><span class="legend-dot" style="background:#22c55e;"></span>绿色 正常（≤2%）</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#eab308;"></span>黄色 关注（2%-8%）</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#ef4444;"></span>红色 质差（>8%）</div>
+        <div class="legend-tooltip" id="legendTooltip" style="display:none;margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,0.06);font-size:11px;color:#9ca3af;line-height:1.6;">
+          基于真实 AOI 网格聚合的质差比例分级。绿色表示质差比例≤2%，正常范围；黄色表示2%-8%，需要关注；红色表示>8%，质差严重。
+        </div>
       </div>
     </div>
 

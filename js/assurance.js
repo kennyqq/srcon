@@ -72,11 +72,15 @@
     document.getElementById('genScriptBtn').addEventListener('click', () => alert('正在生成优化脚本...'));
     document.getElementById('genStrategyBtn').addEventListener('click', () => alert('正在生成业务保障策略...'));
 
+    let resizeTimer;
     window.addEventListener('resize', () => {
-      chartProblem && chartProblem.resize();
-      chartRSRP && chartRSRP.resize();
-      chartSINR && chartSINR.resize();
-      chartDelay && chartDelay.resize();
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        chartProblem && chartProblem.resize();
+        chartRSRP && chartRSRP.resize();
+        chartSINR && chartSINR.resize();
+        chartDelay && chartDelay.resize();
+      }, 150);
     });
     } catch (err) {
       console.error('Assurance init error:', err);
