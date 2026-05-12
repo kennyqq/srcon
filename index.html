@@ -200,7 +200,7 @@
         <span>重点工单</span>
       </div>
       <div class="wo-search">
-        <input type="text" placeholder="请输入工单ID或关键字">
+        <input type="text" placeholder="请输入工单ID或关键字" id="woSearchInput">
         <i class="fas fa-search"></i>
       </div>
       <div class="wo-table-header">
@@ -211,10 +211,10 @@
         <span>处理</span>
       </div>
       <div class="wo-table-body" id="workOrderList"></div>
-      <div class="wo-pagination">
-        <i class="fas fa-chevron-left"></i>
-        <span>1 / 2</span>
-        <i class="fas fa-chevron-right"></i>
+      <div class="wo-pagination" id="woPagination">
+        <i class="fas fa-chevron-left" id="woPagePrev"></i>
+        <span id="woPageInfo">1 / 1</span>
+        <i class="fas fa-chevron-right" id="woPageNext"></i>
       </div>
     </aside>
   </div>

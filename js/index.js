@@ -4,6 +4,8 @@ let map = null;
 let polygons = [];
 let charts = {};
 let currentFilter = { group: '5qi8', district: 'all', scope: 'all' };
+let woPage = { current: 1, size: 8 };
+let woSearch = '';
 
 // ============================================================
 // Initialization
@@ -80,6 +82,20 @@ function renderMap() {
       cursor: 'pointer'
     });
     map.add(glowPolygon);
+
+    // Hover effects
+    const highlight = () => {
+      polygon.setOptions({ fillOpacity: 0.55, strokeWeight: 3, strokeOpacity: 1 });
+      glowPolygon.setOptions({ fillOpacity: 0.15, strokeOpacity: 0.45 });
+    };
+    const unhighlight = () => {
+      polygon.setOptions({ fillOpacity: 0.35, strokeWeight: 2, strokeOpacity: 0.9 });
+      glowPolygon.setOptions({ fillOpacity: 0.05, strokeOpacity: 0.2 });
+    };
+    polygon.on('mouseover', highlight);
+    polygon.on('mouseout', unhighlight);
+    glowPolygon.on('mouseover', highlight);
+    glowPolygon.on('mouseout', unhighlight);
 
     // Grid name label
     const label = new AMap.Text({
@@ -230,15 +246,33 @@ function renderOptimization() {
 // ============================================================
 function renderWorkOrders() {
   const qk = currentFilter.group === 'all' ? '5qi8' : currentFilter.group;
-  const orders = SRCON_DATA.workOrders[qk] || [];
+  let orders = SRCON_DATA.workOrders[qk] || [];
   const container = document.getElementById('workOrderList');
+
+  // Search filter
+  if (woSearch) {
+    const s = woSearch.toLowerCase();
+    orders = orders.filter(o =>
+      (o.id || '').toLowerCase().includes(s) ||
+      (o.gridName || '').toLowerCase().includes(s) ||
+      (o.qualityType || '').toLowerCase().includes(s) ||
+      (o.mainCell || '').toLowerCase().includes(s)
+    );
+  }
 
   if (orders.length === 0) {
     container.innerHTML = '<div style="text-align:center;color:#6b7280;padding:40px 0;font-size:12px;">暂无重点工单</div>';
+    document.getElementById('woPagination').style.display = 'none';
     return;
   }
 
-  container.innerHTML = orders.slice(0, 8).map(o => `
+  document.getElementById('woPagination').style.display = 'flex';
+  const totalPages = Math.max(1, Math.ceil(orders.length / woPage.size));
+  if (woPage.current > totalPages) woPage.current = totalPages;
+  const start = (woPage.current - 1) * woPage.size;
+  const pageOrders = orders.slice(start, start + woPage.size);
+
+  container.innerHTML = pageOrders.map(o => `
     <div class="wo-table-row" onclick="goToDetail('${o.id}')">
       <span class="wo-id">${o.id}</span>
       <span class="wo-events">${o.qualityEvents}</span>
@@ -247,6 +281,12 @@ function renderWorkOrders() {
       <span class="wo-action" onclick="event.stopPropagation();goToDetail('${o.id}')">处理</span>
     </div>
   `).join('');
+
+  document.getElementById('woPageInfo').textContent = `${woPage.current} / ${totalPages}`;
+  document.getElementById('woPagePrev').style.opacity = woPage.current <= 1 ? '0.3' : '1';
+  document.getElementById('woPagePrev').style.pointerEvents = woPage.current <= 1 ? 'none' : 'auto';
+  document.getElementById('woPageNext').style.opacity = woPage.current >= totalPages ? '0.3' : '1';
+  document.getElementById('woPageNext').style.pointerEvents = woPage.current >= totalPages ? 'none' : 'auto';
 }
 
 function goToDetail(orderId) {
@@ -329,6 +369,31 @@ function bindEvents() {
   document.getElementById('districtSelect').addEventListener('change', e => {
     currentFilter.district = e.target.value;
     renderAll();
+  });
+
+  // Search
+  const searchInput = document.getElementById('woSearchInput');
+  if (searchInput) {
+    searchInput.addEventListener('input', e => {
+      woSearch = e.target.value.trim();
+      woPage.current = 1;
+      renderWorkOrders();
+    });
+  }
+
+  // Pagination
+  document.getElementById('woPagePrev').addEventListener('click', () => {
+    if (woPage.current > 1) { woPage.current--; renderWorkOrders(); }
+  });
+  document.getElementById('woPageNext').addEventListener('click', () => {
+    const qk = currentFilter.group === 'all' ? '5qi8' : currentFilter.group;
+    let orders = SRCON_DATA.workOrders[qk] || [];
+    if (woSearch) {
+      const s = woSearch.toLowerCase();
+      orders = orders.filter(o => (o.id || '').toLowerCase().includes(s) || (o.gridName || '').toLowerCase().includes(s) || (o.qualityType || '').toLowerCase().includes(s) || (o.mainCell || '').toLowerCase().includes(s));
+    }
+    const totalPages = Math.ceil(orders.length / woPage.size);
+    if (woPage.current < totalPages) { woPage.current++; renderWorkOrders(); }
   });
 
   // Agent
