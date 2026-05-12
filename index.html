@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agentic 网优数字员工 - SRCON Demo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script>
+    window._AMapSecurityConfig = {
+      securityJsCode: '266d9c2ee335d6ca802428e502c320c1'
+    };
+  </script>
+  <script src="https://webapi.amap.com/loader.js"></script>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="app-header">
+    <div class="logo">
+      <div class="logo-icon"><i class="fas fa-signal"></i></div>
+      <span>Agentic 网优数字员工</span>
+    </div>
+    <div class="title">Optimize with SRCON</div>
+    <div class="user-info">
+      <span><i class="fas fa-cloud"></i> 26°C</span>
+      <span><i class="fas fa-bell"></i></span>
+      <span><i class="fas fa-user"></i> User</span>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <div class="app-container">
+    <!-- Left Sidebar -->
+    <nav class="left-sidebar">
+      <div class="sidebar-btn active" data-panel="filter" title="筛选">
+        <i class="fas fa-filter"></i>
+        <span>筛选</span>
+      </div>
+      <div class="sidebar-btn" data-panel="rank" title="排名">
+        <i class="fas fa-chart-bar"></i>
+        <span>排名</span>
+      </div>
+      <div class="sidebar-btn" data-panel="search" title="搜索">
+        <i class="fas fa-search"></i>
+        <span>搜索</span>
+      </div>
+      <div class="sidebar-btn" data-panel="legend" title="图例">
+        <i class="fas fa-layer-group"></i>
+        <span>图例</span>
+      </div>
+      <div class="sidebar-btn" data-panel="reset" title="重置">
+        <i class="fas fa-redo"></i>
+        <span>重置</span>
+      </div>
+      <div class="sidebar-btn" data-panel="view" title="视图">
+        <i class="fas fa-eye"></i>
+        <span>视图</span>
+      </div>
+      <div class="sidebar-btn" style="margin-top:auto;" data-panel="agent" title="智能体">
+        <i class="fas fa-robot"></i>
+        <span>Agent</span>
+      </div>
+    </nav>
+
+    <!-- Filter Panel -->
+    <aside class="filter-panel" id="filterPanel">
+      <div class="filter-group">
+        <label>数据范围</label>
+        <div class="toggle-group">
+          <button class="toggle-btn active" data-value="all">全部</button>
+          <button class="toggle-btn" data-value="quality">质差</button>
+        </div>
+      </div>
+      <div class="filter-group">
+        <label>特征用户群</label>
+        <select class="filter-select" id="groupSelect">
+          <option value="all">全部对象</option>
+          <option value="5qi6">5QI = 6</option>
+          <option value="5qi8" selected>5QI = 8</option>
+          <option value="5qi9">5QI = 9</option>
+        </select>
+        <p style="font-size:11px;color:var(--text-muted);margin-top:6px;">
+          <i class="fas fa-info-circle"></i> 5QI 是业务承载口径，非用户等级
+        </p>
+      </div>
+      <div class="filter-group">
+        <label>区域筛选</label>
+        <select class="filter-select" id="districtSelect">
+          <option value="all">全部区域</option>
+          <option value="huangpu">黄浦区</option>
+          <option value="jingan">静安区</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>工单搜索</label>
+        <input type="text" class="filter-search" id="orderSearch" placeholder="输入工单ID或对象ID">
+      </div>
+      <div class="filter-group">
+        <button class="btn btn-primary" style="width:100%;" id="applyFilter">
+          <i class="fas fa-search"></i> 搜索
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Breadcrumb -->
+      <div class="breadcrumb">
+        <a href="#"><i class="fas fa-home"></i> 返回首页</a>
+        <span>/</span>
+        <span class="current" id="breadcrumbText">全网质差事件识别</span>
+      </div>
+
+      <!-- KPI Row -->
+      <div class="kpi-row">
+        <div class="kpi-card">
+          <div class="kpi-title">通讯事件数 / 对象数</div>
+          <div class="kpi-pair">
+            <div class="kpi-pair-item">
+              <div class="label">通讯事件数</div>
+              <div class="value" id="kpiEvents">--</div>
+            </div>
+            <div class="kpi-pair-item">
+              <div class="label">对象数</div>
+              <div class="value" id="kpiUsers" style="color:var(--accent-cyan);">--</div>
+            </div>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-title">质差事件数 / 质差比例</div>
+          <div class="kpi-pair">
+            <div class="kpi-pair-item">
+              <div class="label">质差事件数</div>
+              <div class="value" id="kpiQualityEvents">--</div>
+            </div>
+            <div class="kpi-pair-item">
+              <div class="label">质差比例</div>
+              <div class="value" id="kpiRate" style="color:var(--accent-red);">--</div>
+            </div>
+          </div>
+        </div>
+        <div class="chart-card" style="min-width:260px;flex:1.2;">
+          <div class="chart-header">
+            <span class="chart-title">智能板业务质差类型分布</span>
+            <span class="chart-detail" data-agent="business">详情 <i class="fas fa-chevron-right"></i></span>
+          </div>
+          <div class="chart-body" id="chartBusiness"></div>
+        </div>
+        <div class="chart-card" style="min-width:260px;flex:1.2;">
+          <div class="chart-header">
+            <span class="chart-title">异常模式类型分布</span>
+            <span class="chart-detail" data-agent="abnormal">详情 <i class="fas fa-chevron-right"></i></span>
+          </div>
+          <div class="chart-body" id="chartAbnormal"></div>
+        </div>
+      </div>
+
+      <!-- Map Section -->
+      <div class="map-container">
+        <div id="map"></div>
+        <div class="map-legend">
+          <div class="legend-title">图例</div>
+          <div class="legend-item">
+            <div class="legend-color" style="background:#22c55e;"></div>
+            <span>质差占比 ≤ 2%</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color" style="background:#84cc16;"></div>
+            <span>质差占比 (2%, 4%]</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color" style="background:#eab308;"></div>
+            <span>质差占比 (4%, 6%]</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color" style="background:#f97316;"></div>
+            <span>质差占比 (6%, 8%]</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color" style="background:#dc2626;"></div>
+            <span>质差占比 > 8%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Row -->
+      <div class="kpi-row" style="padding-top:16px;">
+        <div class="chart-card" style="min-width:260px;flex:1;">
+          <div class="chart-header">
+            <span class="chart-title">网络根因类型分布</span>
+            <span class="chart-detail" data-agent="rootcause">详情 <i class="fas fa-chevron-right"></i></span>
+          </div>
+          <div class="chart-body" id="chartRootcause"></div>
+        </div>
+        <div class="kpi-card" style="min-width:260px;flex:1;">
+          <div class="kpi-title">优化方案</div>
+          <div class="kpi-value" id="optTotal" style="font-size:24px;">--</div>
+          <div style="margin-top:12px;" id="optTypes">
+            <!-- Dynamic -->
+          </div>
+        </div>
+        <div class="chart-card" style="min-width:260px;flex:1.2;">
+          <div class="chart-header">
+            <span class="chart-title">Agent 解读</span>
+            <span class="chart-detail" data-agent="policy">详情 <i class="fas fa-chevron-right"></i></span>
+          </div>
+          <div class="chart-body" id="chartAgent" style="display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;padding:20px;">
+            <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--accent-purple),var(--accent-pink));display:flex;align-items:center;justify-content:center;font-size:28px;">
+              <i class="fas fa-robot"></i>
+            </div>
+            <div style="text-align:center;color:var(--text-secondary);font-size:13px;line-height:1.6;">
+              <p>Agentic 网优数字员工已就绪</p>
+              <p style="font-size:12px;margin-top:4px;">点击上方"详情"查看智能分析</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Right Panel -->
+    <aside class="right-panel">
+      <div class="panel-header">
+        <i class="fas fa-clipboard-list"></i> 重点工单
+      </div>
+      <div class="panel-body" id="workOrderList">
+        <!-- Dynamic -->
+      </div>
+    </aside>
+  </div>
+
+  <!-- Agent Panel -->
+  <div class="agent-panel" id="agentPanel">
+    <div class="agent-header">
+      <div class="agent-title">
+        <div class="icon"><i class="fas fa-robot"></i></div>
+        <span id="agentTitle">Agent 分析</span>
+      </div>
+      <button class="btn btn-outline btn-sm" id="closeAgent"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="agent-body" id="agentBody">
+      <!-- Dynamic -->
+    </div>
+    <div class="agent-footer">
+      <button class="btn btn-primary btn-sm" id="deepAnalysis">
+        <i class="fas fa-search-plus"></i> 深度解读
+      </button>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>

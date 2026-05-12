@@ -1,0 +1,267 @@
+/* SRCON Demo - Assurance Page Styles */
+
+.assurance-page {
+  height: calc(100vh - var(--header-height));
+  overflow-y: auto;
+  background: var(--bg-primary);
+}
+
+.assurance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.assurance-header .breadcrumb {
+  padding: 0;
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.assurance-content {
+  padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.assurance-section {
+  margin-bottom: 32px;
+}
+
+.assurance-section .section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.assurance-section .section-title i {
+  color: var(--accent-blue);
+  font-size: 18px;
+}
+
+/* Summary */
+.summary-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.summary-item {
+  text-align: center;
+}
+
+.summary-item .label {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.summary-item .value {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.summary-text {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  background: rgba(59, 130, 246, 0.05);
+  padding: 12px 16px;
+  border-radius: 8px;
+  border-left: 3px solid var(--accent-blue);
+}
+
+/* Stats Table */
+.stats-table-wrap {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Chart Row */
+.chart-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.chart-row .chart-card {
+  min-width: 300px;
+}
+
+/* Top 3 List */
+.top3-list {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.top3-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.top3-item .rank {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+  background: var(--accent-blue);
+  color: #fff;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+.top3-item .name {
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.top3-item .desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 6px;
+  line-height: 1.6;
+}
+
+/* Root Cause */
+.rootcause-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.evidence-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 16px;
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.evidence-box strong {
+  color: var(--text-primary);
+}
+
+.affected-cells {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.affected-cells h4 {
+  font-size: 13px;
+  margin-bottom: 10px;
+  color: var(--text-primary);
+}
+
+.cell-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cell-tag {
+  padding: 4px 10px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+/* Policy */
+.policy-intro {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.policy-table-wrap {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  overflow-x: auto;
+}
+
+.policy-table-wrap .data-table {
+  min-width: 900px;
+}
+
+.policy-table-wrap .data-table td {
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.policy-table-wrap .data-table td:nth-child(3) {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.audit-actions {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  flex-wrap: wrap;
+}
+
+.audit-actions .btn {
+  padding: 8px 18px;
+}
+
+/* Value highlight */
+.val-current {
+  color: var(--text-secondary);
+}
+
+.val-suggested {
+  color: var(--accent-green);
+  font-weight: 500;
+}

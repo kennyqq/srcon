@@ -1,0 +1,43 @@
+# SRCON Demo - Git Ignore
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# Output artifacts (auto-generated)
+output/
+*.txt
+*.xlsx
+*.pptx
+
+# Data generators (source of truth is /data/)
+generate_*.py
+inspect_*.py
+validate.js
+
+# Documentation drafts
+DEVELOPMENT_PLAN.md
+srcon_understanding.md
+SRCON_Demo_DataDictionary*
+
+# Raw data sources
+data/
+input/
+

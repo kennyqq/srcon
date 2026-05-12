@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>质差分析 - Agentic 网优数字员工</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/assurance.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="app-header">
+    <div class="logo">
+      <div class="logo-icon"><i class="fas fa-signal"></i></div>
+      <span>Agentic 网优数字员工</span>
+    </div>
+    <div class="title">Optimize with SRCON</div>
+    <div class="user-info">
+      <span><i class="fas fa-cloud"></i> 26°C</span>
+      <span><i class="fas fa-bell"></i></span>
+      <span><i class="fas fa-user"></i> User</span>
+    </div>
+  </header>
+
+  <div class="assurance-page">
+    <!-- Breadcrumb & Actions -->
+    <div class="assurance-header">
+      <div class="breadcrumb">
+        <a href="index.html"><i class="fas fa-arrow-left"></i> 返回</a>
+        <span>/</span>
+        <a href="index.html">全网质差事件识别</a>
+        <span>/</span>
+        <span class="current" id="woTitle">工单详情</span>
+      </div>
+      <div class="header-actions">
+        <button class="btn btn-outline btn-sm"><i class="fas fa-clipboard-check"></i> 优化方案审核</button>
+        <button class="btn btn-outline btn-sm"><i class="fas fa-file-alt"></i> 操作单概览</button>
+        <button class="btn btn-outline btn-sm"><i class="fas fa-chart-line"></i> 优化前后对比</button>
+      </div>
+    </div>
+
+    <div class="assurance-content">
+      <!-- Section 1: Summary -->
+      <section class="assurance-section">
+        <h2 class="section-title"><i class="fas fa-info-circle"></i> 摘要</h2>
+        <div class="summary-card">
+          <div class="summary-grid" id="summaryGrid">
+            <!-- Dynamic -->
+          </div>
+          <div class="summary-text" id="summaryText"></div>
+        </div>
+      </section>
+
+      <!-- Section 2: Problem Analysis -->
+      <section class="assurance-section">
+        <h2 class="section-title"><i class="fas fa-search"></i> 质差问题分析</h2>
+        <div class="stats-table-wrap">
+          <table class="data-table" id="problemTable">
+            <thead>
+              <tr>
+                <th>指标</th>
+                <th>数值</th>
+                <th>说明</th>
+              </tr>
+            </thead>
+            <tbody id="problemTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 3: Abnormal Pattern -->
+      <section class="assurance-section">
+        <h2 class="section-title"><i class="fas fa-exclamation-triangle"></i> 异常模式分析</h2>
+        <div class="chart-row">
+          <div class="chart-card" style="flex:1;">
+            <div class="chart-header">
+              <span class="chart-title">异常模式分布</span>
+            </div>
+            <div class="chart-body" id="chartAbnormalBar" style="height:280px;"></div>
+          </div>
+          <div class="chart-card" style="flex:1.5;">
+            <div class="chart-header">
+              <span class="chart-title">指标回放（24小时）</span>
+            </div>
+            <div class="chart-body" id="chartMetricReplay" style="height:280px;"></div>
+          </div>
+        </div>
+        <div class="top3-list" id="abnormalTop3"></div>
+      </section>
+
+      <!-- Section 4: Root Cause -->
+      <section class="assurance-section">
+        <h2 class="section-title"><i class="fas fa-project-diagram"></i> 网络根因分析</h2>
+        <div class="chart-row">
+          <div class="chart-card" style="flex:1;">
+            <div class="chart-header">
+              <span class="chart-title">根因类型分布</span>
+            </div>
+            <div class="chart-body" id="chartRootcauseBar" style="height:260px;"></div>
+          </div>
+          <div class="rootcause-detail" style="flex:1.5;">
+            <div class="evidence-box" id="rootcauseEvidence"></div>
+            <div class="affected-cells" id="affectedCells"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: Policy Audit -->
+      <section class="assurance-section">
+        <h2 class="section-title"><i class="fas fa-sliders-h"></i> 调整预案与预期效果</h2>
+        <div class="policy-intro" id="policyIntro"></div>
+        <div class="policy-table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>优化类型</th>
+                <th>gNBId</th>
+                <th>小区名称</th>
+                <th>MO</th>
+                <th>参数名</th>
+                <th>当前值</th>
+                <th>建议值</th>
+              </tr>
+            </thead>
+            <tbody id="policyTableBody"></tbody>
+          </table>
+        </div>
+        <div class="audit-actions">
+          <button class="btn btn-primary"><i class="fas fa-check"></i> 审核通过</button>
+          <button class="btn btn-outline" style="color:var(--accent-red);border-color:var(--accent-red);"><i class="fas fa-times"></i> 审核不通过</button>
+          <button class="btn btn-outline"><i class="fas fa-file-code"></i> 加入脚本草案</button>
+          <button class="btn btn-outline"><i class="fas fa-history"></i> 查看回滚条件</button>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/assurance.js"></script>
+</body>
+</html>
