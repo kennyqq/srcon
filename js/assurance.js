@@ -1,374 +1,269 @@
-// SRCON Demo - Assurance Page Logic
+/* ============================================
+   SRCON Demo - Assurance Page Logic
+   ============================================ */
 
-let charts = {};
+(function() {
+  'use strict';
 
-// ============================================================
-// Initialization
-// ============================================================
-document.addEventListener('DOMContentLoaded', () => {
-  const params = COMMON.getUrlParams();
-  const caseId = params.caseId;
-  
-  if (!caseId || !SRCON_DATA.detailData[caseId]) {
-    document.querySelector('.assurance-content').innerHTML = `
-      <div style="text-align:center;padding:80px 0;color:var(--text-secondary);">
-        <i class="fas fa-exclamation-circle" style="font-size:48px;margin-bottom:16px;display:block;"></i>
-        <p>未找到工单数据</p>
-        <a href="index.html" class="btn btn-primary" style="margin-top:16px;display:inline-block;text-decoration:none;">返回首页</a>
-      </div>
-    `;
-    return;
-  }
-  
-  const data = SRCON_DATA.detailData[caseId];
-  renderPage(data);
-  initCharts(data);
-  
-  window.addEventListener('resize', () => {
-    Object.values(charts).forEach(c => c && c.resize());
-  });
-});
+  const DATA = window.SRCON_DATA;
+  let amap = null;
+  let chartProblem = null;
+  let chartRSRP = null, chartSINR = null, chartDelay = null;
 
-// ============================================================
-// Render Page
-// ============================================================
-function renderPage(data) {
-  const order = data.order;
-  const grid = data.grid;
-  
-  // Title
-  document.getElementById('woTitle').textContent = `${grid.name} 区域质差事件识别`;
-  document.title = `质差分析 - ${order.id}`;
-  
-  // Summary
-  renderSummary(data);
-  
-  // Problem Analysis
-  renderProblem(data);
-  
-  // Abnormal Pattern Top3
-  renderAbnormalTop3(data);
-  
-  // Root Cause
-  renderRootcause(data);
-  
-  // Policy
-  renderPolicy(data);
-}
+  function init() {
+    const params = new URLSearchParams(window.location.search);
+    const orderId = params.get('caseId') || params.get('orderId');
+    const qk = params.get('group') || '5qi8';
+    const woList = DATA.workOrders[qk] || [];
+    const wo = orderId ? woList.find(w => w.id === orderId) : woList[0];
+    if (!wo) {
+      document.querySelector('.analysis-dashboard').innerHTML = '<div style="color:#94a3b8;text-align:center;padding:60px;">未找到工单数据</div>';
+      return;
+    }
 
-// ============================================================
-// Summary
-// ============================================================
-function renderSummary(data) {
-  const order = data.order;
-  const grid = data.grid;
-  const problem = data.problem;
-  
-  document.getElementById('summaryGrid').innerHTML = `
-    <div class="summary-item">
-      <div class="label">工单ID</div>
-      <div class="value" style="font-size:14px;">${order.id}</div>
-    </div>
-    <div class="summary-item">
-      <div class="label">主服务小区</div>
-      <div class="value" style="font-size:14px;">${order.mainCell}</div>
-    </div>
-    <div class="summary-item">
-      <div class="label">特征群组</div>
-      <div class="value">${order.group.toUpperCase().replace('QI', 'QI=')}</div>
-    </div>
-    <div class="summary-item">
-      <div class="label">AOI网格</div>
-      <div class="value" style="font-size:14px;">${grid.name}</div>
-    </div>
-    <div class="summary-item">
-      <div class="label">质差事件数</div>
-      <div class="value" style="color:var(--accent-red);">${COMMON.formatNumber(problem.qualityEvents)}</div>
-    </div>
-    <div class="summary-item">
-      <div class="label">质差比例</div>
-      <div class="value" style="color:var(--accent-red);">${problem.rate}%</div>
-    </div>
-  `;
-  
-  document.getElementById('summaryText').textContent = data.summary.text;
-}
+    const grid = DATA.grids.find(g => g.id === wo.gridId) || DATA.grids[0];
+    const stats = grid.stats[qk] || {};
 
-// ============================================================
-// Problem Analysis Table
-// ============================================================
-function renderProblem(data) {
-  const p = data.problem;
-  const rows = [
-    { label: '通讯事件数', value: COMMON.formatNumber(p.totalEvents), desc: '当前工单关联事件' },
-    { label: '质差事件数', value: COMMON.formatNumber(p.qualityEvents), desc: '异常事件' },
-    { label: '质差比例', value: p.rate + '%', desc: '质差事件 / 通讯事件' },
-    { label: '弱覆盖事件', value: COMMON.formatNumber(p.weakCoverage), desc: 'RSRP 低于阈值' },
-    { label: '低SINR事件', value: COMMON.formatNumber(p.lowSinr), desc: '干扰或信号质量问题' },
-    { label: '切换失败事件', value: COMMON.formatNumber(p.handoverFail), desc: '信令过程异常' },
-    { label: '掉线事件', value: COMMON.formatNumber(p.dropLine), desc: '连接异常释放' },
-    { label: '时延异常事件', value: COMMON.formatNumber(p.delayAbnormal), desc: '时延超过门限' }
-  ];
-  
-  document.getElementById('problemTableBody').innerHTML = rows.map(r => `
-    <tr>
-      <td>${r.label}</td>
-      <td style="font-weight:600;">${r.value}</td>
-      <td style="color:var(--text-secondary);font-size:12px;">${r.desc}</td>
-    </tr>
-  `).join('');
-}
+    // Breadcrumb
+    document.getElementById('bcDistrict').textContent = wo.gridName || '黄浦区';
+    document.getElementById('bcOrderId').textContent = wo.id;
 
-// ============================================================
-// Charts
-// ============================================================
-function initCharts(data) {
-  // Abnormal bar chart
-  charts.abnormalBar = echarts.init(document.getElementById('chartAbnormalBar'));
-  const abnormalData = Object.entries(data.abnormal.distribution)
-    .map(([name, value]) => ({ name, value }))
-    .sort((a, b) => b.value - a.value);
-  
-  charts.abnormalBar.setOption({
-    backgroundColor: 'transparent',
-    tooltip: {
-      trigger: 'axis',
-      backgroundColor: '#0f172a',
-      borderColor: '#334155',
-      textStyle: { color: '#f1f5f9', fontSize: 12 },
-      formatter: '{b}: {c}%'
-    },
-    grid: { left: '3%', right: '8%', bottom: '3%', top: '5%', containLabel: true },
-    xAxis: {
-      type: 'value',
-      axisLine: { show: false },
-      splitLine: { lineStyle: { color: '#334155', type: 'dashed' } },
-      axisLabel: { color: '#94a3b8', fontSize: 11, formatter: '{value}%' }
-    },
-    yAxis: {
-      type: 'category',
-      data: abnormalData.map(d => d.name.length > 8 ? d.name.substring(0, 8) + '...' : d.name),
-      axisLine: { lineStyle: { color: '#334155' } },
-      axisLabel: { color: '#94a3b8', fontSize: 11 }
-    },
-    series: [{
-      type: 'bar',
-      data: abnormalData.map(d => d.value),
-      itemStyle: {
-        color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
-          { offset: 0, color: '#3b82f6' },
-          { offset: 1, color: '#06b6d4' }
-        ]),
-        borderRadius: [0, 4, 4, 0]
-      },
-      barWidth: '60%',
-      label: {
-        show: true,
-        position: 'right',
-        formatter: '{c}%',
-        color: '#94a3b8',
-        fontSize: 11
-      }
-    }]
-  });
-  
-  // Metric replay line chart
-  charts.metricReplay = echarts.init(document.getElementById('chartMetricReplay'));
-  const hours = data.abnormal.rsrpCurve.map(d => d.hour + ':00');
-  
-  charts.metricReplay.setOption({
-    backgroundColor: 'transparent',
-    tooltip: {
-      trigger: 'axis',
-      backgroundColor: '#0f172a',
-      borderColor: '#334155',
-      textStyle: { color: '#f1f5f9', fontSize: 12 }
-    },
-    legend: {
-      data: ['RSRP (dBm)', 'SINR (dB)', 'RLC时延 (ms)'],
-      textStyle: { color: '#94a3b8', fontSize: 11 },
-      top: 0
-    },
-    grid: { left: '3%', right: '4%', bottom: '3%', top: '12%', containLabel: true },
-    xAxis: {
-      type: 'category',
-      boundaryGap: false,
-      data: hours,
-      axisLine: { lineStyle: { color: '#334155' } },
-      axisLabel: { color: '#94a3b8', fontSize: 10 }
-    },
-    yAxis: [
-      {
-        type: 'value',
-        name: 'RSRP/SINR',
-        axisLine: { show: false },
-        splitLine: { lineStyle: { color: '#334155', type: 'dashed' } },
-        axisLabel: { color: '#94a3b8', fontSize: 10 }
-      },
-      {
-        type: 'value',
-        name: '时延',
-        axisLine: { show: false },
-        splitLine: { show: false },
-        axisLabel: { color: '#94a3b8', fontSize: 10 }
-      }
-    ],
-    series: [
-      {
-        name: 'RSRP (dBm)',
-        type: 'line',
-        smooth: true,
-        data: data.abnormal.rsrpCurve.map(d => d.value),
-        lineStyle: { width: 2, color: '#3b82f6' },
-        itemStyle: { color: '#3b82f6' },
-        symbol: 'none',
-        markLine: {
-          silent: true,
-          lineStyle: { color: '#ef4444', type: 'dashed' },
-          data: [{ yAxis: -110 }]
-        }
-      },
-      {
-        name: 'SINR (dB)',
-        type: 'line',
-        smooth: true,
-        data: data.abnormal.sinrCurve.map(d => d.value),
-        lineStyle: { width: 2, color: '#10b981' },
-        itemStyle: { color: '#10b981' },
-        symbol: 'none'
-      },
-      {
-        name: 'RLC时延 (ms)',
-        type: 'line',
-        smooth: true,
-        yAxisIndex: 1,
-        data: data.abnormal.delayCurve.map(d => d.value),
-        lineStyle: { width: 2, color: '#f97316' },
-        itemStyle: { color: '#f97316' },
-        symbol: 'none'
-      }
-    ]
-  });
-  
-  // Root cause bar chart
-  charts.rootcauseBar = echarts.init(document.getElementById('chartRootcauseBar'));
-  const rcData = Object.entries(data.rootcause.distribution)
-    .map(([name, value]) => ({ name, value }))
-    .sort((a, b) => b.value - a.value);
-  
-  charts.rootcauseBar.setOption({
-    backgroundColor: 'transparent',
-    tooltip: {
-      trigger: 'axis',
-      backgroundColor: '#0f172a',
-      borderColor: '#334155',
-      textStyle: { color: '#f1f5f9', fontSize: 12 },
-      formatter: '{b}: {c}%'
-    },
-    grid: { left: '3%', right: '8%', bottom: '3%', top: '5%', containLabel: true },
-    xAxis: {
-      type: 'value',
-      axisLine: { show: false },
-      splitLine: { lineStyle: { color: '#334155', type: 'dashed' } },
-      axisLabel: { color: '#94a3b8', fontSize: 11, formatter: '{value}%' }
-    },
-    yAxis: {
-      type: 'category',
-      data: rcData.map(d => d.name.length > 12 ? d.name.substring(0, 12) + '...' : d.name),
-      axisLine: { lineStyle: { color: '#334155' } },
-      axisLabel: { color: '#94a3b8', fontSize: 10 }
-    },
-    series: [{
-      type: 'bar',
-      data: rcData.map(d => d.value),
-      itemStyle: {
-        color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
-          { offset: 0, color: '#8b5cf6' },
-          { offset: 1, color: '#ec4899' }
-        ]),
-        borderRadius: [0, 4, 4, 0]
-      },
-      barWidth: '55%',
-      label: {
-        show: true,
-        position: 'right',
-        formatter: '{c}%',
-        color: '#94a3b8',
-        fontSize: 11
-      }
-    }]
-  });
-}
+    // WO Meta
+    document.getElementById('woId').textContent = wo.id;
+    document.getElementById('woCell').textContent = wo.mainCell || stats.mainCell || '--';
 
-// ============================================================
-// Abnormal Top3
-// ============================================================
-function renderAbnormalTop3(data) {
-  const top3 = data.abnormal.top3;
-  document.getElementById('abnormalTop3').innerHTML = top3.map((item, idx) => `
-    <div class="top3-item">
-      <span class="rank">${idx + 1}</span>
-      <span class="name">${item.name}</span>
-      <div class="desc">${item.desc}</div>
-    </div>
-  `).join('');
-}
+    // Mini KPI
+    document.getElementById('miniEvents').textContent = COMMON.formatNumber(wo.qualityEvents || stats.qualityEvents || 0);
+    document.getElementById('miniQuality').textContent = COMMON.formatNumber(wo.qualityEvents || stats.qualityEvents || 0);
+    const rate = wo.rate || stats.rate || 0;
+    document.getElementById('miniRate').textContent = rate + '%';
 
-// ============================================================
-// Root Cause
-// ============================================================
-function renderRootcause(data) {
-  document.getElementById('rootcauseEvidence').innerHTML = `
-    <p><strong>TOP1 根因：</strong>${data.rootcause.topCause}</p>
-    <p style="margin-top:8px;">${data.rootcause.evidence}</p>
-  `;
-  
-  document.getElementById('affectedCells').innerHTML = `
-    <h4><i class="fas fa-broadcast-tower" style="color:var(--accent-blue);margin-right:6px;"></i>涉及小区</h4>
-    <div class="cell-tags">
-      ${data.rootcause.affectedCells.map(c => `<span class="cell-tag">${c}</span>`).join('')}
-    </div>
-  `;
-}
+    // Problem donut (mock from quality type distribution)
+    chartProblem = echarts.init(document.getElementById('chartProblem'));
+    renderProblemDonut(wo, woList);
 
-// ============================================================
-// Policy
-// ============================================================
-function renderPolicy(data) {
-  // Bind action buttons
-  document.querySelectorAll('.audit-actions .btn, .header-actions .btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const text = btn.textContent.trim();
-      if (text.includes('审核通过')) {
-        alert('策略已标记为审核通过，将进入脚本生成流程');
-      } else if (text.includes('审核不通过')) {
-        alert('策略已标记为审核不通过，请填写原因');
-      } else if (text.includes('加入脚本草案')) {
-        alert('策略已加入脚本草案队列');
-      } else if (text.includes('查看回滚条件')) {
-        alert('回滚条件：参数调整后若质差率未下降或网络KPI恶化超过5%，则自动回滚至调整前状态');
-      } else {
-        alert('功能开发中');
-      }
+    // Metrics replay
+    chartRSRP = echarts.init(document.getElementById('chartRSRP'));
+    chartSINR = echarts.init(document.getElementById('chartSINR'));
+    chartDelay = echarts.init(document.getElementById('chartDelay'));
+    renderMetricChart(chartRSRP, 'RSRP', -105, generateMetricData(-118, -88, -105, 20));
+    renderMetricChart(chartSINR, 'SINR', 3, generateMetricData(-2, 22, 3, 20));
+    renderMetricChart(chartDelay, 'Delay', 100, generateMetricData(30, 220, 100, 20));
+
+    // Map
+    initMap(grid);
+
+    // Signaling
+    renderTraceFlow();
+    renderTraceAnalysis(wo);
+
+    // Right panel
+    renderCIOList(grid, wo);
+    renderStrategyGrid(wo, grid, qk);
+
+    // Events
+    document.getElementById('genScriptBtn').addEventListener('click', () => alert('正在生成优化脚本...'));
+    document.getElementById('genStrategyBtn').addEventListener('click', () => alert('正在生成业务保障策略...'));
+
+    window.addEventListener('resize', () => {
+      chartProblem && chartProblem.resize();
+      chartRSRP && chartRSRP.resize();
+      chartSINR && chartSINR.resize();
+      chartDelay && chartDelay.resize();
     });
-  });
-  
-  const policies = data.policies;
-  
-  document.getElementById('policyIntro').innerHTML = `
-    <p><strong>核心措施：</strong>共涉及 ${policies.length} 条策略草案，主要调整 ${[...new Set(policies.map(p => p['优化类型']))].join('、')} 等参数。</p>
-    <p style="margin-top:6px;">策略基于MR数据和RCA分析生成，参数调整范围在工程安全阈值内，具备回滚条件。所有策略需经专家复核后进入脚本生成流程，<strong style="color:var(--accent-red);">不涉及自动现网下发</strong>。</p>
-  `;
-  
-  document.getElementById('policyTableBody').innerHTML = policies.map(p => `
-    <tr>
-      <td><span style="color:var(--accent-blue);font-weight:500;">${p['优化类型']}</span></td>
-      <td>${p['gNBId']}</td>
-      <td title="${p['CellName']}">${p['CellName']}</td>
-      <td>${p['MO'] || '-'}</td>
-      <td>${p['Parameter Name']}</td>
-      <td class="val-current">${p['Current Value']}</td>
-      <td class="val-suggested">${p['Suggested Value']}</td>
-    </tr>
-  `).join('');
-}
+  }
+
+  function renderProblemDonut(wo, woList) {
+    // Derive distribution from woList quality types
+    const typeCounts = {};
+    woList.forEach(w => { typeCounts[w.qualityType] = (typeCounts[w.qualityType] || 0) + 1; });
+    const data = Object.keys(typeCounts).map(k => ({ value: typeCounts[k], name: k }));
+    if (data.length === 0) {
+      data.push({ value: 1, name: '异常掉线' }, { value: 1, name: '乒乓切换' }, { value: 1, name: '切换失败' });
+    }
+
+    chartProblem.setOption({
+      tooltip: { trigger: 'item' },
+      series: [{
+        type: 'pie',
+        radius: ['45%', '70%'],
+        center: ['50%', '55%'],
+        avoidLabelOverlap: false,
+        label: { show: true, fontSize: 10, color: '#94a3b8' },
+        labelLine: { show: true, lineStyle: { color: 'rgba(255,255,255,0.2)' } },
+        data,
+        color: ['#eab308', '#8b5cf6', '#ef4444', '#06b6d4', '#22c55e']
+      }]
+    });
+  }
+
+  function generateMetricData(min, max, threshold, points) {
+    const data = [];
+    let val = (min + max) / 2;
+    for (let i = 0; i < points; i++) {
+      val += (Math.random() - 0.5) * (max - min) * 0.15;
+      val = Math.max(min, Math.min(max, val));
+      const isAbnormal = (threshold < 0 && val < threshold) || (threshold > 0 && val > threshold);
+      data.push({ value: parseFloat(val.toFixed(1)), abnormal: isAbnormal });
+    }
+    return data;
+  }
+
+  function renderMetricChart(chart, name, threshold, data) {
+    const xData = data.map((_, i) => i);
+    const seriesData = data.map(d => d.value);
+    const abnormalPoints = data.map((d, i) => d.abnormal ? d.value : null);
+
+    chart.setOption({
+      tooltip: { trigger: 'axis' },
+      grid: { left: 0, right: 0, top: 4, bottom: 0 },
+      xAxis: { type: 'category', data: xData, show: false },
+      yAxis: { type: 'value', show: false, min: Math.min(...seriesData) * 0.95, max: Math.max(...seriesData) * 1.05 },
+      series: [
+        {
+          type: 'line',
+          data: seriesData,
+          smooth: true,
+          symbol: 'none',
+          lineStyle: { width: 1.5, color: '#00d4ff' },
+          areaStyle: {
+            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+              { offset: 0, color: 'rgba(0,212,255,0.2)' },
+              { offset: 1, color: 'rgba(0,212,255,0)' }
+            ])
+          }
+        },
+        {
+          type: 'line',
+          data: Array(data.length).fill(threshold),
+          symbol: 'none',
+          lineStyle: { width: 1, type: 'dashed', color: '#ef4444' }
+        },
+        {
+          type: 'scatter',
+          data: abnormalPoints,
+          symbolSize: 6,
+          itemStyle: { color: '#8b5cf6' }
+        }
+      ]
+    });
+  }
+
+  function initMap(grid) {
+    AMapLoader.load({
+      key: 'a94aaf734ef8c87f8c6c45559c28a4fd',
+      version: '2.0',
+      plugins: []
+    }).then(AMap => {
+      amap = new AMap.Map('map', {
+        center: grid.center || [121.4737, 31.2304],
+        zoom: 14,
+        mapStyle: 'amap://styles/dark'
+      });
+
+      // Draw grid polygon
+      if (grid.geometry && grid.geometry.coordinates && grid.geometry.coordinates[0]) {
+        const path = grid.geometry.coordinates[0].map(c => [c[0], c[1]]);
+        const poly = new AMap.Polygon({
+          path,
+          strokeColor: '#00d4ff',
+          strokeWeight: 2,
+          fillColor: '#00d4ff',
+          fillOpacity: 0.1
+        });
+        amap.add(poly);
+        amap.setFitView([poly], false, [60, 60, 60, 60]);
+
+        // Grid label
+        const label = new AMap.Text({
+          text: `<div style="color:#e2e8f0;font-size:13px;font-weight:500;text-shadow:0 0 6px rgba(0,0,0,0.8);white-space:nowrap;padding:2px 6px;background:rgba(10,22,40,0.6);border-radius:4px;border:1px solid rgba(0,212,255,0.15);">${grid.name}</div>`,
+          position: grid.center,
+          offset: new AMap.Pixel(0, -10),
+          anchor: 'center'
+        });
+        amap.add(label);
+      }
+
+      // Cell marker (red = quality issue)
+      const marker = new AMap.CircleMarker({
+        center: grid.center,
+        radius: 18,
+        fillColor: '#ef4444',
+        fillOpacity: 0.7,
+        strokeColor: '#ef4444',
+        strokeWeight: 2
+      });
+      amap.add(marker);
+    }).catch(console.error);
+  }
+
+  function renderTraceFlow() {
+    const steps = [
+      { title: '初始接入', detail: 'RRC Setup\nSucc' },
+      { title: 'DU能力上报', detail: 'UE Cap Report\n5QI=8' },
+      { title: 'L2上下文释放', detail: 'Rel Cause\nRadioLinkFail', highlight: true },
+      { title: '5G同系统切换发起', detail: 'HO Required\nN2 Msg' },
+      { title: '切换进入', detail: 'HO Notify\nACK' },
+      { title: 'DU能力上报', detail: 'UE Cap Report\n5QI=8' }
+    ];
+    const container = document.getElementById('traceFlow');
+    container.innerHTML = steps.map((s, i) => `
+      <div class="trace-step">
+        <div class="trace-step-box${s.highlight ? ' highlight' : ''}">
+          <div class="trace-step-title">${s.title}</div>
+          <div class="trace-step-detail">${s.detail.replace(/\n/g, '<br>')}</div>
+        </div>
+        ${i < steps.length - 1 ? '<div class="trace-arrow"><i class="fas fa-chevron-right"></i></div>' : ''}
+      </div>
+    `).join('');
+  }
+
+  function renderTraceAnalysis(wo) {
+    const abnormalList = ['乒乓/频繁切换', 'RSRP波动', 'SINR陡降'];
+    const rootList = ['邻区CIO配置不合理', '切换门限过宽', '覆盖重叠度高'];
+
+    document.getElementById('abnormalExplain').innerHTML = abnormalList.map(a => `<li>${a}</li>`).join('');
+    document.getElementById('rootcauseExplain').innerHTML = rootList.map(r => `<li>${r}</li>`).join('');
+  }
+
+  function renderCIOList(grid, wo) {
+    const mainCell = wo.mainCell || '5838088/1025';
+    const list = [
+      { name: '邻区CIO复核', detail: `小区 ${mainCell} 与目标小区之间CIO=-3dB，建议调整为-1dB以提升切换成功率。` },
+      { name: 'A3门限复核', detail: '当前A3-offset=-2dB，事件触发过于频繁，建议收紧至-3dB减少乒乓切换。' }
+    ];
+    document.getElementById('cioList').innerHTML = list.map(item => `
+      <div class="cio-item">
+        <div class="cio-item-header">
+          <span class="cio-item-title">${item.name}</span>
+          <button class="cio-interpret-btn">智能体解读</button>
+        </div>
+        <div class="cio-detail">${item.detail}</div>
+        <div class="cio-actions">
+          <button class="cio-action-btn approve"><i class="fas fa-check"></i></button>
+          <button class="cio-action-btn reject"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function renderStrategyGrid(wo, grid, qk) {
+    const stats = grid.stats[qk] || {};
+    const items = [
+      { label: '策略ID', value: `OP-${String(Math.floor(Math.random()*9000)+1000)}` },
+      { label: '生效时间段', value: '17:00-18:00' },
+      { label: '当前5QI', value: '5QI=' + (qk.replace('qi','') || '8') },
+      { label: 'RFSP', value: 'Index=5' },
+      { label: '保障业务', value: wo.qualityType || '直播/游戏' },
+      { label: '优先级', value: 'VIP' }
+    ];
+    document.getElementById('strategyGrid').innerHTML = items.map(i => `
+      <div class="strategy-item">
+        <div class="strategy-item-label">${i.label}</div>
+        <div class="strategy-item-value">${i.value}</div>
+      </div>
+    `).join('');
+  }
+
+  document.addEventListener('DOMContentLoaded', init);
+})();

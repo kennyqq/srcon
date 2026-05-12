@@ -6,135 +6,161 @@
   <title>质差分析 - Agentic 网优数字员工</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script>
+    window._AMapSecurityConfig = {
+      securityJsCode: '266d9c2ee335d6ca802428e502c320c1'
+    };
+  </script>
+  <script src="https://webapi.amap.com/loader.js"></script>
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/assurance.css">
 </head>
 <body>
-  <!-- Header -->
+  <!-- Header (same as home) -->
   <header class="app-header">
-    <div class="logo">
-      <div class="logo-icon"><i class="fas fa-signal"></i></div>
-      <span>Agentic 网优数字员工</span>
+    <div class="header-left">
+      <div class="logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <path d="M14 2L26 8V20L14 26L2 20V8L14 2Z" fill="url(#logoGrad2)"/>
+          <path d="M14 7L21 10.5V17.5L14 21L7 17.5V10.5L14 7Z" fill="#0a1628" fill-opacity="0.8"/>
+          <defs><linearGradient id="logoGrad2" x1="2" y1="2" x2="26" y2="26"><stop stop-color="#00d4ff"/><stop offset="1" stop-color="#0099ff"/></linearGradient></defs>
+        </svg>
+        <span>Agentic 网优数字员工</span>
+      </div>
     </div>
-    <div class="title">Optimize with SRCON</div>
-    <div class="user-info">
-      <span><i class="fas fa-cloud"></i> 26°C</span>
-      <span><i class="fas fa-bell"></i></span>
-      <span><i class="fas fa-user"></i> User</span>
+    <div class="header-center">
+      <h1 class="page-title">特征群组主动关怀</h1>
+    </div>
+    <div class="header-right">
+      <div class="time-toggle">
+        <button class="time-btn active">小时</button>
+        <button class="time-btn">日</button>
+      </div>
+      <div class="time-range"><span>17:00-18:00</span><i class="fas fa-clock"></i></div>
+      <div class="header-icon"><i class="fas fa-bell"></i></div>
+      <div class="header-icon"><i class="fas fa-cloud"></i> 26°C</div>
+      <div class="user-dropdown"><i class="fas fa-user-circle"></i><span>User</span><i class="fas fa-chevron-down"></i></div>
     </div>
   </header>
 
-  <div class="assurance-page">
-    <!-- Breadcrumb & Actions -->
-    <div class="assurance-header">
-      <div class="breadcrumb">
-        <a href="index.html"><i class="fas fa-arrow-left"></i> 返回</a>
-        <span>/</span>
-        <a href="index.html">全网质差事件识别</a>
-        <span>/</span>
-        <span class="current" id="woTitle">工单详情</span>
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb-bar" id="breadcrumbBar">
+    <a href="index.html"><i class="fas fa-home"></i> 返回首页</a>
+    <span class="sep">/</span>
+    <span>全网实时事件识别</span>
+    <span class="sep">/</span>
+    <span>特征群组分析</span>
+    <span class="sep">/</span>
+    <span>5QI=8</span>
+    <span class="sep">/</span>
+    <span class="active" id="bcDistrict">黄浦区</span>
+    <span class="sep">/</span>
+    <span class="active" id="bcOrderId">SA2026041455796</span>
+    <span class="sep">/</span>
+    <span class="active">质差分析</span>
+  </nav>
+
+  <!-- Three-Column Dashboard -->
+  <div class="analysis-dashboard">
+    <!-- LEFT: Work Order Object -->
+    <aside class="analysis-left">
+      <div class="panel-title"><i class="fas fa-file-alt"></i> 工单对象</div>
+
+      <div class="wo-meta">
+        <div class="wo-meta-row"><span class="wo-meta-label">工单ID</span><span class="wo-meta-value" id="woId">--</span></div>
+        <div class="wo-meta-row"><span class="wo-meta-label">主服务小区</span><span class="wo-meta-value" id="woCell">--</span></div>
       </div>
-      <div class="header-actions">
-        <button class="btn btn-outline btn-sm"><i class="fas fa-clipboard-check"></i> 优化方案审核</button>
-        <button class="btn btn-outline btn-sm"><i class="fas fa-file-alt"></i> 操作单概览</button>
-        <button class="btn btn-outline btn-sm"><i class="fas fa-chart-line"></i> 优化前后对比</button>
+
+      <div class="mini-kpi-row">
+        <div class="mini-kpi"><div class="mini-kpi-label">业务事件</div><div class="mini-kpi-val" id="miniEvents">--</div></div>
+        <div class="mini-kpi"><div class="mini-kpi-label">质差事件</div><div class="mini-kpi-val" id="miniQuality">--</div></div>
+        <div class="mini-kpi"><div class="mini-kpi-label">质差事件占比</div><div class="mini-kpi-val rate" id="miniRate">--</div></div>
+      </div>
+
+      <div class="small-chart-wrap">
+        <div class="small-chart-title">质差问题分布</div>
+        <div class="small-chart-body" id="chartProblem"></div>
+      </div>
+
+      <div class="metrics-replay">
+        <div class="replay-header">
+          <span class="replay-title">指标回放</span>
+          <span class="replay-time">15:20:16-15:57:17</span>
+        </div>
+        <div class="replay-chart" id="replayRSRP">
+          <div class="replay-label">RSRP <span class="replay-threshold">门限 -105dBm</span></div>
+          <div class="replay-chart-body" id="chartRSRP"></div>
+        </div>
+        <div class="replay-chart" id="replaySINR">
+          <div class="replay-label">SINR <span class="replay-threshold">门限 3dB</span></div>
+          <div class="replay-chart-body" id="chartSINR"></div>
+        </div>
+        <div class="replay-chart" id="replayDelay">
+          <div class="replay-label">RLC时延 <span class="replay-threshold">门限 100ms</span></div>
+          <div class="replay-chart-body" id="chartDelay"></div>
+        </div>
+        <div class="replay-legend">
+          <span class="rl-dot" style="background:#8b5cf6;"></span> 异常事件
+        </div>
+      </div>
+    </aside>
+
+    <!-- CENTER: Map + Signaling -->
+    <div class="analysis-center">
+      <div class="center-map-wrap">
+        <div class="center-map-title">质差地图</div>
+        <div id="map"></div>
+        <div class="map-status-legend">
+          <span><i class="fas fa-circle" style="color:#ef4444;"></i> 质差</span>
+          <span><i class="fas fa-circle" style="color:#eab308;"></i> 关注</span>
+          <span><i class="fas fa-circle" style="color:#22c55e;"></i> 正常</span>
+          <i class="fas fa-info-circle" style="color:#64748b;margin-left:auto;"></i>
+        </div>
+      </div>
+
+      <div class="signaling-trace">
+        <div class="trace-header">
+          <span class="trace-title">信令回溯</span>
+          <span class="trace-id">R02 / 15:22:01</span>
+        </div>
+        <div class="trace-flow" id="traceFlow">
+          <!-- Dynamic -->
+        </div>
+        <div class="trace-analysis">
+          <div class="trace-analysis-box">
+            <div class="ta-title">异常解读（乒乓/频繁切换）</div>
+            <ul id="abnormalExplain"></ul>
+          </div>
+          <div class="trace-analysis-box">
+            <div class="ta-title">根因分析（参数/CIO调整）</div>
+            <ul id="rootcauseExplain"></ul>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="assurance-content">
-      <!-- Section 1: Summary -->
-      <section class="assurance-section">
-        <h2 class="section-title"><i class="fas fa-info-circle"></i> 摘要</h2>
-        <div class="summary-card">
-          <div class="summary-grid" id="summaryGrid">
-            <!-- Dynamic -->
-          </div>
-          <div class="summary-text" id="summaryText"></div>
-        </div>
-      </section>
+    <!-- RIGHT: Assurance Loop -->
+    <aside class="analysis-right">
+      <div class="panel-title"><i class="fas fa-shield-alt"></i> 保障闭环</div>
 
-      <!-- Section 2: Problem Analysis -->
-      <section class="assurance-section">
-        <h2 class="section-title"><i class="fas fa-search"></i> 质差问题分析</h2>
-        <div class="stats-table-wrap">
-          <table class="data-table" id="problemTable">
-            <thead>
-              <tr>
-                <th>指标</th>
-                <th>数值</th>
-                <th>说明</th>
-              </tr>
-            </thead>
-            <tbody id="problemTableBody"></tbody>
-          </table>
-        </div>
-      </section>
+      <div class="cio-list" id="cioList">
+        <!-- Dynamic -->
+      </div>
 
-      <!-- Section 3: Abnormal Pattern -->
-      <section class="assurance-section">
-        <h2 class="section-title"><i class="fas fa-exclamation-triangle"></i> 异常模式分析</h2>
-        <div class="chart-row">
-          <div class="chart-card" style="flex:1;">
-            <div class="chart-header">
-              <span class="chart-title">异常模式分布</span>
-            </div>
-            <div class="chart-body" id="chartAbnormalBar" style="height:280px;"></div>
-          </div>
-          <div class="chart-card" style="flex:1.5;">
-            <div class="chart-header">
-              <span class="chart-title">指标回放（24小时）</span>
-            </div>
-            <div class="chart-body" id="chartMetricReplay" style="height:280px;"></div>
-          </div>
-        </div>
-        <div class="top3-list" id="abnormalTop3"></div>
-      </section>
+      <button class="gen-script-btn" id="genScriptBtn">
+        <i class="fas fa-file-code"></i> 生成脚本
+      </button>
 
-      <!-- Section 4: Root Cause -->
-      <section class="assurance-section">
-        <h2 class="section-title"><i class="fas fa-project-diagram"></i> 网络根因分析</h2>
-        <div class="chart-row">
-          <div class="chart-card" style="flex:1;">
-            <div class="chart-header">
-              <span class="chart-title">根因类型分布</span>
-            </div>
-            <div class="chart-body" id="chartRootcauseBar" style="height:260px;"></div>
-          </div>
-          <div class="rootcause-detail" style="flex:1.5;">
-            <div class="evidence-box" id="rootcauseEvidence"></div>
-            <div class="affected-cells" id="affectedCells"></div>
-          </div>
+      <div class="biz-strategy">
+        <div class="panel-title" style="margin-top:0;"><i class="fas fa-briefcase"></i> 业务保障策略</div>
+        <div class="strategy-grid" id="strategyGrid">
+          <!-- Dynamic -->
         </div>
-      </section>
-
-      <!-- Section 5: Policy Audit -->
-      <section class="assurance-section">
-        <h2 class="section-title"><i class="fas fa-sliders-h"></i> 调整预案与预期效果</h2>
-        <div class="policy-intro" id="policyIntro"></div>
-        <div class="policy-table-wrap">
-          <table class="data-table">
-            <thead>
-              <tr>
-                <th>优化类型</th>
-                <th>gNBId</th>
-                <th>小区名称</th>
-                <th>MO</th>
-                <th>参数名</th>
-                <th>当前值</th>
-                <th>建议值</th>
-              </tr>
-            </thead>
-            <tbody id="policyTableBody"></tbody>
-          </table>
-        </div>
-        <div class="audit-actions">
-          <button class="btn btn-primary"><i class="fas fa-check"></i> 审核通过</button>
-          <button class="btn btn-outline" style="color:var(--accent-red);border-color:var(--accent-red);"><i class="fas fa-times"></i> 审核不通过</button>
-          <button class="btn btn-outline"><i class="fas fa-file-code"></i> 加入脚本草案</button>
-          <button class="btn btn-outline"><i class="fas fa-history"></i> 查看回滚条件</button>
-        </div>
-      </section>
-    </div>
+        <button class="gen-strategy-btn" id="genStrategyBtn">
+          <i class="fas fa-magic"></i> 生成策略
+        </button>
+      </div>
+    </aside>
   </div>
 
   <script src="js/data.js"></script>
