@@ -93,18 +93,18 @@ function renderMap() {
     // Tooltip on click
     polygon.on('click', (e) => {
       const info = `
-        <div style="padding:16px;min-width:240px;">
-          <div style="font-size:16px;font-weight:600;margin-bottom:4px;">${g.name}</div>
-          <div style="color:#9ca3af;font-size:12px;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,0.08);">${g.district} / 5QI=${qk.replace('qi','')}</div>
-          <table style="width:100%;font-size:12px;line-height:2;color:#9ca3af;">
-            <tr><td>对象数量</td><td style="color:#ffffff;text-align:right;font-weight:500;">${COMMON.formatNumber(stats.users)}</td></tr>
-            <tr><td>通讯事件数</td><td style="color:#ffffff;text-align:right;font-weight:500;">${COMMON.formatNumber(stats.events)}</td></tr>
-            <tr><td>质差事件数</td><td style="color:#ffffff;text-align:right;font-weight:500;">${COMMON.formatNumber(stats.qualityEvents)}</td></tr>
-            <tr><td>质差比例</td><td style="color:${color};text-align:right;font-weight:600;">${rate}%</td></tr>
-            <tr><td>涉及小区数</td><td style="color:#ffffff;text-align:right;font-weight:500;">${stats.cells}</td></tr>
-            <tr><td>主服务小区</td><td style="color:#ffffff;text-align:right;font-weight:500;">${stats.mainCell}</td></tr>
+        <div style="background:#111827;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:16px;min-width:260px;box-shadow:0 8px 24px rgba(0,0,0,0.4);">
+          <div style="font-size:15px;font-weight:600;color:#ffffff;margin-bottom:4px;">${g.name}</div>
+          <div style="color:#9ca3af;font-size:11px;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,0.06);">${g.district} &middot; 5QI=${qk.replace('qi','')}</div>
+          <table style="width:100%;font-size:12px;line-height:2.2;color:#9ca3af;border-collapse:collapse;">
+            <tr><td style="padding-right:12px;">对象数量</td><td style="color:#ffffff;text-align:right;font-weight:500;">${COMMON.formatNumber(stats.users)}</td></tr>
+            <tr><td style="padding-right:12px;">通讯事件数</td><td style="color:#ffffff;text-align:right;font-weight:500;">${COMMON.formatNumber(stats.events)}</td></tr>
+            <tr><td style="padding-right:12px;">质差事件数</td><td style="color:#ffffff;text-align:right;font-weight:500;">${COMMON.formatNumber(stats.qualityEvents)}</td></tr>
+            <tr><td style="padding-right:12px;">质差比例</td><td style="color:${color};text-align:right;font-weight:600;">${rate}%</td></tr>
+            <tr><td style="padding-right:12px;">涉及小区数</td><td style="color:#ffffff;text-align:right;font-weight:500;">${stats.cells}</td></tr>
+            <tr><td style="padding-right:12px;">主服务小区</td><td style="color:#ffffff;text-align:right;font-weight:500;font-size:11px;">${stats.mainCell}</td></tr>
           </table>
-          <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.08);font-size:11px;color:#6b7280;">数据口径：真实 AOI + 小区公参 + 五元组聚合 + 规则重构</div>
+          <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.06);font-size:10px;color:#6b7280;">数据口径：真实 AOI + 小区公参 + 五元组聚合 + 规则重构</div>
         </div>
       `;
       const infoWindow = new AMap.InfoWindow({

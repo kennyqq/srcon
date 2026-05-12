@@ -30,6 +30,21 @@
   color: #3b82f6;
   letter-spacing: 1px;
   margin: 0;
+  position: relative;
+  display: inline-block;
+}
+
+.header-center .page-title::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+  border-radius: 1px;
+  opacity: 0.8;
 }
 
 .header-right {
@@ -147,6 +162,12 @@
   align-items: center;
   justify-content: space-around;
   flex: 1.2;
+  transition: all 0.2s ease;
+}
+
+.kpi-big-card:hover {
+  border-color: rgba(59, 130, 246, 0.25);
+  background: #1a1f2e;
 }
 
 .kpi-big-item {
@@ -191,6 +212,12 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  transition: all 0.2s ease;
+}
+
+.mini-chart-card:hover {
+  border-color: rgba(59, 130, 246, 0.25);
+  background: #1a1f2e;
 }
 
 .mini-chart-header {
@@ -230,6 +257,12 @@
   min-width: 200px;
   display: flex;
   flex-direction: column;
+  transition: all 0.2s ease;
+}
+
+.opt-summary-card:hover {
+  border-color: rgba(59, 130, 246, 0.25);
+  background: #1a1f2e;
 }
 
 .opt-summary-header {
@@ -590,6 +623,11 @@
   align-items: center;
   cursor: pointer;
   transition: background 0.2s;
+  background: #111827;
+}
+
+.wo-table-row:nth-child(even) {
+  background: #0d1117;
 }
 
 .wo-table-row:hover {
