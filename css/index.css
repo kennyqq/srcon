@@ -657,6 +657,22 @@
   cursor: pointer;
 }
 
+.wo-table-row .wo-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.wo-table-row .wo-status::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.8;
+}
+
 .wo-pagination {
   padding: 12px 16px;
   border-top: 1px solid rgba(255, 255, 255, 0.06);

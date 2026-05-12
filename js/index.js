@@ -272,13 +272,14 @@ function renderWorkOrders() {
   const start = (woPage.current - 1) * woPage.size;
   const pageOrders = orders.slice(start, start + woPage.size);
 
+  const statusColor = { '待处理': '#eab308', '处理中': '#3b82f6', '已审核': '#22c55e' };
   container.innerHTML = pageOrders.map(o => `
     <div class="wo-table-row" onclick="goToDetail('${o.id}')">
       <span class="wo-id">${o.id}</span>
       <span class="wo-events">${o.qualityEvents}</span>
       <span class="wo-type">${o.qualityType}</span>
       <span class="wo-cell">${o.mainCell}</span>
-      <span class="wo-action" onclick="event.stopPropagation();goToDetail('${o.id}')">处理</span>
+      <span class="wo-status" style="color:${statusColor[o.status] || '#9ca3af'};font-size:11px;font-weight:500;" onclick="event.stopPropagation();goToDetail('${o.id}')">${o.status || '待处理'}</span>
     </div>
   `).join('');
 
