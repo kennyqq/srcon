@@ -231,7 +231,7 @@ def generate_home_charts(feats):
         'rootcause': rootcause
     }
 
-def generate_assurance_data(orders_by_qk, feats):
+def generate_assurance_data(orders_by_qk, feats, grids_map):
     """Generate per-work-order assurance detail data."""
     assurance = {}
     all_orders = orders_by_qk.get('all', [])
@@ -249,26 +249,77 @@ def generate_assurance_data(orders_by_qk, feats):
                 'sinr': round(base_sinr + random.uniform(-5, 3), 1),
                 'rlcDelay': round(base_rlc + random.uniform(-10, 15), 1)
             })
-        # signal trace (from real message types)
+        # signal trace - ladder diagram format (UE / Source gNB / Target gNB / AMF / SMF)
+        ne_list = ['UE', 'Source gNB', 'Target gNB', 'AMF', 'SMF']
+        base_sec = 30
         trace = []
         seq = 0
-        ne_pairs = [('UE','gNB'),('gNB','AMF'),('AMF','SMF'),('SMF','UPF'),('UPF','DN')]
-        for pair in ne_pairs:
+        has_failure = random.random() < 0.35
+        
+        def add_sig(from_ne, to_ne, msg, status, reason=''):
+            nonlocal seq, base_sec
             seq += 1
-            msg = random.choice(feats['msg_types'][:6])
-            status = random.choices(['成功','失败','超时'], weights=[0.7,0.2,0.1])[0]
-            trace.append({
-                'stepId': f"S{seq:02d}",
+            base_sec += random.randint(2, 8)
+            ms = random.randint(120, 990)
+            return {
+                'id': f"sig_{seq:03d}",
                 'sequence': seq,
-                'fromNe': pair[0],
-                'toNe': pair[1],
-                'messageName': msg,
-                'messageNameCn': msg,
-                'status': status,
-                'causeCode': '0' if status == '成功' else random.choice(['0x2001','0x3002','0x4003']),
-                'latencyMs': random.randint(5, 150),
-                'timestamp': f"2026-04-21 15:{30+seq:02d}:00"
+                'time': f"15:{base_sec//60:02d}:{base_sec%60:02d}.{ms:03d}",
+                'fromNe': from_ne,
+                'toNe': to_ne,
+                'message': msg,
+                'status': 'success' if status == '成功' else ('timeout' if status == '超时' else 'failure'),
+                'abnormal': status != '成功',
+                'reason': reason if status != '成功' else ''
+            }
+        
+        # Handover flow
+        trace.append(add_sig('UE', 'Source gNB', 'MeasurementReport', '成功'))
+        if has_failure:
+            fail_type = random.choice(['切换失败', '超时'])
+            trace.append(add_sig('Source gNB', 'Target gNB', 'HandoverRequest', fail_type, 
+                                'HO Failure / TimeOut' if fail_type == '超时' else 'Resource Unavailable'))
+            trace.append(add_sig('Target gNB', 'Source gNB', 'HandoverFailure', '失败', 'Prepare Failure'))
+            trace.append(add_sig('Source gNB', 'UE', 'RRCReconfiguration', '成功'))
+        else:
+            trace.append(add_sig('Source gNB', 'Target gNB', 'HandoverRequest', '成功'))
+            trace.append(add_sig('Target gNB', 'Source gNB', 'HandoverAck', '成功'))
+            trace.append(add_sig('Source gNB', 'UE', 'RRCReconfiguration', '成功'))
+            trace.append(add_sig('UE', 'Source gNB', 'RRCReconfigurationComplete', '成功'))
+            trace.append(add_sig('Source gNB', 'AMF', 'PathSwitchRequest', '成功'))
+            trace.append(add_sig('AMF', 'SMF', 'Nsmf_PDUSession_UpdateSMContext', '成功'))
+            trace.append(add_sig('SMF', 'AMF', 'Nsmf_PDUSession_UpdateSMContext_RSP', '成功'))
+            trace.append(add_sig('AMF', 'Source gNB', 'PathSwitchAck', '成功'))
+        # unified quality events (shared by map markers, metric replay, modal)
+        qe_count = random.randint(3, 8)
+        qualityEvents = []
+        grid = grids_map.get(wo['gridId']) or {'center': [121.4737, 31.2304]}
+        cx, cy = grid['center']
+        for qi in range(qe_count):
+            rsrp = round(base_rsrp + random.uniform(-12, 3), 1)
+            sinr = round(base_sinr + random.uniform(-6, 2), 1)
+            rlc = round(base_rlc + random.uniform(-15, 25), 1)
+            is_abnormal = rsrp < -105 or sinr < 3 or rlc > 100
+            qualityEvents.append({
+                'eventId': f"EVT_{wo['id']}_{qi+1:03d}",
+                'time': f"15:{30+qi*3:02d}:{random.randint(10,59):02d}",
+                'lng': round(cx + random.uniform(-0.003, 0.003), 6),
+                'lat': round(cy + random.uniform(-0.003, 0.003), 6),
+                'type': wo['qualityType'] or '异常掉线',
+                'cell': wo['mainCell'],
+                'metrics': {
+                    'rsrp': rsrp,
+                    'sinr': sinr,
+                    'rlcDelay': rlc
+                },
+                'thresholds': {
+                    'rsrp': -105,
+                    'sinr': 3,
+                    'rlcDelay': 100
+                },
+                'abnormal': is_abnormal
             })
+        
         # cio params
         cio = []
         for i in range(random.randint(3,6)):
@@ -305,6 +356,7 @@ def generate_assurance_data(orders_by_qk, feats):
         assurance[cid] = {
             'trend': trend,
             'signalTrace': trace,
+            'qualityEvents': qualityEvents,
             'cio': cio,
             'strategies': strategies,
             'guards': guards,
@@ -362,7 +414,8 @@ def main():
     print(f"Generated {len(policies)} policies")
 
     homeCharts = generate_home_charts(feats)
-    assurance = generate_assurance_data(orders, feats)
+    grids_map = {g['id']: g for g in grids}
+    assurance = generate_assurance_data(orders, feats, grids_map)
     agentContent = generate_agent_content(feats)
 
     # Build optimizationSummary from policies
@@ -389,25 +442,34 @@ def main():
         'aggregateKPI': "function(district,qk){var g=this.grids;if(district&&district!=='all')g=g.filter(function(x){return x.district===district});var t=0,u=new Set(),q=0;g.forEach(function(x){var s=x.stats[qk];if(s){t+=s.events;u.add(x.id);q+=s.qualityEvents}});return{events:t,users:u.size,qualityEvents:q,rate:t>0?parseFloat((q/t*100).toFixed(2)):0}}"
     }
 
-    # Write JS - functions must NOT be JSON-stringified
+    # Write JS - split data and selectors for maintainability
     funcs = {
         'getFilteredGrids': data.pop('getFilteredGrids'),
         'aggregateKPI': data.pop('aggregateKPI')
     }
-    with open(OUT_JS, 'w', encoding='utf-8') as f:
+    import os
+    data_dir = os.path.dirname(OUT_JS)
+    raw_js = os.path.join(data_dir, 'data', 'raw-data.js')
+    sel_js = os.path.join(data_dir, 'data', 'selectors.js')
+    os.makedirs(os.path.dirname(raw_js), exist_ok=True)
+
+    with open(raw_js, 'w', encoding='utf-8') as f:
         f.write("// SRCON Demo Data\n")
         f.write("// Derived from real customer data sources\n\n")
         f.write("const SRCON_DATA = ")
         f.write(json.dumps(data, ensure_ascii=False, indent=2))
-        f.write(";\n\n")
-        # append functions
+        f.write(";\n")
+    print(f"Wrote {raw_js}")
+
+    with open(sel_js, 'w', encoding='utf-8') as f:
+        f.write("// SRCON Demo Data Selectors\n\n")
         f.write("SRCON_DATA.getFilteredGrids = ")
         f.write(funcs['getFilteredGrids'])
         f.write(";\n")
         f.write("SRCON_DATA.aggregateKPI = ")
         f.write(funcs['aggregateKPI'])
         f.write(";\n")
-    print(f"Wrote {OUT_JS}")
+    print(f"Wrote {sel_js}")
 
 if __name__ == '__main__':
     main()

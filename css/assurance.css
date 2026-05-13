@@ -2,145 +2,6 @@
    SRCON Demo — Assurance Page (Skill v1.0 Aligned)
    ============================================ */
 
-/* Header */
-.app-header {
-  height: 56px;
-  background: #0d1117;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 24px;
-  position: relative;
-  z-index: 200;
-}
-
-.header-left .logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #ffffff;
-}
-
-.header-center .page-title {
-  font-size: 20px;
-  font-weight: 600;
-  color: #3b82f6;
-  letter-spacing: 1px;
-  margin: 0;
-  position: relative;
-  display: inline-block;
-}
-
-.header-center .page-title::after {
-  content: '';
-  position: absolute;
-  bottom: -6px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 48px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #3b82f6, transparent);
-  border-radius: 1px;
-  opacity: 0.8;
-}
-
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.time-toggle {
-  display: flex;
-  background: #1f2937;
-  border-radius: 6px;
-  padding: 2px;
-  gap: 2px;
-}
-
-.time-btn {
-  padding: 4px 14px;
-  border: none;
-  background: transparent;
-  color: #9ca3af;
-  font-size: 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.time-btn.active {
-  background: rgba(59, 130, 246, 0.2);
-  color: #3b82f6;
-}
-
-.time-range {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: #9ca3af;
-  font-size: 13px;
-  background: #1f2937;
-  padding: 5px 12px;
-  border-radius: 6px;
-}
-
-.header-icon {
-  color: #9ca3af;
-  font-size: 13px;
-  cursor: pointer;
-}
-
-.user-dropdown {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: #9ca3af;
-  font-size: 13px;
-  cursor: pointer;
-}
-
-.user-dropdown i:first-child {
-  font-size: 20px;
-}
-
-/* Breadcrumb */
-.breadcrumb-bar {
-  height: 40px;
-  background: #0d1117;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  display: flex;
-  align-items: center;
-  padding: 0 24px;
-  gap: 12px;
-  font-size: 13px;
-  color: #9ca3af;
-}
-
-.breadcrumb-bar a {
-  color: #9ca3af;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.breadcrumb-bar a:hover {
-  color: #3b82f6;
-}
-
-.breadcrumb-bar .sep {
-  color: #6b7280;
-}
-
-.breadcrumb-bar .active {
-  color: #ffffff;
-  font-weight: 500;
-}
-
 /* Dashboard */
 .analysis-dashboard {
   display: flex;
@@ -1408,6 +1269,106 @@
 
 .mf-btn-primary:hover {
   background: rgba(59, 130, 246, 0.15);
+}
+
+/* Ladder Diagram (Signaling Flow) */
+.ladder-diagram {
+  position: relative;
+  background: rgba(15, 23, 42, 0.6);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  overflow-x: auto;
+  min-height: 200px;
+}
+.ladder-lanes {
+  display: flex;
+  position: relative;
+  height: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.sig-lane {
+  position: relative;
+  text-align: center;
+  padding-top: 8px;
+}
+.sig-lane-name {
+  font-size: 11px;
+  font-weight: 500;
+  color: #94a3b8;
+}
+.sig-lane-line {
+  position: absolute;
+  left: 50%;
+  top: 40px;
+  bottom: 0;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  z-index: 1;
+}
+.ladder-rows {
+  position: relative;
+  padding: 8px 0;
+}
+.sig-row {
+  position: relative;
+  height: 48px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+.sig-arrow {
+  position: absolute;
+  height: 2px;
+  background: #38bdf8;
+  border-radius: 1px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sig-arrow::after {
+  content: '';
+  position: absolute;
+  right: -4px;
+  top: -3px;
+  width: 0;
+  height: 0;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 6px solid #38bdf8;
+}
+.sig-arrow.abnormal {
+  background: #ef4444;
+  border-style: dashed;
+  height: 1.5px;
+}
+.sig-arrow.abnormal::after {
+  border-left-color: #ef4444;
+}
+.sig-label {
+  position: absolute;
+  top: -18px;
+  font-size: 10px;
+  color: #38bdf8;
+  white-space: nowrap;
+  background: rgba(15, 23, 42, 0.9);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+.sig-label.abnormal {
+  color: #ef4444;
+}
+.sig-time {
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  font-size: 10px;
+  color: #64748b;
+}
+.sig-reason {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  font-size: 10px;
+  color: #ef4444;
 }
 
 /* Responsive */

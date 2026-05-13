@@ -6,9 +6,10 @@
   <title>Agentic 网优数字员工 - 特征群组主动关怀</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="js/config.js"></script>
   <script>
     window._AMapSecurityConfig = {
-      securityJsCode: '266d9c2ee335d6ca802428e502c320c1'
+      securityJsCode: SRCON_CONFIG.amapSecurityCode
     };
   </script>
   <script src="https://webapi.amap.com/loader.js"></script>
@@ -30,11 +31,11 @@
             </linearGradient>
           </defs>
         </svg>
-        <span>体验运营管家</span>
+        <span>Agentic 网优数字员工</span>
       </div>
     </div>
     <div class="header-center">
-      <h1 class="page-title">用户体验运营</h1>
+      <h1 class="page-title">特征群组主动关怀</h1>
     </div>
     <div class="header-right">
       <div class="time-toggle">
@@ -316,7 +317,8 @@
     </div>
   </div>
 
-  <script src="js/data.js"></script>
+  <script src="js/data/raw-data.js"></script>
+  <script src="js/data/selectors.js"></script>
   <script src="js/common.js"></script>
   <script src="js/index.js"></script>
 </body>

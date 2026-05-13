@@ -219,18 +219,18 @@ function renderKPI() {
   if (currentFilter.scope === 'quality') {
     grids = grids.filter(g => (g.stats[qk].rate || 0) > 2);
   }
-  let events = 0, users = new Set(), qualityEvents = 0;
+  let events = 0, users = 0, qualityEvents = 0;
   grids.forEach(g => {
     const s = g.stats[qk];
     if (s) {
       events += s.events || 0;
-      users.add(g.id);
+      users += s.users || 0;
       qualityEvents += s.qualityEvents || 0;
     }
   });
   const rate = events > 0 ? parseFloat((qualityEvents / events * 100).toFixed(2)) : 0;
   document.getElementById('kpiEvents').textContent = COMMON.formatNumber(events);
-  document.getElementById('kpiUsers').textContent = COMMON.formatNumber(users.size);
+  document.getElementById('kpiUsers').textContent = COMMON.formatNumber(users);
   document.getElementById('kpiQualityEvents').textContent = COMMON.formatNumber(qualityEvents);
   document.getElementById('kpiRate').textContent = rate + '%';
   const rateEl = document.getElementById('kpiRate');
@@ -269,9 +269,9 @@ function renderWorkOrders() {
   const container = document.getElementById('workOrderList');
 
   // Scope filter
-  if (currentFilter.scope === 'quality') {
-    orders = orders.filter(o => (o.qualityEvents || 0) > 0);
-  }
+  orders = orders
+    .filter(o => (o.qualityEvents || 0) >= 10)
+    .sort((a, b) => (b.qualityEvents || 0) - (a.qualityEvents || 0));
 
   // Search filter
   if (woSearch) {

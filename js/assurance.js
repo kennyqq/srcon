@@ -47,7 +47,7 @@
     document.getElementById('woCell').textContent = wo.mainCell || stats.mainCell || '--';
 
     // Mini KPI
-    document.getElementById('miniEvents').textContent = COMMON.formatNumber(wo.qualityEvents || stats.qualityEvents || 0);
+    document.getElementById('miniEvents').textContent = COMMON.formatNumber(wo.events || stats.events || 0);
     document.getElementById('miniQuality').textContent = COMMON.formatNumber(wo.qualityEvents || stats.qualityEvents || 0);
     const rate = wo.rate || stats.rate || 0;
     document.getElementById('miniRate').textContent = rate + '%';
@@ -65,12 +65,13 @@
     chartSINR = echarts.init(document.getElementById('chartSINR'));
     chartDelay = echarts.init(document.getElementById('chartDelay'));
     const trendData = ad.trend || [];
-    renderMetricChart(chartRSRP, 'RSRP', -105, trendData, 'rsrp');
-    renderMetricChart(chartSINR, 'SINR', 3, trendData, 'sinr');
-    renderMetricChart(chartDelay, 'Delay', 100, trendData, 'rlcDelay');
+    const qe = ad.qualityEvents || [];
+    renderMetricChart(chartRSRP, 'RSRP', -105, trendData, 'rsrp', qe, 'rsrp');
+    renderMetricChart(chartSINR, 'SINR', 3, trendData, 'sinr', qe, 'sinr');
+    renderMetricChart(chartDelay, 'Delay', 100, trendData, 'rlcDelay', qe, 'rlcDelay');
 
-    // Map
-    initMap(grid);
+    // Map (with quality event markers)
+    initMap(grid, qe);
 
     // Signaling
     renderTraceFlow(ad.signalTrace || []);
@@ -81,8 +82,8 @@
     renderStrategyGrid(wo, grid, qk);
 
     // Events
-    document.getElementById('genScriptBtn').addEventListener('click', () => alert('正在生成优化脚本...'));
-    document.getElementById('genStrategyBtn').addEventListener('click', () => alert('正在生成业务保障策略...'));
+    document.getElementById('genScriptBtn').addEventListener('click', () => COMMON.showToast('已生成脚本草案，等待人工复核'));
+    document.getElementById('genStrategyBtn').addEventListener('click', () => COMMON.showToast('已生成保障策略草案，等待人工审核'));
 
     let resizeTimer;
     window.addEventListener('resize', () => {
@@ -139,7 +140,7 @@
     return data;
   }
 
-  function renderMetricChart(chart, name, threshold, trendData, key) {
+  function renderMetricChart(chart, name, threshold, trendData, key, qualityEvents, qeKey) {
     let data = [];
     if (trendData && trendData.length > 0) {
       data = trendData.map(t => {
@@ -152,7 +153,13 @@
     }
     const xData = data.map((_, i) => i);
     const seriesData = data.map(d => d.value);
-    const abnormalPoints = data.map((d, i) => d.abnormal ? d.value : null);
+    // Abnormal scatter points sourced from unified qualityEvents (same source as map markers & modal)
+    const qePoints = Array(data.length).fill(null);
+    (qualityEvents || []).forEach((ev, idx) => {
+      const xPos = Math.min(data.length - 1, Math.floor((idx / Math.max(qualityEvents.length, 1)) * data.length) + 1);
+      qePoints[xPos] = ev.metrics[qeKey];
+    });
+    const abnormalPoints = qePoints;
 
     chart.setOption({
       tooltip: { trigger: 'axis' },
@@ -183,15 +190,15 @@
           type: 'scatter',
           data: abnormalPoints,
           symbolSize: 6,
-          itemStyle: { color: '#8b5cf6' }
+          itemStyle: { color: '#38bdf8' }
         }
       ]
     });
   }
 
-  function initMap(grid) {
+  function initMap(grid, qualityEvents) {
     AMapLoader.load({
-      key: 'a94aaf734ef8c87f8c6c45559c28a4fd',
+      key: (typeof SRCON_CONFIG !== 'undefined' && SRCON_CONFIG.amapKey) ? SRCON_CONFIG.amapKey : 'a94aaf734ef8c87f8c6c45559c28a4fd',
       version: '2.0',
       plugins: []
     }).then(AMap => {
@@ -226,16 +233,26 @@
         }
       }
 
-      // Cell marker (red = quality issue)
-      const marker = new AMap.CircleMarker({
-        center: grid.center,
-        radius: 18,
-        fillColor: '#ef4444',
-        fillOpacity: 0.7,
-        strokeColor: '#ef4444',
-        strokeWeight: 2
+      // Quality event markers (blue dots from unified qualityEvents)
+      const abnormalEvents = (qualityEvents || []).filter(e => e.abnormal);
+      abnormalEvents.forEach((ev, idx) => {
+        const m = new AMap.CircleMarker({
+          center: [ev.lng, ev.lat],
+          radius: 10,
+          fillColor: '#38bdf8',
+          fillOpacity: 0.85,
+          strokeColor: '#e0f2fe',
+          strokeWeight: 2
+        });
+        amap.add(m);
+        const info = new AMap.Text({
+          text: `<div style="color:#38bdf8;font-size:11px;font-weight:500;text-shadow:0 0 4px rgba(0,0,0,0.9);white-space:nowrap;">${ev.eventId}</div>`,
+          position: [ev.lng, ev.lat],
+          offset: new AMap.Pixel(0, -18),
+          anchor: 'center'
+        });
+        amap.add(info);
       });
-      amap.add(marker);
     }).catch(console.error);
   }
 
@@ -245,20 +262,47 @@
       container.innerHTML = '<div style="color:#6b7280;font-size:12px;text-align:center;padding:20px;">暂无信令回溯数据</div>';
       return;
     }
-    const steps = traceData.map(t => ({
-      title: t.messageNameCn || t.messageName || '信令',
-      detail: `${t.fromNe || 'UE'} → ${t.toNe || 'gNB'}\n${t.status}`,
-      highlight: t.status !== '成功'
-    }));
-    container.innerHTML = steps.map((s, i) => `
-      <div class="trace-step">
-        <div class="trace-step-box${s.highlight ? ' highlight' : ''}">
-          <div class="trace-step-title">${s.title}</div>
-          <div class="trace-step-detail">${s.detail.replace(/\n/g, '<br>')}</div>
+    const neList = ['UE', 'Source gNB', 'Target gNB', 'AMF', 'SMF'];
+    const neIndex = ne => neList.indexOf(ne) >= 0 ? neList.indexOf(ne) : 0;
+    const laneWidth = 100 / neList.length;
+
+    // Build rows: each signal is a horizontal arrow between two lanes
+    let rowsHtml = '';
+    traceData.forEach((t, i) => {
+      const fromIdx = neIndex(t.fromNe);
+      const toIdx = neIndex(t.toNe);
+      const isAbnormal = t.abnormal;
+      const leftPct = Math.min(fromIdx, toIdx) * laneWidth + laneWidth * 0.5;
+      const widthPct = Math.abs(toIdx - fromIdx) * laneWidth;
+      const direction = toIdx > fromIdx ? 'right' : 'left';
+      const arrowClass = isAbnormal ? 'sig-arrow abnormal' : 'sig-arrow';
+      const labelClass = isAbnormal ? 'sig-label abnormal' : 'sig-label';
+
+      rowsHtml += `
+        <div class="sig-row" style="height:48px;position:relative;">
+          <div class="${arrowClass}" style="left:${leftPct}%;width:${widthPct}%;top:50%;transform:translateY(-50%);">
+            <div class="${labelClass}">${t.message}</div>
+          </div>
+          <div class="sig-time" style="position:absolute;left:4px;top:4px;font-size:10px;color:#64748b;">${t.time}</div>
+          ${isAbnormal ? `<div class="sig-reason" style="position:absolute;right:4px;top:4px;font-size:10px;color:#ef4444;">${t.reason || '异常'}</div>` : ''}
         </div>
-        ${i < steps.length - 1 ? '<div class="trace-arrow"></div>' : ''}
+      `;
+    });
+
+    // Build lane headers
+    const lanesHtml = neList.map((ne, i) => `
+      <div class="sig-lane" style="left:${i * laneWidth}%;width:${laneWidth}%;">
+        <div class="sig-lane-name">${ne}</div>
+        <div class="sig-lane-line"></div>
       </div>
     `).join('');
+
+    container.innerHTML = `
+      <div class="ladder-diagram">
+        <div class="ladder-lanes">${lanesHtml}</div>
+        <div class="ladder-rows">${rowsHtml}</div>
+      </div>
+    `;
   }
 
   // Modal handling
@@ -303,7 +347,7 @@
         series: [
           { type: 'line', data: seriesData, smooth: true, symbol: 'none', lineStyle: { width: 1.5, color: color }, areaStyle: { color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{ offset: 0, color: color.replace(')', ',0.2)').replace('rgb', 'rgba') }, { offset: 1, color: color.replace(')', ',0)').replace('rgb', 'rgba') }]) } },
           { type: 'line', data: Array(data.length).fill(threshold), symbol: 'none', lineStyle: { width: 1, type: 'dashed', color: '#ef4444' } },
-          { type: 'scatter', data: abnormalPoints, symbolSize: 5, itemStyle: { color: '#8b5cf6' } }
+          { type: 'scatter', data: abnormalPoints, symbolSize: 5, itemStyle: { color: '#38bdf8' } }
         ]
       });
       return chart;
@@ -323,6 +367,41 @@
 
     document.getElementById('abnormalExplain').innerHTML = tags.slice(0, 3).map(a => `<li>${a}</li>`).join('');
     document.getElementById('rootcauseExplain').innerHTML = evidence.slice(0, 3).map(r => `<li>${r}</li>`).join('');
+
+    // Unified qualityEvents drive modal event list (same source as map markers & metric replay)
+    const qe = ad.qualityEvents || [];
+    const abnormalQe = qe.filter(e => e.abnormal);
+    const count = abnormalQe.length;
+
+    // Update metric tags with real count
+    document.querySelectorAll('.mm-tag').forEach(el => {
+      el.textContent = `异常事件 ${count}个`;
+    });
+
+    // Update event list title
+    const listTitle = document.querySelector('.modal-event-title');
+    if (listTitle) listTitle.textContent = `关联事件列表（${count}）`;
+
+    // Render event table rows from unified source
+    const tbody = document.querySelector('.modal-event-table tbody');
+    if (tbody) {
+      if (count === 0) {
+        tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;color:#6b7280;">暂无异常事件</td></tr>';
+      } else {
+        tbody.innerHTML = abnormalQe.map(ev => `
+          <tr>
+            <td>${ev.time}</td>
+            <td>${ev.type}</td>
+            <td>${ev.cell}</td>
+            <td><span class="map-dot" style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#38bdf8;margin-right:4px;"></span>${ev.eventId}</td>
+          </tr>
+        `).join('');
+      }
+    }
+
+    // Update paging
+    const paging = document.querySelector('.modal-event-paging');
+    if (paging) paging.innerHTML = `共 ${count} 条 <span class="page-num active">1</span>`;
   }
 
   function renderCIOList(grid, wo) {
@@ -379,7 +458,7 @@
     const guards = ad.guards || [];
 
     const items = [
-      { label: '策略ID', value: `OP-${String(Math.floor(Math.random()*9000)+1000)}` },
+      { label: '策略ID', value: `SB-RCA-${wo.id}` },
       { label: '生效时间段', value: '17:00-18:00' },
       { label: '当前5QI', value: '5QI=' + (qk.replace('qi','') || '8') },
       { label: '质差类型', value: wo.qualityType || '--' },

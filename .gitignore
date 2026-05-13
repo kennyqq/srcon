@@ -38,6 +38,6 @@ srcon_understanding.md
 SRCON_Demo_DataDictionary*
 
 # Raw data sources
-data/
-input/
+/data/
+/input/
 

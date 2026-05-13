@@ -167,5 +167,20 @@ const COMMON = {
         }
       }))
     };
+  },
+
+  // Non-blocking toast notification
+  showToast(message, duration = 2500) {
+    let el = document.getElementById('srcon-toast');
+    if (!el) {
+      el = document.createElement('div');
+      el.id = 'srcon-toast';
+      el.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:rgba(17,24,39,0.95);color:#e2e8f0;padding:10px 20px;border-radius:8px;font-size:13px;z-index:9999;opacity:0;transition:opacity 0.3s ease;border:1px solid rgba(255,255,255,0.08);box-shadow:0 4px 12px rgba(0,0,0,0.3);white-space:nowrap;';
+      document.body.appendChild(el);
+    }
+    el.textContent = message;
+    el.style.opacity = '1';
+    if (el._timer) clearTimeout(el._timer);
+    el._timer = setTimeout(() => { el.style.opacity = '0'; }, duration);
   }
 };

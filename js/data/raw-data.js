@@ -12861,87 +12861,208 @@ const SRCON_DATA = {
       ],
       "signalTrace": [
         {
-          "stepId": "S01",
+          "id": "sig_001",
           "sequence": 1,
+          "time": "15:00:37.895",
           "fromNe": "UE",
-          "toNe": "gNB",
-          "messageName": "PRIVATE_HO_IN",
-          "messageNameCn": "PRIVATE_HO_IN",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 54,
-          "timestamp": "2026-04-21 15:31:00"
+          "toNe": "Source gNB",
+          "message": "MeasurementReport",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S02",
+          "id": "sig_002",
           "sequence": 2,
-          "fromNe": "gNB",
-          "toNe": "AMF",
-          "messageName": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 108,
-          "timestamp": "2026-04-21 15:32:00"
+          "time": "15:00:40.745",
+          "fromNe": "Source gNB",
+          "toNe": "Target gNB",
+          "message": "HandoverRequest",
+          "status": "failure",
+          "abnormal": true,
+          "reason": "Resource Unavailable"
         },
         {
-          "stepId": "S03",
+          "id": "sig_003",
           "sequence": 3,
-          "fromNe": "AMF",
-          "toNe": "SMF",
-          "messageName": "PUBLIC_INFORMATION",
-          "messageNameCn": "PUBLIC_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 27,
-          "timestamp": "2026-04-21 15:33:00"
+          "time": "15:00:48.774",
+          "fromNe": "Target gNB",
+          "toNe": "Source gNB",
+          "message": "HandoverFailure",
+          "status": "failure",
+          "abnormal": true,
+          "reason": "Prepare Failure"
         },
         {
-          "stepId": "S04",
+          "id": "sig_004",
           "sequence": 4,
-          "fromNe": "SMF",
-          "toNe": "UPF",
-          "messageName": "PUBLIC_INFORMATION",
-          "messageNameCn": "PUBLIC_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 52,
-          "timestamp": "2026-04-21 15:34:00"
+          "time": "15:00:53.966",
+          "fromNe": "Source gNB",
+          "toNe": "UE",
+          "message": "RRCReconfiguration",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        }
+      ],
+      "qualityEvents": [
+        {
+          "eventId": "EVT_WO01157_001",
+          "time": "15:30:21",
+          "lng": 121.437946,
+          "lat": 31.310802,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0003410徐虹北(联通)-5G_2",
+          "metrics": {
+            "rsrp": -98.6,
+            "sinr": -1.3,
+            "rlcDelay": 65.5
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
         },
         {
-          "stepId": "S05",
-          "sequence": 5,
-          "fromNe": "UPF",
-          "toNe": "DN",
-          "messageName": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 68,
-          "timestamp": "2026-04-21 15:35:00"
+          "eventId": "EVT_WO01157_002",
+          "time": "15:33:38",
+          "lng": 121.436579,
+          "lat": 31.313661,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0003410徐虹北(联通)-5G_2",
+          "metrics": {
+            "rsrp": -92.3,
+            "sinr": -2.0,
+            "rlcDelay": 54.1
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01157_003",
+          "time": "15:36:51",
+          "lng": 121.434213,
+          "lat": 31.309355,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0003410徐虹北(联通)-5G_2",
+          "metrics": {
+            "rsrp": -101.8,
+            "sinr": 3.7,
+            "rlcDelay": 39.2
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        },
+        {
+          "eventId": "EVT_WO01157_004",
+          "time": "15:39:53",
+          "lng": 121.435071,
+          "lat": 31.313308,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0003410徐虹北(联通)-5G_2",
+          "metrics": {
+            "rsrp": -96.3,
+            "sinr": 1.7,
+            "rlcDelay": 45.1
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01157_005",
+          "time": "15:42:28",
+          "lng": 121.434261,
+          "lat": 31.309262,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0003410徐虹北(联通)-5G_2",
+          "metrics": {
+            "rsrp": -95.7,
+            "sinr": 0.5,
+            "rlcDelay": 43.4
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01157_006",
+          "time": "15:45:48",
+          "lng": 121.434298,
+          "lat": 31.312149,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0003410徐虹北(联通)-5G_2",
+          "metrics": {
+            "rsrp": -91.9,
+            "sinr": 1.8,
+            "rlcDelay": 56.9
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
         }
       ],
       "cio": [
         {
-          "param": "CovInterFreqA5RsrpThld2",
-          "mo": "NRDUCELLQCIBEARER",
+          "param": "DLRANK2INCSPCTEFFTHLD",
+          "mo": "NRDUCELLCHNCOVALGO",
           "current": "-100",
-          "suggested": "8",
-          "evidence": 0.8638148281235098
+          "suggested": "-98",
+          "evidence": 0.8381196719717893
         },
         {
-          "param": "CovBasedHoB1RsrpThld",
-          "mo": "NRDUCELLDLRANK",
+          "param": "InterFreqHoSwitch.FREQ_PRIORITY_BASED_HO",
+          "mo": "NRCellInterRHoMeaGrp",
           "current": "6",
-          "suggested": "3",
-          "evidence": 0.6040025069679588
+          "suggested": "8",
+          "evidence": 0.7848605934256176
         },
         {
-          "param": "PhyCellId",
-          "mo": "NRDUCELLPDSCHPRECODE",
-          "current": "-100",
+          "param": "FreqPriInterFA1RsrpThld",
+          "mo": "NRCellInterRHoMeaGrp",
+          "current": "6",
           "suggested": "-103",
-          "evidence": 0.8337251401795349
+          "evidence": 0.6216153166448393
+        },
+        {
+          "param": "FreqPriInterFA2RsrpThld",
+          "mo": "NRDUCELLPDCCHALGO",
+          "current": "-100",
+          "suggested": "3",
+          "evidence": 0.7878310553911949
+        },
+        {
+          "param": "FreqSpecificOffset",
+          "mo": "NRDUCELLPDSCH",
+          "current": "6",
+          "suggested": "8",
+          "evidence": 0.6406840077646324
+        },
+        {
+          "param": "CovHoToEutranB2RsrpThld1",
+          "mo": "NRDUCELLULPCCONFIG",
+          "current": "9",
+          "suggested": "-103",
+          "evidence": 0.9146112730997158
         }
       ],
       "strategies": [
@@ -12984,50 +13105,50 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "431f64ec",
+          "suggestionId": "60edf170",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0003410徐虹北(联通)-5G_2|邻区",
           "parameterName": "A3InterFreqHoA2RsrpThld",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.78,
+          "evidenceScore": 0.9,
           "riskLevel": "中",
-          "status": "已加入草案"
+          "status": "待审核"
         },
         {
-          "suggestionId": "301c1169",
+          "suggestionId": "9bb10912",
           "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0003410徐虹北(联通)-5G_2|邻区",
-          "parameterName": "SPECUERSSISATOFFSET",
+          "parameterName": "InterRatHoA1RsrpThld",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.73,
-          "riskLevel": "中",
-          "status": "已加入草案"
+          "evidenceScore": 0.8,
+          "riskLevel": "高",
+          "status": "待审核"
         },
         {
-          "suggestionId": "6ae4e6d4",
+          "suggestionId": "c1480831",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0003410徐虹北(联通)-5G_2|邻区",
-          "parameterName": "InterFreqHoSwitch.FREQ_PRIORITY_BASED_HO",
+          "parameterName": "FreqPriInterFA2RsrpThld",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.76,
-          "riskLevel": "低",
-          "status": "已加入草案"
+          "evidenceScore": 0.82,
+          "riskLevel": "中",
+          "status": "待审核"
         }
       ],
       "summary": {
         "problemDesc": "上海市静安区安庆幼儿园@三泉路分园区域上行DMRS弱覆盖问题突出，质差事件1513起，质差比例11.64%",
         "tags": [
           "上行DMRS弱覆盖",
-          "RF参数不合理",
+          "上行弱覆盖增强参数问题",
           "5QI业务保障"
         ],
         "evidenceChain": [
           "RSRP均值低于门限(-94.3dBm)",
           "SINR均值4.0dB",
-          "信令成功"
+          "信令failure"
         ],
         "riskLevel": "中"
       }
@@ -13036,222 +13157,277 @@ const SRCON_DATA = {
       "trend": [
         {
           "time": "15:30",
-          "rsrp": -97.2,
-          "sinr": 10.1,
-          "rlcDelay": 48.4
-        },
-        {
-          "time": "15:31",
-          "rsrp": -95.7,
-          "sinr": 8.1,
-          "rlcDelay": 41.1
-        },
-        {
-          "time": "15:32",
-          "rsrp": -94.5,
-          "sinr": 13.3,
-          "rlcDelay": 37.0
-        },
-        {
-          "time": "15:33",
-          "rsrp": -98.5,
-          "sinr": 12.0,
-          "rlcDelay": 36.9
-        },
-        {
-          "time": "15:34",
-          "rsrp": -97.0,
-          "sinr": 6.8,
-          "rlcDelay": 48.6
-        },
-        {
-          "time": "15:35",
-          "rsrp": -97.7,
-          "sinr": 10.9,
-          "rlcDelay": 38.7
-        },
-        {
-          "time": "15:36",
-          "rsrp": -100.0,
-          "sinr": 10.5,
-          "rlcDelay": 37.9
-        },
-        {
-          "time": "15:37",
-          "rsrp": -101.6,
-          "sinr": 11.0,
-          "rlcDelay": 37.2
-        },
-        {
-          "time": "15:38",
-          "rsrp": -97.7,
-          "sinr": 12.8,
+          "rsrp": -102.0,
+          "sinr": 12.2,
           "rlcDelay": 46.3
         },
         {
-          "time": "15:39",
+          "time": "15:31",
+          "rsrp": -89.7,
+          "sinr": 16.9,
+          "rlcDelay": 46.4
+        },
+        {
+          "time": "15:32",
+          "rsrp": -90.4,
+          "sinr": 9.7,
+          "rlcDelay": 54.9
+        },
+        {
+          "time": "15:33",
+          "rsrp": -92.6,
+          "sinr": 15.5,
+          "rlcDelay": 69.2
+        },
+        {
+          "time": "15:34",
+          "rsrp": -94.2,
+          "sinr": 12.8,
+          "rlcDelay": 69.5
+        },
+        {
+          "time": "15:35",
           "rsrp": -97.6,
-          "sinr": 10.0,
-          "rlcDelay": 36.4
+          "sinr": 16.4,
+          "rlcDelay": 67.4
+        },
+        {
+          "time": "15:36",
+          "rsrp": -97.7,
+          "sinr": 14.9,
+          "rlcDelay": 61.2
+        },
+        {
+          "time": "15:37",
+          "rsrp": -95.6,
+          "sinr": 14.6,
+          "rlcDelay": 53.4
+        },
+        {
+          "time": "15:38",
+          "rsrp": -100.3,
+          "sinr": 13.7,
+          "rlcDelay": 57.9
+        },
+        {
+          "time": "15:39",
+          "rsrp": -93.1,
+          "sinr": 11.2,
+          "rlcDelay": 44.8
         },
         {
           "time": "15:40",
-          "rsrp": -98.3,
-          "sinr": 12.8,
-          "rlcDelay": 53.0
+          "rsrp": -102.3,
+          "sinr": 11.8,
+          "rlcDelay": 61.5
         },
         {
           "time": "15:41",
-          "rsrp": -99.2,
-          "sinr": 12.9,
-          "rlcDelay": 53.6
+          "rsrp": -95.5,
+          "sinr": 13.7,
+          "rlcDelay": 65.3
         },
         {
           "time": "15:42",
-          "rsrp": -96.8,
-          "sinr": 6.7,
-          "rlcDelay": 43.6
+          "rsrp": -99.4,
+          "sinr": 12.2,
+          "rlcDelay": 51.6
         },
         {
           "time": "15:43",
-          "rsrp": -103.5,
-          "sinr": 14.3,
-          "rlcDelay": 58.3
+          "rsrp": -90.4,
+          "sinr": 15.2,
+          "rlcDelay": 47.5
         },
         {
           "time": "15:44",
-          "rsrp": -103.4,
-          "sinr": 13.8,
-          "rlcDelay": 35.7
+          "rsrp": -92.1,
+          "sinr": 12.8,
+          "rlcDelay": 63.9
         },
         {
           "time": "15:45",
-          "rsrp": -99.0,
-          "sinr": 12.5,
-          "rlcDelay": 54.1
+          "rsrp": -91.1,
+          "sinr": 9.5,
+          "rlcDelay": 49.9
         },
         {
           "time": "15:46",
-          "rsrp": -91.6,
-          "sinr": 11.5,
-          "rlcDelay": 45.5
+          "rsrp": -101.3,
+          "sinr": 9.7,
+          "rlcDelay": 59.6
         },
         {
           "time": "15:47",
-          "rsrp": -91.4,
-          "sinr": 9.4,
-          "rlcDelay": 56.7
+          "rsrp": -93.4,
+          "sinr": 9.8,
+          "rlcDelay": 63.2
         },
         {
           "time": "15:48",
-          "rsrp": -92.5,
-          "sinr": 9.3,
-          "rlcDelay": 52.0
+          "rsrp": -97.4,
+          "sinr": 11.3,
+          "rlcDelay": 50.1
         },
         {
           "time": "15:49",
-          "rsrp": -95.7,
-          "sinr": 10.6,
-          "rlcDelay": 51.3
+          "rsrp": -91.4,
+          "sinr": 9.9,
+          "rlcDelay": 57.3
         }
       ],
       "signalTrace": [
         {
-          "stepId": "S01",
+          "id": "sig_001",
           "sequence": 1,
+          "time": "15:00:38.869",
           "fromNe": "UE",
-          "toNe": "gNB",
-          "messageName": "PRIVATE_HO_IN",
-          "messageNameCn": "PRIVATE_HO_IN",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 142,
-          "timestamp": "2026-04-21 15:31:00"
+          "toNe": "Source gNB",
+          "message": "MeasurementReport",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S02",
+          "id": "sig_002",
           "sequence": 2,
-          "fromNe": "gNB",
-          "toNe": "AMF",
-          "messageName": "PUBLIC_INFORMATION",
-          "messageNameCn": "PUBLIC_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 62,
-          "timestamp": "2026-04-21 15:32:00"
+          "time": "15:00:44.732",
+          "fromNe": "Source gNB",
+          "toNe": "Target gNB",
+          "message": "HandoverRequest",
+          "status": "timeout",
+          "abnormal": true,
+          "reason": "HO Failure / TimeOut"
         },
         {
-          "stepId": "S03",
+          "id": "sig_003",
           "sequence": 3,
-          "fromNe": "AMF",
-          "toNe": "SMF",
-          "messageName": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "status": "失败",
-          "causeCode": "0x3002",
-          "latencyMs": 123,
-          "timestamp": "2026-04-21 15:33:00"
+          "time": "15:00:52.808",
+          "fromNe": "Target gNB",
+          "toNe": "Source gNB",
+          "message": "HandoverFailure",
+          "status": "failure",
+          "abnormal": true,
+          "reason": "Prepare Failure"
         },
         {
-          "stepId": "S04",
+          "id": "sig_004",
           "sequence": 4,
-          "fromNe": "SMF",
-          "toNe": "UPF",
-          "messageName": "5G周期Mr",
-          "messageNameCn": "5G周期Mr",
-          "status": "失败",
-          "causeCode": "0x3002",
-          "latencyMs": 141,
-          "timestamp": "2026-04-21 15:34:00"
+          "time": "15:01:00.448",
+          "fromNe": "Source gNB",
+          "toNe": "UE",
+          "message": "RRCReconfiguration",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        }
+      ],
+      "qualityEvents": [
+        {
+          "eventId": "EVT_WO01158_001",
+          "time": "15:30:24",
+          "lng": 121.434537,
+          "lat": 31.309588,
+          "type": "下行弱覆盖",
+          "cell": "CUDU0003410徐虹北(联通)-5G_2",
+          "metrics": {
+            "rsrp": -102.1,
+            "sinr": 9.6,
+            "rlcDelay": 66.1
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
         },
         {
-          "stepId": "S05",
-          "sequence": 5,
-          "fromNe": "UPF",
-          "toNe": "DN",
-          "messageName": "PUBLIC_INFORMATION",
-          "messageNameCn": "PUBLIC_INFORMATION",
-          "status": "失败",
-          "causeCode": "0x2001",
-          "latencyMs": 122,
-          "timestamp": "2026-04-21 15:35:00"
+          "eventId": "EVT_WO01158_002",
+          "time": "15:33:21",
+          "lng": 121.435812,
+          "lat": 31.3105,
+          "type": "下行弱覆盖",
+          "cell": "CUDU0003410徐虹北(联通)-5G_2",
+          "metrics": {
+            "rsrp": -98.2,
+            "sinr": 13.1,
+            "rlcDelay": 69.1
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        },
+        {
+          "eventId": "EVT_WO01158_003",
+          "time": "15:36:52",
+          "lng": 121.434343,
+          "lat": 31.311084,
+          "type": "下行弱覆盖",
+          "cell": "CUDU0003410徐虹北(联通)-5G_2",
+          "metrics": {
+            "rsrp": -99.2,
+            "sinr": 16.2,
+            "rlcDelay": 77.4
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        },
+        {
+          "eventId": "EVT_WO01158_004",
+          "time": "15:39:21",
+          "lng": 121.436582,
+          "lat": 31.310778,
+          "type": "下行弱覆盖",
+          "cell": "CUDU0003410徐虹北(联通)-5G_2",
+          "metrics": {
+            "rsrp": -96.1,
+            "sinr": 11.7,
+            "rlcDelay": 51.7
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
         }
       ],
       "cio": [
         {
-          "param": "CoverageScenario",
-          "mo": "NRDUCELLCHNPWR",
-          "current": "-100",
+          "param": "InterRatHoA2RsrpThld",
+          "mo": "NRCellHoEutranMeaGrp",
+          "current": "9",
           "suggested": "-103",
-          "evidence": 0.6112760602184933
+          "evidence": 0.7968350823554182
         },
         {
-          "param": "MAXUESATPWROFFSET",
-          "mo": "NRDUCELLALGOSWITCH",
-          "current": "6",
-          "suggested": "-103",
-          "evidence": 0.6842332029501241
-        },
-        {
-          "param": "Mech-Tilt",
-          "mo": "NRCellInterFHoMeaGrp",
-          "current": "6",
-          "suggested": "-103",
-          "evidence": 0.7562543731870108
-        },
-        {
-          "param": "MAXUESATPWROFFSET",
-          "mo": "NRCellEutranNFreq",
-          "current": "-100",
-          "suggested": "-103",
-          "evidence": 0.7407928727838171
-        },
-        {
-          "param": "CovInterFreqA2RsrpThld",
+          "param": "FreqPriInterFA4RsrpThld",
           "mo": "NRDUCELLCHNCOVALGO",
-          "current": "-100",
+          "current": "6",
+          "suggested": "-98",
+          "evidence": 0.7359466670826112
+        },
+        {
+          "param": "CovInterFreqA5RsrpThld2",
+          "mo": "NRCellAlgoSwitch",
+          "current": "0",
           "suggested": "-103",
-          "evidence": 0.6490474512902166
+          "evidence": 0.9227791365789277
+        },
+        {
+          "param": "DLRANK4DECSPCTEFFTHLD",
+          "mo": "NRDUCELLPDSCHPRECODE",
+          "current": "-105",
+          "suggested": "3",
+          "evidence": 0.8536046493075207
         }
       ],
       "strategies": [
@@ -13294,274 +13470,417 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "735446cc",
+          "suggestionId": "74fc067a",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0003410徐虹北(联通)-5G_2|邻区",
-          "parameterName": "InterRatHoA2RsrpThld",
+          "parameterName": "CovHoToEutranB2RsrpThld1",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.76,
-          "riskLevel": "高",
-          "status": "已加入草案"
+          "evidenceScore": 0.71,
+          "riskLevel": "中",
+          "status": "待审核"
         },
         {
-          "suggestionId": "220e80fb",
+          "suggestionId": "de62178c",
           "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0003410徐虹北(联通)-5G_2|邻区",
-          "parameterName": "A3InterFreqHoA1RsrpThld",
+          "parameterName": "DLRANK4DECSPCTEFFTHLD",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.85,
+          "evidenceScore": 0.72,
           "riskLevel": "高",
-          "status": "已加入草案"
+          "status": "待审核"
         },
         {
-          "suggestionId": "9828425f",
+          "suggestionId": "f431e1f7",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0003410徐虹北(联通)-5G_2|邻区",
-          "parameterName": "CovInterFreqA2RsrpThld",
+          "parameterName": "CovInterFreqA1RsrpThld",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.78,
-          "riskLevel": "低",
-          "status": "待审核"
+          "evidenceScore": 0.75,
+          "riskLevel": "中",
+          "status": "已加入草案"
         }
       ],
       "summary": {
         "problemDesc": "上海市静安区安庆幼儿园@三泉路分园区域下行弱覆盖问题突出，质差事件1513起，质差比例11.64%",
         "tags": [
           "下行弱覆盖",
-          "上行弱覆盖增强参数问题",
+          "RF参数不合理",
           "5QI业务保障"
         ],
         "evidenceChain": [
-          "RSRP均值低于门限(-96.3dBm)",
-          "SINR均值11.3dB",
-          "信令成功"
+          "RSRP均值低于门限(-94.6dBm)",
+          "SINR均值14.4dB",
+          "信令timeout"
         ],
-        "riskLevel": "中"
+        "riskLevel": "低"
       }
     },
     "WO01186": {
       "trend": [
         {
           "time": "15:30",
-          "rsrp": -106.6,
-          "sinr": 6.6,
-          "rlcDelay": 62.5
+          "rsrp": -86.6,
+          "sinr": 18.0,
+          "rlcDelay": 23.1
         },
         {
           "time": "15:31",
-          "rsrp": -108.9,
-          "sinr": 5.6,
-          "rlcDelay": 54.1
+          "rsrp": -91.7,
+          "sinr": 15.8,
+          "rlcDelay": 39.9
         },
         {
           "time": "15:32",
-          "rsrp": -107.8,
-          "sinr": 8.3,
-          "rlcDelay": 58.6
+          "rsrp": -92.4,
+          "sinr": 20.4,
+          "rlcDelay": 26.6
         },
         {
           "time": "15:33",
-          "rsrp": -107.1,
-          "sinr": 8.5,
-          "rlcDelay": 53.0
+          "rsrp": -92.6,
+          "sinr": 17.0,
+          "rlcDelay": 23.6
         },
         {
           "time": "15:34",
-          "rsrp": -113.7,
-          "sinr": 9.6,
-          "rlcDelay": 51.5
+          "rsrp": -92.9,
+          "sinr": 18.1,
+          "rlcDelay": 19.5
         },
         {
           "time": "15:35",
-          "rsrp": -113.2,
-          "sinr": 12.1,
-          "rlcDelay": 49.1
+          "rsrp": -86.8,
+          "sinr": 17.9,
+          "rlcDelay": 38.0
         },
         {
           "time": "15:36",
-          "rsrp": -110.1,
-          "sinr": 5.7,
-          "rlcDelay": 55.8
+          "rsrp": -87.7,
+          "sinr": 17.1,
+          "rlcDelay": 27.4
         },
         {
           "time": "15:37",
-          "rsrp": -110.7,
-          "sinr": 9.5,
-          "rlcDelay": 55.2
+          "rsrp": -92.3,
+          "sinr": 15.9,
+          "rlcDelay": 20.7
         },
         {
           "time": "15:38",
-          "rsrp": -112.8,
-          "sinr": 7.9,
-          "rlcDelay": 47.5
+          "rsrp": -96.2,
+          "sinr": 21.6,
+          "rlcDelay": 31.5
         },
         {
           "time": "15:39",
-          "rsrp": -110.3,
-          "sinr": 8.2,
-          "rlcDelay": 58.9
+          "rsrp": -94.1,
+          "sinr": 15.4,
+          "rlcDelay": 25.3
         },
         {
           "time": "15:40",
-          "rsrp": -105.3,
-          "sinr": 5.7,
-          "rlcDelay": 54.9
+          "rsrp": -94.6,
+          "sinr": 20.8,
+          "rlcDelay": 29.5
         },
         {
           "time": "15:41",
-          "rsrp": -108.3,
-          "sinr": 5.6,
-          "rlcDelay": 47.3
+          "rsrp": -91.1,
+          "sinr": 19.6,
+          "rlcDelay": 23.5
         },
         {
           "time": "15:42",
-          "rsrp": -105.7,
-          "sinr": 9.9,
-          "rlcDelay": 62.3
+          "rsrp": -88.9,
+          "sinr": 21.9,
+          "rlcDelay": 33.1
         },
         {
           "time": "15:43",
-          "rsrp": -113.3,
-          "sinr": 6.9,
-          "rlcDelay": 68.2
+          "rsrp": -93.2,
+          "sinr": 15.5,
+          "rlcDelay": 36.9
         },
         {
           "time": "15:44",
-          "rsrp": -112.2,
-          "sinr": 12.5,
-          "rlcDelay": 50.8
+          "rsrp": -97.4,
+          "sinr": 19.9,
+          "rlcDelay": 29.2
         },
         {
           "time": "15:45",
-          "rsrp": -113.7,
-          "sinr": 11.2,
-          "rlcDelay": 64.2
+          "rsrp": -87.7,
+          "sinr": 18.5,
+          "rlcDelay": 33.1
         },
         {
           "time": "15:46",
-          "rsrp": -106.3,
-          "sinr": 12.6,
-          "rlcDelay": 62.9
+          "rsrp": -98.8,
+          "sinr": 14.4,
+          "rlcDelay": 38.2
         },
         {
           "time": "15:47",
-          "rsrp": -107.0,
-          "sinr": 8.4,
-          "rlcDelay": 51.5
+          "rsrp": -87.3,
+          "sinr": 19.5,
+          "rlcDelay": 36.1
         },
         {
           "time": "15:48",
-          "rsrp": -111.9,
-          "sinr": 7.5,
-          "rlcDelay": 57.2
+          "rsrp": -94.2,
+          "sinr": 20.9,
+          "rlcDelay": 22.8
         },
         {
           "time": "15:49",
-          "rsrp": -107.7,
-          "sinr": 7.7,
-          "rlcDelay": 54.5
+          "rsrp": -90.4,
+          "sinr": 14.2,
+          "rlcDelay": 29.7
         }
       ],
       "signalTrace": [
         {
-          "stepId": "S01",
+          "id": "sig_001",
           "sequence": 1,
+          "time": "15:00:36.773",
           "fromNe": "UE",
-          "toNe": "gNB",
-          "messageName": "PUBLIC_INFORMATION",
-          "messageNameCn": "PUBLIC_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 125,
-          "timestamp": "2026-04-21 15:31:00"
+          "toNe": "Source gNB",
+          "message": "MeasurementReport",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S02",
+          "id": "sig_002",
           "sequence": 2,
-          "fromNe": "gNB",
-          "toNe": "AMF",
-          "messageName": "PRIVATE_HO_IN",
-          "messageNameCn": "PRIVATE_HO_IN",
-          "status": "超时",
-          "causeCode": "0x3002",
-          "latencyMs": 85,
-          "timestamp": "2026-04-21 15:32:00"
+          "time": "15:00:43.751",
+          "fromNe": "Source gNB",
+          "toNe": "Target gNB",
+          "message": "HandoverRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S03",
+          "id": "sig_003",
           "sequence": 3,
+          "time": "15:00:48.795",
+          "fromNe": "Target gNB",
+          "toNe": "Source gNB",
+          "message": "HandoverAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_004",
+          "sequence": 4,
+          "time": "15:00:53.136",
+          "fromNe": "Source gNB",
+          "toNe": "UE",
+          "message": "RRCReconfiguration",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_005",
+          "sequence": 5,
+          "time": "15:00:55.664",
+          "fromNe": "UE",
+          "toNe": "Source gNB",
+          "message": "RRCReconfigurationComplete",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_006",
+          "sequence": 6,
+          "time": "15:01:01.541",
+          "fromNe": "Source gNB",
+          "toNe": "AMF",
+          "message": "PathSwitchRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_007",
+          "sequence": 7,
+          "time": "15:01:03.137",
           "fromNe": "AMF",
           "toNe": "SMF",
-          "messageName": "PUBLIC_INFORMATION",
-          "messageNameCn": "PUBLIC_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 61,
-          "timestamp": "2026-04-21 15:33:00"
+          "message": "Nsmf_PDUSession_UpdateSMContext",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S04",
-          "sequence": 4,
+          "id": "sig_008",
+          "sequence": 8,
+          "time": "15:01:09.859",
           "fromNe": "SMF",
-          "toNe": "UPF",
-          "messageName": "5G周期Mr",
-          "messageNameCn": "5G周期Mr",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 71,
-          "timestamp": "2026-04-21 15:34:00"
+          "toNe": "AMF",
+          "message": "Nsmf_PDUSession_UpdateSMContext_RSP",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S05",
-          "sequence": 5,
-          "fromNe": "UPF",
-          "toNe": "DN",
-          "messageName": "PRIVATE_MEASUREMENT_REPORT",
-          "messageNameCn": "PRIVATE_MEASUREMENT_REPORT",
-          "status": "超时",
-          "causeCode": "0x4003",
-          "latencyMs": 111,
-          "timestamp": "2026-04-21 15:35:00"
+          "id": "sig_009",
+          "sequence": 9,
+          "time": "15:01:13.668",
+          "fromNe": "AMF",
+          "toNe": "Source gNB",
+          "message": "PathSwitchAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        }
+      ],
+      "qualityEvents": [
+        {
+          "eventId": "EVT_WO01186_001",
+          "time": "15:30:21",
+          "lng": 121.427252,
+          "lat": 31.315275,
+          "type": "CCE资源不足",
+          "cell": "CUDU0003850徐襄阳-3.5G_1",
+          "metrics": {
+            "rsrp": -103.3,
+            "sinr": 19.7,
+            "rlcDelay": 39.0
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        },
+        {
+          "eventId": "EVT_WO01186_002",
+          "time": "15:33:32",
+          "lng": 121.428214,
+          "lat": 31.317078,
+          "type": "CCE资源不足",
+          "cell": "CUDU0003850徐襄阳-3.5G_1",
+          "metrics": {
+            "rsrp": -101.3,
+            "sinr": 14.7,
+            "rlcDelay": 33.1
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        },
+        {
+          "eventId": "EVT_WO01186_003",
+          "time": "15:36:54",
+          "lng": 121.427965,
+          "lat": 31.318801,
+          "type": "CCE资源不足",
+          "cell": "CUDU0003850徐襄阳-3.5G_1",
+          "metrics": {
+            "rsrp": -98.0,
+            "sinr": 16.4,
+            "rlcDelay": 34.6
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        },
+        {
+          "eventId": "EVT_WO01186_004",
+          "time": "15:39:58",
+          "lng": 121.4268,
+          "lat": 31.317129,
+          "type": "CCE资源不足",
+          "cell": "CUDU0003850徐襄阳-3.5G_1",
+          "metrics": {
+            "rsrp": -90.9,
+            "sinr": 18.4,
+            "rlcDelay": 46.4
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        },
+        {
+          "eventId": "EVT_WO01186_005",
+          "time": "15:42:54",
+          "lng": 121.427638,
+          "lat": 31.317696,
+          "type": "CCE资源不足",
+          "cell": "CUDU0003850徐襄阳-3.5G_1",
+          "metrics": {
+            "rsrp": -97.9,
+            "sinr": 17.0,
+            "rlcDelay": 37.5
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
         }
       ],
       "cio": [
         {
-          "param": "CoverageScenario",
-          "mo": "NRCellAlgoSwitch",
-          "current": "0",
-          "suggested": "-98",
-          "evidence": 0.732943921159404
-        },
-        {
-          "param": "DLRANK3INCSPCTEFFTHLD",
-          "mo": "CELL",
-          "current": "9",
-          "suggested": "3",
-          "evidence": 0.8291127881423577
-        },
-        {
-          "param": "MAXUESATPWROFFSET",
-          "mo": "NRDUCELLPDSCH",
-          "current": "0",
-          "suggested": "8",
-          "evidence": 0.9382778935376203
-        },
-        {
           "param": "PhyCellId",
-          "mo": "NRDUCELLPDCCH",
-          "current": "9",
-          "suggested": "-98",
-          "evidence": 0.8564702829587565
+          "mo": "NRDUCELLPDSCH",
+          "current": "6",
+          "suggested": "-103",
+          "evidence": 0.9131769242499448
         },
         {
-          "param": "FreqPriInterFA1RsrpThld",
-          "mo": "NRCellFreqRelation",
+          "param": "DLINITMCS",
+          "mo": "NRCellEutranNFreq",
           "current": "-100",
+          "suggested": "-98",
+          "evidence": 0.9154455356586046
+        },
+        {
+          "param": "SPECUERSSISATOFFSET",
+          "mo": "NRDUCELLULPCCONFIG",
+          "current": "9",
+          "suggested": "5",
+          "evidence": 0.6162966897596102
+        },
+        {
+          "param": "Mech-Tilt",
+          "mo": "NRDUCELLCHNPWR",
+          "current": "6",
           "suggested": "3",
-          "evidence": 0.7709107124389463
+          "evidence": 0.8303382341676624
+        },
+        {
+          "param": "FreqSpecificOffset",
+          "mo": "NRDUCELLPDSCH",
+          "current": "-105",
+          "suggested": "-98",
+          "evidence": 0.8054626364295709
+        },
+        {
+          "param": "DLRANK2INCSPCTEFFTHLD",
+          "mo": "NRDUCELLQCIBEARER",
+          "current": "-105",
+          "suggested": "5",
+          "evidence": 0.656857587750147
         }
       ],
       "strategies": [
@@ -13604,36 +13923,36 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "781daee6",
+          "suggestionId": "0db457af",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0003850徐襄阳-3.5G_1|邻区",
-          "parameterName": "DLINITMCS",
+          "parameterName": "CovInterFreqA2RsrpThld",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.92,
-          "riskLevel": "高",
+          "evidenceScore": 0.84,
+          "riskLevel": "中",
+          "status": "已加入草案"
+        },
+        {
+          "suggestionId": "dd4e07f8",
+          "rootCauseType": "上行弱覆盖增强参数问题",
+          "affectedCellPair": "CUDU0003850徐襄阳-3.5G_1|邻区",
+          "parameterName": "TrafficPriority",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.89,
+          "riskLevel": "低",
           "status": "待审核"
         },
         {
-          "suggestionId": "68ecb0cf",
-          "rootCauseType": "上行弱覆盖增强参数问题",
+          "suggestionId": "d2918b6e",
+          "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0003850徐襄阳-3.5G_1|邻区",
           "parameterName": "InterRatHoA1RsrpThld",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.71,
-          "riskLevel": "低",
-          "status": "待审核"
-        },
-        {
-          "suggestionId": "afcdf555",
-          "rootCauseType": "上行干扰增强参数问题",
-          "affectedCellPair": "CUDU0003850徐襄阳-3.5G_1|邻区",
-          "parameterName": "DLRANK2INCSPCTEFFTHLD",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.7,
-          "riskLevel": "低",
+          "evidenceScore": 0.89,
+          "riskLevel": "中",
           "status": "待审核"
         }
       ],
@@ -13645,219 +13964,369 @@ const SRCON_DATA = {
           "5QI业务保障"
         ],
         "evidenceChain": [
-          "RSRP均值低于门限(-108.1dBm)",
-          "SINR均值10.2dB",
-          "信令超时"
+          "RSRP均值低于门限(-91.6dBm)",
+          "SINR均值19.2dB",
+          "信令success"
         ],
-        "riskLevel": "高"
+        "riskLevel": "中"
       }
     },
     "WO01029": {
       "trend": [
         {
           "time": "15:30",
-          "rsrp": -118.4,
-          "sinr": 2.9,
-          "rlcDelay": 60.7
+          "rsrp": -109.2,
+          "sinr": -0.6,
+          "rlcDelay": 70.5
         },
         {
           "time": "15:31",
-          "rsrp": -107.4,
-          "sinr": 3.1,
-          "rlcDelay": 37.8
+          "rsrp": -113.0,
+          "sinr": -0.3,
+          "rlcDelay": 65.9
         },
         {
           "time": "15:32",
-          "rsrp": -112.3,
-          "sinr": 1.1,
-          "rlcDelay": 37.8
+          "rsrp": -111.3,
+          "sinr": -3.5,
+          "rlcDelay": 60.1
         },
         {
           "time": "15:33",
-          "rsrp": -109.8,
-          "sinr": 2.1,
-          "rlcDelay": 44.5
+          "rsrp": -112.3,
+          "sinr": -3.8,
+          "rlcDelay": 61.0
         },
         {
           "time": "15:34",
-          "rsrp": -112.7,
-          "sinr": 3.4,
-          "rlcDelay": 48.1
+          "rsrp": -112.3,
+          "sinr": 0.8,
+          "rlcDelay": 53.7
         },
         {
           "time": "15:35",
-          "rsrp": -107.0,
-          "sinr": -0.8,
-          "rlcDelay": 60.3
+          "rsrp": -114.0,
+          "sinr": -4.7,
+          "rlcDelay": 53.0
         },
         {
           "time": "15:36",
-          "rsrp": -112.4,
-          "sinr": -0.3,
-          "rlcDelay": 52.9
+          "rsrp": -112.3,
+          "sinr": 0.9,
+          "rlcDelay": 50.2
         },
         {
           "time": "15:37",
-          "rsrp": -115.9,
-          "sinr": 0.6,
-          "rlcDelay": 57.2
+          "rsrp": -112.1,
+          "sinr": -2.4,
+          "rlcDelay": 48.6
         },
         {
           "time": "15:38",
-          "rsrp": -118.2,
-          "sinr": 5.5,
-          "rlcDelay": 48.8
+          "rsrp": -104.9,
+          "sinr": -1.8,
+          "rlcDelay": 65.3
         },
         {
           "time": "15:39",
-          "rsrp": -116.1,
-          "sinr": 3.4,
-          "rlcDelay": 44.9
+          "rsrp": -115.9,
+          "sinr": -4.6,
+          "rlcDelay": 57.1
         },
         {
           "time": "15:40",
-          "rsrp": -108.5,
-          "sinr": -1.5,
-          "rlcDelay": 62.2
+          "rsrp": -110.0,
+          "sinr": -1.2,
+          "rlcDelay": 48.9
         },
         {
           "time": "15:41",
-          "rsrp": -110.8,
-          "sinr": -1.9,
-          "rlcDelay": 47.5
+          "rsrp": -116.0,
+          "sinr": -0.9,
+          "rlcDelay": 61.2
         },
         {
           "time": "15:42",
-          "rsrp": -114.3,
+          "rsrp": -107.0,
           "sinr": 1.6,
-          "rlcDelay": 53.3
+          "rlcDelay": 46.6
         },
         {
           "time": "15:43",
-          "rsrp": -110.1,
-          "sinr": -1.5,
-          "rlcDelay": 58.5
+          "rsrp": -111.8,
+          "sinr": 0.9,
+          "rlcDelay": 64.4
         },
         {
           "time": "15:44",
-          "rsrp": -110.8,
-          "sinr": 0.5,
-          "rlcDelay": 61.8
+          "rsrp": -109.9,
+          "sinr": 2.6,
+          "rlcDelay": 52.4
         },
         {
           "time": "15:45",
-          "rsrp": -106.6,
-          "sinr": 5.0,
-          "rlcDelay": 60.3
+          "rsrp": -110.4,
+          "sinr": 0.2,
+          "rlcDelay": 50.5
         },
         {
           "time": "15:46",
-          "rsrp": -116.2,
-          "sinr": 5.0,
-          "rlcDelay": 54.7
+          "rsrp": -113.7,
+          "sinr": -3.2,
+          "rlcDelay": 50.0
         },
         {
           "time": "15:47",
-          "rsrp": -111.9,
-          "sinr": -0.0,
-          "rlcDelay": 60.5
+          "rsrp": -115.0,
+          "sinr": -3.1,
+          "rlcDelay": 53.8
         },
         {
           "time": "15:48",
-          "rsrp": -110.3,
-          "sinr": 0.1,
-          "rlcDelay": 50.9
+          "rsrp": -107.0,
+          "sinr": -2.4,
+          "rlcDelay": 69.9
         },
         {
           "time": "15:49",
-          "rsrp": -110.7,
-          "sinr": -0.8,
-          "rlcDelay": 58.6
+          "rsrp": -107.8,
+          "sinr": -1.4,
+          "rlcDelay": 61.7
         }
       ],
       "signalTrace": [
         {
-          "stepId": "S01",
+          "id": "sig_001",
           "sequence": 1,
+          "time": "15:00:33.431",
           "fromNe": "UE",
-          "toNe": "gNB",
-          "messageName": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "status": "超时",
-          "causeCode": "0x4003",
-          "latencyMs": 41,
-          "timestamp": "2026-04-21 15:31:00"
+          "toNe": "Source gNB",
+          "message": "MeasurementReport",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S02",
+          "id": "sig_002",
           "sequence": 2,
-          "fromNe": "gNB",
-          "toNe": "AMF",
-          "messageName": "5G周期Mr",
-          "messageNameCn": "5G周期Mr",
-          "status": "失败",
-          "causeCode": "0x2001",
-          "latencyMs": 81,
-          "timestamp": "2026-04-21 15:32:00"
+          "time": "15:00:35.525",
+          "fromNe": "Source gNB",
+          "toNe": "Target gNB",
+          "message": "HandoverRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S03",
+          "id": "sig_003",
           "sequence": 3,
+          "time": "15:00:39.981",
+          "fromNe": "Target gNB",
+          "toNe": "Source gNB",
+          "message": "HandoverAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_004",
+          "sequence": 4,
+          "time": "15:00:45.509",
+          "fromNe": "Source gNB",
+          "toNe": "UE",
+          "message": "RRCReconfiguration",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_005",
+          "sequence": 5,
+          "time": "15:00:53.457",
+          "fromNe": "UE",
+          "toNe": "Source gNB",
+          "message": "RRCReconfigurationComplete",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_006",
+          "sequence": 6,
+          "time": "15:00:58.462",
+          "fromNe": "Source gNB",
+          "toNe": "AMF",
+          "message": "PathSwitchRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_007",
+          "sequence": 7,
+          "time": "15:01:03.955",
           "fromNe": "AMF",
           "toNe": "SMF",
-          "messageName": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 150,
-          "timestamp": "2026-04-21 15:33:00"
+          "message": "Nsmf_PDUSession_UpdateSMContext",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S04",
-          "sequence": 4,
+          "id": "sig_008",
+          "sequence": 8,
+          "time": "15:01:11.786",
           "fromNe": "SMF",
-          "toNe": "UPF",
-          "messageName": "PUBLIC_INFORMATION",
-          "messageNameCn": "PUBLIC_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 143,
-          "timestamp": "2026-04-21 15:34:00"
+          "toNe": "AMF",
+          "message": "Nsmf_PDUSession_UpdateSMContext_RSP",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S05",
-          "sequence": 5,
-          "fromNe": "UPF",
-          "toNe": "DN",
-          "messageName": "PRIVATE_HO_IN",
-          "messageNameCn": "PRIVATE_HO_IN",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 40,
-          "timestamp": "2026-04-21 15:35:00"
+          "id": "sig_009",
+          "sequence": 9,
+          "time": "15:01:17.259",
+          "fromNe": "AMF",
+          "toNe": "Source gNB",
+          "message": "PathSwitchAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        }
+      ],
+      "qualityEvents": [
+        {
+          "eventId": "EVT_WO01029_001",
+          "time": "15:30:30",
+          "lng": 121.440419,
+          "lat": 31.317652,
+          "type": "CCE资源不足",
+          "cell": "CUDU0005687联长万宝(联通)-5G_1",
+          "metrics": {
+            "rsrp": -116.4,
+            "sinr": 1.3,
+            "rlcDelay": 49.3
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01029_002",
+          "time": "15:33:46",
+          "lng": 121.444045,
+          "lat": 31.317218,
+          "type": "CCE资源不足",
+          "cell": "CUDU0005687联长万宝(联通)-5G_1",
+          "metrics": {
+            "rsrp": -116.4,
+            "sinr": -0.4,
+            "rlcDelay": 66.6
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01029_003",
+          "time": "15:36:46",
+          "lng": 121.440552,
+          "lat": 31.321247,
+          "type": "CCE资源不足",
+          "cell": "CUDU0005687联长万宝(联通)-5G_1",
+          "metrics": {
+            "rsrp": -117.0,
+            "sinr": -0.0,
+            "rlcDelay": 55.9
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01029_004",
+          "time": "15:39:56",
+          "lng": 121.442123,
+          "lat": 31.319513,
+          "type": "CCE资源不足",
+          "cell": "CUDU0005687联长万宝(联通)-5G_1",
+          "metrics": {
+            "rsrp": -118.5,
+            "sinr": -0.2,
+            "rlcDelay": 42.4
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01029_005",
+          "time": "15:42:36",
+          "lng": 121.443391,
+          "lat": 31.316098,
+          "type": "CCE资源不足",
+          "cell": "CUDU0005687联长万宝(联通)-5G_1",
+          "metrics": {
+            "rsrp": -114.6,
+            "sinr": -4.0,
+            "rlcDelay": 69.0
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
         }
       ],
       "cio": [
         {
-          "param": "InterRatHoA1RsrpThld",
-          "mo": "NRDUCELLPDSCHPRECODE",
-          "current": "-105",
-          "suggested": "-103",
-          "evidence": 0.7529808884952247
+          "param": "CovInterFreqA2RsrpThld",
+          "mo": "NRDUCELLCHNPWR",
+          "current": "-100",
+          "suggested": "8",
+          "evidence": 0.876176867127022
         },
         {
-          "param": "DLRANK3INCSPCTEFFTHLD",
-          "mo": "NRCellInterRHoMeaGrp",
-          "current": "0",
+          "param": "Mech-Tilt",
+          "mo": "NRDUCELLUEPWRSAVING",
+          "current": "6",
+          "suggested": "8",
+          "evidence": 0.803785406725718
+        },
+        {
+          "param": "FreqPriInterFA2RsrpThld",
+          "mo": "NRDUCELLPDCCHALGO",
+          "current": "9",
           "suggested": "3",
-          "evidence": 0.8691519786779047
+          "evidence": 0.6128678074237132
         },
         {
-          "param": "InterFreqHoSwitch.FREQ_PRIORITY_BASED_HO",
-          "mo": "NRDUCELLQCIBEARER",
-          "current": "0",
+          "param": "FreqPriInterFA1RsrpThld",
+          "mo": "NRDUCELLCHNCOVALGO",
+          "current": "6",
           "suggested": "-103",
-          "evidence": 0.8219430315916572
+          "evidence": 0.6382792988355004
+        },
+        {
+          "param": "CovInterFreqA2RsrpThld",
+          "mo": "NRDUCELLPDSCHPRECODE",
+          "current": "-100",
+          "suggested": "3",
+          "evidence": 0.6155038427347473
         }
       ],
       "strategies": [
@@ -13900,260 +14369,436 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "0577e2f3",
+          "suggestionId": "cebf008b",
           "rootCauseType": "RF参数不合理",
+          "affectedCellPair": "CUDU0005687联长万宝(联通)-5G_1|邻区",
+          "parameterName": "PhyCellId",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.87,
+          "riskLevel": "中",
+          "status": "已加入草案"
+        },
+        {
+          "suggestionId": "19374592",
+          "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0005687联长万宝(联通)-5G_1|邻区",
           "parameterName": "DLRANK3DECSPCTEFFTHLD",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.95,
-          "riskLevel": "中",
+          "evidenceScore": 0.81,
+          "riskLevel": "低",
           "status": "待审核"
         },
         {
-          "suggestionId": "d88c81bd",
-          "rootCauseType": "上行弱覆盖增强参数问题",
-          "affectedCellPair": "CUDU0005687联长万宝(联通)-5G_1|邻区",
-          "parameterName": "FreqPriInterFA1RsrpThld",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.84,
-          "riskLevel": "中",
-          "status": "已加入草案"
-        },
-        {
-          "suggestionId": "ed15d1d7",
+          "suggestionId": "1454c151",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0005687联长万宝(联通)-5G_1|邻区",
-          "parameterName": "FreqSpecificOffset",
+          "parameterName": "CovInterFreqA5RsrpThld2",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.87,
+          "evidenceScore": 0.76,
           "riskLevel": "高",
-          "status": "已加入草案"
+          "status": "待审核"
         }
       ],
       "summary": {
         "problemDesc": "紫金兰花苑区域CCE资源不足问题突出，质差事件1138起，质差比例8.91%",
         "tags": [
           "CCE资源不足",
-          "RF参数不合理",
+          "上行弱覆盖增强参数问题",
           "5QI业务保障"
         ],
         "evidenceChain": [
-          "RSRP均值低于门限(-111.2dBm)",
-          "SINR均值2.8dB",
-          "信令失败"
+          "RSRP均值低于门限(-109.2dBm)",
+          "SINR均值-0.3dB",
+          "信令success"
         ],
-        "riskLevel": "高"
+        "riskLevel": "中"
       }
     },
     "WO01023": {
       "trend": [
         {
           "time": "15:30",
-          "rsrp": -112.1,
-          "sinr": 1.5,
-          "rlcDelay": 34.0
+          "rsrp": -106.7,
+          "sinr": 12.8,
+          "rlcDelay": 45.9
         },
         {
           "time": "15:31",
-          "rsrp": -113.6,
-          "sinr": 1.5,
-          "rlcDelay": 23.4
+          "rsrp": -111.9,
+          "sinr": 13.3,
+          "rlcDelay": 69.4
         },
         {
           "time": "15:32",
-          "rsrp": -114.4,
-          "sinr": 6.0,
-          "rlcDelay": 25.5
+          "rsrp": -111.7,
+          "sinr": 17.5,
+          "rlcDelay": 48.9
         },
         {
           "time": "15:33",
-          "rsrp": -105.7,
-          "sinr": -0.8,
-          "rlcDelay": 16.6
+          "rsrp": -109.2,
+          "sinr": 13.6,
+          "rlcDelay": 50.5
         },
         {
           "time": "15:34",
-          "rsrp": -110.0,
-          "sinr": 2.9,
-          "rlcDelay": 27.2
+          "rsrp": -106.9,
+          "sinr": 13.8,
+          "rlcDelay": 56.3
         },
         {
           "time": "15:35",
-          "rsrp": -114.3,
-          "sinr": -0.9,
-          "rlcDelay": 28.3
+          "rsrp": -104.2,
+          "sinr": 12.5,
+          "rlcDelay": 52.8
         },
         {
           "time": "15:36",
-          "rsrp": -107.9,
-          "sinr": 4.7,
-          "rlcDelay": 36.0
+          "rsrp": -102.7,
+          "sinr": 10.9,
+          "rlcDelay": 66.5
         },
         {
           "time": "15:37",
-          "rsrp": -115.5,
-          "sinr": 1.7,
-          "rlcDelay": 33.9
+          "rsrp": -104.8,
+          "sinr": 15.4,
+          "rlcDelay": 49.4
         },
         {
           "time": "15:38",
-          "rsrp": -106.2,
-          "sinr": 2.9,
-          "rlcDelay": 39.2
+          "rsrp": -100.4,
+          "sinr": 11.9,
+          "rlcDelay": 49.7
         },
         {
           "time": "15:39",
-          "rsrp": -112.5,
-          "sinr": 2.6,
-          "rlcDelay": 31.5
+          "rsrp": -111.1,
+          "sinr": 14.5,
+          "rlcDelay": 69.3
         },
         {
           "time": "15:40",
-          "rsrp": -113.4,
-          "sinr": 0.6,
-          "rlcDelay": 21.1
+          "rsrp": -110.2,
+          "sinr": 13.2,
+          "rlcDelay": 49.9
         },
         {
           "time": "15:41",
-          "rsrp": -113.7,
-          "sinr": -0.2,
-          "rlcDelay": 21.3
+          "rsrp": -104.9,
+          "sinr": 13.4,
+          "rlcDelay": 46.0
         },
         {
           "time": "15:42",
-          "rsrp": -111.7,
-          "sinr": 4.7,
-          "rlcDelay": 23.4
+          "rsrp": -105.2,
+          "sinr": 11.6,
+          "rlcDelay": 60.1
         },
         {
           "time": "15:43",
-          "rsrp": -103.3,
-          "sinr": 4.2,
-          "rlcDelay": 26.8
+          "rsrp": -108.2,
+          "sinr": 15.6,
+          "rlcDelay": 50.5
         },
         {
           "time": "15:44",
-          "rsrp": -107.6,
-          "sinr": 2.1,
-          "rlcDelay": 17.8
+          "rsrp": -103.4,
+          "sinr": 16.5,
+          "rlcDelay": 46.9
         },
         {
           "time": "15:45",
-          "rsrp": -115.5,
-          "sinr": 1.6,
-          "rlcDelay": 35.5
+          "rsrp": -111.9,
+          "sinr": 17.0,
+          "rlcDelay": 50.0
         },
         {
           "time": "15:46",
-          "rsrp": -110.7,
-          "sinr": 5.3,
-          "rlcDelay": 25.4
+          "rsrp": -109.0,
+          "sinr": 13.7,
+          "rlcDelay": 51.9
         },
         {
           "time": "15:47",
-          "rsrp": -110.0,
-          "sinr": 5.0,
-          "rlcDelay": 30.7
+          "rsrp": -102.0,
+          "sinr": 14.2,
+          "rlcDelay": 61.3
         },
         {
           "time": "15:48",
-          "rsrp": -107.9,
-          "sinr": 0.8,
-          "rlcDelay": 29.5
+          "rsrp": -105.5,
+          "sinr": 14.9,
+          "rlcDelay": 60.0
         },
         {
           "time": "15:49",
-          "rsrp": -106.6,
-          "sinr": 2.3,
-          "rlcDelay": 18.9
+          "rsrp": -108.7,
+          "sinr": 16.8,
+          "rlcDelay": 60.7
         }
       ],
       "signalTrace": [
         {
-          "stepId": "S01",
+          "id": "sig_001",
           "sequence": 1,
+          "time": "15:00:37.939",
           "fromNe": "UE",
-          "toNe": "gNB",
-          "messageName": "PUBLIC_INFORMATION",
-          "messageNameCn": "PUBLIC_INFORMATION",
-          "status": "超时",
-          "causeCode": "0x3002",
-          "latencyMs": 130,
-          "timestamp": "2026-04-21 15:31:00"
+          "toNe": "Source gNB",
+          "message": "MeasurementReport",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S02",
+          "id": "sig_002",
           "sequence": 2,
-          "fromNe": "gNB",
-          "toNe": "AMF",
-          "messageName": "PRIVATE_MEASUREMENT_REPORT",
-          "messageNameCn": "PRIVATE_MEASUREMENT_REPORT",
-          "status": "失败",
-          "causeCode": "0x3002",
-          "latencyMs": 101,
-          "timestamp": "2026-04-21 15:32:00"
+          "time": "15:00:41.749",
+          "fromNe": "Source gNB",
+          "toNe": "Target gNB",
+          "message": "HandoverRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S03",
+          "id": "sig_003",
           "sequence": 3,
+          "time": "15:00:47.206",
+          "fromNe": "Target gNB",
+          "toNe": "Source gNB",
+          "message": "HandoverAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_004",
+          "sequence": 4,
+          "time": "15:00:54.257",
+          "fromNe": "Source gNB",
+          "toNe": "UE",
+          "message": "RRCReconfiguration",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_005",
+          "sequence": 5,
+          "time": "15:00:58.240",
+          "fromNe": "UE",
+          "toNe": "Source gNB",
+          "message": "RRCReconfigurationComplete",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_006",
+          "sequence": 6,
+          "time": "15:01:01.432",
+          "fromNe": "Source gNB",
+          "toNe": "AMF",
+          "message": "PathSwitchRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_007",
+          "sequence": 7,
+          "time": "15:01:03.307",
           "fromNe": "AMF",
           "toNe": "SMF",
-          "messageName": "PRIVATE_HO_IN",
-          "messageNameCn": "PRIVATE_HO_IN",
-          "status": "失败",
-          "causeCode": "0x3002",
-          "latencyMs": 98,
-          "timestamp": "2026-04-21 15:33:00"
+          "message": "Nsmf_PDUSession_UpdateSMContext",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S04",
-          "sequence": 4,
+          "id": "sig_008",
+          "sequence": 8,
+          "time": "15:01:07.830",
           "fromNe": "SMF",
-          "toNe": "UPF",
-          "messageName": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "status": "超时",
-          "causeCode": "0x2001",
-          "latencyMs": 144,
-          "timestamp": "2026-04-21 15:34:00"
+          "toNe": "AMF",
+          "message": "Nsmf_PDUSession_UpdateSMContext_RSP",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S05",
-          "sequence": 5,
-          "fromNe": "UPF",
-          "toNe": "DN",
-          "messageName": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 145,
-          "timestamp": "2026-04-21 15:35:00"
+          "id": "sig_009",
+          "sequence": 9,
+          "time": "15:01:10.643",
+          "fromNe": "AMF",
+          "toNe": "Source gNB",
+          "message": "PathSwitchAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        }
+      ],
+      "qualityEvents": [
+        {
+          "eventId": "EVT_WO01023_001",
+          "time": "15:30:21",
+          "lng": 121.440702,
+          "lat": 31.318558,
+          "type": "上行SRS弱覆盖",
+          "cell": "CUDU0001214联汇川(联通)-5G_3",
+          "metrics": {
+            "rsrp": -110.9,
+            "sinr": 10.1,
+            "rlcDelay": 55.7
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01023_002",
+          "time": "15:33:20",
+          "lng": 121.44072,
+          "lat": 31.316176,
+          "type": "上行SRS弱覆盖",
+          "cell": "CUDU0001214联汇川(联通)-5G_3",
+          "metrics": {
+            "rsrp": -103.4,
+            "sinr": 16.4,
+            "rlcDelay": 47.2
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        },
+        {
+          "eventId": "EVT_WO01023_003",
+          "time": "15:36:32",
+          "lng": 121.443493,
+          "lat": 31.318242,
+          "type": "上行SRS弱覆盖",
+          "cell": "CUDU0001214联汇川(联通)-5G_3",
+          "metrics": {
+            "rsrp": -112.5,
+            "sinr": 12.6,
+            "rlcDelay": 42.5
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01023_004",
+          "time": "15:39:51",
+          "lng": 121.440752,
+          "lat": 31.319442,
+          "type": "上行SRS弱覆盖",
+          "cell": "CUDU0001214联汇川(联通)-5G_3",
+          "metrics": {
+            "rsrp": -114.3,
+            "sinr": 12.1,
+            "rlcDelay": 62.8
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01023_005",
+          "time": "15:42:15",
+          "lng": 121.441174,
+          "lat": 31.320109,
+          "type": "上行SRS弱覆盖",
+          "cell": "CUDU0001214联汇川(联通)-5G_3",
+          "metrics": {
+            "rsrp": -111.0,
+            "sinr": 15.7,
+            "rlcDelay": 59.9
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01023_006",
+          "time": "15:45:28",
+          "lng": 121.438791,
+          "lat": 31.318078,
+          "type": "上行SRS弱覆盖",
+          "cell": "CUDU0001214联汇川(联通)-5G_3",
+          "metrics": {
+            "rsrp": -113.9,
+            "sinr": 9.3,
+            "rlcDelay": 49.3
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
         }
       ],
       "cio": [
         {
-          "param": "UESATPWROFFSETTHLD",
+          "param": "FreqPriInterFA2RsrpThld",
+          "mo": "NRDUCELLPDCCHALGO",
+          "current": "-105",
+          "suggested": "3",
+          "evidence": 0.6399723279756391
+        },
+        {
+          "param": "DLRANK2INCSPCTEFFTHLD",
+          "mo": "NRDUCELLCHNCOVALGO",
+          "current": "0",
+          "suggested": "3",
+          "evidence": 0.8879138247286914
+        },
+        {
+          "param": "Tilt",
           "mo": "NRDUCELLUEPWRSAVING",
-          "current": "-100",
-          "suggested": "8",
-          "evidence": 0.8791899323609912
+          "current": "6",
+          "suggested": "-98",
+          "evidence": 0.9464215047568391
         },
         {
-          "param": "DLRANK3INCSPCTEFFTHLD",
-          "mo": "NRCellInterRHoMeaGrp",
-          "current": "9",
-          "suggested": "8",
-          "evidence": 0.6487126929437191
-        },
-        {
-          "param": "InterRatHoA2RsrpThld",
+          "param": "Mech-Azimuth",
           "mo": "CELL",
           "current": "0",
-          "suggested": "-98",
-          "evidence": 0.850332736954799
+          "suggested": "-103",
+          "evidence": 0.7574063199906448
+        },
+        {
+          "param": "FreqPriInterFA1RsrpThld",
+          "mo": "NRCellInterRHoMeaGrp",
+          "current": "9",
+          "suggested": "-103",
+          "evidence": 0.8714710774582708
+        },
+        {
+          "param": "CovInterFreqA2RsrpThld",
+          "mo": "NRCellAlgoSwitch",
+          "current": "6",
+          "suggested": "5",
+          "evidence": 0.9013670436945846
         }
       ],
       "strategies": [
@@ -14196,35 +14841,35 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "e4f849f6",
+          "suggestionId": "cd8501bf",
           "rootCauseType": "RF参数不合理",
+          "affectedCellPair": "CUDU0001214联汇川(联通)-5G_3|邻区",
+          "parameterName": "InterFreqHoSwitch.FREQ_PRIORITY_BASED_HO",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.86,
+          "riskLevel": "低",
+          "status": "待审核"
+        },
+        {
+          "suggestionId": "57cc9a76",
+          "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0001214联汇川(联通)-5G_3|邻区",
           "parameterName": "DLRANK3DECSPCTEFFTHLD",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.79,
-          "riskLevel": "中",
-          "status": "已加入草案"
+          "evidenceScore": 0.75,
+          "riskLevel": "低",
+          "status": "待审核"
         },
         {
-          "suggestionId": "40cbcf0a",
-          "rootCauseType": "上行弱覆盖增强参数问题",
+          "suggestionId": "1589e27e",
+          "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0001214联汇川(联通)-5G_3|邻区",
           "parameterName": "A3InterFreqHoA1RsrpThld",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.8,
-          "riskLevel": "高",
-          "status": "已加入草案"
-        },
-        {
-          "suggestionId": "c4de7238",
-          "rootCauseType": "上行干扰增强参数问题",
-          "affectedCellPair": "CUDU0001214联汇川(联通)-5G_3|邻区",
-          "parameterName": "FreqPriInterFA2RsrpThld",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.71,
+          "evidenceScore": 0.79,
           "riskLevel": "中",
           "status": "待审核"
         }
@@ -14233,237 +14878,430 @@ const SRCON_DATA = {
         "problemDesc": "上海市皮肤病医院区域上行SRS弱覆盖问题突出，质差事件884起，质差比例10.46%",
         "tags": [
           "上行SRS弱覆盖",
-          "RF参数不合理",
+          "上行弱覆盖增强参数问题",
           "5QI业务保障"
         ],
         "evidenceChain": [
-          "RSRP均值低于门限(-107.6dBm)",
-          "SINR均值3.4dB",
-          "信令失败"
+          "RSRP均值低于门限(-105.2dBm)",
+          "SINR均值15.0dB",
+          "信令success"
         ],
-        "riskLevel": "低"
+        "riskLevel": "高"
       }
     },
     "WO01024": {
       "trend": [
         {
           "time": "15:30",
-          "rsrp": -106.0,
-          "sinr": 8.7,
-          "rlcDelay": 65.8
+          "rsrp": -109.0,
+          "sinr": 12.8,
+          "rlcDelay": 87.5
         },
         {
           "time": "15:31",
-          "rsrp": -101.4,
-          "sinr": 6.8,
-          "rlcDelay": 73.0
+          "rsrp": -113.9,
+          "sinr": 11.6,
+          "rlcDelay": 77.4
         },
         {
           "time": "15:32",
-          "rsrp": -101.0,
-          "sinr": 0.9,
-          "rlcDelay": 55.3
+          "rsrp": -114.9,
+          "sinr": 7.8,
+          "rlcDelay": 83.5
         },
         {
           "time": "15:33",
-          "rsrp": -99.9,
-          "sinr": 5.0,
-          "rlcDelay": 63.3
+          "rsrp": -106.6,
+          "sinr": 6.7,
+          "rlcDelay": 70.8
         },
         {
           "time": "15:34",
-          "rsrp": -99.1,
-          "sinr": 4.4,
-          "rlcDelay": 58.6
+          "rsrp": -111.5,
+          "sinr": 7.6,
+          "rlcDelay": 88.2
         },
         {
           "time": "15:35",
-          "rsrp": -96.5,
-          "sinr": 5.5,
-          "rlcDelay": 61.3
+          "rsrp": -110.6,
+          "sinr": 6.7,
+          "rlcDelay": 83.0
         },
         {
           "time": "15:36",
-          "rsrp": -102.1,
-          "sinr": 1.0,
-          "rlcDelay": 51.4
+          "rsrp": -107.5,
+          "sinr": 8.6,
+          "rlcDelay": 69.0
         },
         {
           "time": "15:37",
-          "rsrp": -101.2,
-          "sinr": 8.5,
-          "rlcDelay": 51.7
+          "rsrp": -105.4,
+          "sinr": 11.8,
+          "rlcDelay": 77.2
         },
         {
           "time": "15:38",
-          "rsrp": -94.3,
-          "sinr": 1.9,
-          "rlcDelay": 56.6
+          "rsrp": -105.9,
+          "sinr": 11.2,
+          "rlcDelay": 89.1
         },
         {
           "time": "15:39",
-          "rsrp": -100.6,
-          "sinr": 2.5,
-          "rlcDelay": 60.9
+          "rsrp": -109.8,
+          "sinr": 9.5,
+          "rlcDelay": 81.7
         },
         {
           "time": "15:40",
-          "rsrp": -100.4,
-          "sinr": 4.3,
-          "rlcDelay": 66.2
+          "rsrp": -104.4,
+          "sinr": 12.4,
+          "rlcDelay": 69.5
         },
         {
           "time": "15:41",
-          "rsrp": -102.4,
-          "sinr": 3.2,
-          "rlcDelay": 69.1
+          "rsrp": -103.0,
+          "sinr": 10.7,
+          "rlcDelay": 84.6
         },
         {
           "time": "15:42",
-          "rsrp": -105.1,
-          "sinr": 7.6,
-          "rlcDelay": 65.0
+          "rsrp": -104.6,
+          "sinr": 12.0,
+          "rlcDelay": 77.1
         },
         {
           "time": "15:43",
-          "rsrp": -97.8,
-          "sinr": 2.1,
-          "rlcDelay": 73.4
+          "rsrp": -103.1,
+          "sinr": 12.2,
+          "rlcDelay": 79.5
         },
         {
           "time": "15:44",
-          "rsrp": -103.4,
-          "sinr": 2.2,
-          "rlcDelay": 52.8
+          "rsrp": -111.5,
+          "sinr": 7.9,
+          "rlcDelay": 80.8
         },
         {
           "time": "15:45",
-          "rsrp": -99.3,
-          "sinr": 8.5,
-          "rlcDelay": 54.6
+          "rsrp": -114.0,
+          "sinr": 12.4,
+          "rlcDelay": 86.9
         },
         {
           "time": "15:46",
-          "rsrp": -101.3,
-          "sinr": 2.3,
-          "rlcDelay": 64.8
+          "rsrp": -104.1,
+          "sinr": 11.7,
+          "rlcDelay": 68.3
         },
         {
           "time": "15:47",
-          "rsrp": -100.9,
-          "sinr": 1.0,
-          "rlcDelay": 64.2
+          "rsrp": -107.5,
+          "sinr": 12.3,
+          "rlcDelay": 67.6
         },
         {
           "time": "15:48",
-          "rsrp": -104.0,
-          "sinr": 5.5,
-          "rlcDelay": 58.5
+          "rsrp": -103.6,
+          "sinr": 6.9,
+          "rlcDelay": 78.6
         },
         {
           "time": "15:49",
-          "rsrp": -97.4,
-          "sinr": 2.5,
-          "rlcDelay": 67.6
+          "rsrp": -102.8,
+          "sinr": 9.0,
+          "rlcDelay": 92.0
         }
       ],
       "signalTrace": [
         {
-          "stepId": "S01",
+          "id": "sig_001",
           "sequence": 1,
+          "time": "15:00:37.429",
           "fromNe": "UE",
-          "toNe": "gNB",
-          "messageName": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 142,
-          "timestamp": "2026-04-21 15:31:00"
+          "toNe": "Source gNB",
+          "message": "MeasurementReport",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S02",
+          "id": "sig_002",
           "sequence": 2,
-          "fromNe": "gNB",
-          "toNe": "AMF",
-          "messageName": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 55,
-          "timestamp": "2026-04-21 15:32:00"
+          "time": "15:00:40.400",
+          "fromNe": "Source gNB",
+          "toNe": "Target gNB",
+          "message": "HandoverRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S03",
+          "id": "sig_003",
           "sequence": 3,
+          "time": "15:00:42.790",
+          "fromNe": "Target gNB",
+          "toNe": "Source gNB",
+          "message": "HandoverAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_004",
+          "sequence": 4,
+          "time": "15:00:46.376",
+          "fromNe": "Source gNB",
+          "toNe": "UE",
+          "message": "RRCReconfiguration",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_005",
+          "sequence": 5,
+          "time": "15:00:48.500",
+          "fromNe": "UE",
+          "toNe": "Source gNB",
+          "message": "RRCReconfigurationComplete",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_006",
+          "sequence": 6,
+          "time": "15:00:55.784",
+          "fromNe": "Source gNB",
+          "toNe": "AMF",
+          "message": "PathSwitchRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_007",
+          "sequence": 7,
+          "time": "15:00:58.173",
           "fromNe": "AMF",
           "toNe": "SMF",
-          "messageName": "PUBLIC_INFORMATION",
-          "messageNameCn": "PUBLIC_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 130,
-          "timestamp": "2026-04-21 15:33:00"
+          "message": "Nsmf_PDUSession_UpdateSMContext",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S04",
-          "sequence": 4,
+          "id": "sig_008",
+          "sequence": 8,
+          "time": "15:01:03.760",
           "fromNe": "SMF",
-          "toNe": "UPF",
-          "messageName": "PRIVATE_MEASUREMENT_REPORT",
-          "messageNameCn": "PRIVATE_MEASUREMENT_REPORT",
-          "status": "超时",
-          "causeCode": "0x3002",
-          "latencyMs": 104,
-          "timestamp": "2026-04-21 15:34:00"
+          "toNe": "AMF",
+          "message": "Nsmf_PDUSession_UpdateSMContext_RSP",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S05",
-          "sequence": 5,
-          "fromNe": "UPF",
-          "toNe": "DN",
-          "messageName": "PRIVATE_MEASUREMENT_REPORT",
-          "messageNameCn": "PRIVATE_MEASUREMENT_REPORT",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 34,
-          "timestamp": "2026-04-21 15:35:00"
+          "id": "sig_009",
+          "sequence": 9,
+          "time": "15:01:07.863",
+          "fromNe": "AMF",
+          "toNe": "Source gNB",
+          "message": "PathSwitchAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        }
+      ],
+      "qualityEvents": [
+        {
+          "eventId": "EVT_WO01024_001",
+          "time": "15:30:16",
+          "lng": 121.437789,
+          "lat": 31.318195,
+          "type": "CCE资源不足",
+          "cell": "CUDU0001214联汇川(联通)-5G_3",
+          "metrics": {
+            "rsrp": -108.4,
+            "sinr": 8.0,
+            "rlcDelay": 65.8
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01024_002",
+          "time": "15:33:10",
+          "lng": 121.43783,
+          "lat": 31.317395,
+          "type": "CCE资源不足",
+          "cell": "CUDU0001214联汇川(联通)-5G_3",
+          "metrics": {
+            "rsrp": -117.7,
+            "sinr": 6.4,
+            "rlcDelay": 89.3
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01024_003",
+          "time": "15:36:40",
+          "lng": 121.438207,
+          "lat": 31.317632,
+          "type": "CCE资源不足",
+          "cell": "CUDU0001214联汇川(联通)-5G_3",
+          "metrics": {
+            "rsrp": -117.9,
+            "sinr": 11.5,
+            "rlcDelay": 89.9
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01024_004",
+          "time": "15:39:29",
+          "lng": 121.438605,
+          "lat": 31.319975,
+          "type": "CCE资源不足",
+          "cell": "CUDU0001214联汇川(联通)-5G_3",
+          "metrics": {
+            "rsrp": -108.7,
+            "sinr": 5.4,
+            "rlcDelay": 74.7
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01024_005",
+          "time": "15:42:19",
+          "lng": 121.438192,
+          "lat": 31.318714,
+          "type": "CCE资源不足",
+          "cell": "CUDU0001214联汇川(联通)-5G_3",
+          "metrics": {
+            "rsrp": -108.4,
+            "sinr": 5.7,
+            "rlcDelay": 101.9
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01024_006",
+          "time": "15:45:23",
+          "lng": 121.44155,
+          "lat": 31.316242,
+          "type": "CCE资源不足",
+          "cell": "CUDU0001214联汇川(联通)-5G_3",
+          "metrics": {
+            "rsrp": -110.5,
+            "sinr": 5.9,
+            "rlcDelay": 76.2
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01024_007",
+          "time": "15:48:15",
+          "lng": 121.443162,
+          "lat": 31.316174,
+          "type": "CCE资源不足",
+          "cell": "CUDU0001214联汇川(联通)-5G_3",
+          "metrics": {
+            "rsrp": -113.5,
+            "sinr": 10.1,
+            "rlcDelay": 96.5
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01024_008",
+          "time": "15:51:37",
+          "lng": 121.439669,
+          "lat": 31.316173,
+          "type": "CCE资源不足",
+          "cell": "CUDU0001214联汇川(联通)-5G_3",
+          "metrics": {
+            "rsrp": -117.8,
+            "sinr": 10.4,
+            "rlcDelay": 76.2
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
         }
       ],
       "cio": [
         {
-          "param": "FreqPriInterFA1RsrpThld",
-          "mo": "NRDUCELLUEPWRSAVING",
-          "current": "6",
-          "suggested": "-98",
-          "evidence": 0.8848083889913267
-        },
-        {
-          "param": "SPECUERSSISATOFFSET",
-          "mo": "NRDUCELLDLRANK",
-          "current": "6",
-          "suggested": "3",
-          "evidence": 0.6296631890180597
-        },
-        {
-          "param": "CoverageScenario",
-          "mo": "NRDUCELLPDSCH",
-          "current": "-105",
-          "suggested": "-98",
-          "evidence": 0.7068830008874246
-        },
-        {
-          "param": "FreqSpecificOffset",
-          "mo": "NRDUCELLPDSCHPRECODE",
+          "param": "PhyCellId",
+          "mo": "NRCellInterRHoMeaGrp",
           "current": "-100",
           "suggested": "3",
-          "evidence": 0.7359621442584967
+          "evidence": 0.8103496716171708
         },
         {
-          "param": "InterFreqHoSwitch.FREQ_PRIORITY_BASED_HO",
-          "mo": "NRCellHoEutranMeaGrp",
-          "current": "6",
+          "param": "UESATPWROFFSETTHLD",
+          "mo": "NRDUCELLFEATURESW",
+          "current": "0",
+          "suggested": "-103",
+          "evidence": 0.8967622365539856
+        },
+        {
+          "param": "MAXUESATPWROFFSET",
+          "mo": "NRDUCELLDLRANK",
+          "current": "-100",
+          "suggested": "3",
+          "evidence": 0.8124244043851859
+        },
+        {
+          "param": "CovHoToEutranB2RsrpThld1",
+          "mo": "NRDUCELLQCIBEARER",
+          "current": "0",
+          "suggested": "-103",
+          "evidence": 0.8743305598517461
+        },
+        {
+          "param": "DLRANK3DECSPCTEFFTHLD",
+          "mo": "CELL",
+          "current": "9",
           "suggested": "8",
-          "evidence": 0.7480635737256243
+          "evidence": 0.639460281911333
         }
       ],
       "strategies": [
@@ -14506,281 +15344,422 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "356fe4ce",
+          "suggestionId": "395fad80",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0001214联汇川(联通)-5G_3|邻区",
           "parameterName": "CovInterFreqA1RsrpThld",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
           "evidenceScore": 0.86,
-          "riskLevel": "高",
+          "riskLevel": "低",
           "status": "待审核"
         },
         {
-          "suggestionId": "e0da2c56",
+          "suggestionId": "28a788f2",
           "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0001214联汇川(联通)-5G_3|邻区",
-          "parameterName": "FreqPriInterFA2RsrpThld",
+          "parameterName": "FreqPriInterFA1RsrpThld",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.74,
-          "riskLevel": "中",
-          "status": "待审核"
+          "evidenceScore": 0.93,
+          "riskLevel": "低",
+          "status": "已加入草案"
         },
         {
-          "suggestionId": "16fa04e2",
+          "suggestionId": "93a7ca40",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0001214联汇川(联通)-5G_3|邻区",
-          "parameterName": "FreqSpecificOffset",
+          "parameterName": "DLRANK4DECSPCTEFFTHLD",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.78,
+          "evidenceScore": 0.91,
           "riskLevel": "中",
-          "status": "待审核"
+          "status": "已加入草案"
         }
       ],
       "summary": {
         "problemDesc": "上海市皮肤病医院区域CCE资源不足问题突出，质差事件884起，质差比例10.46%",
         "tags": [
           "CCE资源不足",
-          "上行弱覆盖增强参数问题",
+          "上行干扰增强参数问题",
           "5QI业务保障"
         ],
         "evidenceChain": [
-          "RSRP均值低于门限(-98.6dBm)",
-          "SINR均值5.8dB",
-          "信令成功"
+          "RSRP均值低于门限(-107.7dBm)",
+          "SINR均值10.6dB",
+          "信令success"
         ],
-        "riskLevel": "低"
+        "riskLevel": "高"
       }
     },
     "WO01025": {
       "trend": [
         {
           "time": "15:30",
-          "rsrp": -103.6,
-          "sinr": 2.5,
-          "rlcDelay": 43.3
+          "rsrp": -117.7,
+          "sinr": 8.1,
+          "rlcDelay": 69.6
         },
         {
           "time": "15:31",
-          "rsrp": -104.5,
-          "sinr": 3.0,
-          "rlcDelay": 44.1
+          "rsrp": -115.9,
+          "sinr": 10.7,
+          "rlcDelay": 93.0
         },
         {
           "time": "15:32",
-          "rsrp": -108.7,
-          "sinr": 1.8,
-          "rlcDelay": 52.9
+          "rsrp": -113.5,
+          "sinr": 5.7,
+          "rlcDelay": 87.1
         },
         {
           "time": "15:33",
-          "rsrp": -108.0,
-          "sinr": -2.4,
-          "rlcDelay": 38.7
+          "rsrp": -108.7,
+          "sinr": 6.8,
+          "rlcDelay": 79.3
         },
         {
           "time": "15:34",
-          "rsrp": -107.1,
-          "sinr": 3.5,
-          "rlcDelay": 47.2
+          "rsrp": -110.4,
+          "sinr": 7.7,
+          "rlcDelay": 73.1
         },
         {
           "time": "15:35",
-          "rsrp": -100.8,
-          "sinr": 1.3,
-          "rlcDelay": 45.8
+          "rsrp": -117.6,
+          "sinr": 4.0,
+          "rlcDelay": 92.3
         },
         {
           "time": "15:36",
-          "rsrp": -103.4,
-          "sinr": -0.6,
-          "rlcDelay": 46.6
+          "rsrp": -106.0,
+          "sinr": 4.6,
+          "rlcDelay": 77.4
         },
         {
           "time": "15:37",
-          "rsrp": -98.0,
-          "sinr": 1.6,
-          "rlcDelay": 52.0
+          "rsrp": -111.1,
+          "sinr": 9.5,
+          "rlcDelay": 85.5
         },
         {
           "time": "15:38",
-          "rsrp": -101.0,
-          "sinr": 0.8,
-          "rlcDelay": 38.5
+          "rsrp": -110.3,
+          "sinr": 5.8,
+          "rlcDelay": 80.2
         },
         {
           "time": "15:39",
-          "rsrp": -105.4,
-          "sinr": 3.2,
-          "rlcDelay": 49.4
+          "rsrp": -106.3,
+          "sinr": 5.3,
+          "rlcDelay": 75.4
         },
         {
           "time": "15:40",
-          "rsrp": -107.7,
+          "rsrp": -106.7,
           "sinr": 4.3,
-          "rlcDelay": 33.8
+          "rlcDelay": 84.5
         },
         {
           "time": "15:41",
-          "rsrp": -107.5,
-          "sinr": 4.2,
-          "rlcDelay": 35.2
+          "rsrp": -118.0,
+          "sinr": 8.7,
+          "rlcDelay": 85.7
         },
         {
           "time": "15:42",
-          "rsrp": -99.6,
-          "sinr": -1.8,
-          "rlcDelay": 53.3
+          "rsrp": -116.4,
+          "sinr": 3.5,
+          "rlcDelay": 72.7
         },
         {
           "time": "15:43",
-          "rsrp": -108.2,
-          "sinr": 3.2,
-          "rlcDelay": 50.3
+          "rsrp": -118.5,
+          "sinr": 7.3,
+          "rlcDelay": 77.9
         },
         {
           "time": "15:44",
-          "rsrp": -99.7,
-          "sinr": 2.2,
-          "rlcDelay": 43.7
+          "rsrp": -112.0,
+          "sinr": 9.9,
+          "rlcDelay": 75.7
         },
         {
           "time": "15:45",
-          "rsrp": -102.9,
-          "sinr": 3.6,
-          "rlcDelay": 53.4
+          "rsrp": -113.8,
+          "sinr": 9.4,
+          "rlcDelay": 91.1
         },
         {
           "time": "15:46",
-          "rsrp": -100.4,
-          "sinr": 1.9,
-          "rlcDelay": 46.3
+          "rsrp": -109.2,
+          "sinr": 4.3,
+          "rlcDelay": 91.7
         },
         {
           "time": "15:47",
-          "rsrp": -103.1,
-          "sinr": -1.4,
-          "rlcDelay": 57.5
+          "rsrp": -114.3,
+          "sinr": 6.8,
+          "rlcDelay": 82.3
         },
         {
           "time": "15:48",
-          "rsrp": -107.1,
-          "sinr": 1.9,
-          "rlcDelay": 56.8
+          "rsrp": -115.3,
+          "sinr": 11.2,
+          "rlcDelay": 84.9
         },
         {
           "time": "15:49",
-          "rsrp": -104.2,
-          "sinr": 4.5,
-          "rlcDelay": 53.4
+          "rsrp": -112.2,
+          "sinr": 7.4,
+          "rlcDelay": 70.6
         }
       ],
       "signalTrace": [
         {
-          "stepId": "S01",
+          "id": "sig_001",
           "sequence": 1,
+          "time": "15:00:33.496",
           "fromNe": "UE",
-          "toNe": "gNB",
-          "messageName": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "status": "超时",
-          "causeCode": "0x3002",
-          "latencyMs": 20,
-          "timestamp": "2026-04-21 15:31:00"
+          "toNe": "Source gNB",
+          "message": "MeasurementReport",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S02",
+          "id": "sig_002",
           "sequence": 2,
-          "fromNe": "gNB",
-          "toNe": "AMF",
-          "messageName": "PRIVATE_HO_IN",
-          "messageNameCn": "PRIVATE_HO_IN",
-          "status": "失败",
-          "causeCode": "0x2001",
-          "latencyMs": 38,
-          "timestamp": "2026-04-21 15:32:00"
+          "time": "15:00:36.381",
+          "fromNe": "Source gNB",
+          "toNe": "Target gNB",
+          "message": "HandoverRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S03",
+          "id": "sig_003",
           "sequence": 3,
+          "time": "15:00:44.225",
+          "fromNe": "Target gNB",
+          "toNe": "Source gNB",
+          "message": "HandoverAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_004",
+          "sequence": 4,
+          "time": "15:00:50.810",
+          "fromNe": "Source gNB",
+          "toNe": "UE",
+          "message": "RRCReconfiguration",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_005",
+          "sequence": 5,
+          "time": "15:00:57.238",
+          "fromNe": "UE",
+          "toNe": "Source gNB",
+          "message": "RRCReconfigurationComplete",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_006",
+          "sequence": 6,
+          "time": "15:01:00.878",
+          "fromNe": "Source gNB",
+          "toNe": "AMF",
+          "message": "PathSwitchRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_007",
+          "sequence": 7,
+          "time": "15:01:06.122",
           "fromNe": "AMF",
           "toNe": "SMF",
-          "messageName": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 87,
-          "timestamp": "2026-04-21 15:33:00"
+          "message": "Nsmf_PDUSession_UpdateSMContext",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S04",
-          "sequence": 4,
+          "id": "sig_008",
+          "sequence": 8,
+          "time": "15:01:08.132",
           "fromNe": "SMF",
-          "toNe": "UPF",
-          "messageName": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "status": "失败",
-          "causeCode": "0x4003",
-          "latencyMs": 105,
-          "timestamp": "2026-04-21 15:34:00"
+          "toNe": "AMF",
+          "message": "Nsmf_PDUSession_UpdateSMContext_RSP",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S05",
-          "sequence": 5,
-          "fromNe": "UPF",
-          "toNe": "DN",
-          "messageName": "PUBLIC_INFORMATION",
-          "messageNameCn": "PUBLIC_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 73,
-          "timestamp": "2026-04-21 15:35:00"
+          "id": "sig_009",
+          "sequence": 9,
+          "time": "15:01:11.167",
+          "fromNe": "AMF",
+          "toNe": "Source gNB",
+          "message": "PathSwitchAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        }
+      ],
+      "qualityEvents": [
+        {
+          "eventId": "EVT_WO01025_001",
+          "time": "15:30:12",
+          "lng": 121.441099,
+          "lat": 31.320818,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0001214联汇川(联通)-5G_3",
+          "metrics": {
+            "rsrp": -117.2,
+            "sinr": 9.7,
+            "rlcDelay": 71.4
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01025_002",
+          "time": "15:33:36",
+          "lng": 121.443277,
+          "lat": 31.317254,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0001214联汇川(联通)-5G_3",
+          "metrics": {
+            "rsrp": -111.6,
+            "sinr": 5.7,
+            "rlcDelay": 77.1
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01025_003",
+          "time": "15:36:53",
+          "lng": 121.443194,
+          "lat": 31.31641,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0001214联汇川(联通)-5G_3",
+          "metrics": {
+            "rsrp": -110.3,
+            "sinr": 6.9,
+            "rlcDelay": 69.0
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01025_004",
+          "time": "15:39:14",
+          "lng": 121.443044,
+          "lat": 31.32053,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0001214联汇川(联通)-5G_3",
+          "metrics": {
+            "rsrp": -110.6,
+            "sinr": 10.2,
+            "rlcDelay": 102.4
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01025_005",
+          "time": "15:42:39",
+          "lng": 121.43783,
+          "lat": 31.316538,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0001214联汇川(联通)-5G_3",
+          "metrics": {
+            "rsrp": -111.1,
+            "sinr": 4.8,
+            "rlcDelay": 67.7
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01025_006",
+          "time": "15:45:39",
+          "lng": 121.439992,
+          "lat": 31.321165,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0001214联汇川(联通)-5G_3",
+          "metrics": {
+            "rsrp": -114.2,
+            "sinr": 4.8,
+            "rlcDelay": 89.2
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
         }
       ],
       "cio": [
         {
-          "param": "TrafficPriority",
-          "mo": "NRDUCELLUEPWRSAVING",
-          "current": "-105",
-          "suggested": "-103",
-          "evidence": 0.7409977706556373
-        },
-        {
           "param": "UESATPWROFFSETTHLD",
-          "mo": "NRDUCELLCHNPWR",
-          "current": "0",
-          "suggested": "8",
-          "evidence": 0.9325889276028838
-        },
-        {
-          "param": "CovBasedHoB1RsrpThld",
-          "mo": "NRDUCELLULPCCONFIG",
-          "current": "-105",
-          "suggested": "-103",
-          "evidence": 0.8558261781204686
-        },
-        {
-          "param": "A3InterFreqHoA2RsrpThld",
-          "mo": "NRDUCELLPDSCHPRECODE",
-          "current": "-105",
-          "suggested": "3",
-          "evidence": 0.7392005538660322
+          "mo": "NRDUCELLCHNCOVALGO",
+          "current": "-100",
+          "suggested": "-98",
+          "evidence": 0.6022322589631314
         },
         {
           "param": "FreqPriInterFA4RsrpThld",
-          "mo": "NRCellAlgoSwitch",
-          "current": "9",
-          "suggested": "5",
-          "evidence": 0.7130028023564835
+          "mo": "NRDUCELLTRPBEAM",
+          "current": "-100",
+          "suggested": "3",
+          "evidence": 0.7212482942087921
         },
         {
-          "param": "InterRatHoA2RsrpThld",
-          "mo": "NRDUCELLPDSCH",
-          "current": "6",
-          "suggested": "3",
-          "evidence": 0.645707987607641
+          "param": "DLRANK3INCSPCTEFFTHLD",
+          "mo": "NRDUCELLTRPBEAM",
+          "current": "0",
+          "suggested": "-103",
+          "evidence": 0.8656252036247875
+        },
+        {
+          "param": "TrafficPriority",
+          "mo": "NRDUCELLDLRANK",
+          "current": "-105",
+          "suggested": "-98",
+          "evidence": 0.7854350711710043
         }
       ],
       "strategies": [
@@ -14823,36 +15802,36 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "1e9daf14",
+          "suggestionId": "23b67e9a",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0001214联汇川(联通)-5G_3|邻区",
-          "parameterName": "DLRANK4DECSPCTEFFTHLD",
+          "parameterName": "CovInterFreqA2RsrpThld",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.82,
-          "riskLevel": "中",
+          "evidenceScore": 0.8,
+          "riskLevel": "低",
           "status": "待审核"
         },
         {
-          "suggestionId": "647e337e",
+          "suggestionId": "4509c05d",
           "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0001214联汇川(联通)-5G_3|邻区",
-          "parameterName": "Tilt",
+          "parameterName": "SPECUERSSISATOFFSET",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.72,
-          "riskLevel": "中",
+          "evidenceScore": 0.77,
+          "riskLevel": "低",
           "status": "待审核"
         },
         {
-          "suggestionId": "075c7b8a",
+          "suggestionId": "e66848ed",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0001214联汇川(联通)-5G_3|邻区",
-          "parameterName": "Mech-Azimuth",
+          "parameterName": "DLINITIALMCSADJVALUE",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.93,
-          "riskLevel": "低",
+          "evidenceScore": 0.91,
+          "riskLevel": "中",
           "status": "已加入草案"
         }
       ],
@@ -14864,226 +15843,300 @@ const SRCON_DATA = {
           "5QI业务保障"
         ],
         "evidenceChain": [
-          "RSRP均值低于门限(-102.9dBm)",
-          "SINR均值2.3dB",
-          "信令失败"
+          "RSRP均值低于门限(-110.7dBm)",
+          "SINR均值8.4dB",
+          "信令success"
         ],
-        "riskLevel": "低"
+        "riskLevel": "高"
       }
     },
     "WO01140": {
       "trend": [
         {
           "time": "15:30",
-          "rsrp": -86.4,
-          "sinr": 9.5,
-          "rlcDelay": 77.3
+          "rsrp": -110.2,
+          "sinr": -4.3,
+          "rlcDelay": 32.2
         },
         {
           "time": "15:31",
-          "rsrp": -86.8,
-          "sinr": 9.4,
-          "rlcDelay": 72.1
+          "rsrp": -115.2,
+          "sinr": 2.8,
+          "rlcDelay": 23.9
         },
         {
           "time": "15:32",
-          "rsrp": -93.5,
-          "sinr": 3.1,
-          "rlcDelay": 86.4
+          "rsrp": -117.5,
+          "sinr": -2.4,
+          "rlcDelay": 38.0
         },
         {
           "time": "15:33",
-          "rsrp": -89.8,
-          "sinr": 2.8,
-          "rlcDelay": 85.4
+          "rsrp": -111.8,
+          "sinr": 1.0,
+          "rlcDelay": 26.0
         },
         {
           "time": "15:34",
-          "rsrp": -88.8,
-          "sinr": 8.5,
-          "rlcDelay": 80.5
+          "rsrp": -117.3,
+          "sinr": -4.3,
+          "rlcDelay": 23.1
         },
         {
           "time": "15:35",
-          "rsrp": -97.0,
-          "sinr": 3.2,
-          "rlcDelay": 75.1
+          "rsrp": -110.7,
+          "sinr": -0.2,
+          "rlcDelay": 21.9
         },
         {
           "time": "15:36",
-          "rsrp": -97.2,
-          "sinr": 7.2,
-          "rlcDelay": 82.7
+          "rsrp": -118.7,
+          "sinr": -1.2,
+          "rlcDelay": 28.2
         },
         {
           "time": "15:37",
-          "rsrp": -92.4,
-          "sinr": 2.5,
-          "rlcDelay": 78.3
+          "rsrp": -113.9,
+          "sinr": 2.8,
+          "rlcDelay": 23.2
         },
         {
           "time": "15:38",
-          "rsrp": -96.6,
-          "sinr": 9.3,
-          "rlcDelay": 87.1
+          "rsrp": -116.9,
+          "sinr": -2.8,
+          "rlcDelay": 21.0
         },
         {
           "time": "15:39",
-          "rsrp": -92.0,
-          "sinr": 4.2,
-          "rlcDelay": 72.0
+          "rsrp": -118.8,
+          "sinr": 0.6,
+          "rlcDelay": 38.7
         },
         {
           "time": "15:40",
-          "rsrp": -87.7,
-          "sinr": 3.2,
-          "rlcDelay": 78.9
+          "rsrp": -111.8,
+          "sinr": -4.6,
+          "rlcDelay": 38.9
         },
         {
           "time": "15:41",
-          "rsrp": -94.3,
-          "sinr": 5.5,
-          "rlcDelay": 90.1
+          "rsrp": -116.6,
+          "sinr": -4.2,
+          "rlcDelay": 24.2
         },
         {
           "time": "15:42",
-          "rsrp": -86.8,
-          "sinr": 7.5,
-          "rlcDelay": 86.7
+          "rsrp": -116.3,
+          "sinr": -0.8,
+          "rlcDelay": 34.9
         },
         {
           "time": "15:43",
-          "rsrp": -97.3,
-          "sinr": 6.9,
-          "rlcDelay": 85.0
+          "rsrp": -117.5,
+          "sinr": 3.0,
+          "rlcDelay": 18.8
         },
         {
           "time": "15:44",
-          "rsrp": -96.1,
-          "sinr": 5.2,
-          "rlcDelay": 75.1
+          "rsrp": -115.6,
+          "sinr": -1.3,
+          "rlcDelay": 36.7
         },
         {
           "time": "15:45",
-          "rsrp": -88.5,
-          "sinr": 9.8,
-          "rlcDelay": 85.1
+          "rsrp": -117.6,
+          "sinr": -1.2,
+          "rlcDelay": 38.1
         },
         {
           "time": "15:46",
-          "rsrp": -92.5,
-          "sinr": 4.1,
-          "rlcDelay": 92.2
+          "rsrp": -119.1,
+          "sinr": -4.8,
+          "rlcDelay": 38.8
         },
         {
           "time": "15:47",
-          "rsrp": -96.4,
-          "sinr": 3.4,
-          "rlcDelay": 88.0
+          "rsrp": -108.1,
+          "sinr": -3.9,
+          "rlcDelay": 38.6
         },
         {
           "time": "15:48",
-          "rsrp": -93.6,
-          "sinr": 5.8,
-          "rlcDelay": 89.5
+          "rsrp": -116.0,
+          "sinr": 0.1,
+          "rlcDelay": 34.1
         },
         {
           "time": "15:49",
-          "rsrp": -95.0,
-          "sinr": 7.6,
-          "rlcDelay": 75.9
+          "rsrp": -113.3,
+          "sinr": -2.8,
+          "rlcDelay": 38.3
         }
       ],
       "signalTrace": [
         {
-          "stepId": "S01",
+          "id": "sig_001",
           "sequence": 1,
+          "time": "15:00:32.322",
           "fromNe": "UE",
-          "toNe": "gNB",
-          "messageName": "PRIVATE_MEASUREMENT_REPORT",
-          "messageNameCn": "PRIVATE_MEASUREMENT_REPORT",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 77,
-          "timestamp": "2026-04-21 15:31:00"
+          "toNe": "Source gNB",
+          "message": "MeasurementReport",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S02",
+          "id": "sig_002",
           "sequence": 2,
-          "fromNe": "gNB",
-          "toNe": "AMF",
-          "messageName": "5G周期Mr",
-          "messageNameCn": "5G周期Mr",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 82,
-          "timestamp": "2026-04-21 15:32:00"
+          "time": "15:00:40.251",
+          "fromNe": "Source gNB",
+          "toNe": "Target gNB",
+          "message": "HandoverRequest",
+          "status": "timeout",
+          "abnormal": true,
+          "reason": "HO Failure / TimeOut"
         },
         {
-          "stepId": "S03",
+          "id": "sig_003",
           "sequence": 3,
-          "fromNe": "AMF",
-          "toNe": "SMF",
-          "messageName": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 135,
-          "timestamp": "2026-04-21 15:33:00"
+          "time": "15:00:42.987",
+          "fromNe": "Target gNB",
+          "toNe": "Source gNB",
+          "message": "HandoverFailure",
+          "status": "failure",
+          "abnormal": true,
+          "reason": "Prepare Failure"
         },
         {
-          "stepId": "S04",
+          "id": "sig_004",
           "sequence": 4,
-          "fromNe": "SMF",
-          "toNe": "UPF",
-          "messageName": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "status": "失败",
-          "causeCode": "0x3002",
-          "latencyMs": 18,
-          "timestamp": "2026-04-21 15:34:00"
+          "time": "15:00:50.948",
+          "fromNe": "Source gNB",
+          "toNe": "UE",
+          "message": "RRCReconfiguration",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        }
+      ],
+      "qualityEvents": [
+        {
+          "eventId": "EVT_WO01140_001",
+          "time": "15:30:46",
+          "lng": 121.431857,
+          "lat": 31.318322,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0001977长宝地(联通)-3.5G_2",
+          "metrics": {
+            "rsrp": -123.0,
+            "sinr": 1.6,
+            "rlcDelay": 15.0
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
         },
         {
-          "stepId": "S05",
-          "sequence": 5,
-          "fromNe": "UPF",
-          "toNe": "DN",
-          "messageName": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 33,
-          "timestamp": "2026-04-21 15:35:00"
+          "eventId": "EVT_WO01140_002",
+          "time": "15:33:32",
+          "lng": 121.430546,
+          "lat": 31.315098,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0001977长宝地(联通)-3.5G_2",
+          "metrics": {
+            "rsrp": -117.4,
+            "sinr": -2.8,
+            "rlcDelay": 30.1
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01140_003",
+          "time": "15:36:49",
+          "lng": 121.43296,
+          "lat": 31.317859,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0001977长宝地(联通)-3.5G_2",
+          "metrics": {
+            "rsrp": -120.7,
+            "sinr": 1.2,
+            "rlcDelay": 14.4
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01140_004",
+          "time": "15:39:15",
+          "lng": 121.430937,
+          "lat": 31.314798,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0001977长宝地(联通)-3.5G_2",
+          "metrics": {
+            "rsrp": -117.4,
+            "sinr": 1.2,
+            "rlcDelay": 32.2
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01140_005",
+          "time": "15:42:50",
+          "lng": 121.435223,
+          "lat": 31.317237,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0001977长宝地(联通)-3.5G_2",
+          "metrics": {
+            "rsrp": -121.9,
+            "sinr": 1.2,
+            "rlcDelay": 34.0
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
         }
       ],
       "cio": [
         {
-          "param": "CovInterFreqA1RsrpThld",
-          "mo": "NRDUCELLFEATURESW",
-          "current": "-105",
-          "suggested": "3",
-          "evidence": 0.9110535848304177
-        },
-        {
-          "param": "Azimuth",
+          "param": "TrafficPriority",
           "mo": "NRDUCELLPDSCHPRECODE",
-          "current": "0",
-          "suggested": "-98",
-          "evidence": 0.7353933870888121
+          "current": "9",
+          "suggested": "3",
+          "evidence": 0.8735022870424227
         },
         {
-          "param": "DLRANK3INCSPCTEFFTHLD",
+          "param": "FreqPriInterFA1RsrpThld",
           "mo": "NRDUCELLULPCCONFIG",
-          "current": "9",
+          "current": "6",
           "suggested": "5",
-          "evidence": 0.7912246774064728
+          "evidence": 0.735933446099255
         },
         {
           "param": "FreqSpecificOffset",
-          "mo": "NRDUCELLPDCCH",
-          "current": "-105",
-          "suggested": "-103",
-          "evidence": 0.8055772239240735
+          "mo": "NRDUCELLTRPBEAM",
+          "current": "0",
+          "suggested": "3",
+          "evidence": 0.676657065825583
         }
       ],
       "strategies": [
@@ -15126,35 +16179,35 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "6d08cc9d",
+          "suggestionId": "a56480f6",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0001977长宝地(联通)-3.5G_2|邻区",
-          "parameterName": "Azimuth",
+          "parameterName": "DLINITIALMCSADJVALUE",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.77,
-          "riskLevel": "低",
+          "evidenceScore": 0.9,
+          "riskLevel": "中",
           "status": "待审核"
         },
         {
-          "suggestionId": "125fa52f",
+          "suggestionId": "ba622b31",
           "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0001977长宝地(联通)-3.5G_2|邻区",
           "parameterName": "DLRANK3DECSPCTEFFTHLD",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.8,
-          "riskLevel": "中",
+          "evidenceScore": 0.95,
+          "riskLevel": "高",
           "status": "已加入草案"
         },
         {
-          "suggestionId": "243d0de6",
+          "suggestionId": "04fbb9d7",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0001977长宝地(联通)-3.5G_2|邻区",
-          "parameterName": "FreqPriInterFA4RsrpThld",
+          "parameterName": "DLRANK2INCSPCTEFFTHLD",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.88,
+          "evidenceScore": 0.85,
           "riskLevel": "低",
           "status": "待审核"
         }
@@ -15163,13 +16216,13 @@ const SRCON_DATA = {
         "problemDesc": "共康中学区域上行DMRS弱覆盖问题突出，质差事件835起，质差比例7.67%",
         "tags": [
           "上行DMRS弱覆盖",
-          "上行弱覆盖增强参数问题",
+          "RF参数不合理",
           "5QI业务保障"
         ],
         "evidenceChain": [
-          "RSRP均值低于门限(-90.2dBm)",
-          "SINR均值7.4dB",
-          "信令成功"
+          "RSRP均值低于门限(-112.9dBm)",
+          "SINR均值0.1dB",
+          "信令timeout"
         ],
         "riskLevel": "低"
       }
@@ -15178,208 +16231,291 @@ const SRCON_DATA = {
       "trend": [
         {
           "time": "15:30",
-          "rsrp": -104.7,
-          "sinr": 8.5,
-          "rlcDelay": 32.0
+          "rsrp": -94.7,
+          "sinr": -0.7,
+          "rlcDelay": 83.9
         },
         {
           "time": "15:31",
-          "rsrp": -107.0,
-          "sinr": 10.9,
-          "rlcDelay": 39.2
+          "rsrp": -103.7,
+          "sinr": 5.6,
+          "rlcDelay": 78.9
         },
         {
           "time": "15:32",
-          "rsrp": -114.4,
-          "sinr": 9.8,
-          "rlcDelay": 40.4
+          "rsrp": -102.0,
+          "sinr": 5.6,
+          "rlcDelay": 80.1
         },
         {
           "time": "15:33",
-          "rsrp": -104.2,
-          "sinr": 4.7,
-          "rlcDelay": 24.3
+          "rsrp": -104.3,
+          "sinr": 3.6,
+          "rlcDelay": 79.1
         },
         {
           "time": "15:34",
-          "rsrp": -109.6,
-          "sinr": 7.9,
-          "rlcDelay": 37.4
+          "rsrp": -97.5,
+          "sinr": 6.2,
+          "rlcDelay": 59.7
         },
         {
           "time": "15:35",
-          "rsrp": -111.2,
-          "sinr": 10.2,
-          "rlcDelay": 40.7
+          "rsrp": -97.5,
+          "sinr": 6.4,
+          "rlcDelay": 73.1
         },
         {
           "time": "15:36",
-          "rsrp": -113.7,
-          "sinr": 9.9,
-          "rlcDelay": 39.7
+          "rsrp": -99.3,
+          "sinr": 0.4,
+          "rlcDelay": 83.7
         },
         {
           "time": "15:37",
-          "rsrp": -113.1,
-          "sinr": 11.9,
-          "rlcDelay": 35.3
+          "rsrp": -95.1,
+          "sinr": 2.8,
+          "rlcDelay": 66.7
         },
         {
           "time": "15:38",
-          "rsrp": -105.1,
-          "sinr": 10.0,
-          "rlcDelay": 26.4
+          "rsrp": -100.2,
+          "sinr": -0.4,
+          "rlcDelay": 64.8
         },
         {
           "time": "15:39",
-          "rsrp": -113.6,
-          "sinr": 10.5,
-          "rlcDelay": 28.9
+          "rsrp": -103.7,
+          "sinr": 3.1,
+          "rlcDelay": 59.0
         },
         {
           "time": "15:40",
-          "rsrp": -103.7,
-          "sinr": 10.4,
-          "rlcDelay": 22.9
+          "rsrp": -94.6,
+          "sinr": 0.5,
+          "rlcDelay": 62.2
         },
         {
           "time": "15:41",
-          "rsrp": -104.8,
-          "sinr": 6.4,
-          "rlcDelay": 23.8
+          "rsrp": -97.3,
+          "sinr": 6.2,
+          "rlcDelay": 80.1
         },
         {
           "time": "15:42",
-          "rsrp": -106.0,
-          "sinr": 8.9,
-          "rlcDelay": 24.1
+          "rsrp": -102.4,
+          "sinr": -1.0,
+          "rlcDelay": 73.6
         },
         {
           "time": "15:43",
-          "rsrp": -109.3,
-          "sinr": 7.1,
-          "rlcDelay": 34.7
+          "rsrp": -94.7,
+          "sinr": 5.1,
+          "rlcDelay": 80.1
         },
         {
           "time": "15:44",
-          "rsrp": -107.9,
-          "sinr": 7.2,
-          "rlcDelay": 28.6
+          "rsrp": -95.4,
+          "sinr": 6.5,
+          "rlcDelay": 68.3
         },
         {
           "time": "15:45",
-          "rsrp": -113.9,
-          "sinr": 8.8,
-          "rlcDelay": 40.3
+          "rsrp": -94.3,
+          "sinr": 2.0,
+          "rlcDelay": 61.5
         },
         {
           "time": "15:46",
-          "rsrp": -112.3,
-          "sinr": 8.3,
-          "rlcDelay": 23.3
+          "rsrp": -102.7,
+          "sinr": -0.0,
+          "rlcDelay": 62.9
         },
         {
           "time": "15:47",
-          "rsrp": -104.0,
-          "sinr": 6.2,
-          "rlcDelay": 34.0
+          "rsrp": -94.2,
+          "sinr": 5.2,
+          "rlcDelay": 83.0
         },
         {
           "time": "15:48",
-          "rsrp": -110.3,
-          "sinr": 5.4,
-          "rlcDelay": 45.5
+          "rsrp": -98.1,
+          "sinr": 0.3,
+          "rlcDelay": 83.2
         },
         {
           "time": "15:49",
-          "rsrp": -104.1,
-          "sinr": 8.7,
-          "rlcDelay": 45.0
+          "rsrp": -97.6,
+          "sinr": 6.3,
+          "rlcDelay": 78.7
         }
       ],
       "signalTrace": [
         {
-          "stepId": "S01",
+          "id": "sig_001",
           "sequence": 1,
+          "time": "15:00:36.954",
           "fromNe": "UE",
-          "toNe": "gNB",
-          "messageName": "5G周期Mr",
-          "messageNameCn": "5G周期Mr",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 62,
-          "timestamp": "2026-04-21 15:31:00"
+          "toNe": "Source gNB",
+          "message": "MeasurementReport",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S02",
+          "id": "sig_002",
           "sequence": 2,
-          "fromNe": "gNB",
-          "toNe": "AMF",
-          "messageName": "PRIVATE_HO_IN",
-          "messageNameCn": "PRIVATE_HO_IN",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 86,
-          "timestamp": "2026-04-21 15:32:00"
+          "time": "15:00:41.434",
+          "fromNe": "Source gNB",
+          "toNe": "Target gNB",
+          "message": "HandoverRequest",
+          "status": "failure",
+          "abnormal": true,
+          "reason": "Resource Unavailable"
         },
         {
-          "stepId": "S03",
+          "id": "sig_003",
           "sequence": 3,
-          "fromNe": "AMF",
-          "toNe": "SMF",
-          "messageName": "PRIVATE_HO_IN",
-          "messageNameCn": "PRIVATE_HO_IN",
-          "status": "失败",
-          "causeCode": "0x4003",
-          "latencyMs": 100,
-          "timestamp": "2026-04-21 15:33:00"
+          "time": "15:00:48.825",
+          "fromNe": "Target gNB",
+          "toNe": "Source gNB",
+          "message": "HandoverFailure",
+          "status": "failure",
+          "abnormal": true,
+          "reason": "Prepare Failure"
         },
         {
-          "stepId": "S04",
+          "id": "sig_004",
           "sequence": 4,
-          "fromNe": "SMF",
-          "toNe": "UPF",
-          "messageName": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 18,
-          "timestamp": "2026-04-21 15:34:00"
+          "time": "15:00:52.250",
+          "fromNe": "Source gNB",
+          "toNe": "UE",
+          "message": "RRCReconfiguration",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        }
+      ],
+      "qualityEvents": [
+        {
+          "eventId": "EVT_WO01141_001",
+          "time": "15:30:35",
+          "lng": 121.434363,
+          "lat": 31.3186,
+          "type": "上行SRS弱覆盖",
+          "cell": "CUDU0001977长宝地(联通)-3.5G_2",
+          "metrics": {
+            "rsrp": -99.6,
+            "sinr": 5.5,
+            "rlcDelay": 91.9
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
         },
         {
-          "stepId": "S05",
-          "sequence": 5,
-          "fromNe": "UPF",
-          "toNe": "DN",
-          "messageName": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 137,
-          "timestamp": "2026-04-21 15:35:00"
+          "eventId": "EVT_WO01141_002",
+          "time": "15:33:49",
+          "lng": 121.430583,
+          "lat": 31.317368,
+          "type": "上行SRS弱覆盖",
+          "cell": "CUDU0001977长宝地(联通)-3.5G_2",
+          "metrics": {
+            "rsrp": -102.1,
+            "sinr": -0.7,
+            "rlcDelay": 66.7
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01141_003",
+          "time": "15:36:25",
+          "lng": 121.431339,
+          "lat": 31.315892,
+          "type": "上行SRS弱覆盖",
+          "cell": "CUDU0001977长宝地(联通)-3.5G_2",
+          "metrics": {
+            "rsrp": -96.5,
+            "sinr": -1.0,
+            "rlcDelay": 83.8
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01141_004",
+          "time": "15:39:52",
+          "lng": 121.433093,
+          "lat": 31.319295,
+          "type": "上行SRS弱覆盖",
+          "cell": "CUDU0001977长宝地(联通)-3.5G_2",
+          "metrics": {
+            "rsrp": -101.0,
+            "sinr": 5.6,
+            "rlcDelay": 86.8
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
         }
       ],
       "cio": [
         {
-          "param": "TrafficPriority",
-          "mo": "NRCellInterRHoMeaGrp",
-          "current": "9",
-          "suggested": "5",
-          "evidence": 0.8707346178270599
-        },
-        {
-          "param": "InterRatHoA2RsrpThld",
-          "mo": "NRDUCELLPDSCH",
-          "current": "-105",
-          "suggested": "3",
-          "evidence": 0.7598611615806014
+          "param": "Azimuth",
+          "mo": "NRDUCELLCHNPWR",
+          "current": "-100",
+          "suggested": "-98",
+          "evidence": 0.8426116267124426
         },
         {
           "param": "FreqPriInterFA1RsrpThld",
-          "mo": "NRCellAlgoSwitch",
+          "mo": "NRDUCELLCHNPWR",
+          "current": "-105",
+          "suggested": "-103",
+          "evidence": 0.6168516102066486
+        },
+        {
+          "param": "A3InterFreqHoA2RsrpThld",
+          "mo": "NRDUCELLALGOSWITCH",
+          "current": "-100",
+          "suggested": "8",
+          "evidence": 0.7725786977158466
+        },
+        {
+          "param": "TrafficPriority",
+          "mo": "NRDUCELLPDSCHPRECODE",
+          "current": "6",
+          "suggested": "8",
+          "evidence": 0.6354999958729926
+        },
+        {
+          "param": "CovInterFreqA1RsrpThld",
+          "mo": "NRDUCELLULPCCONFIG",
+          "current": "-100",
+          "suggested": "-98",
+          "evidence": 0.7579505967035761
+        },
+        {
+          "param": "DLRANK3DECSPCTEFFTHLD",
+          "mo": "NRCellEutranNFreq",
           "current": "0",
-          "suggested": "3",
-          "evidence": 0.8745775260505695
+          "suggested": "-103",
+          "evidence": 0.7115509177848302
         }
       ],
       "strategies": [
@@ -15422,1165 +16558,435 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "dd8665c5",
+          "suggestionId": "8666212b",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0001977长宝地(联通)-3.5G_2|邻区",
-          "parameterName": "UESATPWROFFSETTHLD",
+          "parameterName": "Mech-Azimuth",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.86,
-          "riskLevel": "中",
+          "evidenceScore": 0.72,
+          "riskLevel": "低",
           "status": "已加入草案"
         },
         {
-          "suggestionId": "713f17fb",
+          "suggestionId": "de9d9154",
           "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0001977长宝地(联通)-3.5G_2|邻区",
-          "parameterName": "A3InterFreqHoA1RsrpThld",
+          "parameterName": "FreqSpecificOffset",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.94,
-          "riskLevel": "低",
+          "evidenceScore": 0.88,
+          "riskLevel": "高",
           "status": "待审核"
         },
         {
-          "suggestionId": "2c0c9336",
+          "suggestionId": "54899fdb",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0001977长宝地(联通)-3.5G_2|邻区",
-          "parameterName": "CoverageScenario",
+          "parameterName": "CovBasedHoB1RsrpThld",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.7,
-          "riskLevel": "中",
-          "status": "待审核"
+          "evidenceScore": 0.85,
+          "riskLevel": "高",
+          "status": "已加入草案"
         }
       ],
       "summary": {
         "problemDesc": "共康中学区域上行SRS弱覆盖问题突出，质差事件835起，质差比例7.67%",
         "tags": [
           "上行SRS弱覆盖",
-          "RF参数不合理",
+          "上行干扰增强参数问题",
           "5QI业务保障"
         ],
         "evidenceChain": [
-          "RSRP均值低于门限(-107.3dBm)",
-          "SINR均值9.2dB",
-          "信令成功"
+          "RSRP均值低于门限(-98.6dBm)",
+          "SINR均值3.9dB",
+          "信令failure"
         ],
-        "riskLevel": "高"
+        "riskLevel": "低"
       }
     },
     "WO01113": {
       "trend": [
         {
           "time": "15:30",
-          "rsrp": -102.0,
-          "sinr": 11.5,
-          "rlcDelay": 79.1
+          "rsrp": -106.6,
+          "sinr": 7.8,
+          "rlcDelay": 54.7
         },
         {
           "time": "15:31",
-          "rsrp": -103.3,
-          "sinr": 17.3,
-          "rlcDelay": 65.2
+          "rsrp": -99.5,
+          "sinr": 10.7,
+          "rlcDelay": 60.3
         },
         {
           "time": "15:32",
-          "rsrp": -107.5,
-          "sinr": 13.4,
-          "rlcDelay": 74.9
+          "rsrp": -100.2,
+          "sinr": 11.7,
+          "rlcDelay": 63.0
         },
         {
           "time": "15:33",
-          "rsrp": -113.6,
-          "sinr": 19.4,
-          "rlcDelay": 80.4
+          "rsrp": -108.4,
+          "sinr": 8.1,
+          "rlcDelay": 56.3
         },
         {
           "time": "15:34",
-          "rsrp": -113.1,
-          "sinr": 18.8,
-          "rlcDelay": 85.1
+          "rsrp": -105.1,
+          "sinr": 11.3,
+          "rlcDelay": 47.8
         },
         {
           "time": "15:35",
-          "rsrp": -107.6,
-          "sinr": 17.1,
-          "rlcDelay": 71.9
+          "rsrp": -112.2,
+          "sinr": 8.1,
+          "rlcDelay": 67.0
         },
         {
           "time": "15:36",
-          "rsrp": -101.7,
-          "sinr": 12.1,
-          "rlcDelay": 65.0
+          "rsrp": -104.1,
+          "sinr": 11.2,
+          "rlcDelay": 48.9
         },
         {
           "time": "15:37",
-          "rsrp": -112.6,
-          "sinr": 18.0,
-          "rlcDelay": 64.5
+          "rsrp": -109.5,
+          "sinr": 12.5,
+          "rlcDelay": 70.9
         },
         {
           "time": "15:38",
-          "rsrp": -107.0,
-          "sinr": 15.0,
-          "rlcDelay": 86.7
+          "rsrp": -106.1,
+          "sinr": 8.3,
+          "rlcDelay": 66.1
         },
         {
           "time": "15:39",
-          "rsrp": -111.3,
-          "sinr": 13.6,
-          "rlcDelay": 70.5
+          "rsrp": -106.1,
+          "sinr": 14.5,
+          "rlcDelay": 53.1
         },
         {
           "time": "15:40",
           "rsrp": -103.9,
-          "sinr": 17.1,
-          "rlcDelay": 81.0
-        },
-        {
-          "time": "15:41",
-          "rsrp": -110.2,
-          "sinr": 13.6,
-          "rlcDelay": 64.5
-        },
-        {
-          "time": "15:42",
-          "rsrp": -111.7,
-          "sinr": 17.7,
-          "rlcDelay": 77.2
-        },
-        {
-          "time": "15:43",
-          "rsrp": -112.3,
-          "sinr": 12.8,
-          "rlcDelay": 74.3
-        },
-        {
-          "time": "15:44",
-          "rsrp": -109.1,
-          "sinr": 15.8,
-          "rlcDelay": 86.7
-        },
-        {
-          "time": "15:45",
-          "rsrp": -111.6,
-          "sinr": 13.9,
-          "rlcDelay": 69.3
-        },
-        {
-          "time": "15:46",
-          "rsrp": -112.8,
-          "sinr": 12.7,
-          "rlcDelay": 79.8
-        },
-        {
-          "time": "15:47",
-          "rsrp": -103.6,
-          "sinr": 17.0,
-          "rlcDelay": 63.6
-        },
-        {
-          "time": "15:48",
-          "rsrp": -103.5,
-          "sinr": 14.1,
-          "rlcDelay": 64.9
-        },
-        {
-          "time": "15:49",
-          "rsrp": -111.1,
-          "sinr": 14.3,
-          "rlcDelay": 75.5
-        }
-      ],
-      "signalTrace": [
-        {
-          "stepId": "S01",
-          "sequence": 1,
-          "fromNe": "UE",
-          "toNe": "gNB",
-          "messageName": "5G周期Mr",
-          "messageNameCn": "5G周期Mr",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 49,
-          "timestamp": "2026-04-21 15:31:00"
-        },
-        {
-          "stepId": "S02",
-          "sequence": 2,
-          "fromNe": "gNB",
-          "toNe": "AMF",
-          "messageName": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "status": "超时",
-          "causeCode": "0x3002",
-          "latencyMs": 147,
-          "timestamp": "2026-04-21 15:32:00"
-        },
-        {
-          "stepId": "S03",
-          "sequence": 3,
-          "fromNe": "AMF",
-          "toNe": "SMF",
-          "messageName": "5G周期Mr",
-          "messageNameCn": "5G周期Mr",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 29,
-          "timestamp": "2026-04-21 15:33:00"
-        },
-        {
-          "stepId": "S04",
-          "sequence": 4,
-          "fromNe": "SMF",
-          "toNe": "UPF",
-          "messageName": "PUBLIC_INFORMATION",
-          "messageNameCn": "PUBLIC_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 40,
-          "timestamp": "2026-04-21 15:34:00"
-        },
-        {
-          "stepId": "S05",
-          "sequence": 5,
-          "fromNe": "UPF",
-          "toNe": "DN",
-          "messageName": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 61,
-          "timestamp": "2026-04-21 15:35:00"
-        }
-      ],
-      "cio": [
-        {
-          "param": "CovHoToEutranB2RsrpThld1",
-          "mo": "NRDUCELLQCIBEARER",
-          "current": "0",
-          "suggested": "-103",
-          "evidence": 0.8038133304949221
-        },
-        {
-          "param": "CovInterFreqA5RsrpThld2",
-          "mo": "NRCellInterRHoMeaGrp",
-          "current": "-105",
-          "suggested": "-103",
-          "evidence": 0.6692126178434016
-        },
-        {
-          "param": "PhyCellId",
-          "mo": "NRDUCELLUEPWRSAVING",
-          "current": "-100",
-          "suggested": "-103",
-          "evidence": 0.9167772896330535
-        },
-        {
-          "param": "DLRANK3INCSPCTEFFTHLD",
-          "mo": "NRDUCELLPDSCH",
-          "current": "-105",
-          "suggested": "-103",
-          "evidence": 0.9297982313584403
-        }
-      ],
-      "strategies": [
-        {
-          "name": "RF覆盖调整",
-          "desc": "调整下倾角与方位角，增强主瓣覆盖",
-          "risk": "低",
-          "status": "待审核"
-        },
-        {
-          "name": "切换参数优化",
-          "desc": "优化A3/A5门限，减少乒乓切换",
-          "risk": "中",
-          "status": "已加入草案"
-        },
-        {
-          "name": "容量扩容",
-          "desc": "周边小区负载均衡参数调整",
-          "risk": "中",
-          "status": "待审核"
-        },
-        {
-          "name": "上行功率控制",
-          "desc": "提升PUSCH发射功率偏移量",
-          "risk": "低",
-          "status": "已加入草案"
-        },
-        {
-          "name": "SRS权值优化",
-          "desc": "开启上行弱覆盖频选调度",
-          "risk": "低",
-          "status": "待审核"
-        },
-        {
-          "name": "PCI混淆核查",
-          "desc": "核查同频同PCI干扰",
-          "risk": "高",
-          "status": "待审核"
-        }
-      ],
-      "guards": [
-        {
-          "suggestionId": "b37661f4",
-          "rootCauseType": "RF参数不合理",
-          "affectedCellPair": "CUDU0003783长汉森-5G_2|邻区",
-          "parameterName": "Tilt",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.74,
-          "riskLevel": "高",
-          "status": "已加入草案"
-        },
-        {
-          "suggestionId": "aaf45256",
-          "rootCauseType": "上行弱覆盖增强参数问题",
-          "affectedCellPair": "CUDU0003783长汉森-5G_2|邻区",
-          "parameterName": "DLRANK3INCSPCTEFFTHLD",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.88,
-          "riskLevel": "中",
-          "status": "待审核"
-        },
-        {
-          "suggestionId": "9525df14",
-          "rootCauseType": "上行干扰增强参数问题",
-          "affectedCellPair": "CUDU0003783长汉森-5G_2|邻区",
-          "parameterName": "TrafficPriority",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.87,
-          "riskLevel": "低",
-          "status": "已加入草案"
-        }
-      ],
-      "summary": {
-        "problemDesc": "场中路2401弄社区区域上行SRS弱覆盖问题突出，质差事件827起，质差比例6.15%",
-        "tags": [
-          "上行SRS弱覆盖",
-          "RF参数不合理",
-          "5QI业务保障"
-        ],
-        "evidenceChain": [
-          "RSRP均值低于门限(-106.3dBm)",
-          "SINR均值16.5dB",
-          "信令超时"
-        ],
-        "riskLevel": "低"
-      }
-    },
-    "WO01019": {
-      "trend": [
-        {
-          "time": "15:30",
-          "rsrp": -108.1,
-          "sinr": 7.7,
-          "rlcDelay": 35.1
-        },
-        {
-          "time": "15:31",
-          "rsrp": -109.6,
-          "sinr": 9.9,
-          "rlcDelay": 30.9
-        },
-        {
-          "time": "15:32",
-          "rsrp": -115.0,
-          "sinr": 5.9,
-          "rlcDelay": 29.4
-        },
-        {
-          "time": "15:33",
-          "rsrp": -107.8,
-          "sinr": 9.2,
-          "rlcDelay": 25.1
-        },
-        {
-          "time": "15:34",
-          "rsrp": -103.2,
-          "sinr": 7.2,
-          "rlcDelay": 19.4
-        },
-        {
-          "time": "15:35",
-          "rsrp": -111.2,
-          "sinr": 8.5,
-          "rlcDelay": 30.9
-        },
-        {
-          "time": "15:36",
-          "rsrp": -106.0,
-          "sinr": 5.6,
-          "rlcDelay": 33.1
-        },
-        {
-          "time": "15:37",
-          "rsrp": -111.9,
-          "sinr": 5.0,
-          "rlcDelay": 19.6
-        },
-        {
-          "time": "15:38",
-          "rsrp": -108.4,
-          "sinr": 3.0,
-          "rlcDelay": 39.2
-        },
-        {
-          "time": "15:39",
-          "rsrp": -112.5,
-          "sinr": 9.3,
-          "rlcDelay": 30.7
-        },
-        {
-          "time": "15:40",
-          "rsrp": -111.5,
-          "sinr": 7.5,
-          "rlcDelay": 24.7
-        },
-        {
-          "time": "15:41",
-          "rsrp": -114.1,
-          "sinr": 4.8,
-          "rlcDelay": 24.9
-        },
-        {
-          "time": "15:42",
-          "rsrp": -109.2,
-          "sinr": 9.1,
-          "rlcDelay": 37.3
-        },
-        {
-          "time": "15:43",
-          "rsrp": -106.2,
-          "sinr": 10.4,
-          "rlcDelay": 33.3
-        },
-        {
-          "time": "15:44",
-          "rsrp": -103.4,
-          "sinr": 5.9,
-          "rlcDelay": 42.3
-        },
-        {
-          "time": "15:45",
-          "rsrp": -103.2,
-          "sinr": 4.2,
-          "rlcDelay": 24.8
-        },
-        {
-          "time": "15:46",
-          "rsrp": -112.0,
-          "sinr": 8.7,
-          "rlcDelay": 27.9
-        },
-        {
-          "time": "15:47",
-          "rsrp": -108.4,
-          "sinr": 8.4,
-          "rlcDelay": 27.7
-        },
-        {
-          "time": "15:48",
-          "rsrp": -108.7,
-          "sinr": 3.9,
-          "rlcDelay": 42.6
-        },
-        {
-          "time": "15:49",
-          "rsrp": -105.2,
-          "sinr": 9.3,
-          "rlcDelay": 43.2
-        }
-      ],
-      "signalTrace": [
-        {
-          "stepId": "S01",
-          "sequence": 1,
-          "fromNe": "UE",
-          "toNe": "gNB",
-          "messageName": "PRIVATE_MEASUREMENT_REPORT",
-          "messageNameCn": "PRIVATE_MEASUREMENT_REPORT",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 130,
-          "timestamp": "2026-04-21 15:31:00"
-        },
-        {
-          "stepId": "S02",
-          "sequence": 2,
-          "fromNe": "gNB",
-          "toNe": "AMF",
-          "messageName": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 64,
-          "timestamp": "2026-04-21 15:32:00"
-        },
-        {
-          "stepId": "S03",
-          "sequence": 3,
-          "fromNe": "AMF",
-          "toNe": "SMF",
-          "messageName": "PRIVATE_MEASUREMENT_REPORT",
-          "messageNameCn": "PRIVATE_MEASUREMENT_REPORT",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 139,
-          "timestamp": "2026-04-21 15:33:00"
-        },
-        {
-          "stepId": "S04",
-          "sequence": 4,
-          "fromNe": "SMF",
-          "toNe": "UPF",
-          "messageName": "PUBLIC_INFORMATION",
-          "messageNameCn": "PUBLIC_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 56,
-          "timestamp": "2026-04-21 15:34:00"
-        },
-        {
-          "stepId": "S05",
-          "sequence": 5,
-          "fromNe": "UPF",
-          "toNe": "DN",
-          "messageName": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 50,
-          "timestamp": "2026-04-21 15:35:00"
-        }
-      ],
-      "cio": [
-        {
-          "param": "Tilt",
-          "mo": "NRDUCELLTRPBEAM",
-          "current": "-100",
-          "suggested": "3",
-          "evidence": 0.8466437196063135
-        },
-        {
-          "param": "CoverageScenario",
-          "mo": "NRCellInterFHoMeaGrp",
-          "current": "6",
-          "suggested": "5",
-          "evidence": 0.9361955625965153
-        },
-        {
-          "param": "FreqPriInterFA1RsrpThld",
-          "mo": "NRDUCELLQCIBEARER",
-          "current": "6",
-          "suggested": "-103",
-          "evidence": 0.7177963748992815
-        },
-        {
-          "param": "CovBasedHoB1RsrpThld",
-          "mo": "NRCellHoEutranMeaGrp",
-          "current": "-100",
-          "suggested": "8",
-          "evidence": 0.8771448837499551
-        },
-        {
-          "param": "CovInterFreqA1RsrpThld",
-          "mo": "NRDUCELLPDSCH",
-          "current": "-100",
-          "suggested": "3",
-          "evidence": 0.8427461394023901
-        }
-      ],
-      "strategies": [
-        {
-          "name": "RF覆盖调整",
-          "desc": "调整下倾角与方位角，增强主瓣覆盖",
-          "risk": "低",
-          "status": "待审核"
-        },
-        {
-          "name": "切换参数优化",
-          "desc": "优化A3/A5门限，减少乒乓切换",
-          "risk": "中",
-          "status": "已加入草案"
-        },
-        {
-          "name": "容量扩容",
-          "desc": "周边小区负载均衡参数调整",
-          "risk": "中",
-          "status": "待审核"
-        },
-        {
-          "name": "上行功率控制",
-          "desc": "提升PUSCH发射功率偏移量",
-          "risk": "低",
-          "status": "已加入草案"
-        },
-        {
-          "name": "SRS权值优化",
-          "desc": "开启上行弱覆盖频选调度",
-          "risk": "低",
-          "status": "待审核"
-        },
-        {
-          "name": "PCI混淆核查",
-          "desc": "核查同频同PCI干扰",
-          "risk": "高",
-          "status": "待审核"
-        }
-      ],
-      "guards": [
-        {
-          "suggestionId": "000ea6a4",
-          "rootCauseType": "RF参数不合理",
-          "affectedCellPair": "CUDU0007368斡徐青之(联通)-3.5G_1|邻区",
-          "parameterName": "DLINITMCS",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.85,
-          "riskLevel": "中",
-          "status": "待审核"
-        },
-        {
-          "suggestionId": "9f225e90",
-          "rootCauseType": "上行弱覆盖增强参数问题",
-          "affectedCellPair": "CUDU0007368斡徐青之(联通)-3.5G_1|邻区",
-          "parameterName": "MAXUESATPWROFFSET",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.85,
-          "riskLevel": "低",
-          "status": "已加入草案"
-        },
-        {
-          "suggestionId": "e7e7e7d3",
-          "rootCauseType": "上行干扰增强参数问题",
-          "affectedCellPair": "CUDU0007368斡徐青之(联通)-3.5G_1|邻区",
-          "parameterName": "InterRatHoA2RsrpThld",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.88,
-          "riskLevel": "中",
-          "status": "待审核"
-        }
-      ],
-      "summary": {
-        "problemDesc": "北杰公寓区域CCE资源不足问题突出，质差事件764起，质差比例6.67%",
-        "tags": [
-          "CCE资源不足",
-          "RF参数不合理",
-          "5QI业务保障"
-        ],
-        "evidenceChain": [
-          "RSRP均值低于门限(-108.1dBm)",
-          "SINR均值7.8dB",
-          "信令成功"
-        ],
-        "riskLevel": "高"
-      }
-    },
-    "WO01020": {
-      "trend": [
-        {
-          "time": "15:30",
-          "rsrp": -111.9,
-          "sinr": 14.6,
-          "rlcDelay": 58.6
-        },
-        {
-          "time": "15:31",
-          "rsrp": -120.6,
-          "sinr": 11.0,
-          "rlcDelay": 64.6
-        },
-        {
-          "time": "15:32",
-          "rsrp": -115.0,
-          "sinr": 13.6,
-          "rlcDelay": 47.0
-        },
-        {
-          "time": "15:33",
-          "rsrp": -116.5,
-          "sinr": 11.1,
-          "rlcDelay": 46.3
-        },
-        {
-          "time": "15:34",
-          "rsrp": -118.4,
-          "sinr": 11.0,
-          "rlcDelay": 60.3
-        },
-        {
-          "time": "15:35",
-          "rsrp": -110.4,
-          "sinr": 15.0,
-          "rlcDelay": 61.1
-        },
-        {
-          "time": "15:36",
-          "rsrp": -113.5,
-          "sinr": 11.1,
-          "rlcDelay": 44.7
-        },
-        {
-          "time": "15:37",
-          "rsrp": -120.2,
-          "sinr": 14.0,
-          "rlcDelay": 53.1
-        },
-        {
-          "time": "15:38",
-          "rsrp": -112.7,
-          "sinr": 14.2,
-          "rlcDelay": 45.6
-        },
-        {
-          "time": "15:39",
-          "rsrp": -117.3,
-          "sinr": 11.8,
-          "rlcDelay": 48.5
-        },
-        {
-          "time": "15:40",
-          "rsrp": -117.6,
-          "sinr": 15.5,
-          "rlcDelay": 53.2
-        },
-        {
-          "time": "15:41",
-          "rsrp": -118.1,
-          "sinr": 15.1,
-          "rlcDelay": 64.1
-        },
-        {
-          "time": "15:42",
-          "rsrp": -115.4,
-          "sinr": 14.5,
-          "rlcDelay": 50.0
-        },
-        {
-          "time": "15:43",
-          "rsrp": -117.1,
-          "sinr": 14.8,
-          "rlcDelay": 45.2
-        },
-        {
-          "time": "15:44",
-          "rsrp": -122.7,
           "sinr": 10.5,
-          "rlcDelay": 47.0
-        },
-        {
-          "time": "15:45",
-          "rsrp": -118.5,
-          "sinr": 15.5,
-          "rlcDelay": 48.4
-        },
-        {
-          "time": "15:46",
-          "rsrp": -122.0,
-          "sinr": 16.0,
-          "rlcDelay": 68.8
-        },
-        {
-          "time": "15:47",
-          "rsrp": -118.6,
-          "sinr": 16.3,
-          "rlcDelay": 66.7
-        },
-        {
-          "time": "15:48",
-          "rsrp": -113.8,
-          "sinr": 11.9,
-          "rlcDelay": 60.7
-        },
-        {
-          "time": "15:49",
-          "rsrp": -115.1,
-          "sinr": 11.9,
-          "rlcDelay": 45.7
-        }
-      ],
-      "signalTrace": [
-        {
-          "stepId": "S01",
-          "sequence": 1,
-          "fromNe": "UE",
-          "toNe": "gNB",
-          "messageName": "PRIVATE_HO_IN",
-          "messageNameCn": "PRIVATE_HO_IN",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 53,
-          "timestamp": "2026-04-21 15:31:00"
-        },
-        {
-          "stepId": "S02",
-          "sequence": 2,
-          "fromNe": "gNB",
-          "toNe": "AMF",
-          "messageName": "PUBLIC_INFORMATION",
-          "messageNameCn": "PUBLIC_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 143,
-          "timestamp": "2026-04-21 15:32:00"
-        },
-        {
-          "stepId": "S03",
-          "sequence": 3,
-          "fromNe": "AMF",
-          "toNe": "SMF",
-          "messageName": "PRIVATE_HO_IN",
-          "messageNameCn": "PRIVATE_HO_IN",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 81,
-          "timestamp": "2026-04-21 15:33:00"
-        },
-        {
-          "stepId": "S04",
-          "sequence": 4,
-          "fromNe": "SMF",
-          "toNe": "UPF",
-          "messageName": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 105,
-          "timestamp": "2026-04-21 15:34:00"
-        },
-        {
-          "stepId": "S05",
-          "sequence": 5,
-          "fromNe": "UPF",
-          "toNe": "DN",
-          "messageName": "PRIVATE_MEASUREMENT_REPORT",
-          "messageNameCn": "PRIVATE_MEASUREMENT_REPORT",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 130,
-          "timestamp": "2026-04-21 15:35:00"
-        }
-      ],
-      "cio": [
-        {
-          "param": "Tilt",
-          "mo": "NRDUCELLPDSCHPRECODE",
-          "current": "-105",
-          "suggested": "8",
-          "evidence": 0.6306699257574402
-        },
-        {
-          "param": "DLRANK3INCSPCTEFFTHLD",
-          "mo": "NRDUCELLFEATURESW",
-          "current": "9",
-          "suggested": "-98",
-          "evidence": 0.6339454141185246
-        },
-        {
-          "param": "CovHoToEutranB2RsrpThld1",
-          "mo": "NRCellFreqRelation",
-          "current": "0",
-          "suggested": "-103",
-          "evidence": 0.7657497278997241
-        },
-        {
-          "param": "Mech-Azimuth",
-          "mo": "NRDUCELLDLRANK",
-          "current": "9",
-          "suggested": "8",
-          "evidence": 0.77118388424223
-        }
-      ],
-      "strategies": [
-        {
-          "name": "RF覆盖调整",
-          "desc": "调整下倾角与方位角，增强主瓣覆盖",
-          "risk": "低",
-          "status": "待审核"
-        },
-        {
-          "name": "切换参数优化",
-          "desc": "优化A3/A5门限，减少乒乓切换",
-          "risk": "中",
-          "status": "已加入草案"
-        },
-        {
-          "name": "容量扩容",
-          "desc": "周边小区负载均衡参数调整",
-          "risk": "中",
-          "status": "待审核"
-        },
-        {
-          "name": "上行功率控制",
-          "desc": "提升PUSCH发射功率偏移量",
-          "risk": "低",
-          "status": "已加入草案"
-        },
-        {
-          "name": "SRS权值优化",
-          "desc": "开启上行弱覆盖频选调度",
-          "risk": "低",
-          "status": "待审核"
-        },
-        {
-          "name": "PCI混淆核查",
-          "desc": "核查同频同PCI干扰",
-          "risk": "高",
-          "status": "待审核"
-        }
-      ],
-      "guards": [
-        {
-          "suggestionId": "91767093",
-          "rootCauseType": "RF参数不合理",
-          "affectedCellPair": "CUDU0007368斡徐青之(联通)-3.5G_1|邻区",
-          "parameterName": "MAXUESATPWROFFSET",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.77,
-          "riskLevel": "高",
-          "status": "已加入草案"
-        },
-        {
-          "suggestionId": "cf0280f0",
-          "rootCauseType": "上行弱覆盖增强参数问题",
-          "affectedCellPair": "CUDU0007368斡徐青之(联通)-3.5G_1|邻区",
-          "parameterName": "FreqSpecificOffset",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.79,
-          "riskLevel": "中",
-          "status": "已加入草案"
-        },
-        {
-          "suggestionId": "cc8517ed",
-          "rootCauseType": "上行干扰增强参数问题",
-          "affectedCellPair": "CUDU0007368斡徐青之(联通)-3.5G_1|邻区",
-          "parameterName": "FreqSpecificOffset",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.81,
-          "riskLevel": "中",
-          "status": "已加入草案"
-        }
-      ],
-      "summary": {
-        "problemDesc": "北杰公寓区域上行SRS弱覆盖问题突出，质差事件764起，质差比例6.67%",
-        "tags": [
-          "上行SRS弱覆盖",
-          "上行弱覆盖增强参数问题",
-          "5QI业务保障"
-        ],
-        "evidenceChain": [
-          "RSRP均值低于门限(-115.0dBm)",
-          "SINR均值13.4dB",
-          "信令成功"
-        ],
-        "riskLevel": "中"
-      }
-    },
-    "WO01021": {
-      "trend": [
-        {
-          "time": "15:30",
-          "rsrp": -107.6,
-          "sinr": 4.2,
-          "rlcDelay": 15.8
-        },
-        {
-          "time": "15:31",
-          "rsrp": -112.9,
-          "sinr": 3.2,
-          "rlcDelay": 38.0
-        },
-        {
-          "time": "15:32",
-          "rsrp": -109.7,
-          "sinr": 3.3,
-          "rlcDelay": 34.7
-        },
-        {
-          "time": "15:33",
-          "rsrp": -106.7,
-          "sinr": 2.3,
-          "rlcDelay": 27.1
-        },
-        {
-          "time": "15:34",
-          "rsrp": -106.1,
-          "sinr": 2.7,
-          "rlcDelay": 35.7
-        },
-        {
-          "time": "15:35",
-          "rsrp": -111.2,
-          "sinr": -0.5,
-          "rlcDelay": 36.3
-        },
-        {
-          "time": "15:36",
-          "rsrp": -108.1,
-          "sinr": 2.9,
-          "rlcDelay": 36.2
-        },
-        {
-          "time": "15:37",
-          "rsrp": -106.9,
-          "sinr": 4.3,
-          "rlcDelay": 29.2
-        },
-        {
-          "time": "15:38",
-          "rsrp": -115.8,
-          "sinr": 5.0,
-          "rlcDelay": 18.0
-        },
-        {
-          "time": "15:39",
-          "rsrp": -104.5,
-          "sinr": 6.7,
-          "rlcDelay": 33.9
-        },
-        {
-          "time": "15:40",
-          "rsrp": -115.7,
-          "sinr": 2.3,
-          "rlcDelay": 38.4
+          "rlcDelay": 55.7
         },
         {
           "time": "15:41",
-          "rsrp": -111.7,
-          "sinr": 6.9,
-          "rlcDelay": 29.4
+          "rsrp": -107.3,
+          "sinr": 8.9,
+          "rlcDelay": 47.6
         },
         {
           "time": "15:42",
           "rsrp": -106.5,
-          "sinr": 1.0,
-          "rlcDelay": 36.5
+          "sinr": 9.5,
+          "rlcDelay": 67.4
         },
         {
           "time": "15:43",
-          "rsrp": -105.5,
-          "sinr": -0.6,
-          "rlcDelay": 23.4
+          "rsrp": -104.9,
+          "sinr": 8.6,
+          "rlcDelay": 63.9
         },
         {
           "time": "15:44",
-          "rsrp": -112.2,
-          "sinr": 1.5,
-          "rlcDelay": 20.6
+          "rsrp": -111.0,
+          "sinr": 12.7,
+          "rlcDelay": 66.6
         },
         {
           "time": "15:45",
-          "rsrp": -111.4,
-          "sinr": 5.9,
-          "rlcDelay": 33.4
+          "rsrp": -106.8,
+          "sinr": 13.4,
+          "rlcDelay": 52.1
         },
         {
           "time": "15:46",
-          "rsrp": -109.2,
-          "sinr": 3.1,
-          "rlcDelay": 24.2
+          "rsrp": -111.4,
+          "sinr": 10.5,
+          "rlcDelay": 59.5
         },
         {
           "time": "15:47",
-          "rsrp": -112.0,
-          "sinr": 0.1,
-          "rlcDelay": 28.4
+          "rsrp": -99.7,
+          "sinr": 12.9,
+          "rlcDelay": 69.8
         },
         {
           "time": "15:48",
-          "rsrp": -107.5,
-          "sinr": 6.4,
-          "rlcDelay": 36.8
+          "rsrp": -104.8,
+          "sinr": 9.3,
+          "rlcDelay": 53.9
         },
         {
           "time": "15:49",
-          "rsrp": -110.0,
-          "sinr": -0.3,
-          "rlcDelay": 20.9
+          "rsrp": -107.1,
+          "sinr": 14.2,
+          "rlcDelay": 47.3
         }
       ],
       "signalTrace": [
         {
-          "stepId": "S01",
+          "id": "sig_001",
           "sequence": 1,
+          "time": "15:00:36.939",
           "fromNe": "UE",
-          "toNe": "gNB",
-          "messageName": "PRIVATE_MEASUREMENT_REPORT",
-          "messageNameCn": "PRIVATE_MEASUREMENT_REPORT",
-          "status": "失败",
-          "causeCode": "0x3002",
-          "latencyMs": 72,
-          "timestamp": "2026-04-21 15:31:00"
+          "toNe": "Source gNB",
+          "message": "MeasurementReport",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S02",
+          "id": "sig_002",
           "sequence": 2,
-          "fromNe": "gNB",
-          "toNe": "AMF",
-          "messageName": "PUBLIC_INFORMATION",
-          "messageNameCn": "PUBLIC_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 126,
-          "timestamp": "2026-04-21 15:32:00"
+          "time": "15:00:42.813",
+          "fromNe": "Source gNB",
+          "toNe": "Target gNB",
+          "message": "HandoverRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S03",
+          "id": "sig_003",
           "sequence": 3,
+          "time": "15:00:48.270",
+          "fromNe": "Target gNB",
+          "toNe": "Source gNB",
+          "message": "HandoverAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_004",
+          "sequence": 4,
+          "time": "15:00:50.895",
+          "fromNe": "Source gNB",
+          "toNe": "UE",
+          "message": "RRCReconfiguration",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_005",
+          "sequence": 5,
+          "time": "15:00:55.297",
+          "fromNe": "UE",
+          "toNe": "Source gNB",
+          "message": "RRCReconfigurationComplete",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_006",
+          "sequence": 6,
+          "time": "15:00:58.336",
+          "fromNe": "Source gNB",
+          "toNe": "AMF",
+          "message": "PathSwitchRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_007",
+          "sequence": 7,
+          "time": "15:01:06.317",
           "fromNe": "AMF",
           "toNe": "SMF",
-          "messageName": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 108,
-          "timestamp": "2026-04-21 15:33:00"
+          "message": "Nsmf_PDUSession_UpdateSMContext",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S04",
-          "sequence": 4,
+          "id": "sig_008",
+          "sequence": 8,
+          "time": "15:01:09.163",
           "fromNe": "SMF",
-          "toNe": "UPF",
-          "messageName": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 107,
-          "timestamp": "2026-04-21 15:34:00"
+          "toNe": "AMF",
+          "message": "Nsmf_PDUSession_UpdateSMContext_RSP",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S05",
-          "sequence": 5,
-          "fromNe": "UPF",
-          "toNe": "DN",
-          "messageName": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 89,
-          "timestamp": "2026-04-21 15:35:00"
+          "id": "sig_009",
+          "sequence": 9,
+          "time": "15:01:14.200",
+          "fromNe": "AMF",
+          "toNe": "Source gNB",
+          "message": "PathSwitchAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        }
+      ],
+      "qualityEvents": [
+        {
+          "eventId": "EVT_WO01113_001",
+          "time": "15:30:48",
+          "lng": 121.437765,
+          "lat": 31.310938,
+          "type": "上行SRS弱覆盖",
+          "cell": "CUDU0003783长汉森-5G_2",
+          "metrics": {
+            "rsrp": -109.7,
+            "sinr": 14.4,
+            "rlcDelay": 66.5
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01113_002",
+          "time": "15:33:35",
+          "lng": 121.43953,
+          "lat": 31.310613,
+          "type": "上行SRS弱覆盖",
+          "cell": "CUDU0003783长汉森-5G_2",
+          "metrics": {
+            "rsrp": -102.5,
+            "sinr": 6.9,
+            "rlcDelay": 57.0
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        },
+        {
+          "eventId": "EVT_WO01113_003",
+          "time": "15:36:54",
+          "lng": 121.439956,
+          "lat": 31.308608,
+          "type": "上行SRS弱覆盖",
+          "cell": "CUDU0003783长汉森-5G_2",
+          "metrics": {
+            "rsrp": -108.4,
+            "sinr": 13.7,
+            "rlcDelay": 41.9
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01113_004",
+          "time": "15:39:47",
+          "lng": 121.439714,
+          "lat": 31.311262,
+          "type": "上行SRS弱覆盖",
+          "cell": "CUDU0003783长汉森-5G_2",
+          "metrics": {
+            "rsrp": -109.9,
+            "sinr": 9.7,
+            "rlcDelay": 47.4
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01113_005",
+          "time": "15:42:28",
+          "lng": 121.441423,
+          "lat": 31.310754,
+          "type": "上行SRS弱覆盖",
+          "cell": "CUDU0003783长汉森-5G_2",
+          "metrics": {
+            "rsrp": -114.7,
+            "sinr": 7.2,
+            "rlcDelay": 72.6
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01113_006",
+          "time": "15:45:46",
+          "lng": 121.439872,
+          "lat": 31.305698,
+          "type": "上行SRS弱覆盖",
+          "cell": "CUDU0003783长汉森-5G_2",
+          "metrics": {
+            "rsrp": -103.0,
+            "sinr": 8.5,
+            "rlcDelay": 67.6
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        },
+        {
+          "eventId": "EVT_WO01113_007",
+          "time": "15:48:54",
+          "lng": 121.438628,
+          "lat": 31.307848,
+          "type": "上行SRS弱覆盖",
+          "cell": "CUDU0003783长汉森-5G_2",
+          "metrics": {
+            "rsrp": -112.1,
+            "sinr": 7.5,
+            "rlcDelay": 65.8
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01113_008",
+          "time": "15:51:40",
+          "lng": 121.441743,
+          "lat": 31.310855,
+          "type": "上行SRS弱覆盖",
+          "cell": "CUDU0003783长汉森-5G_2",
+          "metrics": {
+            "rsrp": -103.0,
+            "sinr": 11.9,
+            "rlcDelay": 43.4
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
         }
       ],
       "cio": [
         {
-          "param": "Tilt",
-          "mo": "NRDUCELLPDCCH",
-          "current": "0",
-          "suggested": "5",
-          "evidence": 0.6070815110076452
-        },
-        {
-          "param": "DLRANK3INCSPCTEFFTHLD",
+          "param": "CovBasedHoB1RsrpThld",
           "mo": "NRDUCELLDLRANK",
           "current": "0",
           "suggested": "5",
@@ -16641,9 +17047,9 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "cbc66bbd",
+          "suggestionId": "8ed9412e",
           "rootCauseType": "RF参数不合理",
-          "affectedCellPair": "CUDU0007368斡徐青之(联通)-3.5G_1|邻区",
+          "affectedCellPair": "CUDU0003783长汉森-5G_2|邻区",
           "parameterName": "InterFreqHoSwitch.FREQ_PRIORITY_BASED_HO",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
@@ -16652,9 +17058,9 @@ const SRCON_DATA = {
           "status": "已加入草案"
         },
         {
-          "suggestionId": "08a68af5",
+          "suggestionId": "dc1eb4eb",
           "rootCauseType": "上行弱覆盖增强参数问题",
-          "affectedCellPair": "CUDU0007368斡徐青之(联通)-3.5G_1|邻区",
+          "affectedCellPair": "CUDU0003783长汉森-5G_2|邻区",
           "parameterName": "CovHoToEutranB2RsrpThld1",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
@@ -16663,9 +17069,9 @@ const SRCON_DATA = {
           "status": "已加入草案"
         },
         {
-          "suggestionId": "d9d948eb",
+          "suggestionId": "99e3ba05",
           "rootCauseType": "上行干扰增强参数问题",
-          "affectedCellPair": "CUDU0007368斡徐青之(联通)-3.5G_1|邻区",
+          "affectedCellPair": "CUDU0003783长汉森-5G_2|邻区",
           "parameterName": "DLRANK2INCSPCTEFFTHLD",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
@@ -16675,21 +17081,21 @@ const SRCON_DATA = {
         }
       ],
       "summary": {
-        "problemDesc": "北杰公寓区域CCE资源不足问题突出，质差事件764起，质差比例6.67%",
+        "problemDesc": "场中路2401弄社区区域上行SRS弱覆盖问题突出，质差事件827起，质差比例6.15%",
         "tags": [
-          "CCE资源不足",
+          "上行SRS弱覆盖",
           "上行干扰增强参数问题",
           "5QI业务保障"
         ],
         "evidenceChain": [
-          "RSRP均值低于门限(-109.3dBm)",
-          "SINR均值3.9dB",
-          "信令成功"
+          "RSRP均值低于门限(-104.2dBm)",
+          "SINR均值12.4dB",
+          "信令success"
         ],
         "riskLevel": "低"
       }
     },
-    "WO01090": {
+    "WO01019": {
       "trend": [
         {
           "time": "15:30",
@@ -16814,94 +17220,237 @@ const SRCON_DATA = {
       ],
       "signalTrace": [
         {
-          "stepId": "S01",
+          "id": "sig_001",
           "sequence": 1,
+          "time": "15:00:38.503",
           "fromNe": "UE",
-          "toNe": "gNB",
-          "messageName": "PRIVATE_HO_IN",
-          "messageNameCn": "PRIVATE_HO_IN",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 77,
-          "timestamp": "2026-04-21 15:31:00"
+          "toNe": "Source gNB",
+          "message": "MeasurementReport",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S02",
+          "id": "sig_002",
           "sequence": 2,
-          "fromNe": "gNB",
-          "toNe": "AMF",
-          "messageName": "PRIVATE_HO_IN",
-          "messageNameCn": "PRIVATE_HO_IN",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 128,
-          "timestamp": "2026-04-21 15:32:00"
+          "time": "15:00:44.782",
+          "fromNe": "Source gNB",
+          "toNe": "Target gNB",
+          "message": "HandoverRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S03",
+          "id": "sig_003",
           "sequence": 3,
+          "time": "15:00:50.743",
+          "fromNe": "Target gNB",
+          "toNe": "Source gNB",
+          "message": "HandoverAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_004",
+          "sequence": 4,
+          "time": "15:00:54.425",
+          "fromNe": "Source gNB",
+          "toNe": "UE",
+          "message": "RRCReconfiguration",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_005",
+          "sequence": 5,
+          "time": "15:01:01.230",
+          "fromNe": "UE",
+          "toNe": "Source gNB",
+          "message": "RRCReconfigurationComplete",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_006",
+          "sequence": 6,
+          "time": "15:01:06.185",
+          "fromNe": "Source gNB",
+          "toNe": "AMF",
+          "message": "PathSwitchRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_007",
+          "sequence": 7,
+          "time": "15:01:10.403",
           "fromNe": "AMF",
           "toNe": "SMF",
-          "messageName": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 75,
-          "timestamp": "2026-04-21 15:33:00"
+          "message": "Nsmf_PDUSession_UpdateSMContext",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S04",
-          "sequence": 4,
+          "id": "sig_008",
+          "sequence": 8,
+          "time": "15:01:17.452",
           "fromNe": "SMF",
-          "toNe": "UPF",
-          "messageName": "5G周期Mr",
-          "messageNameCn": "5G周期Mr",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 75,
-          "timestamp": "2026-04-21 15:34:00"
+          "toNe": "AMF",
+          "message": "Nsmf_PDUSession_UpdateSMContext_RSP",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S05",
-          "sequence": 5,
-          "fromNe": "UPF",
-          "toNe": "DN",
-          "messageName": "PRIVATE_HO_IN",
-          "messageNameCn": "PRIVATE_HO_IN",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 81,
-          "timestamp": "2026-04-21 15:35:00"
+          "id": "sig_009",
+          "sequence": 9,
+          "time": "15:01:25.403",
+          "fromNe": "AMF",
+          "toNe": "Source gNB",
+          "message": "PathSwitchAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        }
+      ],
+      "qualityEvents": [
+        {
+          "eventId": "EVT_WO01019_001",
+          "time": "15:30:22",
+          "lng": 121.432527,
+          "lat": 31.309405,
+          "type": "CCE资源不足",
+          "cell": "CUDU0007368斡徐青之(联通)-3.5G_1",
+          "metrics": {
+            "rsrp": -115.5,
+            "sinr": 15.2,
+            "rlcDelay": 55.3
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01019_002",
+          "time": "15:33:48",
+          "lng": 121.434052,
+          "lat": 31.30673,
+          "type": "CCE资源不足",
+          "cell": "CUDU0007368斡徐青之(联通)-3.5G_1",
+          "metrics": {
+            "rsrp": -111.9,
+            "sinr": 14.1,
+            "rlcDelay": 61.3
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01019_003",
+          "time": "15:36:28",
+          "lng": 121.433184,
+          "lat": 31.307323,
+          "type": "CCE资源不足",
+          "cell": "CUDU0007368斡徐青之(联通)-3.5G_1",
+          "metrics": {
+            "rsrp": -123.3,
+            "sinr": 7.8,
+            "rlcDelay": 49.1
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01019_004",
+          "time": "15:39:46",
+          "lng": 121.436523,
+          "lat": 31.306871,
+          "type": "CCE资源不足",
+          "cell": "CUDU0007368斡徐青之(联通)-3.5G_1",
+          "metrics": {
+            "rsrp": -119.5,
+            "sinr": 7.9,
+            "rlcDelay": 57.5
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01019_005",
+          "time": "15:42:40",
+          "lng": 121.437066,
+          "lat": 31.308843,
+          "type": "CCE资源不足",
+          "cell": "CUDU0007368斡徐青之(联通)-3.5G_1",
+          "metrics": {
+            "rsrp": -114.7,
+            "sinr": 13.1,
+            "rlcDelay": 54.7
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
         }
       ],
       "cio": [
         {
-          "param": "CoverageScenario",
-          "mo": "NRDUCELLPDCCHALGO",
-          "current": "-100",
-          "suggested": "-103",
-          "evidence": 0.8819004379217354
+          "param": "DLRANK4DECSPCTEFFTHLD",
+          "mo": "NRCellFreqRelation",
+          "current": "6",
+          "suggested": "-98",
+          "evidence": 0.7028244185012659
         },
         {
-          "param": "DLRANK3DECSPCTEFFTHLD",
-          "mo": "NRDUCELLFEATURESW",
-          "current": "9",
-          "suggested": "5",
-          "evidence": 0.8382645126355835
+          "param": "CovInterFreqA1RsrpThld",
+          "mo": "NRCellHoEutranMeaGrp",
+          "current": "0",
+          "suggested": "3",
+          "evidence": 0.8670213764117558
+        },
+        {
+          "param": "FreqSpecificOffset",
+          "mo": "NRDUCELLPDSCH",
+          "current": "-105",
+          "suggested": "-98",
+          "evidence": 0.7243491886419413
         },
         {
           "param": "UESATPWROFFSETTHLD",
-          "mo": "NRDUCELLTRPBEAM",
+          "mo": "NRDUCELLDLRANK",
           "current": "9",
           "suggested": "5",
-          "evidence": 0.6907991954491961
+          "evidence": 0.7300888504177013
         },
         {
-          "param": "FreqPriInterFA4RsrpThld",
-          "mo": "NRDUCELLQCIBEARER",
+          "param": "A3InterFreqHoA1RsrpThld",
+          "mo": "NRDUCELLDLRANK",
           "current": "9",
           "suggested": "-103",
-          "evidence": 0.804058295844675
+          "evidence": 0.764687798684738
         }
       ],
       "strategies": [
@@ -16944,41 +17493,41 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "2b4b4f89",
+          "suggestionId": "a0826007",
           "rootCauseType": "RF参数不合理",
-          "affectedCellPair": "CUDU0001065斡徐上影-5G_2|邻区",
-          "parameterName": "A3InterFreqHoA1RsrpThld",
+          "affectedCellPair": "CUDU0007368斡徐青之(联通)-3.5G_1|邻区",
+          "parameterName": "DLRANK4DECSPCTEFFTHLD",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.9,
-          "riskLevel": "中",
+          "evidenceScore": 0.86,
+          "riskLevel": "高",
           "status": "待审核"
         },
         {
-          "suggestionId": "d75544d2",
+          "suggestionId": "dcc159a9",
           "rootCauseType": "上行弱覆盖增强参数问题",
-          "affectedCellPair": "CUDU0001065斡徐上影-5G_2|邻区",
-          "parameterName": "MAXUESATPWROFFSET",
+          "affectedCellPair": "CUDU0007368斡徐青之(联通)-3.5G_1|邻区",
+          "parameterName": "CovInterFreqA1RsrpThld",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.83,
-          "riskLevel": "中",
-          "status": "已加入草案"
+          "evidenceScore": 0.92,
+          "riskLevel": "高",
+          "status": "待审核"
         },
         {
-          "suggestionId": "cca02dd7",
+          "suggestionId": "8af2b219",
           "rootCauseType": "上行干扰增强参数问题",
-          "affectedCellPair": "CUDU0001065斡徐上影-5G_2|邻区",
-          "parameterName": "InterRatHoA1RsrpThld",
+          "affectedCellPair": "CUDU0007368斡徐青之(联通)-3.5G_1|邻区",
+          "parameterName": "DLRANK4DECSPCTEFFTHLD",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.78,
-          "riskLevel": "低",
-          "status": "待审核"
+          "evidenceScore": 0.87,
+          "riskLevel": "高",
+          "status": "已加入草案"
         }
       ],
       "summary": {
-        "problemDesc": "临汾路1565弄小区区域CCE资源不足问题突出，质差事件755起，质差比例7.31%",
+        "problemDesc": "北杰公寓区域CCE资源不足问题突出，质差事件764起，质差比例6.67%",
         "tags": [
           "CCE资源不足",
           "上行弱覆盖增强参数问题",
@@ -16987,231 +17536,315 @@ const SRCON_DATA = {
         "evidenceChain": [
           "RSRP均值低于门限(-113.4dBm)",
           "SINR均值13.6dB",
-          "信令成功"
+          "信令success"
         ],
         "riskLevel": "低"
       }
     },
-    "WO01091": {
+    "WO01020": {
       "trend": [
         {
           "time": "15:30",
-          "rsrp": -104.0,
-          "sinr": 16.6,
-          "rlcDelay": 77.2
+          "rsrp": -96.8,
+          "sinr": 4.2,
+          "rlcDelay": 91.9
         },
         {
           "time": "15:31",
-          "rsrp": -99.5,
-          "sinr": 14.5,
-          "rlcDelay": 59.1
+          "rsrp": -88.4,
+          "sinr": -2.5,
+          "rlcDelay": 91.1
         },
         {
           "time": "15:32",
-          "rsrp": -108.3,
-          "sinr": 16.3,
-          "rlcDelay": 64.0
+          "rsrp": -98.9,
+          "sinr": -3.0,
+          "rlcDelay": 77.9
         },
         {
           "time": "15:33",
-          "rsrp": -99.7,
-          "sinr": 12.3,
-          "rlcDelay": 68.2
+          "rsrp": -88.4,
+          "sinr": -1.2,
+          "rlcDelay": 71.0
         },
         {
           "time": "15:34",
-          "rsrp": -105.2,
-          "sinr": 10.2,
-          "rlcDelay": 54.9
+          "rsrp": -95.4,
+          "sinr": -2.0,
+          "rlcDelay": 88.9
         },
         {
           "time": "15:35",
-          "rsrp": -103.0,
-          "sinr": 13.9,
-          "rlcDelay": 69.0
+          "rsrp": -93.7,
+          "sinr": -2.4,
+          "rlcDelay": 89.2
         },
         {
           "time": "15:36",
-          "rsrp": -105.1,
-          "sinr": 10.9,
-          "rlcDelay": 56.5
+          "rsrp": -91.1,
+          "sinr": -2.6,
+          "rlcDelay": 80.4
         },
         {
           "time": "15:37",
-          "rsrp": -102.4,
-          "sinr": 13.5,
-          "rlcDelay": 63.8
+          "rsrp": -95.6,
+          "sinr": -0.3,
+          "rlcDelay": 81.5
         },
         {
           "time": "15:38",
-          "rsrp": -99.9,
-          "sinr": 10.5,
-          "rlcDelay": 78.3
+          "rsrp": -101.2,
+          "sinr": 0.6,
+          "rlcDelay": 87.8
         },
         {
           "time": "15:39",
-          "rsrp": -106.8,
-          "sinr": 17.2,
-          "rlcDelay": 75.8
+          "rsrp": -88.9,
+          "sinr": 3.5,
+          "rlcDelay": 88.5
         },
         {
           "time": "15:40",
-          "rsrp": -98.4,
-          "sinr": 10.4,
-          "rlcDelay": 75.1
+          "rsrp": -94.3,
+          "sinr": -3.5,
+          "rlcDelay": 69.6
         },
         {
           "time": "15:41",
-          "rsrp": -108.9,
-          "sinr": 9.9,
-          "rlcDelay": 61.8
+          "rsrp": -91.7,
+          "sinr": -1.9,
+          "rlcDelay": 91.5
         },
         {
           "time": "15:42",
-          "rsrp": -98.4,
-          "sinr": 11.8,
-          "rlcDelay": 55.0
+          "rsrp": -97.2,
+          "sinr": -2.9,
+          "rlcDelay": 82.1
         },
         {
           "time": "15:43",
-          "rsrp": -105.4,
-          "sinr": 11.0,
-          "rlcDelay": 72.8
+          "rsrp": -97.2,
+          "sinr": -3.2,
+          "rlcDelay": 70.7
         },
         {
           "time": "15:44",
-          "rsrp": -103.7,
-          "sinr": 10.6,
-          "rlcDelay": 73.1
+          "rsrp": -88.9,
+          "sinr": -0.0,
+          "rlcDelay": 82.5
         },
         {
           "time": "15:45",
-          "rsrp": -101.1,
-          "sinr": 10.3,
-          "rlcDelay": 64.4
+          "rsrp": -94.4,
+          "sinr": -0.2,
+          "rlcDelay": 86.7
         },
         {
           "time": "15:46",
-          "rsrp": -105.6,
-          "sinr": 12.7,
-          "rlcDelay": 65.4
+          "rsrp": -99.5,
+          "sinr": 4.3,
+          "rlcDelay": 81.8
         },
         {
           "time": "15:47",
-          "rsrp": -111.2,
-          "sinr": 13.6,
-          "rlcDelay": 71.8
+          "rsrp": -91.5,
+          "sinr": -2.4,
+          "rlcDelay": 92.2
         },
         {
           "time": "15:48",
-          "rsrp": -98.9,
-          "sinr": 16.4,
-          "rlcDelay": 72.4
+          "rsrp": -90.7,
+          "sinr": -3.5,
+          "rlcDelay": 75.1
         },
         {
           "time": "15:49",
-          "rsrp": -104.3,
-          "sinr": 9.4,
-          "rlcDelay": 53.6
+          "rsrp": -88.4,
+          "sinr": -2.0,
+          "rlcDelay": 70.1
         }
       ],
       "signalTrace": [
         {
-          "stepId": "S01",
+          "id": "sig_001",
           "sequence": 1,
+          "time": "15:00:32.495",
           "fromNe": "UE",
-          "toNe": "gNB",
-          "messageName": "5G周期Mr",
-          "messageNameCn": "5G周期Mr",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 93,
-          "timestamp": "2026-04-21 15:31:00"
+          "toNe": "Source gNB",
+          "message": "MeasurementReport",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S02",
+          "id": "sig_002",
           "sequence": 2,
-          "fromNe": "gNB",
-          "toNe": "AMF",
-          "messageName": "PRIVATE_HO_IN",
-          "messageNameCn": "PRIVATE_HO_IN",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 103,
-          "timestamp": "2026-04-21 15:32:00"
+          "time": "15:00:39.786",
+          "fromNe": "Source gNB",
+          "toNe": "Target gNB",
+          "message": "HandoverRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S03",
+          "id": "sig_003",
           "sequence": 3,
+          "time": "15:00:47.158",
+          "fromNe": "Target gNB",
+          "toNe": "Source gNB",
+          "message": "HandoverAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_004",
+          "sequence": 4,
+          "time": "15:00:52.775",
+          "fromNe": "Source gNB",
+          "toNe": "UE",
+          "message": "RRCReconfiguration",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_005",
+          "sequence": 5,
+          "time": "15:00:56.909",
+          "fromNe": "UE",
+          "toNe": "Source gNB",
+          "message": "RRCReconfigurationComplete",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_006",
+          "sequence": 6,
+          "time": "15:01:02.758",
+          "fromNe": "Source gNB",
+          "toNe": "AMF",
+          "message": "PathSwitchRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_007",
+          "sequence": 7,
+          "time": "15:01:04.728",
           "fromNe": "AMF",
           "toNe": "SMF",
-          "messageName": "PRIVATE_MEASUREMENT_REPORT",
-          "messageNameCn": "PRIVATE_MEASUREMENT_REPORT",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 47,
-          "timestamp": "2026-04-21 15:33:00"
+          "message": "Nsmf_PDUSession_UpdateSMContext",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S04",
-          "sequence": 4,
+          "id": "sig_008",
+          "sequence": 8,
+          "time": "15:01:06.797",
           "fromNe": "SMF",
-          "toNe": "UPF",
-          "messageName": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "status": "失败",
-          "causeCode": "0x3002",
-          "latencyMs": 79,
-          "timestamp": "2026-04-21 15:34:00"
+          "toNe": "AMF",
+          "message": "Nsmf_PDUSession_UpdateSMContext_RSP",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S05",
-          "sequence": 5,
-          "fromNe": "UPF",
-          "toNe": "DN",
-          "messageName": "PUBLIC_INFORMATION",
-          "messageNameCn": "PUBLIC_INFORMATION",
-          "status": "失败",
-          "causeCode": "0x4003",
-          "latencyMs": 139,
-          "timestamp": "2026-04-21 15:35:00"
+          "id": "sig_009",
+          "sequence": 9,
+          "time": "15:01:08.789",
+          "fromNe": "AMF",
+          "toNe": "Source gNB",
+          "message": "PathSwitchAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        }
+      ],
+      "qualityEvents": [
+        {
+          "eventId": "EVT_WO01020_001",
+          "time": "15:30:17",
+          "lng": 121.434911,
+          "lat": 31.307658,
+          "type": "上行SRS弱覆盖",
+          "cell": "CUDU0007368斡徐青之(联通)-3.5G_1",
+          "metrics": {
+            "rsrp": -104.5,
+            "sinr": -3.8,
+            "rlcDelay": 82.3
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01020_002",
+          "time": "15:33:29",
+          "lng": 121.434152,
+          "lat": 31.305418,
+          "type": "上行SRS弱覆盖",
+          "cell": "CUDU0007368斡徐青之(联通)-3.5G_1",
+          "metrics": {
+            "rsrp": -102.9,
+            "sinr": 0.9,
+            "rlcDelay": 89.8
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01020_003",
+          "time": "15:36:36",
+          "lng": 121.436611,
+          "lat": 31.305441,
+          "type": "上行SRS弱覆盖",
+          "cell": "CUDU0007368斡徐青之(联通)-3.5G_1",
+          "metrics": {
+            "rsrp": -97.4,
+            "sinr": 0.3,
+            "rlcDelay": 92.6
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
         }
       ],
       "cio": [
         {
-          "param": "FreqPriInterFA4RsrpThld",
-          "mo": "NRCellHoEutranMeaGrp",
-          "current": "0",
+          "param": "InterRatHoA2RsrpThld",
+          "mo": "NRCellInterFHoMeaGrp",
+          "current": "-105",
           "suggested": "8",
-          "evidence": 0.7257378102283213
+          "evidence": 0.6695263315971988
         },
         {
           "param": "CovHoToEutranB2RsrpThld1",
-          "mo": "NRCellFreqRelation",
-          "current": "9",
-          "suggested": "-103",
-          "evidence": 0.6799463996925389
-        },
-        {
-          "param": "UESATPWROFFSETTHLD",
-          "mo": "NRCellHoEutranMeaGrp",
-          "current": "-100",
-          "suggested": "-103",
-          "evidence": 0.8063924921797345
-        },
-        {
-          "param": "FreqSpecificOffset",
-          "mo": "NRCellInterFHoMeaGrp",
-          "current": "0",
-          "suggested": "-103",
-          "evidence": 0.7313173514365437
-        },
-        {
-          "param": "PhyCellId",
           "mo": "NRDUCELLCHNPWR",
           "current": "6",
-          "suggested": "3",
-          "evidence": 0.6170054365536081
+          "suggested": "-98",
+          "evidence": 0.7252726427927826
+        },
+        {
+          "param": "FreqPriInterFA4RsrpThld",
+          "mo": "NRDUCELLDLRANK",
+          "current": "-100",
+          "suggested": "-103",
+          "evidence": 0.79184856730494
         }
       ],
       "strategies": [
@@ -17254,36 +17887,987 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "08b3380d",
+          "suggestionId": "1314bf95",
           "rootCauseType": "RF参数不合理",
-          "affectedCellPair": "CUDU0001065斡徐上影-5G_2|邻区",
-          "parameterName": "Tilt",
+          "affectedCellPair": "CUDU0007368斡徐青之(联通)-3.5G_1|邻区",
+          "parameterName": "DLINITMCS",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.87,
-          "riskLevel": "高",
-          "status": "待审核"
-        },
-        {
-          "suggestionId": "0ffd41bf",
-          "rootCauseType": "上行弱覆盖增强参数问题",
-          "affectedCellPair": "CUDU0001065斡徐上影-5G_2|邻区",
-          "parameterName": "Tilt",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.87,
+          "evidenceScore": 0.75,
           "riskLevel": "中",
           "status": "已加入草案"
         },
         {
-          "suggestionId": "8d0dfacc",
+          "suggestionId": "6f671791",
+          "rootCauseType": "上行弱覆盖增强参数问题",
+          "affectedCellPair": "CUDU0007368斡徐青之(联通)-3.5G_1|邻区",
+          "parameterName": "CovInterFreqA2RsrpThld",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.7,
+          "riskLevel": "高",
+          "status": "待审核"
+        },
+        {
+          "suggestionId": "8bf02303",
           "rootCauseType": "上行干扰增强参数问题",
-          "affectedCellPair": "CUDU0001065斡徐上影-5G_2|邻区",
-          "parameterName": "TrafficPriority",
+          "affectedCellPair": "CUDU0007368斡徐青之(联通)-3.5G_1|邻区",
+          "parameterName": "DLINITMCS",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.73,
+          "riskLevel": "高",
+          "status": "已加入草案"
+        }
+      ],
+      "summary": {
+        "problemDesc": "北杰公寓区域上行SRS弱覆盖问题突出，质差事件764起，质差比例6.67%",
+        "tags": [
+          "上行SRS弱覆盖",
+          "RF参数不合理",
+          "5QI业务保障"
+        ],
+        "evidenceChain": [
+          "RSRP均值低于门限(-93.2dBm)",
+          "SINR均值1.3dB",
+          "信令success"
+        ],
+        "riskLevel": "低"
+      }
+    },
+    "WO01021": {
+      "trend": [
+        {
+          "time": "15:30",
+          "rsrp": -91.7,
+          "sinr": -0.2,
+          "rlcDelay": 64.8
+        },
+        {
+          "time": "15:31",
+          "rsrp": -90.8,
+          "sinr": -3.2,
+          "rlcDelay": 54.7
+        },
+        {
+          "time": "15:32",
+          "rsrp": -92.9,
+          "sinr": 1.6,
+          "rlcDelay": 74.7
+        },
+        {
+          "time": "15:33",
+          "rsrp": -98.8,
+          "sinr": 0.1,
+          "rlcDelay": 64.1
+        },
+        {
+          "time": "15:34",
+          "rsrp": -102.0,
+          "sinr": 1.5,
+          "rlcDelay": 75.7
+        },
+        {
+          "time": "15:35",
+          "rsrp": -103.4,
+          "sinr": -4.2,
+          "rlcDelay": 69.6
+        },
+        {
+          "time": "15:36",
+          "rsrp": -99.2,
+          "sinr": 1.8,
+          "rlcDelay": 77.3
+        },
+        {
+          "time": "15:37",
+          "rsrp": -100.0,
+          "sinr": 0.5,
+          "rlcDelay": 62.7
+        },
+        {
+          "time": "15:38",
+          "rsrp": -99.1,
+          "sinr": -4.4,
+          "rlcDelay": 63.4
+        },
+        {
+          "time": "15:39",
+          "rsrp": -97.6,
+          "sinr": 1.3,
+          "rlcDelay": 70.7
+        },
+        {
+          "time": "15:40",
+          "rsrp": -97.3,
+          "sinr": -2.0,
+          "rlcDelay": 75.6
+        },
+        {
+          "time": "15:41",
+          "rsrp": -101.3,
+          "sinr": -4.3,
+          "rlcDelay": 71.6
+        },
+        {
+          "time": "15:42",
+          "rsrp": -90.8,
+          "sinr": 1.4,
+          "rlcDelay": 56.0
+        },
+        {
+          "time": "15:43",
+          "rsrp": -91.7,
+          "sinr": -1.5,
+          "rlcDelay": 67.6
+        },
+        {
+          "time": "15:44",
+          "rsrp": -97.8,
+          "sinr": -0.5,
+          "rlcDelay": 72.9
+        },
+        {
+          "time": "15:45",
+          "rsrp": -95.6,
+          "sinr": 1.6,
+          "rlcDelay": 75.4
+        },
+        {
+          "time": "15:46",
+          "rsrp": -94.1,
+          "sinr": 1.8,
+          "rlcDelay": 65.5
+        },
+        {
+          "time": "15:47",
+          "rsrp": -97.2,
+          "sinr": 1.8,
+          "rlcDelay": 64.4
+        },
+        {
+          "time": "15:48",
+          "rsrp": -102.7,
+          "sinr": -0.1,
+          "rlcDelay": 53.7
+        },
+        {
+          "time": "15:49",
+          "rsrp": -92.2,
+          "sinr": -1.2,
+          "rlcDelay": 72.0
+        }
+      ],
+      "signalTrace": [
+        {
+          "id": "sig_001",
+          "sequence": 1,
+          "time": "15:00:33.805",
+          "fromNe": "UE",
+          "toNe": "Source gNB",
+          "message": "MeasurementReport",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_002",
+          "sequence": 2,
+          "time": "15:00:41.466",
+          "fromNe": "Source gNB",
+          "toNe": "Target gNB",
+          "message": "HandoverRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_003",
+          "sequence": 3,
+          "time": "15:00:47.655",
+          "fromNe": "Target gNB",
+          "toNe": "Source gNB",
+          "message": "HandoverAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_004",
+          "sequence": 4,
+          "time": "15:00:54.837",
+          "fromNe": "Source gNB",
+          "toNe": "UE",
+          "message": "RRCReconfiguration",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_005",
+          "sequence": 5,
+          "time": "15:01:00.217",
+          "fromNe": "UE",
+          "toNe": "Source gNB",
+          "message": "RRCReconfigurationComplete",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_006",
+          "sequence": 6,
+          "time": "15:01:05.797",
+          "fromNe": "Source gNB",
+          "toNe": "AMF",
+          "message": "PathSwitchRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_007",
+          "sequence": 7,
+          "time": "15:01:12.374",
+          "fromNe": "AMF",
+          "toNe": "SMF",
+          "message": "Nsmf_PDUSession_UpdateSMContext",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_008",
+          "sequence": 8,
+          "time": "15:01:17.474",
+          "fromNe": "SMF",
+          "toNe": "AMF",
+          "message": "Nsmf_PDUSession_UpdateSMContext_RSP",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_009",
+          "sequence": 9,
+          "time": "15:01:24.812",
+          "fromNe": "AMF",
+          "toNe": "Source gNB",
+          "message": "PathSwitchAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        }
+      ],
+      "qualityEvents": [
+        {
+          "eventId": "EVT_WO01021_001",
+          "time": "15:30:49",
+          "lng": 121.431954,
+          "lat": 31.308672,
+          "type": "CCE资源不足",
+          "cell": "CUDU0007368斡徐青之(联通)-3.5G_1",
+          "metrics": {
+            "rsrp": -101.7,
+            "sinr": 0.4,
+            "rlcDelay": 70.7
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01021_002",
+          "time": "15:33:20",
+          "lng": 121.432076,
+          "lat": 31.307762,
+          "type": "CCE资源不足",
+          "cell": "CUDU0007368斡徐青之(联通)-3.5G_1",
+          "metrics": {
+            "rsrp": -105.2,
+            "sinr": 0.4,
+            "rlcDelay": 82.5
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01021_003",
+          "time": "15:36:24",
+          "lng": 121.43493,
+          "lat": 31.307084,
+          "type": "CCE资源不足",
+          "cell": "CUDU0007368斡徐青之(联通)-3.5G_1",
+          "metrics": {
+            "rsrp": -103.9,
+            "sinr": 1.4,
+            "rlcDelay": 50.4
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01021_004",
+          "time": "15:39:46",
+          "lng": 121.434316,
+          "lat": 31.309952,
+          "type": "CCE资源不足",
+          "cell": "CUDU0007368斡徐青之(联通)-3.5G_1",
+          "metrics": {
+            "rsrp": -95.3,
+            "sinr": -5.7,
+            "rlcDelay": 66.2
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01021_005",
+          "time": "15:42:51",
+          "lng": 121.431734,
+          "lat": 31.307233,
+          "type": "CCE资源不足",
+          "cell": "CUDU0007368斡徐青之(联通)-3.5G_1",
+          "metrics": {
+            "rsrp": -100.8,
+            "sinr": -5.4,
+            "rlcDelay": 68.3
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01021_006",
+          "time": "15:45:48",
+          "lng": 121.437406,
+          "lat": 31.308637,
+          "type": "CCE资源不足",
+          "cell": "CUDU0007368斡徐青之(联通)-3.5G_1",
+          "metrics": {
+            "rsrp": -107.0,
+            "sinr": -2.0,
+            "rlcDelay": 81.5
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01021_007",
+          "time": "15:48:39",
+          "lng": 121.437329,
+          "lat": 31.306992,
+          "type": "CCE资源不足",
+          "cell": "CUDU0007368斡徐青之(联通)-3.5G_1",
+          "metrics": {
+            "rsrp": -94.2,
+            "sinr": -1.9,
+            "rlcDelay": 74.6
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01021_008",
+          "time": "15:51:45",
+          "lng": 121.436231,
+          "lat": 31.308412,
+          "type": "CCE资源不足",
+          "cell": "CUDU0007368斡徐青之(联通)-3.5G_1",
+          "metrics": {
+            "rsrp": -106.7,
+            "sinr": -4.6,
+            "rlcDelay": 66.6
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        }
+      ],
+      "cio": [
+        {
+          "param": "SPECUERSSISATOFFSET",
+          "mo": "NRDUCELLUEPWRSAVING",
+          "current": "-105",
+          "suggested": "-103",
+          "evidence": 0.865761982877691
+        },
+        {
+          "param": "CovInterFreqA2RsrpThld",
+          "mo": "NRDUCELLTRPBEAM",
+          "current": "0",
+          "suggested": "5",
+          "evidence": 0.8904593599720404
+        },
+        {
+          "param": "DLRANK3DECSPCTEFFTHLD",
+          "mo": "NRDUCELLDLRANK",
+          "current": "6",
+          "suggested": "3",
+          "evidence": 0.7308616261611403
+        },
+        {
+          "param": "Mech-Azimuth",
+          "mo": "NRCellEutranNFreq",
+          "current": "-100",
+          "suggested": "8",
+          "evidence": 0.649157215562787
+        },
+        {
+          "param": "SPECUERSSISATOFFSET",
+          "mo": "NRDUCELLALGOSWITCH",
+          "current": "-105",
+          "suggested": "5",
+          "evidence": 0.8137981181485393
+        }
+      ],
+      "strategies": [
+        {
+          "name": "RF覆盖调整",
+          "desc": "调整下倾角与方位角，增强主瓣覆盖",
+          "risk": "低",
+          "status": "待审核"
+        },
+        {
+          "name": "切换参数优化",
+          "desc": "优化A3/A5门限，减少乒乓切换",
+          "risk": "中",
+          "status": "已加入草案"
+        },
+        {
+          "name": "容量扩容",
+          "desc": "周边小区负载均衡参数调整",
+          "risk": "中",
+          "status": "待审核"
+        },
+        {
+          "name": "上行功率控制",
+          "desc": "提升PUSCH发射功率偏移量",
+          "risk": "低",
+          "status": "已加入草案"
+        },
+        {
+          "name": "SRS权值优化",
+          "desc": "开启上行弱覆盖频选调度",
+          "risk": "低",
+          "status": "待审核"
+        },
+        {
+          "name": "PCI混淆核查",
+          "desc": "核查同频同PCI干扰",
+          "risk": "高",
+          "status": "待审核"
+        }
+      ],
+      "guards": [
+        {
+          "suggestionId": "27a7e359",
+          "rootCauseType": "RF参数不合理",
+          "affectedCellPair": "CUDU0007368斡徐青之(联通)-3.5G_1|邻区",
+          "parameterName": "CovHoToEutranB2RsrpThld1",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
           "evidenceScore": 0.73,
           "riskLevel": "中",
+          "status": "待审核"
+        },
+        {
+          "suggestionId": "8d41f0c5",
+          "rootCauseType": "上行弱覆盖增强参数问题",
+          "affectedCellPair": "CUDU0007368斡徐青之(联通)-3.5G_1|邻区",
+          "parameterName": "A3InterFreqHoA2RsrpThld",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.91,
+          "riskLevel": "低",
+          "status": "已加入草案"
+        },
+        {
+          "suggestionId": "8ec6d7b2",
+          "rootCauseType": "上行干扰增强参数问题",
+          "affectedCellPair": "CUDU0007368斡徐青之(联通)-3.5G_1|邻区",
+          "parameterName": "Mech-Azimuth",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.89,
+          "riskLevel": "低",
+          "status": "待审核"
+        }
+      ],
+      "summary": {
+        "problemDesc": "北杰公寓区域CCE资源不足问题突出，质差事件764起，质差比例6.67%",
+        "tags": [
+          "CCE资源不足",
+          "上行弱覆盖增强参数问题",
+          "5QI业务保障"
+        ],
+        "evidenceChain": [
+          "RSRP均值低于门限(-95.5dBm)",
+          "SINR均值-0.3dB",
+          "信令success"
+        ],
+        "riskLevel": "中"
+      }
+    },
+    "WO01090": {
+      "trend": [
+        {
+          "time": "15:30",
+          "rsrp": -100.1,
+          "sinr": 18.3,
+          "rlcDelay": 19.3
+        },
+        {
+          "time": "15:31",
+          "rsrp": -94.4,
+          "sinr": 20.7,
+          "rlcDelay": 30.2
+        },
+        {
+          "time": "15:32",
+          "rsrp": -99.9,
+          "sinr": 21.4,
+          "rlcDelay": 22.5
+        },
+        {
+          "time": "15:33",
+          "rsrp": -99.0,
+          "sinr": 19.9,
+          "rlcDelay": 21.3
+        },
+        {
+          "time": "15:34",
+          "rsrp": -101.5,
+          "sinr": 18.8,
+          "rlcDelay": 40.1
+        },
+        {
+          "time": "15:35",
+          "rsrp": -100.0,
+          "sinr": 17.1,
+          "rlcDelay": 42.6
+        },
+        {
+          "time": "15:36",
+          "rsrp": -94.6,
+          "sinr": 20.1,
+          "rlcDelay": 24.9
+        },
+        {
+          "time": "15:37",
+          "rsrp": -94.0,
+          "sinr": 21.8,
+          "rlcDelay": 29.4
+        },
+        {
+          "time": "15:38",
+          "rsrp": -104.8,
+          "sinr": 17.3,
+          "rlcDelay": 35.6
+        },
+        {
+          "time": "15:39",
+          "rsrp": -96.8,
+          "sinr": 16.4,
+          "rlcDelay": 35.6
+        },
+        {
+          "time": "15:40",
+          "rsrp": -95.3,
+          "sinr": 19.7,
+          "rlcDelay": 41.5
+        },
+        {
+          "time": "15:41",
+          "rsrp": -98.3,
+          "sinr": 15.6,
+          "rlcDelay": 33.7
+        },
+        {
+          "time": "15:42",
+          "rsrp": -102.8,
+          "sinr": 16.8,
+          "rlcDelay": 34.9
+        },
+        {
+          "time": "15:43",
+          "rsrp": -93.8,
+          "sinr": 19.2,
+          "rlcDelay": 42.0
+        },
+        {
+          "time": "15:44",
+          "rsrp": -100.0,
+          "sinr": 19.6,
+          "rlcDelay": 26.1
+        },
+        {
+          "time": "15:45",
+          "rsrp": -105.0,
+          "sinr": 16.9,
+          "rlcDelay": 30.1
+        },
+        {
+          "time": "15:46",
+          "rsrp": -99.1,
+          "sinr": 19.4,
+          "rlcDelay": 28.5
+        },
+        {
+          "time": "15:47",
+          "rsrp": -96.8,
+          "sinr": 20.8,
+          "rlcDelay": 25.2
+        },
+        {
+          "time": "15:48",
+          "rsrp": -95.5,
+          "sinr": 20.5,
+          "rlcDelay": 31.1
+        },
+        {
+          "time": "15:49",
+          "rsrp": -106.2,
+          "sinr": 15.2,
+          "rlcDelay": 34.8
+        }
+      ],
+      "signalTrace": [
+        {
+          "id": "sig_001",
+          "sequence": 1,
+          "time": "15:00:38.924",
+          "fromNe": "UE",
+          "toNe": "Source gNB",
+          "message": "MeasurementReport",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_002",
+          "sequence": 2,
+          "time": "15:00:42.819",
+          "fromNe": "Source gNB",
+          "toNe": "Target gNB",
+          "message": "HandoverRequest",
+          "status": "failure",
+          "abnormal": true,
+          "reason": "Resource Unavailable"
+        },
+        {
+          "id": "sig_003",
+          "sequence": 3,
+          "time": "15:00:46.269",
+          "fromNe": "Target gNB",
+          "toNe": "Source gNB",
+          "message": "HandoverFailure",
+          "status": "failure",
+          "abnormal": true,
+          "reason": "Prepare Failure"
+        },
+        {
+          "id": "sig_004",
+          "sequence": 4,
+          "time": "15:00:54.183",
+          "fromNe": "Source gNB",
+          "toNe": "UE",
+          "message": "RRCReconfiguration",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        }
+      ],
+      "qualityEvents": [
+        {
+          "eventId": "EVT_WO01090_001",
+          "time": "15:30:32",
+          "lng": 121.434395,
+          "lat": 31.30913,
+          "type": "CCE资源不足",
+          "cell": "CUDU0001065斡徐上影-5G_2",
+          "metrics": {
+            "rsrp": -98.8,
+            "sinr": 14.7,
+            "rlcDelay": 34.7
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        },
+        {
+          "eventId": "EVT_WO01090_002",
+          "time": "15:33:57",
+          "lng": 121.433394,
+          "lat": 31.310848,
+          "type": "CCE资源不足",
+          "cell": "CUDU0001065斡徐上影-5G_2",
+          "metrics": {
+            "rsrp": -97.5,
+            "sinr": 19.0,
+            "rlcDelay": 47.7
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        },
+        {
+          "eventId": "EVT_WO01090_003",
+          "time": "15:36:54",
+          "lng": 121.433498,
+          "lat": 31.314074,
+          "type": "CCE资源不足",
+          "cell": "CUDU0001065斡徐上影-5G_2",
+          "metrics": {
+            "rsrp": -102.9,
+            "sinr": 19.4,
+            "rlcDelay": 40.9
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        },
+        {
+          "eventId": "EVT_WO01090_004",
+          "time": "15:39:30",
+          "lng": 121.435306,
+          "lat": 31.308838,
+          "type": "CCE资源不足",
+          "cell": "CUDU0001065斡徐上影-5G_2",
+          "metrics": {
+            "rsrp": -104.7,
+            "sinr": 20.7,
+            "rlcDelay": 52.1
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        },
+        {
+          "eventId": "EVT_WO01090_005",
+          "time": "15:42:38",
+          "lng": 121.434491,
+          "lat": 31.313984,
+          "type": "CCE资源不足",
+          "cell": "CUDU0001065斡徐上影-5G_2",
+          "metrics": {
+            "rsrp": -99.4,
+            "sinr": 14.7,
+            "rlcDelay": 47.8
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        },
+        {
+          "eventId": "EVT_WO01090_006",
+          "time": "15:45:44",
+          "lng": 121.433942,
+          "lat": 31.309694,
+          "type": "CCE资源不足",
+          "cell": "CUDU0001065斡徐上影-5G_2",
+          "metrics": {
+            "rsrp": -100.0,
+            "sinr": 18.2,
+            "rlcDelay": 43.3
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        },
+        {
+          "eventId": "EVT_WO01090_007",
+          "time": "15:48:53",
+          "lng": 121.429958,
+          "lat": 31.31429,
+          "type": "CCE资源不足",
+          "cell": "CUDU0001065斡徐上影-5G_2",
+          "metrics": {
+            "rsrp": -99.7,
+            "sinr": 14.6,
+            "rlcDelay": 31.0
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        },
+        {
+          "eventId": "EVT_WO01090_008",
+          "time": "15:51:27",
+          "lng": 121.432851,
+          "lat": 31.309295,
+          "type": "CCE资源不足",
+          "cell": "CUDU0001065斡徐上影-5G_2",
+          "metrics": {
+            "rsrp": -99.5,
+            "sinr": 14.0,
+            "rlcDelay": 14.7
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        }
+      ],
+      "cio": [
+        {
+          "param": "Azimuth",
+          "mo": "NRDUCELLPDSCH",
+          "current": "9",
+          "suggested": "-98",
+          "evidence": 0.6139792062625005
+        },
+        {
+          "param": "DLINITMCS",
+          "mo": "NRDUCELLPDSCH",
+          "current": "6",
+          "suggested": "-103",
+          "evidence": 0.8707813324506107
+        },
+        {
+          "param": "PhyCellId",
+          "mo": "NRDUCELLFEATURESW",
+          "current": "0",
+          "suggested": "8",
+          "evidence": 0.8764678638461004
+        },
+        {
+          "param": "FreqPriInterFA2RsrpThld",
+          "mo": "NRDUCELLPDSCHPRECODE",
+          "current": "-105",
+          "suggested": "5",
+          "evidence": 0.7838882735147081
+        },
+        {
+          "param": "FreqSpecificOffset",
+          "mo": "NRDUCELLPDCCHALGO",
+          "current": "-105",
+          "suggested": "3",
+          "evidence": 0.6557796723811025
+        }
+      ],
+      "strategies": [
+        {
+          "name": "RF覆盖调整",
+          "desc": "调整下倾角与方位角，增强主瓣覆盖",
+          "risk": "低",
+          "status": "待审核"
+        },
+        {
+          "name": "切换参数优化",
+          "desc": "优化A3/A5门限，减少乒乓切换",
+          "risk": "中",
+          "status": "已加入草案"
+        },
+        {
+          "name": "容量扩容",
+          "desc": "周边小区负载均衡参数调整",
+          "risk": "中",
+          "status": "待审核"
+        },
+        {
+          "name": "上行功率控制",
+          "desc": "提升PUSCH发射功率偏移量",
+          "risk": "低",
+          "status": "已加入草案"
+        },
+        {
+          "name": "SRS权值优化",
+          "desc": "开启上行弱覆盖频选调度",
+          "risk": "低",
+          "status": "待审核"
+        },
+        {
+          "name": "PCI混淆核查",
+          "desc": "核查同频同PCI干扰",
+          "risk": "高",
+          "status": "待审核"
+        }
+      ],
+      "guards": [
+        {
+          "suggestionId": "6e18d7b1",
+          "rootCauseType": "RF参数不合理",
+          "affectedCellPair": "CUDU0001065斡徐上影-5G_2|邻区",
+          "parameterName": "FreqPriInterFA2RsrpThld",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.83,
+          "riskLevel": "低",
+          "status": "已加入草案"
+        },
+        {
+          "suggestionId": "bdab9270",
+          "rootCauseType": "上行弱覆盖增强参数问题",
+          "affectedCellPair": "CUDU0001065斡徐上影-5G_2|邻区",
+          "parameterName": "CovInterFreqA2RsrpThld",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.92,
+          "riskLevel": "高",
+          "status": "已加入草案"
+        },
+        {
+          "suggestionId": "6393a813",
+          "rootCauseType": "上行干扰增强参数问题",
+          "affectedCellPair": "CUDU0001065斡徐上影-5G_2|邻区",
+          "parameterName": "CovBasedHoB1RsrpThld",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.79,
+          "riskLevel": "低",
           "status": "已加入草案"
         }
       ],
@@ -17295,240 +18879,343 @@ const SRCON_DATA = {
           "5QI业务保障"
         ],
         "evidenceChain": [
-          "RSRP均值低于门限(-103.2dBm)",
-          "SINR均值14.3dB",
-          "信令成功"
+          "RSRP均值低于门限(-98.5dBm)",
+          "SINR均值19.0dB",
+          "信令failure"
         ],
-        "riskLevel": "低"
+        "riskLevel": "高"
       }
     },
-    "WO01129": {
+    "WO01091": {
       "trend": [
         {
           "time": "15:30",
-          "rsrp": -112.4,
-          "sinr": 8.9,
-          "rlcDelay": 23.6
+          "rsrp": -111.0,
+          "sinr": 12.6,
+          "rlcDelay": 52.3
         },
         {
           "time": "15:31",
-          "rsrp": -109.8,
-          "sinr": 13.7,
-          "rlcDelay": 21.0
+          "rsrp": -110.3,
+          "sinr": 13.2,
+          "rlcDelay": 44.8
         },
         {
           "time": "15:32",
-          "rsrp": -106.2,
-          "sinr": 12.2,
-          "rlcDelay": 26.0
+          "rsrp": -110.9,
+          "sinr": 15.3,
+          "rlcDelay": 46.4
         },
         {
           "time": "15:33",
-          "rsrp": -114.2,
-          "sinr": 14.4,
-          "rlcDelay": 23.0
+          "rsrp": -115.8,
+          "sinr": 10.0,
+          "rlcDelay": 59.5
         },
         {
           "time": "15:34",
-          "rsrp": -109.9,
-          "sinr": 14.3,
-          "rlcDelay": 31.3
+          "rsrp": -112.1,
+          "sinr": 10.7,
+          "rlcDelay": 56.8
         },
         {
           "time": "15:35",
-          "rsrp": -105.2,
-          "sinr": 10.9,
-          "rlcDelay": 20.8
+          "rsrp": -117.0,
+          "sinr": 8.1,
+          "rlcDelay": 59.2
         },
         {
           "time": "15:36",
-          "rsrp": -115.8,
-          "sinr": 12.5,
-          "rlcDelay": 33.3
+          "rsrp": -120.3,
+          "sinr": 11.8,
+          "rlcDelay": 60.4
         },
         {
           "time": "15:37",
-          "rsrp": -108.9,
-          "sinr": 11.9,
-          "rlcDelay": 16.4
+          "rsrp": -120.6,
+          "sinr": 15.4,
+          "rlcDelay": 50.2
         },
         {
           "time": "15:38",
-          "rsrp": -117.7,
-          "sinr": 8.8,
-          "rlcDelay": 13.3
+          "rsrp": -122.7,
+          "sinr": 8.2,
+          "rlcDelay": 53.5
         },
         {
           "time": "15:39",
-          "rsrp": -110.4,
-          "sinr": 12.0,
-          "rlcDelay": 34.3
+          "rsrp": -112.7,
+          "sinr": 14.6,
+          "rlcDelay": 47.3
         },
         {
           "time": "15:40",
-          "rsrp": -107.7,
-          "sinr": 8.7,
-          "rlcDelay": 28.6
+          "rsrp": -121.4,
+          "sinr": 12.0,
+          "rlcDelay": 54.3
         },
         {
           "time": "15:41",
-          "rsrp": -106.1,
-          "sinr": 13.2,
-          "rlcDelay": 22.0
+          "rsrp": -110.1,
+          "sinr": 13.9,
+          "rlcDelay": 52.9
         },
         {
           "time": "15:42",
-          "rsrp": -105.2,
-          "sinr": 10.2,
-          "rlcDelay": 11.8
+          "rsrp": -110.6,
+          "sinr": 13.7,
+          "rlcDelay": 40.6
         },
         {
           "time": "15:43",
-          "rsrp": -107.3,
-          "sinr": 15.1,
-          "rlcDelay": 31.9
+          "rsrp": -116.8,
+          "sinr": 10.4,
+          "rlcDelay": 38.9
         },
         {
           "time": "15:44",
-          "rsrp": -113.2,
-          "sinr": 13.5,
-          "rlcDelay": 21.2
+          "rsrp": -122.1,
+          "sinr": 14.1,
+          "rlcDelay": 50.7
         },
         {
           "time": "15:45",
-          "rsrp": -116.4,
-          "sinr": 14.9,
-          "rlcDelay": 32.8
+          "rsrp": -115.3,
+          "sinr": 9.5,
+          "rlcDelay": 43.2
         },
         {
           "time": "15:46",
           "rsrp": -117.7,
-          "sinr": 9.2,
-          "rlcDelay": 26.7
+          "sinr": 12.8,
+          "rlcDelay": 47.6
         },
         {
           "time": "15:47",
-          "rsrp": -113.6,
-          "sinr": 15.2,
-          "rlcDelay": 34.4
+          "rsrp": -122.6,
+          "sinr": 13.1,
+          "rlcDelay": 50.1
         },
         {
           "time": "15:48",
           "rsrp": -114.4,
-          "sinr": 14.0,
-          "rlcDelay": 19.9
+          "sinr": 12.7,
+          "rlcDelay": 55.6
         },
         {
           "time": "15:49",
-          "rsrp": -113.4,
-          "sinr": 9.0,
-          "rlcDelay": 20.6
+          "rsrp": -115.2,
+          "sinr": 13.3,
+          "rlcDelay": 38.6
         }
       ],
       "signalTrace": [
         {
-          "stepId": "S01",
+          "id": "sig_001",
           "sequence": 1,
+          "time": "15:00:32.416",
           "fromNe": "UE",
-          "toNe": "gNB",
-          "messageName": "PUBLIC_INFORMATION",
-          "messageNameCn": "PUBLIC_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 103,
-          "timestamp": "2026-04-21 15:31:00"
+          "toNe": "Source gNB",
+          "message": "MeasurementReport",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S02",
+          "id": "sig_002",
           "sequence": 2,
-          "fromNe": "gNB",
-          "toNe": "AMF",
-          "messageName": "5G周期Mr",
-          "messageNameCn": "5G周期Mr",
-          "status": "失败",
-          "causeCode": "0x3002",
-          "latencyMs": 47,
-          "timestamp": "2026-04-21 15:32:00"
+          "time": "15:00:40.822",
+          "fromNe": "Source gNB",
+          "toNe": "Target gNB",
+          "message": "HandoverRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S03",
+          "id": "sig_003",
           "sequence": 3,
+          "time": "15:00:44.741",
+          "fromNe": "Target gNB",
+          "toNe": "Source gNB",
+          "message": "HandoverAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_004",
+          "sequence": 4,
+          "time": "15:00:46.408",
+          "fromNe": "Source gNB",
+          "toNe": "UE",
+          "message": "RRCReconfiguration",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_005",
+          "sequence": 5,
+          "time": "15:00:54.568",
+          "fromNe": "UE",
+          "toNe": "Source gNB",
+          "message": "RRCReconfigurationComplete",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_006",
+          "sequence": 6,
+          "time": "15:00:59.524",
+          "fromNe": "Source gNB",
+          "toNe": "AMF",
+          "message": "PathSwitchRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_007",
+          "sequence": 7,
+          "time": "15:01:07.796",
           "fromNe": "AMF",
           "toNe": "SMF",
-          "messageName": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 20,
-          "timestamp": "2026-04-21 15:33:00"
+          "message": "Nsmf_PDUSession_UpdateSMContext",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S04",
-          "sequence": 4,
+          "id": "sig_008",
+          "sequence": 8,
+          "time": "15:01:09.605",
           "fromNe": "SMF",
-          "toNe": "UPF",
-          "messageName": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 128,
-          "timestamp": "2026-04-21 15:34:00"
+          "toNe": "AMF",
+          "message": "Nsmf_PDUSession_UpdateSMContext_RSP",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S05",
-          "sequence": 5,
-          "fromNe": "UPF",
-          "toNe": "DN",
-          "messageName": "PRIVATE_MEASUREMENT_REPORT",
-          "messageNameCn": "PRIVATE_MEASUREMENT_REPORT",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 51,
-          "timestamp": "2026-04-21 15:35:00"
+          "id": "sig_009",
+          "sequence": 9,
+          "time": "15:01:12.666",
+          "fromNe": "AMF",
+          "toNe": "Source gNB",
+          "message": "PathSwitchAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        }
+      ],
+      "qualityEvents": [
+        {
+          "eventId": "EVT_WO01091_001",
+          "time": "15:30:44",
+          "lng": 121.431281,
+          "lat": 31.312319,
+          "type": "CCE资源不足",
+          "cell": "CUDU0001065斡徐上影-5G_2",
+          "metrics": {
+            "rsrp": -124.7,
+            "sinr": 9.8,
+            "rlcDelay": 63.6
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01091_002",
+          "time": "15:33:56",
+          "lng": 121.433399,
+          "lat": 31.314259,
+          "type": "CCE资源不足",
+          "cell": "CUDU0001065斡徐上影-5G_2",
+          "metrics": {
+            "rsrp": -122.3,
+            "sinr": 13.8,
+            "rlcDelay": 70.4
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01091_003",
+          "time": "15:36:12",
+          "lng": 121.429541,
+          "lat": 31.312095,
+          "type": "CCE资源不足",
+          "cell": "CUDU0001065斡徐上影-5G_2",
+          "metrics": {
+            "rsrp": -126.6,
+            "sinr": 13.7,
+            "rlcDelay": 37.4
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01091_004",
+          "time": "15:39:57",
+          "lng": 121.43396,
+          "lat": 31.312871,
+          "type": "CCE资源不足",
+          "cell": "CUDU0001065斡徐上影-5G_2",
+          "metrics": {
+            "rsrp": -118.7,
+            "sinr": 14.3,
+            "rlcDelay": 43.9
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
         }
       ],
       "cio": [
         {
-          "param": "DLRANK2INCSPCTEFFTHLD",
-          "mo": "NRDUCELLPDSCHPRECODE",
-          "current": "6",
-          "suggested": "-103",
-          "evidence": 0.9019015210834327
-        },
-        {
-          "param": "DLINITIALMCSADJVALUE",
-          "mo": "NRCellHoEutranMeaGrp",
-          "current": "9",
-          "suggested": "8",
-          "evidence": 0.6395281177808185
-        },
-        {
           "param": "FreqPriInterFA4RsrpThld",
-          "mo": "NRDUCELLUEPWRSAVING",
-          "current": "-105",
-          "suggested": "-103",
-          "evidence": 0.6915645035299715
-        },
-        {
-          "param": "CovBasedHoB1RsrpThld",
-          "mo": "NRDUCELLTRPBEAM",
-          "current": "6",
-          "suggested": "3",
-          "evidence": 0.8533207401465943
-        },
-        {
-          "param": "CovInterFreqA2RsrpThld",
-          "mo": "NRDUCELLPDSCH",
-          "current": "6",
-          "suggested": "3",
-          "evidence": 0.8408845752120246
+          "mo": "NRDUCELLPDCCHALGO",
+          "current": "-100",
+          "suggested": "-98",
+          "evidence": 0.6643974529748841
         },
         {
           "param": "InterFreqHoSwitch.FREQ_PRIORITY_BASED_HO",
-          "mo": "NRCellInterFHoMeaGrp",
-          "current": "9",
-          "suggested": "-98",
-          "evidence": 0.768675387062224
+          "mo": "NRDUCELLCHNPWR",
+          "current": "-100",
+          "suggested": "-103",
+          "evidence": 0.6634752946707775
+        },
+        {
+          "param": "DLRANK3DECSPCTEFFTHLD",
+          "mo": "NRDUCELLULPCCONFIG",
+          "current": "-105",
+          "suggested": "3",
+          "evidence": 0.7614428212913578
+        },
+        {
+          "param": "FreqPriInterFA2RsrpThld",
+          "mo": "NRCellInterRHoMeaGrp",
+          "current": "0",
+          "suggested": "-103",
+          "evidence": 0.6877406651852342
         }
       ],
       "strategies": [
@@ -17571,36 +19258,494 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "d4b285ea",
+          "suggestionId": "c7123736",
           "rootCauseType": "RF参数不合理",
-          "affectedCellPair": "CUDU0001977长宝地(联通)-3.5G_2|邻区",
-          "parameterName": "MAXUESATPWROFFSET",
+          "affectedCellPair": "CUDU0001065斡徐上影-5G_2|邻区",
+          "parameterName": "CovHoToEutranB2RsrpThld1",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.87,
+          "evidenceScore": 0.88,
           "riskLevel": "中",
-          "status": "待审核"
+          "status": "已加入草案"
         },
         {
-          "suggestionId": "53c08808",
+          "suggestionId": "755b4c5d",
           "rootCauseType": "上行弱覆盖增强参数问题",
-          "affectedCellPair": "CUDU0001977长宝地(联通)-3.5G_2|邻区",
-          "parameterName": "DLRANK3INCSPCTEFFTHLD",
+          "affectedCellPair": "CUDU0001065斡徐上影-5G_2|邻区",
+          "parameterName": "FreqPriInterFA1RsrpThld",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.91,
+          "evidenceScore": 0.73,
           "riskLevel": "高",
           "status": "待审核"
         },
         {
-          "suggestionId": "3418d36c",
+          "suggestionId": "4452979a",
           "rootCauseType": "上行干扰增强参数问题",
-          "affectedCellPair": "CUDU0001977长宝地(联通)-3.5G_2|邻区",
-          "parameterName": "Azimuth",
+          "affectedCellPair": "CUDU0001065斡徐上影-5G_2|邻区",
+          "parameterName": "Mech-Azimuth",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.86,
+          "evidenceScore": 0.77,
           "riskLevel": "低",
+          "status": "待审核"
+        }
+      ],
+      "summary": {
+        "problemDesc": "临汾路1565弄小区区域CCE资源不足问题突出，质差事件755起，质差比例7.31%",
+        "tags": [
+          "CCE资源不足",
+          "上行弱覆盖增强参数问题",
+          "5QI业务保障"
+        ],
+        "evidenceChain": [
+          "RSRP均值低于门限(-114.8dBm)",
+          "SINR均值12.7dB",
+          "信令success"
+        ],
+        "riskLevel": "中"
+      }
+    },
+    "WO01129": {
+      "trend": [
+        {
+          "time": "15:30",
+          "rsrp": -104.1,
+          "sinr": 11.1,
+          "rlcDelay": 37.5
+        },
+        {
+          "time": "15:31",
+          "rsrp": -107.6,
+          "sinr": 10.0,
+          "rlcDelay": 28.5
+        },
+        {
+          "time": "15:32",
+          "rsrp": -108.5,
+          "sinr": 8.3,
+          "rlcDelay": 46.8
+        },
+        {
+          "time": "15:33",
+          "rsrp": -106.1,
+          "sinr": 13.3,
+          "rlcDelay": 31.7
+        },
+        {
+          "time": "15:34",
+          "rsrp": -102.2,
+          "sinr": 13.6,
+          "rlcDelay": 39.9
+        },
+        {
+          "time": "15:35",
+          "rsrp": -107.1,
+          "sinr": 9.0,
+          "rlcDelay": 42.1
+        },
+        {
+          "time": "15:36",
+          "rsrp": -109.4,
+          "sinr": 11.4,
+          "rlcDelay": 49.4
+        },
+        {
+          "time": "15:37",
+          "rsrp": -100.6,
+          "sinr": 7.7,
+          "rlcDelay": 41.8
+        },
+        {
+          "time": "15:38",
+          "rsrp": -108.3,
+          "sinr": 13.7,
+          "rlcDelay": 30.3
+        },
+        {
+          "time": "15:39",
+          "rsrp": -110.8,
+          "sinr": 6.7,
+          "rlcDelay": 41.0
+        },
+        {
+          "time": "15:40",
+          "rsrp": -111.3,
+          "sinr": 11.2,
+          "rlcDelay": 38.5
+        },
+        {
+          "time": "15:41",
+          "rsrp": -104.1,
+          "sinr": 13.8,
+          "rlcDelay": 42.1
+        },
+        {
+          "time": "15:42",
+          "rsrp": -104.7,
+          "sinr": 14.5,
+          "rlcDelay": 40.1
+        },
+        {
+          "time": "15:43",
+          "rsrp": -101.7,
+          "sinr": 9.5,
+          "rlcDelay": 33.9
+        },
+        {
+          "time": "15:44",
+          "rsrp": -101.7,
+          "sinr": 12.4,
+          "rlcDelay": 35.6
+        },
+        {
+          "time": "15:45",
+          "rsrp": -105.7,
+          "sinr": 10.6,
+          "rlcDelay": 38.3
+        },
+        {
+          "time": "15:46",
+          "rsrp": -105.2,
+          "sinr": 11.9,
+          "rlcDelay": 49.5
+        },
+        {
+          "time": "15:47",
+          "rsrp": -101.2,
+          "sinr": 11.5,
+          "rlcDelay": 32.5
+        },
+        {
+          "time": "15:48",
+          "rsrp": -105.1,
+          "sinr": 10.1,
+          "rlcDelay": 32.8
+        },
+        {
+          "time": "15:49",
+          "rsrp": -99.4,
+          "sinr": 11.8,
+          "rlcDelay": 52.5
+        }
+      ],
+      "signalTrace": [
+        {
+          "id": "sig_001",
+          "sequence": 1,
+          "time": "15:00:35.487",
+          "fromNe": "UE",
+          "toNe": "Source gNB",
+          "message": "MeasurementReport",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_002",
+          "sequence": 2,
+          "time": "15:00:37.344",
+          "fromNe": "Source gNB",
+          "toNe": "Target gNB",
+          "message": "HandoverRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_003",
+          "sequence": 3,
+          "time": "15:00:45.619",
+          "fromNe": "Target gNB",
+          "toNe": "Source gNB",
+          "message": "HandoverAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_004",
+          "sequence": 4,
+          "time": "15:00:48.184",
+          "fromNe": "Source gNB",
+          "toNe": "UE",
+          "message": "RRCReconfiguration",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_005",
+          "sequence": 5,
+          "time": "15:00:52.498",
+          "fromNe": "UE",
+          "toNe": "Source gNB",
+          "message": "RRCReconfigurationComplete",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_006",
+          "sequence": 6,
+          "time": "15:00:55.163",
+          "fromNe": "Source gNB",
+          "toNe": "AMF",
+          "message": "PathSwitchRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_007",
+          "sequence": 7,
+          "time": "15:01:02.331",
+          "fromNe": "AMF",
+          "toNe": "SMF",
+          "message": "Nsmf_PDUSession_UpdateSMContext",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_008",
+          "sequence": 8,
+          "time": "15:01:08.930",
+          "fromNe": "SMF",
+          "toNe": "AMF",
+          "message": "Nsmf_PDUSession_UpdateSMContext_RSP",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_009",
+          "sequence": 9,
+          "time": "15:01:12.517",
+          "fromNe": "AMF",
+          "toNe": "Source gNB",
+          "message": "PathSwitchAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        }
+      ],
+      "qualityEvents": [
+        {
+          "eventId": "EVT_WO01129_001",
+          "time": "15:30:51",
+          "lng": 121.43821,
+          "lat": 31.312622,
+          "type": "下行弱覆盖",
+          "cell": "CUDU0001977长宝地(联通)-3.5G_2",
+          "metrics": {
+            "rsrp": -102.0,
+            "sinr": 12.6,
+            "rlcDelay": 24.9
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        },
+        {
+          "eventId": "EVT_WO01129_002",
+          "time": "15:33:26",
+          "lng": 121.439738,
+          "lat": 31.311821,
+          "type": "下行弱覆盖",
+          "cell": "CUDU0001977长宝地(联通)-3.5G_2",
+          "metrics": {
+            "rsrp": -107.9,
+            "sinr": 12.2,
+            "rlcDelay": 56.7
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01129_003",
+          "time": "15:36:14",
+          "lng": 121.439366,
+          "lat": 31.310658,
+          "type": "下行弱覆盖",
+          "cell": "CUDU0001977长宝地(联通)-3.5G_2",
+          "metrics": {
+            "rsrp": -110.1,
+            "sinr": 8.6,
+            "rlcDelay": 46.8
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01129_004",
+          "time": "15:39:32",
+          "lng": 121.439187,
+          "lat": 31.311293,
+          "type": "下行弱覆盖",
+          "cell": "CUDU0001977长宝地(联通)-3.5G_2",
+          "metrics": {
+            "rsrp": -102.1,
+            "sinr": 9.7,
+            "rlcDelay": 37.5
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        },
+        {
+          "eventId": "EVT_WO01129_005",
+          "time": "15:42:20",
+          "lng": 121.437646,
+          "lat": 31.311487,
+          "type": "下行弱覆盖",
+          "cell": "CUDU0001977长宝地(联通)-3.5G_2",
+          "metrics": {
+            "rsrp": -106.7,
+            "sinr": 9.6,
+            "rlcDelay": 28.9
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01129_006",
+          "time": "15:45:48",
+          "lng": 121.44057,
+          "lat": 31.30911,
+          "type": "下行弱覆盖",
+          "cell": "CUDU0001977长宝地(联通)-3.5G_2",
+          "metrics": {
+            "rsrp": -111.5,
+            "sinr": 6.8,
+            "rlcDelay": 29.6
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        }
+      ],
+      "cio": [
+        {
+          "param": "FreqPriInterFA4RsrpThld",
+          "mo": "NRDUCELLPDSCH",
+          "current": "-105",
+          "suggested": "8",
+          "evidence": 0.8363302992104376
+        },
+        {
+          "param": "CovInterFreqA1RsrpThld",
+          "mo": "NRCellAlgoSwitch",
+          "current": "6",
+          "suggested": "-98",
+          "evidence": 0.8265407319491933
+        },
+        {
+          "param": "FreqPriInterFA4RsrpThld",
+          "mo": "NRDUCELLTRPBEAM",
+          "current": "-100",
+          "suggested": "-103",
+          "evidence": 0.6447597902321835
+        },
+        {
+          "param": "A3InterFreqHoA1RsrpThld",
+          "mo": "NRCellFreqRelation",
+          "current": "-100",
+          "suggested": "3",
+          "evidence": 0.6137168028338192
+        }
+      ],
+      "strategies": [
+        {
+          "name": "RF覆盖调整",
+          "desc": "调整下倾角与方位角，增强主瓣覆盖",
+          "risk": "低",
+          "status": "待审核"
+        },
+        {
+          "name": "切换参数优化",
+          "desc": "优化A3/A5门限，减少乒乓切换",
+          "risk": "中",
+          "status": "已加入草案"
+        },
+        {
+          "name": "容量扩容",
+          "desc": "周边小区负载均衡参数调整",
+          "risk": "中",
+          "status": "待审核"
+        },
+        {
+          "name": "上行功率控制",
+          "desc": "提升PUSCH发射功率偏移量",
+          "risk": "低",
+          "status": "已加入草案"
+        },
+        {
+          "name": "SRS权值优化",
+          "desc": "开启上行弱覆盖频选调度",
+          "risk": "低",
+          "status": "待审核"
+        },
+        {
+          "name": "PCI混淆核查",
+          "desc": "核查同频同PCI干扰",
+          "risk": "高",
+          "status": "待审核"
+        }
+      ],
+      "guards": [
+        {
+          "suggestionId": "1e4319b4",
+          "rootCauseType": "RF参数不合理",
+          "affectedCellPair": "CUDU0001977长宝地(联通)-3.5G_2|邻区",
+          "parameterName": "A3InterFreqHoA1RsrpThld",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.74,
+          "riskLevel": "低",
+          "status": "已加入草案"
+        },
+        {
+          "suggestionId": "960f70ea",
+          "rootCauseType": "上行弱覆盖增强参数问题",
+          "affectedCellPair": "CUDU0001977长宝地(联通)-3.5G_2|邻区",
+          "parameterName": "DLINITMCS",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.75,
+          "riskLevel": "中",
+          "status": "待审核"
+        },
+        {
+          "suggestionId": "e289bb3a",
+          "rootCauseType": "上行干扰增强参数问题",
+          "affectedCellPair": "CUDU0001977长宝地(联通)-3.5G_2|邻区",
+          "parameterName": "DLINITIALMCSADJVALUE",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.88,
+          "riskLevel": "高",
           "status": "已加入草案"
         }
       ],
@@ -17608,13 +19753,13 @@ const SRCON_DATA = {
         "problemDesc": "闻喜路1110弄小区区域下行弱覆盖问题突出，质差事件735起，质差比例7.23%",
         "tags": [
           "下行弱覆盖",
-          "上行弱覆盖增强参数问题",
+          "RF参数不合理",
           "5QI业务保障"
         ],
         "evidenceChain": [
-          "RSRP均值低于门限(-109.9dBm)",
-          "SINR均值13.1dB",
-          "信令失败"
+          "RSRP均值低于门限(-103.7dBm)",
+          "SINR均值11.6dB",
+          "信令success"
         ],
         "riskLevel": "低"
       }
@@ -17623,215 +19768,344 @@ const SRCON_DATA = {
       "trend": [
         {
           "time": "15:30",
-          "rsrp": -108.5,
-          "sinr": 4.2,
-          "rlcDelay": 30.0
+          "rsrp": -109.6,
+          "sinr": 21.5,
+          "rlcDelay": 77.1
         },
         {
           "time": "15:31",
-          "rsrp": -112.8,
-          "sinr": 7.0,
-          "rlcDelay": 30.3
+          "rsrp": -101.4,
+          "sinr": 21.4,
+          "rlcDelay": 66.6
         },
         {
           "time": "15:32",
-          "rsrp": -115.2,
-          "sinr": 10.2,
-          "rlcDelay": 35.7
+          "rsrp": -103.2,
+          "sinr": 17.0,
+          "rlcDelay": 80.1
         },
         {
           "time": "15:33",
-          "rsrp": -110.0,
-          "sinr": 7.4,
-          "rlcDelay": 27.4
+          "rsrp": -107.3,
+          "sinr": 18.5,
+          "rlcDelay": 76.8
         },
         {
           "time": "15:34",
-          "rsrp": -114.7,
-          "sinr": 9.0,
-          "rlcDelay": 27.0
+          "rsrp": -108.8,
+          "sinr": 17.9,
+          "rlcDelay": 64.8
         },
         {
           "time": "15:35",
-          "rsrp": -115.8,
-          "sinr": 8.3,
-          "rlcDelay": 24.5
+          "rsrp": -109.1,
+          "sinr": 21.7,
+          "rlcDelay": 74.6
         },
         {
           "time": "15:36",
-          "rsrp": -119.9,
-          "sinr": 8.6,
-          "rlcDelay": 39.9
+          "rsrp": -106.3,
+          "sinr": 16.0,
+          "rlcDelay": 64.4
         },
         {
           "time": "15:37",
-          "rsrp": -117.2,
-          "sinr": 7.9,
-          "rlcDelay": 29.6
+          "rsrp": -105.6,
+          "sinr": 19.8,
+          "rlcDelay": 63.0
         },
         {
           "time": "15:38",
-          "rsrp": -112.4,
-          "sinr": 11.4,
-          "rlcDelay": 33.5
+          "rsrp": -101.6,
+          "sinr": 18.9,
+          "rlcDelay": 65.0
         },
         {
           "time": "15:39",
-          "rsrp": -120.4,
-          "sinr": 5.6,
-          "rlcDelay": 35.8
+          "rsrp": -105.5,
+          "sinr": 15.9,
+          "rlcDelay": 77.1
         },
         {
           "time": "15:40",
-          "rsrp": -113.8,
-          "sinr": 8.8,
-          "rlcDelay": 36.3
+          "rsrp": -101.0,
+          "sinr": 22.0,
+          "rlcDelay": 81.4
         },
         {
           "time": "15:41",
-          "rsrp": -112.6,
-          "sinr": 9.5,
-          "rlcDelay": 27.3
+          "rsrp": -103.3,
+          "sinr": 19.0,
+          "rlcDelay": 71.3
         },
         {
           "time": "15:42",
-          "rsrp": -111.3,
-          "sinr": 5.6,
-          "rlcDelay": 33.0
+          "rsrp": -111.2,
+          "sinr": 19.1,
+          "rlcDelay": 67.8
         },
         {
           "time": "15:43",
-          "rsrp": -110.3,
-          "sinr": 11.5,
-          "rlcDelay": 31.8
+          "rsrp": -101.3,
+          "sinr": 21.2,
+          "rlcDelay": 71.6
         },
         {
           "time": "15:44",
-          "rsrp": -114.3,
-          "sinr": 9.4,
-          "rlcDelay": 25.6
+          "rsrp": -104.1,
+          "sinr": 20.8,
+          "rlcDelay": 81.1
         },
         {
           "time": "15:45",
-          "rsrp": -119.0,
-          "sinr": 4.9,
-          "rlcDelay": 42.4
+          "rsrp": -102.7,
+          "sinr": 15.6,
+          "rlcDelay": 65.4
         },
         {
           "time": "15:46",
-          "rsrp": -111.7,
-          "sinr": 4.7,
-          "rlcDelay": 39.7
+          "rsrp": -105.6,
+          "sinr": 16.7,
+          "rlcDelay": 83.5
         },
         {
           "time": "15:47",
-          "rsrp": -118.7,
-          "sinr": 11.3,
-          "rlcDelay": 34.3
+          "rsrp": -108.1,
+          "sinr": 21.9,
+          "rlcDelay": 72.3
         },
         {
           "time": "15:48",
-          "rsrp": -115.2,
-          "sinr": 10.1,
-          "rlcDelay": 42.4
+          "rsrp": -109.3,
+          "sinr": 20.5,
+          "rlcDelay": 81.8
         },
         {
           "time": "15:49",
-          "rsrp": -119.7,
-          "sinr": 7.1,
-          "rlcDelay": 47.6
+          "rsrp": -104.3,
+          "sinr": 15.8,
+          "rlcDelay": 62.2
         }
       ],
       "signalTrace": [
         {
-          "stepId": "S01",
+          "id": "sig_001",
           "sequence": 1,
+          "time": "15:00:37.943",
           "fromNe": "UE",
-          "toNe": "gNB",
-          "messageName": "5G周期Mr",
-          "messageNameCn": "5G周期Mr",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 120,
-          "timestamp": "2026-04-21 15:31:00"
+          "toNe": "Source gNB",
+          "message": "MeasurementReport",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S02",
+          "id": "sig_002",
           "sequence": 2,
-          "fromNe": "gNB",
-          "toNe": "AMF",
-          "messageName": "PUBLIC_INFORMATION",
-          "messageNameCn": "PUBLIC_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 134,
-          "timestamp": "2026-04-21 15:32:00"
+          "time": "15:00:41.538",
+          "fromNe": "Source gNB",
+          "toNe": "Target gNB",
+          "message": "HandoverRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S03",
+          "id": "sig_003",
           "sequence": 3,
+          "time": "15:00:45.229",
+          "fromNe": "Target gNB",
+          "toNe": "Source gNB",
+          "message": "HandoverAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_004",
+          "sequence": 4,
+          "time": "15:00:48.556",
+          "fromNe": "Source gNB",
+          "toNe": "UE",
+          "message": "RRCReconfiguration",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_005",
+          "sequence": 5,
+          "time": "15:00:55.719",
+          "fromNe": "UE",
+          "toNe": "Source gNB",
+          "message": "RRCReconfigurationComplete",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_006",
+          "sequence": 6,
+          "time": "15:00:59.387",
+          "fromNe": "Source gNB",
+          "toNe": "AMF",
+          "message": "PathSwitchRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_007",
+          "sequence": 7,
+          "time": "15:01:07.668",
           "fromNe": "AMF",
           "toNe": "SMF",
-          "messageName": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "status": "超时",
-          "causeCode": "0x2001",
-          "latencyMs": 140,
-          "timestamp": "2026-04-21 15:33:00"
+          "message": "Nsmf_PDUSession_UpdateSMContext",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S04",
-          "sequence": 4,
+          "id": "sig_008",
+          "sequence": 8,
+          "time": "15:01:12.698",
           "fromNe": "SMF",
-          "toNe": "UPF",
-          "messageName": "5G周期Mr",
-          "messageNameCn": "5G周期Mr",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 115,
-          "timestamp": "2026-04-21 15:34:00"
+          "toNe": "AMF",
+          "message": "Nsmf_PDUSession_UpdateSMContext_RSP",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S05",
-          "sequence": 5,
-          "fromNe": "UPF",
-          "toNe": "DN",
-          "messageName": "PRIVATE_MEASUREMENT_REPORT",
-          "messageNameCn": "PRIVATE_MEASUREMENT_REPORT",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 135,
-          "timestamp": "2026-04-21 15:35:00"
+          "id": "sig_009",
+          "sequence": 9,
+          "time": "15:01:16.746",
+          "fromNe": "AMF",
+          "toNe": "Source gNB",
+          "message": "PathSwitchAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        }
+      ],
+      "qualityEvents": [
+        {
+          "eventId": "EVT_WO01082_001",
+          "time": "15:30:45",
+          "lng": 121.437057,
+          "lat": 31.313042,
+          "type": "下行弱覆盖",
+          "cell": "CUDU0002693金轩大酒店(联通)-5G_2",
+          "metrics": {
+            "rsrp": -100.9,
+            "sinr": 17.0,
+            "rlcDelay": 65.2
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        },
+        {
+          "eventId": "EVT_WO01082_002",
+          "time": "15:33:29",
+          "lng": 121.43582,
+          "lat": 31.314792,
+          "type": "下行弱覆盖",
+          "cell": "CUDU0002693金轩大酒店(联通)-5G_2",
+          "metrics": {
+            "rsrp": -110.2,
+            "sinr": 18.3,
+            "rlcDelay": 67.2
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01082_003",
+          "time": "15:36:17",
+          "lng": 121.436841,
+          "lat": 31.312827,
+          "type": "下行弱覆盖",
+          "cell": "CUDU0002693金轩大酒店(联通)-5G_2",
+          "metrics": {
+            "rsrp": -109.8,
+            "sinr": 14.9,
+            "rlcDelay": 91.6
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01082_004",
+          "time": "15:39:35",
+          "lng": 121.43707,
+          "lat": 31.314952,
+          "type": "下行弱覆盖",
+          "cell": "CUDU0002693金轩大酒店(联通)-5G_2",
+          "metrics": {
+            "rsrp": -105.3,
+            "sinr": 15.1,
+            "rlcDelay": 65.6
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01082_005",
+          "time": "15:42:34",
+          "lng": 121.438141,
+          "lat": 31.310179,
+          "type": "下行弱覆盖",
+          "cell": "CUDU0002693金轩大酒店(联通)-5G_2",
+          "metrics": {
+            "rsrp": -106.6,
+            "sinr": 19.3,
+            "rlcDelay": 59.1
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
         }
       ],
       "cio": [
         {
-          "param": "SPECUERSSISATOFFSET",
-          "mo": "NRDUCELLULPCCONFIG",
-          "current": "-100",
-          "suggested": "-98",
-          "evidence": 0.6362438863932487
-        },
-        {
-          "param": "MAXUESATPWROFFSET",
-          "mo": "NRDUCELLFEATURESW",
-          "current": "6",
-          "suggested": "5",
-          "evidence": 0.7764385417736075
-        },
-        {
-          "param": "TrafficPriority",
-          "mo": "NRDUCELLALGOSWITCH",
-          "current": "6",
-          "suggested": "-98",
-          "evidence": 0.6957585579846389
-        },
-        {
-          "param": "CovBasedHoB1RsrpThld",
-          "mo": "NRDUCELLDLRANK",
+          "param": "DLRANK3INCSPCTEFFTHLD",
+          "mo": "NRCellHoEutranMeaGrp",
           "current": "9",
-          "suggested": "-98",
-          "evidence": 0.6483630019758709
+          "suggested": "3",
+          "evidence": 0.7523821020934673
+        },
+        {
+          "param": "Mech-Tilt",
+          "mo": "NRDUCELLCHNPWR",
+          "current": "-100",
+          "suggested": "5",
+          "evidence": 0.628013907843531
+        },
+        {
+          "param": "Tilt",
+          "mo": "NRDUCELLQCIBEARER",
+          "current": "9",
+          "suggested": "3",
+          "evidence": 0.8296613304492231
         }
       ],
       "strategies": [
@@ -17874,35 +20148,35 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "b017f759",
+          "suggestionId": "af4216ce",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0002693金轩大酒店(联通)-5G_2|邻区",
-          "parameterName": "InterFreqHoSwitch.FREQ_PRIORITY_BASED_HO",
+          "parameterName": "InterRatHoA2RsrpThld",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
           "evidenceScore": 0.88,
           "riskLevel": "高",
-          "status": "已加入草案"
-        },
-        {
-          "suggestionId": "168eb002",
-          "rootCauseType": "上行弱覆盖增强参数问题",
-          "affectedCellPair": "CUDU0002693金轩大酒店(联通)-5G_2|邻区",
-          "parameterName": "DLRANK3INCSPCTEFFTHLD",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.88,
-          "riskLevel": "中",
           "status": "待审核"
         },
         {
-          "suggestionId": "1d1040c8",
-          "rootCauseType": "上行干扰增强参数问题",
+          "suggestionId": "21cb493a",
+          "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0002693金轩大酒店(联通)-5G_2|邻区",
-          "parameterName": "CovHoToEutranB2RsrpThld1",
+          "parameterName": "DLRANK2INCSPCTEFFTHLD",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.75,
+          "evidenceScore": 0.91,
+          "riskLevel": "高",
+          "status": "已加入草案"
+        },
+        {
+          "suggestionId": "4b31bec9",
+          "rootCauseType": "上行干扰增强参数问题",
+          "affectedCellPair": "CUDU0002693金轩大酒店(联通)-5G_2|邻区",
+          "parameterName": "A3InterFreqHoA2RsrpThld",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.7,
           "riskLevel": "高",
           "status": "已加入草案"
         }
@@ -17911,223 +20185,361 @@ const SRCON_DATA = {
         "problemDesc": "三泉前进公寓区域下行弱覆盖问题突出，质差事件698起，质差比例7.68%",
         "tags": [
           "下行弱覆盖",
-          "上行干扰增强参数问题",
+          "RF参数不合理",
           "5QI业务保障"
         ],
         "evidenceChain": [
-          "RSRP均值低于门限(-113.1dBm)",
-          "SINR均值8.8dB",
-          "信令成功"
+          "RSRP均值低于门限(-103.8dBm)",
+          "SINR均值19.8dB",
+          "信令success"
         ],
-        "riskLevel": "中"
+        "riskLevel": "低"
       }
     },
     "WO01083": {
       "trend": [
         {
           "time": "15:30",
-          "rsrp": -87.3,
-          "sinr": -2.7,
-          "rlcDelay": 66.2
+          "rsrp": -95.4,
+          "sinr": 9.6,
+          "rlcDelay": 60.9
         },
         {
           "time": "15:31",
-          "rsrp": -91.7,
-          "sinr": 1.6,
-          "rlcDelay": 71.6
+          "rsrp": -94.9,
+          "sinr": 12.0,
+          "rlcDelay": 54.1
         },
         {
           "time": "15:32",
-          "rsrp": -92.7,
-          "sinr": 0.6,
-          "rlcDelay": 76.2
+          "rsrp": -99.8,
+          "sinr": 7.4,
+          "rlcDelay": 68.6
         },
         {
           "time": "15:33",
-          "rsrp": -90.7,
-          "sinr": 1.3,
-          "rlcDelay": 75.0
+          "rsrp": -98.1,
+          "sinr": 5.8,
+          "rlcDelay": 52.3
         },
         {
           "time": "15:34",
-          "rsrp": -93.0,
-          "sinr": 2.9,
-          "rlcDelay": 63.2
+          "rsrp": -94.3,
+          "sinr": 11.6,
+          "rlcDelay": 65.6
         },
         {
           "time": "15:35",
-          "rsrp": -99.8,
-          "sinr": -3.2,
-          "rlcDelay": 62.1
+          "rsrp": -94.0,
+          "sinr": 8.7,
+          "rlcDelay": 66.5
         },
         {
           "time": "15:36",
-          "rsrp": -99.3,
-          "sinr": -3.6,
-          "rlcDelay": 59.3
+          "rsrp": -98.9,
+          "sinr": 10.8,
+          "rlcDelay": 57.6
         },
         {
           "time": "15:37",
-          "rsrp": -89.8,
-          "sinr": 3.8,
-          "rlcDelay": 69.7
+          "rsrp": -90.9,
+          "sinr": 7.9,
+          "rlcDelay": 62.0
         },
         {
           "time": "15:38",
-          "rsrp": -98.1,
-          "sinr": -3.6,
-          "rlcDelay": 72.2
+          "rsrp": -103.3,
+          "sinr": 5.6,
+          "rlcDelay": 64.6
         },
         {
           "time": "15:39",
-          "rsrp": -97.3,
-          "sinr": 0.2,
-          "rlcDelay": 61.6
+          "rsrp": -96.1,
+          "sinr": 8.3,
+          "rlcDelay": 60.4
         },
         {
           "time": "15:40",
-          "rsrp": -94.1,
-          "sinr": 0.8,
-          "rlcDelay": 69.5
-        },
-        {
-          "time": "15:41",
-          "rsrp": -92.7,
-          "sinr": -2.3,
-          "rlcDelay": 68.8
-        },
-        {
-          "time": "15:42",
-          "rsrp": -94.9,
-          "sinr": 0.0,
-          "rlcDelay": 72.5
-        },
-        {
-          "time": "15:43",
-          "rsrp": -90.9,
-          "sinr": 1.5,
-          "rlcDelay": 53.8
-        },
-        {
-          "time": "15:44",
-          "rsrp": -95.0,
-          "sinr": -0.7,
-          "rlcDelay": 72.3
-        },
-        {
-          "time": "15:45",
-          "rsrp": -91.1,
-          "sinr": 3.6,
-          "rlcDelay": 54.0
-        },
-        {
-          "time": "15:46",
-          "rsrp": -90.3,
-          "sinr": -2.5,
-          "rlcDelay": 74.3
-        },
-        {
-          "time": "15:47",
-          "rsrp": -88.8,
-          "sinr": -0.5,
+          "rsrp": -101.9,
+          "sinr": 8.3,
           "rlcDelay": 58.3
         },
         {
+          "time": "15:41",
+          "rsrp": -96.4,
+          "sinr": 10.6,
+          "rlcDelay": 58.2
+        },
+        {
+          "time": "15:42",
+          "rsrp": -97.6,
+          "sinr": 7.2,
+          "rlcDelay": 64.0
+        },
+        {
+          "time": "15:43",
+          "rsrp": -100.2,
+          "sinr": 6.9,
+          "rlcDelay": 71.3
+        },
+        {
+          "time": "15:44",
+          "rsrp": -94.5,
+          "sinr": 11.4,
+          "rlcDelay": 73.5
+        },
+        {
+          "time": "15:45",
+          "rsrp": -97.1,
+          "sinr": 6.3,
+          "rlcDelay": 61.5
+        },
+        {
+          "time": "15:46",
+          "rsrp": -93.1,
+          "sinr": 6.0,
+          "rlcDelay": 69.4
+        },
+        {
+          "time": "15:47",
+          "rsrp": -93.0,
+          "sinr": 7.5,
+          "rlcDelay": 60.7
+        },
+        {
           "time": "15:48",
-          "rsrp": -91.7,
-          "sinr": 1.6,
-          "rlcDelay": 61.8
+          "rsrp": -96.4,
+          "sinr": 9.8,
+          "rlcDelay": 58.5
         },
         {
           "time": "15:49",
-          "rsrp": -92.3,
-          "sinr": 1.8,
-          "rlcDelay": 57.5
+          "rsrp": -99.7,
+          "sinr": 7.4,
+          "rlcDelay": 70.6
         }
       ],
       "signalTrace": [
         {
-          "stepId": "S01",
+          "id": "sig_001",
           "sequence": 1,
+          "time": "15:00:36.302",
           "fromNe": "UE",
-          "toNe": "gNB",
-          "messageName": "5G周期Mr",
-          "messageNameCn": "5G周期Mr",
-          "status": "超时",
-          "causeCode": "0x3002",
-          "latencyMs": 119,
-          "timestamp": "2026-04-21 15:31:00"
+          "toNe": "Source gNB",
+          "message": "MeasurementReport",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S02",
+          "id": "sig_002",
           "sequence": 2,
-          "fromNe": "gNB",
-          "toNe": "AMF",
-          "messageName": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "status": "超时",
-          "causeCode": "0x2001",
-          "latencyMs": 52,
-          "timestamp": "2026-04-21 15:32:00"
+          "time": "15:00:40.482",
+          "fromNe": "Source gNB",
+          "toNe": "Target gNB",
+          "message": "HandoverRequest",
+          "status": "timeout",
+          "abnormal": true,
+          "reason": "HO Failure / TimeOut"
         },
         {
-          "stepId": "S03",
+          "id": "sig_003",
           "sequence": 3,
-          "fromNe": "AMF",
-          "toNe": "SMF",
-          "messageName": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "status": "失败",
-          "causeCode": "0x2001",
-          "latencyMs": 101,
-          "timestamp": "2026-04-21 15:33:00"
+          "time": "15:00:43.707",
+          "fromNe": "Target gNB",
+          "toNe": "Source gNB",
+          "message": "HandoverFailure",
+          "status": "failure",
+          "abnormal": true,
+          "reason": "Prepare Failure"
         },
         {
-          "stepId": "S04",
+          "id": "sig_004",
           "sequence": 4,
-          "fromNe": "SMF",
-          "toNe": "UPF",
-          "messageName": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 147,
-          "timestamp": "2026-04-21 15:34:00"
+          "time": "15:00:47.307",
+          "fromNe": "Source gNB",
+          "toNe": "UE",
+          "message": "RRCReconfiguration",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        }
+      ],
+      "qualityEvents": [
+        {
+          "eventId": "EVT_WO01083_001",
+          "time": "15:30:22",
+          "lng": 121.433763,
+          "lat": 31.311599,
+          "type": "上行SRS弱覆盖",
+          "cell": "CUDU0002693金轩大酒店(联通)-5G_2",
+          "metrics": {
+            "rsrp": -97.2,
+            "sinr": 10.5,
+            "rlcDelay": 66.9
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
         },
         {
-          "stepId": "S05",
-          "sequence": 5,
-          "fromNe": "UPF",
-          "toNe": "DN",
-          "messageName": "PRIVATE_HO_IN",
-          "messageNameCn": "PRIVATE_HO_IN",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 70,
-          "timestamp": "2026-04-21 15:35:00"
+          "eventId": "EVT_WO01083_002",
+          "time": "15:33:49",
+          "lng": 121.43449,
+          "lat": 31.314821,
+          "type": "上行SRS弱覆盖",
+          "cell": "CUDU0002693金轩大酒店(联通)-5G_2",
+          "metrics": {
+            "rsrp": -103.4,
+            "sinr": 5.1,
+            "rlcDelay": 80.3
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        },
+        {
+          "eventId": "EVT_WO01083_003",
+          "time": "15:36:41",
+          "lng": 121.436037,
+          "lat": 31.314732,
+          "type": "上行SRS弱覆盖",
+          "cell": "CUDU0002693金轩大酒店(联通)-5G_2",
+          "metrics": {
+            "rsrp": -105.6,
+            "sinr": 3.9,
+            "rlcDelay": 85.1
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01083_004",
+          "time": "15:39:49",
+          "lng": 121.434247,
+          "lat": 31.315536,
+          "type": "上行SRS弱覆盖",
+          "cell": "CUDU0002693金轩大酒店(联通)-5G_2",
+          "metrics": {
+            "rsrp": -99.3,
+            "sinr": 3.6,
+            "rlcDelay": 66.2
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        },
+        {
+          "eventId": "EVT_WO01083_005",
+          "time": "15:42:21",
+          "lng": 121.43826,
+          "lat": 31.315643,
+          "type": "上行SRS弱覆盖",
+          "cell": "CUDU0002693金轩大酒店(联通)-5G_2",
+          "metrics": {
+            "rsrp": -94.2,
+            "sinr": 7.8,
+            "rlcDelay": 57.9
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        },
+        {
+          "eventId": "EVT_WO01083_006",
+          "time": "15:45:13",
+          "lng": 121.435508,
+          "lat": 31.312686,
+          "type": "上行SRS弱覆盖",
+          "cell": "CUDU0002693金轩大酒店(联通)-5G_2",
+          "metrics": {
+            "rsrp": -103.2,
+            "sinr": 5.0,
+            "rlcDelay": 70.0
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        },
+        {
+          "eventId": "EVT_WO01083_007",
+          "time": "15:48:53",
+          "lng": 121.437009,
+          "lat": 31.31289,
+          "type": "上行SRS弱覆盖",
+          "cell": "CUDU0002693金轩大酒店(联通)-5G_2",
+          "metrics": {
+            "rsrp": -93.3,
+            "sinr": 3.5,
+            "rlcDelay": 60.8
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        },
+        {
+          "eventId": "EVT_WO01083_008",
+          "time": "15:51:10",
+          "lng": 121.432425,
+          "lat": 31.311412,
+          "type": "上行SRS弱覆盖",
+          "cell": "CUDU0002693金轩大酒店(联通)-5G_2",
+          "metrics": {
+            "rsrp": -105.6,
+            "sinr": 7.4,
+            "rlcDelay": 59.5
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
         }
       ],
       "cio": [
         {
           "param": "CovBasedHoB1RsrpThld",
-          "mo": "NRDUCELLUEPWRSAVING",
-          "current": "-100",
-          "suggested": "-103",
-          "evidence": 0.6537961842493704
+          "mo": "NRDUCELLPDSCHPRECODE",
+          "current": "6",
+          "suggested": "5",
+          "evidence": 0.6655033546834974
+        },
+        {
+          "param": "CovInterFreqA5RsrpThld2",
+          "mo": "CELL",
+          "current": "0",
+          "suggested": "8",
+          "evidence": 0.9354843859715716
         },
         {
           "param": "CovBasedHoB1RsrpThld",
-          "mo": "NRDUCELLFEATURESW",
-          "current": "-105",
-          "suggested": "3",
-          "evidence": 0.8950989934180793
-        },
-        {
-          "param": "InterRatHoA2RsrpThld",
-          "mo": "NRDUCELLPDCCH",
-          "current": "6",
-          "suggested": "3",
-          "evidence": 0.7253299558573088
+          "mo": "NRDUCELLPDSCHPRECODE",
+          "current": "-100",
+          "suggested": "8",
+          "evidence": 0.74838000814383
         }
       ],
       "strategies": [
@@ -18170,36 +20582,36 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "3eaa4afd",
+          "suggestionId": "c3c7c5ca",
           "rootCauseType": "RF参数不合理",
-          "affectedCellPair": "CUDU0002693金轩大酒店(联通)-5G_2|邻区",
-          "parameterName": "DLRANK3DECSPCTEFFTHLD",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.88,
-          "riskLevel": "高",
-          "status": "待审核"
-        },
-        {
-          "suggestionId": "79d511d3",
-          "rootCauseType": "上行弱覆盖增强参数问题",
-          "affectedCellPair": "CUDU0002693金轩大酒店(联通)-5G_2|邻区",
-          "parameterName": "FreqSpecificOffset",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.83,
-          "riskLevel": "高",
-          "status": "待审核"
-        },
-        {
-          "suggestionId": "0536e329",
-          "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0002693金轩大酒店(联通)-5G_2|邻区",
           "parameterName": "FreqPriInterFA4RsrpThld",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.84,
+          "evidenceScore": 0.88,
           "riskLevel": "中",
+          "status": "已加入草案"
+        },
+        {
+          "suggestionId": "61e62bd9",
+          "rootCauseType": "上行弱覆盖增强参数问题",
+          "affectedCellPair": "CUDU0002693金轩大酒店(联通)-5G_2|邻区",
+          "parameterName": "DLRANK4DECSPCTEFFTHLD",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.8,
+          "riskLevel": "中",
+          "status": "待审核"
+        },
+        {
+          "suggestionId": "2d23acb3",
+          "rootCauseType": "上行干扰增强参数问题",
+          "affectedCellPair": "CUDU0002693金轩大酒店(联通)-5G_2|邻区",
+          "parameterName": "A3InterFreqHoA1RsrpThld",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.73,
+          "riskLevel": "高",
           "status": "待审核"
         }
       ],
@@ -18207,1547 +20619,18 @@ const SRCON_DATA = {
         "problemDesc": "三泉前进公寓区域上行SRS弱覆盖问题突出，质差事件698起，质差比例7.68%",
         "tags": [
           "上行SRS弱覆盖",
-          "上行弱覆盖增强参数问题",
+          "RF参数不合理",
           "5QI业务保障"
         ],
         "evidenceChain": [
-          "RSRP均值低于门限(-92.0dBm)",
-          "SINR均值0.9dB",
-          "信令超时"
+          "RSRP均值低于门限(-95.4dBm)",
+          "SINR均值9.2dB",
+          "信令timeout"
         ],
-        "riskLevel": "低"
+        "riskLevel": "高"
       }
     },
     "WO01084": {
-      "trend": [
-        {
-          "time": "15:30",
-          "rsrp": -97.1,
-          "sinr": 15.2,
-          "rlcDelay": 45.3
-        },
-        {
-          "time": "15:31",
-          "rsrp": -94.7,
-          "sinr": 12.1,
-          "rlcDelay": 48.7
-        },
-        {
-          "time": "15:32",
-          "rsrp": -92.5,
-          "sinr": 8.5,
-          "rlcDelay": 38.5
-        },
-        {
-          "time": "15:33",
-          "rsrp": -97.8,
-          "sinr": 12.7,
-          "rlcDelay": 52.8
-        },
-        {
-          "time": "15:34",
-          "rsrp": -97.7,
-          "sinr": 7.9,
-          "rlcDelay": 52.0
-        },
-        {
-          "time": "15:35",
-          "rsrp": -96.0,
-          "sinr": 14.0,
-          "rlcDelay": 32.7
-        },
-        {
-          "time": "15:36",
-          "rsrp": -97.6,
-          "sinr": 13.4,
-          "rlcDelay": 30.5
-        },
-        {
-          "time": "15:37",
-          "rsrp": -94.2,
-          "sinr": 13.8,
-          "rlcDelay": 42.7
-        },
-        {
-          "time": "15:38",
-          "rsrp": -94.3,
-          "sinr": 11.5,
-          "rlcDelay": 37.3
-        },
-        {
-          "time": "15:39",
-          "rsrp": -92.4,
-          "sinr": 10.2,
-          "rlcDelay": 31.9
-        },
-        {
-          "time": "15:40",
-          "rsrp": -99.7,
-          "sinr": 15.4,
-          "rlcDelay": 49.2
-        },
-        {
-          "time": "15:41",
-          "rsrp": -94.0,
-          "sinr": 12.6,
-          "rlcDelay": 35.1
-        },
-        {
-          "time": "15:42",
-          "rsrp": -92.7,
-          "sinr": 9.3,
-          "rlcDelay": 47.0
-        },
-        {
-          "time": "15:43",
-          "rsrp": -90.1,
-          "sinr": 9.2,
-          "rlcDelay": 50.6
-        },
-        {
-          "time": "15:44",
-          "rsrp": -89.5,
-          "sinr": 13.5,
-          "rlcDelay": 40.7
-        },
-        {
-          "time": "15:45",
-          "rsrp": -90.3,
-          "sinr": 8.2,
-          "rlcDelay": 47.0
-        },
-        {
-          "time": "15:46",
-          "rsrp": -100.6,
-          "sinr": 13.3,
-          "rlcDelay": 30.8
-        },
-        {
-          "time": "15:47",
-          "rsrp": -100.0,
-          "sinr": 9.0,
-          "rlcDelay": 36.2
-        },
-        {
-          "time": "15:48",
-          "rsrp": -100.0,
-          "sinr": 14.2,
-          "rlcDelay": 52.6
-        },
-        {
-          "time": "15:49",
-          "rsrp": -95.6,
-          "sinr": 11.2,
-          "rlcDelay": 40.0
-        }
-      ],
-      "signalTrace": [
-        {
-          "stepId": "S01",
-          "sequence": 1,
-          "fromNe": "UE",
-          "toNe": "gNB",
-          "messageName": "PRIVATE_HO_IN",
-          "messageNameCn": "PRIVATE_HO_IN",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 35,
-          "timestamp": "2026-04-21 15:31:00"
-        },
-        {
-          "stepId": "S02",
-          "sequence": 2,
-          "fromNe": "gNB",
-          "toNe": "AMF",
-          "messageName": "PRIVATE_MEASUREMENT_REPORT",
-          "messageNameCn": "PRIVATE_MEASUREMENT_REPORT",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 21,
-          "timestamp": "2026-04-21 15:32:00"
-        },
-        {
-          "stepId": "S03",
-          "sequence": 3,
-          "fromNe": "AMF",
-          "toNe": "SMF",
-          "messageName": "5G周期Mr",
-          "messageNameCn": "5G周期Mr",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 23,
-          "timestamp": "2026-04-21 15:33:00"
-        },
-        {
-          "stepId": "S04",
-          "sequence": 4,
-          "fromNe": "SMF",
-          "toNe": "UPF",
-          "messageName": "PRIVATE_HO_IN",
-          "messageNameCn": "PRIVATE_HO_IN",
-          "status": "超时",
-          "causeCode": "0x2001",
-          "latencyMs": 79,
-          "timestamp": "2026-04-21 15:34:00"
-        },
-        {
-          "stepId": "S05",
-          "sequence": 5,
-          "fromNe": "UPF",
-          "toNe": "DN",
-          "messageName": "5G周期Mr",
-          "messageNameCn": "5G周期Mr",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 27,
-          "timestamp": "2026-04-21 15:35:00"
-        }
-      ],
-      "cio": [
-        {
-          "param": "DLRANK2INCSPCTEFFTHLD",
-          "mo": "NRDUCELLUEPWRSAVING",
-          "current": "9",
-          "suggested": "8",
-          "evidence": 0.8877428295556686
-        },
-        {
-          "param": "Azimuth",
-          "mo": "NRDUCELLPDCCH",
-          "current": "-100",
-          "suggested": "3",
-          "evidence": 0.6769530039111786
-        },
-        {
-          "param": "UESATPWROFFSETTHLD",
-          "mo": "NRDUCELLQCIBEARER",
-          "current": "6",
-          "suggested": "5",
-          "evidence": 0.9360469927781521
-        },
-        {
-          "param": "CoverageScenario",
-          "mo": "NRDUCELLDLRANK",
-          "current": "0",
-          "suggested": "-103",
-          "evidence": 0.7937334657174976
-        },
-        {
-          "param": "FreqPriInterFA2RsrpThld",
-          "mo": "NRCellHoEutranMeaGrp",
-          "current": "-105",
-          "suggested": "-103",
-          "evidence": 0.6017604436759018
-        }
-      ],
-      "strategies": [
-        {
-          "name": "RF覆盖调整",
-          "desc": "调整下倾角与方位角，增强主瓣覆盖",
-          "risk": "低",
-          "status": "待审核"
-        },
-        {
-          "name": "切换参数优化",
-          "desc": "优化A3/A5门限，减少乒乓切换",
-          "risk": "中",
-          "status": "已加入草案"
-        },
-        {
-          "name": "容量扩容",
-          "desc": "周边小区负载均衡参数调整",
-          "risk": "中",
-          "status": "待审核"
-        },
-        {
-          "name": "上行功率控制",
-          "desc": "提升PUSCH发射功率偏移量",
-          "risk": "低",
-          "status": "已加入草案"
-        },
-        {
-          "name": "SRS权值优化",
-          "desc": "开启上行弱覆盖频选调度",
-          "risk": "低",
-          "status": "待审核"
-        },
-        {
-          "name": "PCI混淆核查",
-          "desc": "核查同频同PCI干扰",
-          "risk": "高",
-          "status": "待审核"
-        }
-      ],
-      "guards": [
-        {
-          "suggestionId": "fb118f33",
-          "rootCauseType": "RF参数不合理",
-          "affectedCellPair": "CUDU0002693金轩大酒店(联通)-5G_2|邻区",
-          "parameterName": "InterFreqHoSwitch.FREQ_PRIORITY_BASED_HO",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.8,
-          "riskLevel": "高",
-          "status": "待审核"
-        },
-        {
-          "suggestionId": "c9ac5f7c",
-          "rootCauseType": "上行弱覆盖增强参数问题",
-          "affectedCellPair": "CUDU0002693金轩大酒店(联通)-5G_2|邻区",
-          "parameterName": "InterRatHoA2RsrpThld",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.75,
-          "riskLevel": "高",
-          "status": "已加入草案"
-        },
-        {
-          "suggestionId": "4b5b9337",
-          "rootCauseType": "上行干扰增强参数问题",
-          "affectedCellPair": "CUDU0002693金轩大酒店(联通)-5G_2|邻区",
-          "parameterName": "CovHoToEutranB2RsrpThld1",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.8,
-          "riskLevel": "高",
-          "status": "待审核"
-        }
-      ],
-      "summary": {
-        "problemDesc": "三泉前进公寓区域CCE资源不足问题突出，质差事件698起，质差比例7.68%",
-        "tags": [
-          "CCE资源不足",
-          "RF参数不合理",
-          "5QI业务保障"
-        ],
-        "evidenceChain": [
-          "RSRP均值低于门限(-92.9dBm)",
-          "SINR均值12.6dB",
-          "信令成功"
-        ],
-        "riskLevel": "低"
-      }
-    },
-    "WO01085": {
-      "trend": [
-        {
-          "time": "15:30",
-          "rsrp": -115.1,
-          "sinr": 17.8,
-          "rlcDelay": 43.0
-        },
-        {
-          "time": "15:31",
-          "rsrp": -106.4,
-          "sinr": 18.8,
-          "rlcDelay": 46.5
-        },
-        {
-          "time": "15:32",
-          "rsrp": -111.5,
-          "sinr": 15.8,
-          "rlcDelay": 28.9
-        },
-        {
-          "time": "15:33",
-          "rsrp": -116.6,
-          "sinr": 12.2,
-          "rlcDelay": 39.8
-        },
-        {
-          "time": "15:34",
-          "rsrp": -111.1,
-          "sinr": 14.0,
-          "rlcDelay": 24.9
-        },
-        {
-          "time": "15:35",
-          "rsrp": -109.0,
-          "sinr": 12.2,
-          "rlcDelay": 37.1
-        },
-        {
-          "time": "15:36",
-          "rsrp": -105.8,
-          "sinr": 13.9,
-          "rlcDelay": 32.9
-        },
-        {
-          "time": "15:37",
-          "rsrp": -109.5,
-          "sinr": 13.8,
-          "rlcDelay": 36.3
-        },
-        {
-          "time": "15:38",
-          "rsrp": -110.1,
-          "sinr": 14.3,
-          "rlcDelay": 29.6
-        },
-        {
-          "time": "15:39",
-          "rsrp": -111.9,
-          "sinr": 11.4,
-          "rlcDelay": 27.8
-        },
-        {
-          "time": "15:40",
-          "rsrp": -114.6,
-          "sinr": 17.3,
-          "rlcDelay": 32.6
-        },
-        {
-          "time": "15:41",
-          "rsrp": -106.6,
-          "sinr": 12.4,
-          "rlcDelay": 40.0
-        },
-        {
-          "time": "15:42",
-          "rsrp": -106.1,
-          "sinr": 15.1,
-          "rlcDelay": 30.6
-        },
-        {
-          "time": "15:43",
-          "rsrp": -113.5,
-          "sinr": 15.8,
-          "rlcDelay": 26.1
-        },
-        {
-          "time": "15:44",
-          "rsrp": -109.6,
-          "sinr": 18.1,
-          "rlcDelay": 43.1
-        },
-        {
-          "time": "15:45",
-          "rsrp": -115.7,
-          "sinr": 15.7,
-          "rlcDelay": 28.2
-        },
-        {
-          "time": "15:46",
-          "rsrp": -106.0,
-          "sinr": 12.0,
-          "rlcDelay": 23.5
-        },
-        {
-          "time": "15:47",
-          "rsrp": -117.2,
-          "sinr": 15.4,
-          "rlcDelay": 22.4
-        },
-        {
-          "time": "15:48",
-          "rsrp": -109.9,
-          "sinr": 14.6,
-          "rlcDelay": 36.4
-        },
-        {
-          "time": "15:49",
-          "rsrp": -105.7,
-          "sinr": 15.8,
-          "rlcDelay": 35.2
-        }
-      ],
-      "signalTrace": [
-        {
-          "stepId": "S01",
-          "sequence": 1,
-          "fromNe": "UE",
-          "toNe": "gNB",
-          "messageName": "PRIVATE_MEASUREMENT_REPORT",
-          "messageNameCn": "PRIVATE_MEASUREMENT_REPORT",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 43,
-          "timestamp": "2026-04-21 15:31:00"
-        },
-        {
-          "stepId": "S02",
-          "sequence": 2,
-          "fromNe": "gNB",
-          "toNe": "AMF",
-          "messageName": "PRIVATE_HO_IN",
-          "messageNameCn": "PRIVATE_HO_IN",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 79,
-          "timestamp": "2026-04-21 15:32:00"
-        },
-        {
-          "stepId": "S03",
-          "sequence": 3,
-          "fromNe": "AMF",
-          "toNe": "SMF",
-          "messageName": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 135,
-          "timestamp": "2026-04-21 15:33:00"
-        },
-        {
-          "stepId": "S04",
-          "sequence": 4,
-          "fromNe": "SMF",
-          "toNe": "UPF",
-          "messageName": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 133,
-          "timestamp": "2026-04-21 15:34:00"
-        },
-        {
-          "stepId": "S05",
-          "sequence": 5,
-          "fromNe": "UPF",
-          "toNe": "DN",
-          "messageName": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 47,
-          "timestamp": "2026-04-21 15:35:00"
-        }
-      ],
-      "cio": [
-        {
-          "param": "A3InterFreqHoA2RsrpThld",
-          "mo": "NRCellFreqRelation",
-          "current": "-100",
-          "suggested": "3",
-          "evidence": 0.9320491410645424
-        },
-        {
-          "param": "MAXUESATPWROFFSET",
-          "mo": "NRCellHoEutranMeaGrp",
-          "current": "9",
-          "suggested": "5",
-          "evidence": 0.6141469391181072
-        },
-        {
-          "param": "DLRANK2INCSPCTEFFTHLD",
-          "mo": "NRDUCELLPDCCH",
-          "current": "-100",
-          "suggested": "-103",
-          "evidence": 0.6925249902852052
-        },
-        {
-          "param": "CovInterFreqA2RsrpThld",
-          "mo": "NRCellEutranNFreq",
-          "current": "-100",
-          "suggested": "3",
-          "evidence": 0.9177041324005362
-        }
-      ],
-      "strategies": [
-        {
-          "name": "RF覆盖调整",
-          "desc": "调整下倾角与方位角，增强主瓣覆盖",
-          "risk": "低",
-          "status": "待审核"
-        },
-        {
-          "name": "切换参数优化",
-          "desc": "优化A3/A5门限，减少乒乓切换",
-          "risk": "中",
-          "status": "已加入草案"
-        },
-        {
-          "name": "容量扩容",
-          "desc": "周边小区负载均衡参数调整",
-          "risk": "中",
-          "status": "待审核"
-        },
-        {
-          "name": "上行功率控制",
-          "desc": "提升PUSCH发射功率偏移量",
-          "risk": "低",
-          "status": "已加入草案"
-        },
-        {
-          "name": "SRS权值优化",
-          "desc": "开启上行弱覆盖频选调度",
-          "risk": "低",
-          "status": "待审核"
-        },
-        {
-          "name": "PCI混淆核查",
-          "desc": "核查同频同PCI干扰",
-          "risk": "高",
-          "status": "待审核"
-        }
-      ],
-      "guards": [
-        {
-          "suggestionId": "95e6b312",
-          "rootCauseType": "RF参数不合理",
-          "affectedCellPair": "CUDU0002693金轩大酒店(联通)-5G_2|邻区",
-          "parameterName": "FreqPriInterFA1RsrpThld",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.8,
-          "riskLevel": "中",
-          "status": "待审核"
-        },
-        {
-          "suggestionId": "dd05553e",
-          "rootCauseType": "上行弱覆盖增强参数问题",
-          "affectedCellPair": "CUDU0002693金轩大酒店(联通)-5G_2|邻区",
-          "parameterName": "Tilt",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.95,
-          "riskLevel": "中",
-          "status": "待审核"
-        },
-        {
-          "suggestionId": "88a8ab4a",
-          "rootCauseType": "上行干扰增强参数问题",
-          "affectedCellPair": "CUDU0002693金轩大酒店(联通)-5G_2|邻区",
-          "parameterName": "SPECUERSSISATOFFSET",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.94,
-          "riskLevel": "高",
-          "status": "已加入草案"
-        }
-      ],
-      "summary": {
-        "problemDesc": "三泉前进公寓区域上行DMRS弱覆盖问题突出，质差事件698起，质差比例7.68%",
-        "tags": [
-          "上行DMRS弱覆盖",
-          "上行干扰增强参数问题",
-          "5QI业务保障"
-        ],
-        "evidenceChain": [
-          "RSRP均值低于门限(-109.5dBm)",
-          "SINR均值16.4dB",
-          "信令成功"
-        ],
-        "riskLevel": "中"
-      }
-    },
-    "WO01179": {
-      "trend": [
-        {
-          "time": "15:30",
-          "rsrp": -103.6,
-          "sinr": 10.2,
-          "rlcDelay": 55.1
-        },
-        {
-          "time": "15:31",
-          "rsrp": -107.5,
-          "sinr": 7.6,
-          "rlcDelay": 56.9
-        },
-        {
-          "time": "15:32",
-          "rsrp": -105.6,
-          "sinr": 8.8,
-          "rlcDelay": 53.0
-        },
-        {
-          "time": "15:33",
-          "rsrp": -104.0,
-          "sinr": 11.9,
-          "rlcDelay": 54.8
-        },
-        {
-          "time": "15:34",
-          "rsrp": -108.4,
-          "sinr": 12.6,
-          "rlcDelay": 43.6
-        },
-        {
-          "time": "15:35",
-          "rsrp": -105.5,
-          "sinr": 9.7,
-          "rlcDelay": 39.6
-        },
-        {
-          "time": "15:36",
-          "rsrp": -106.6,
-          "sinr": 6.8,
-          "rlcDelay": 47.7
-        },
-        {
-          "time": "15:37",
-          "rsrp": -97.9,
-          "sinr": 10.8,
-          "rlcDelay": 43.0
-        },
-        {
-          "time": "15:38",
-          "rsrp": -104.2,
-          "sinr": 6.5,
-          "rlcDelay": 49.5
-        },
-        {
-          "time": "15:39",
-          "rsrp": -102.3,
-          "sinr": 10.3,
-          "rlcDelay": 48.8
-        },
-        {
-          "time": "15:40",
-          "rsrp": -103.2,
-          "sinr": 7.5,
-          "rlcDelay": 35.8
-        },
-        {
-          "time": "15:41",
-          "rsrp": -100.8,
-          "sinr": 6.6,
-          "rlcDelay": 45.4
-        },
-        {
-          "time": "15:42",
-          "rsrp": -97.0,
-          "sinr": 6.7,
-          "rlcDelay": 36.8
-        },
-        {
-          "time": "15:43",
-          "rsrp": -96.5,
-          "sinr": 9.7,
-          "rlcDelay": 42.7
-        },
-        {
-          "time": "15:44",
-          "rsrp": -95.9,
-          "sinr": 10.6,
-          "rlcDelay": 54.6
-        },
-        {
-          "time": "15:45",
-          "rsrp": -99.1,
-          "sinr": 12.1,
-          "rlcDelay": 56.3
-        },
-        {
-          "time": "15:46",
-          "rsrp": -105.7,
-          "sinr": 10.4,
-          "rlcDelay": 44.4
-        },
-        {
-          "time": "15:47",
-          "rsrp": -102.3,
-          "sinr": 7.3,
-          "rlcDelay": 42.9
-        },
-        {
-          "time": "15:48",
-          "rsrp": -106.7,
-          "sinr": 10.2,
-          "rlcDelay": 51.8
-        },
-        {
-          "time": "15:49",
-          "rsrp": -100.4,
-          "sinr": 9.6,
-          "rlcDelay": 36.8
-        }
-      ],
-      "signalTrace": [
-        {
-          "stepId": "S01",
-          "sequence": 1,
-          "fromNe": "UE",
-          "toNe": "gNB",
-          "messageName": "5G周期Mr",
-          "messageNameCn": "5G周期Mr",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 121,
-          "timestamp": "2026-04-21 15:31:00"
-        },
-        {
-          "stepId": "S02",
-          "sequence": 2,
-          "fromNe": "gNB",
-          "toNe": "AMF",
-          "messageName": "PRIVATE_MEASUREMENT_REPORT",
-          "messageNameCn": "PRIVATE_MEASUREMENT_REPORT",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 63,
-          "timestamp": "2026-04-21 15:32:00"
-        },
-        {
-          "stepId": "S03",
-          "sequence": 3,
-          "fromNe": "AMF",
-          "toNe": "SMF",
-          "messageName": "PUBLIC_INFORMATION",
-          "messageNameCn": "PUBLIC_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 32,
-          "timestamp": "2026-04-21 15:33:00"
-        },
-        {
-          "stepId": "S04",
-          "sequence": 4,
-          "fromNe": "SMF",
-          "toNe": "UPF",
-          "messageName": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 134,
-          "timestamp": "2026-04-21 15:34:00"
-        },
-        {
-          "stepId": "S05",
-          "sequence": 5,
-          "fromNe": "UPF",
-          "toNe": "DN",
-          "messageName": "5G周期Mr",
-          "messageNameCn": "5G周期Mr",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 43,
-          "timestamp": "2026-04-21 15:35:00"
-        }
-      ],
-      "cio": [
-        {
-          "param": "FreqSpecificOffset",
-          "mo": "NRDUCELLPDCCH",
-          "current": "6",
-          "suggested": "3",
-          "evidence": 0.6136627972663449
-        },
-        {
-          "param": "DLRANK3DECSPCTEFFTHLD",
-          "mo": "NRDUCELLCHNCOVALGO",
-          "current": "6",
-          "suggested": "-103",
-          "evidence": 0.632616488030436
-        },
-        {
-          "param": "MAXUESATPWROFFSET",
-          "mo": "NRCellHoEutranMeaGrp",
-          "current": "6",
-          "suggested": "3",
-          "evidence": 0.8896326225282256
-        }
-      ],
-      "strategies": [
-        {
-          "name": "RF覆盖调整",
-          "desc": "调整下倾角与方位角，增强主瓣覆盖",
-          "risk": "低",
-          "status": "待审核"
-        },
-        {
-          "name": "切换参数优化",
-          "desc": "优化A3/A5门限，减少乒乓切换",
-          "risk": "中",
-          "status": "已加入草案"
-        },
-        {
-          "name": "容量扩容",
-          "desc": "周边小区负载均衡参数调整",
-          "risk": "中",
-          "status": "待审核"
-        },
-        {
-          "name": "上行功率控制",
-          "desc": "提升PUSCH发射功率偏移量",
-          "risk": "低",
-          "status": "已加入草案"
-        },
-        {
-          "name": "SRS权值优化",
-          "desc": "开启上行弱覆盖频选调度",
-          "risk": "低",
-          "status": "待审核"
-        },
-        {
-          "name": "PCI混淆核查",
-          "desc": "核查同频同PCI干扰",
-          "risk": "高",
-          "status": "待审核"
-        }
-      ],
-      "guards": [
-        {
-          "suggestionId": "65e13e23",
-          "rootCauseType": "RF参数不合理",
-          "affectedCellPair": "CUDU0003361长昭化(联通)-5G_3|邻区",
-          "parameterName": "DLINITIALMCSADJVALUE",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.93,
-          "riskLevel": "高",
-          "status": "已加入草案"
-        },
-        {
-          "suggestionId": "c296e85e",
-          "rootCauseType": "上行弱覆盖增强参数问题",
-          "affectedCellPair": "CUDU0003361长昭化(联通)-5G_3|邻区",
-          "parameterName": "InterRatHoA1RsrpThld",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.81,
-          "riskLevel": "低",
-          "status": "已加入草案"
-        },
-        {
-          "suggestionId": "52d56809",
-          "rootCauseType": "上行干扰增强参数问题",
-          "affectedCellPair": "CUDU0003361长昭化(联通)-5G_3|邻区",
-          "parameterName": "CovInterFreqA2RsrpThld",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.93,
-          "riskLevel": "中",
-          "status": "已加入草案"
-        }
-      ],
-      "summary": {
-        "problemDesc": "彭浦新村第五幼儿园区域上行DMRS弱覆盖问题突出，质差事件695起，质差比例5.34%",
-        "tags": [
-          "上行DMRS弱覆盖",
-          "上行弱覆盖增强参数问题",
-          "5QI业务保障"
-        ],
-        "evidenceChain": [
-          "RSRP均值低于门限(-100.5dBm)",
-          "SINR均值10.5dB",
-          "信令成功"
-        ],
-        "riskLevel": "高"
-      }
-    },
-    "WO01180": {
-      "trend": [
-        {
-          "time": "15:30",
-          "rsrp": -95.4,
-          "sinr": 16.4,
-          "rlcDelay": 66.6
-        },
-        {
-          "time": "15:31",
-          "rsrp": -92.9,
-          "sinr": 20.3,
-          "rlcDelay": 62.3
-        },
-        {
-          "time": "15:32",
-          "rsrp": -95.1,
-          "sinr": 17.3,
-          "rlcDelay": 66.7
-        },
-        {
-          "time": "15:33",
-          "rsrp": -102.8,
-          "sinr": 18.9,
-          "rlcDelay": 60.4
-        },
-        {
-          "time": "15:34",
-          "rsrp": -96.1,
-          "sinr": 17.1,
-          "rlcDelay": 69.6
-        },
-        {
-          "time": "15:35",
-          "rsrp": -100.2,
-          "sinr": 19.4,
-          "rlcDelay": 70.5
-        },
-        {
-          "time": "15:36",
-          "rsrp": -101.5,
-          "sinr": 16.4,
-          "rlcDelay": 74.9
-        },
-        {
-          "time": "15:37",
-          "rsrp": -99.5,
-          "sinr": 17.3,
-          "rlcDelay": 74.3
-        },
-        {
-          "time": "15:38",
-          "rsrp": -94.9,
-          "sinr": 20.9,
-          "rlcDelay": 70.2
-        },
-        {
-          "time": "15:39",
-          "rsrp": -100.2,
-          "sinr": 17.4,
-          "rlcDelay": 74.2
-        },
-        {
-          "time": "15:40",
-          "rsrp": -100.6,
-          "sinr": 17.4,
-          "rlcDelay": 72.3
-        },
-        {
-          "time": "15:41",
-          "rsrp": -90.0,
-          "sinr": 17.6,
-          "rlcDelay": 79.6
-        },
-        {
-          "time": "15:42",
-          "rsrp": -97.7,
-          "sinr": 14.1,
-          "rlcDelay": 81.8
-        },
-        {
-          "time": "15:43",
-          "rsrp": -101.3,
-          "sinr": 14.8,
-          "rlcDelay": 79.8
-        },
-        {
-          "time": "15:44",
-          "rsrp": -90.5,
-          "sinr": 13.8,
-          "rlcDelay": 72.9
-        },
-        {
-          "time": "15:45",
-          "rsrp": -92.7,
-          "sinr": 19.4,
-          "rlcDelay": 75.6
-        },
-        {
-          "time": "15:46",
-          "rsrp": -94.0,
-          "sinr": 13.4,
-          "rlcDelay": 70.0
-        },
-        {
-          "time": "15:47",
-          "rsrp": -94.6,
-          "sinr": 19.4,
-          "rlcDelay": 80.8
-        },
-        {
-          "time": "15:48",
-          "rsrp": -96.8,
-          "sinr": 17.8,
-          "rlcDelay": 62.4
-        },
-        {
-          "time": "15:49",
-          "rsrp": -99.5,
-          "sinr": 15.9,
-          "rlcDelay": 75.5
-        }
-      ],
-      "signalTrace": [
-        {
-          "stepId": "S01",
-          "sequence": 1,
-          "fromNe": "UE",
-          "toNe": "gNB",
-          "messageName": "5G周期Mr",
-          "messageNameCn": "5G周期Mr",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 107,
-          "timestamp": "2026-04-21 15:31:00"
-        },
-        {
-          "stepId": "S02",
-          "sequence": 2,
-          "fromNe": "gNB",
-          "toNe": "AMF",
-          "messageName": "PRIVATE_MEASUREMENT_REPORT",
-          "messageNameCn": "PRIVATE_MEASUREMENT_REPORT",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 78,
-          "timestamp": "2026-04-21 15:32:00"
-        },
-        {
-          "stepId": "S03",
-          "sequence": 3,
-          "fromNe": "AMF",
-          "toNe": "SMF",
-          "messageName": "5G周期Mr",
-          "messageNameCn": "5G周期Mr",
-          "status": "超时",
-          "causeCode": "0x2001",
-          "latencyMs": 49,
-          "timestamp": "2026-04-21 15:33:00"
-        },
-        {
-          "stepId": "S04",
-          "sequence": 4,
-          "fromNe": "SMF",
-          "toNe": "UPF",
-          "messageName": "5G周期Mr",
-          "messageNameCn": "5G周期Mr",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 7,
-          "timestamp": "2026-04-21 15:34:00"
-        },
-        {
-          "stepId": "S05",
-          "sequence": 5,
-          "fromNe": "UPF",
-          "toNe": "DN",
-          "messageName": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "status": "失败",
-          "causeCode": "0x4003",
-          "latencyMs": 78,
-          "timestamp": "2026-04-21 15:35:00"
-        }
-      ],
-      "cio": [
-        {
-          "param": "Tilt",
-          "mo": "NRDUCELLFEATURESW",
-          "current": "6",
-          "suggested": "3",
-          "evidence": 0.8444574064097168
-        },
-        {
-          "param": "InterFreqHoSwitch.FREQ_PRIORITY_BASED_HO",
-          "mo": "NRCellFreqRelation",
-          "current": "-105",
-          "suggested": "5",
-          "evidence": 0.683739818850582
-        },
-        {
-          "param": "Azimuth",
-          "mo": "NRCellFreqRelation",
-          "current": "-105",
-          "suggested": "5",
-          "evidence": 0.872885507641746
-        },
-        {
-          "param": "FreqPriInterFA1RsrpThld",
-          "mo": "NRDUCELLQCIBEARER",
-          "current": "9",
-          "suggested": "3",
-          "evidence": 0.6701086340934779
-        }
-      ],
-      "strategies": [
-        {
-          "name": "RF覆盖调整",
-          "desc": "调整下倾角与方位角，增强主瓣覆盖",
-          "risk": "低",
-          "status": "待审核"
-        },
-        {
-          "name": "切换参数优化",
-          "desc": "优化A3/A5门限，减少乒乓切换",
-          "risk": "中",
-          "status": "已加入草案"
-        },
-        {
-          "name": "容量扩容",
-          "desc": "周边小区负载均衡参数调整",
-          "risk": "中",
-          "status": "待审核"
-        },
-        {
-          "name": "上行功率控制",
-          "desc": "提升PUSCH发射功率偏移量",
-          "risk": "低",
-          "status": "已加入草案"
-        },
-        {
-          "name": "SRS权值优化",
-          "desc": "开启上行弱覆盖频选调度",
-          "risk": "低",
-          "status": "待审核"
-        },
-        {
-          "name": "PCI混淆核查",
-          "desc": "核查同频同PCI干扰",
-          "risk": "高",
-          "status": "待审核"
-        }
-      ],
-      "guards": [
-        {
-          "suggestionId": "b2c5c8ed",
-          "rootCauseType": "RF参数不合理",
-          "affectedCellPair": "CUDU0003361长昭化(联通)-5G_3|邻区",
-          "parameterName": "Azimuth",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.88,
-          "riskLevel": "低",
-          "status": "待审核"
-        },
-        {
-          "suggestionId": "c6ccf629",
-          "rootCauseType": "上行弱覆盖增强参数问题",
-          "affectedCellPair": "CUDU0003361长昭化(联通)-5G_3|邻区",
-          "parameterName": "FreqPriInterFA2RsrpThld",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.77,
-          "riskLevel": "高",
-          "status": "已加入草案"
-        },
-        {
-          "suggestionId": "ea7fa005",
-          "rootCauseType": "上行干扰增强参数问题",
-          "affectedCellPair": "CUDU0003361长昭化(联通)-5G_3|邻区",
-          "parameterName": "FreqPriInterFA1RsrpThld",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.94,
-          "riskLevel": "中",
-          "status": "待审核"
-        }
-      ],
-      "summary": {
-        "problemDesc": "彭浦新村第五幼儿园区域上行DMRS弱覆盖问题突出，质差事件695起，质差比例5.34%",
-        "tags": [
-          "上行DMRS弱覆盖",
-          "上行干扰增强参数问题",
-          "5QI业务保障"
-        ],
-        "evidenceChain": [
-          "RSRP均值低于门限(-94.9dBm)",
-          "SINR均值18.0dB",
-          "信令成功"
-        ],
-        "riskLevel": "低"
-      }
-    },
-    "WO01053": {
-      "trend": [
-        {
-          "time": "15:30",
-          "rsrp": -109.4,
-          "sinr": 5.9,
-          "rlcDelay": 24.2
-        },
-        {
-          "time": "15:31",
-          "rsrp": -105.1,
-          "sinr": 4.6,
-          "rlcDelay": 13.2
-        },
-        {
-          "time": "15:32",
-          "rsrp": -105.0,
-          "sinr": 3.9,
-          "rlcDelay": 23.7
-        },
-        {
-          "time": "15:33",
-          "rsrp": -101.3,
-          "sinr": 3.9,
-          "rlcDelay": 21.3
-        },
-        {
-          "time": "15:34",
-          "rsrp": -106.7,
-          "sinr": 5.8,
-          "rlcDelay": 16.4
-        },
-        {
-          "time": "15:35",
-          "rsrp": -107.2,
-          "sinr": 8.1,
-          "rlcDelay": 27.3
-        },
-        {
-          "time": "15:36",
-          "rsrp": -100.0,
-          "sinr": 8.8,
-          "rlcDelay": 22.3
-        },
-        {
-          "time": "15:37",
-          "rsrp": -108.3,
-          "sinr": 4.9,
-          "rlcDelay": 30.0
-        },
-        {
-          "time": "15:38",
-          "rsrp": -108.8,
-          "sinr": 7.5,
-          "rlcDelay": 30.3
-        },
-        {
-          "time": "15:39",
-          "rsrp": -106.3,
-          "sinr": 4.7,
-          "rlcDelay": 23.7
-        },
-        {
-          "time": "15:40",
-          "rsrp": -102.5,
-          "sinr": 4.0,
-          "rlcDelay": 17.5
-        },
-        {
-          "time": "15:41",
-          "rsrp": -106.4,
-          "sinr": 7.9,
-          "rlcDelay": 18.8
-        },
-        {
-          "time": "15:42",
-          "rsrp": -104.4,
-          "sinr": 3.3,
-          "rlcDelay": 18.1
-        },
-        {
-          "time": "15:43",
-          "rsrp": -108.8,
-          "sinr": 6.5,
-          "rlcDelay": 14.8
-        },
-        {
-          "time": "15:44",
-          "rsrp": -101.9,
-          "sinr": 9.3,
-          "rlcDelay": 15.0
-        },
-        {
-          "time": "15:45",
-          "rsrp": -102.0,
-          "sinr": 3.8,
-          "rlcDelay": 16.3
-        },
-        {
-          "time": "15:46",
-          "rsrp": -108.2,
-          "sinr": 3.7,
-          "rlcDelay": 31.2
-        },
-        {
-          "time": "15:47",
-          "rsrp": -100.8,
-          "sinr": 4.7,
-          "rlcDelay": 29.8
-        },
-        {
-          "time": "15:48",
-          "rsrp": -110.1,
-          "sinr": 2.5,
-          "rlcDelay": 34.2
-        },
-        {
-          "time": "15:49",
-          "rsrp": -105.2,
-          "sinr": 1.9,
-          "rlcDelay": 31.7
-        }
-      ],
-      "signalTrace": [
-        {
-          "stepId": "S01",
-          "sequence": 1,
-          "fromNe": "UE",
-          "toNe": "gNB",
-          "messageName": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "status": "失败",
-          "causeCode": "0x3002",
-          "latencyMs": 85,
-          "timestamp": "2026-04-21 15:31:00"
-        },
-        {
-          "stepId": "S02",
-          "sequence": 2,
-          "fromNe": "gNB",
-          "toNe": "AMF",
-          "messageName": "PUBLIC_INFORMATION",
-          "messageNameCn": "PUBLIC_INFORMATION",
-          "status": "失败",
-          "causeCode": "0x4003",
-          "latencyMs": 75,
-          "timestamp": "2026-04-21 15:32:00"
-        },
-        {
-          "stepId": "S03",
-          "sequence": 3,
-          "fromNe": "AMF",
-          "toNe": "SMF",
-          "messageName": "PUBLIC_INFORMATION",
-          "messageNameCn": "PUBLIC_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 135,
-          "timestamp": "2026-04-21 15:33:00"
-        },
-        {
-          "stepId": "S04",
-          "sequence": 4,
-          "fromNe": "SMF",
-          "toNe": "UPF",
-          "messageName": "PRIVATE_HO_IN",
-          "messageNameCn": "PRIVATE_HO_IN",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 37,
-          "timestamp": "2026-04-21 15:34:00"
-        },
-        {
-          "stepId": "S05",
-          "sequence": 5,
-          "fromNe": "UPF",
-          "toNe": "DN",
-          "messageName": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 113,
-          "timestamp": "2026-04-21 15:35:00"
-        }
-      ],
-      "cio": [
-        {
-          "param": "FreqPriInterFA2RsrpThld",
-          "mo": "NRCellEutranNFreq",
-          "current": "6",
-          "suggested": "5",
-          "evidence": 0.7378009229983392
-        },
-        {
-          "param": "MAXUESATPWROFFSET",
-          "mo": "NRCellFreqRelation",
-          "current": "9",
-          "suggested": "-103",
-          "evidence": 0.8443855988336488
-        },
-        {
-          "param": "A3InterFreqHoA2RsrpThld",
-          "mo": "NRDUCELLPDSCH",
-          "current": "-105",
-          "suggested": "-103",
-          "evidence": 0.8359360711556921
-        },
-        {
-          "param": "TrafficPriority",
-          "mo": "NRDUCELLULPCCONFIG",
-          "current": "-105",
-          "suggested": "5",
-          "evidence": 0.7265608140414381
-        },
-        {
-          "param": "DLRANK4DECSPCTEFFTHLD",
-          "mo": "NRDUCELLCHNPWR",
-          "current": "-100",
-          "suggested": "3",
-          "evidence": 0.691997162125995
-        },
-        {
-          "param": "CovInterFreqA5RsrpThld2",
-          "mo": "NRDUCELLPDCCH",
-          "current": "6",
-          "suggested": "5",
-          "evidence": 0.7280734528926743
-        }
-      ],
-      "strategies": [
-        {
-          "name": "RF覆盖调整",
-          "desc": "调整下倾角与方位角，增强主瓣覆盖",
-          "risk": "低",
-          "status": "待审核"
-        },
-        {
-          "name": "切换参数优化",
-          "desc": "优化A3/A5门限，减少乒乓切换",
-          "risk": "中",
-          "status": "已加入草案"
-        },
-        {
-          "name": "容量扩容",
-          "desc": "周边小区负载均衡参数调整",
-          "risk": "中",
-          "status": "待审核"
-        },
-        {
-          "name": "上行功率控制",
-          "desc": "提升PUSCH发射功率偏移量",
-          "risk": "低",
-          "status": "已加入草案"
-        },
-        {
-          "name": "SRS权值优化",
-          "desc": "开启上行弱覆盖频选调度",
-          "risk": "低",
-          "status": "待审核"
-        },
-        {
-          "name": "PCI混淆核查",
-          "desc": "核查同频同PCI干扰",
-          "risk": "高",
-          "status": "待审核"
-        }
-      ],
-      "guards": [
-        {
-          "suggestionId": "3e91e8c8",
-          "rootCauseType": "RF参数不合理",
-          "affectedCellPair": "CUDU0001977长宝地-3.5G_2|邻区",
-          "parameterName": "CovInterFreqA1RsrpThld",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.81,
-          "riskLevel": "中",
-          "status": "已加入草案"
-        },
-        {
-          "suggestionId": "7e6612ba",
-          "rootCauseType": "上行弱覆盖增强参数问题",
-          "affectedCellPair": "CUDU0001977长宝地-3.5G_2|邻区",
-          "parameterName": "FreqPriInterFA1RsrpThld",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.91,
-          "riskLevel": "中",
-          "status": "已加入草案"
-        },
-        {
-          "suggestionId": "621658b7",
-          "rootCauseType": "上行干扰增强参数问题",
-          "affectedCellPair": "CUDU0001977长宝地-3.5G_2|邻区",
-          "parameterName": "FreqSpecificOffset",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.84,
-          "riskLevel": "高",
-          "status": "待审核"
-        }
-      ],
-      "summary": {
-        "problemDesc": "场中路3117弄小区区域CCE资源不足问题突出，质差事件686起，质差比例7.42%",
-        "tags": [
-          "CCE资源不足",
-          "RF参数不合理",
-          "5QI业务保障"
-        ],
-        "evidenceChain": [
-          "RSRP均值低于门限(-103.6dBm)",
-          "SINR均值6.9dB",
-          "信令失败"
-        ],
-        "riskLevel": "高"
-      }
-    },
-    "WO01054": {
       "trend": [
         {
           "time": "15:30",
@@ -19872,693 +20755,192 @@ const SRCON_DATA = {
       ],
       "signalTrace": [
         {
-          "stepId": "S01",
+          "id": "sig_001",
           "sequence": 1,
+          "time": "15:00:34.885",
           "fromNe": "UE",
-          "toNe": "gNB",
-          "messageName": "PRIVATE_HO_IN",
-          "messageNameCn": "PRIVATE_HO_IN",
-          "status": "失败",
-          "causeCode": "0x4003",
-          "latencyMs": 120,
-          "timestamp": "2026-04-21 15:31:00"
+          "toNe": "Source gNB",
+          "message": "MeasurementReport",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S02",
+          "id": "sig_002",
           "sequence": 2,
-          "fromNe": "gNB",
-          "toNe": "AMF",
-          "messageName": "PUBLIC_INFORMATION",
-          "messageNameCn": "PUBLIC_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 10,
-          "timestamp": "2026-04-21 15:32:00"
+          "time": "15:00:40.653",
+          "fromNe": "Source gNB",
+          "toNe": "Target gNB",
+          "message": "HandoverRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S03",
+          "id": "sig_003",
           "sequence": 3,
+          "time": "15:00:45.543",
+          "fromNe": "Target gNB",
+          "toNe": "Source gNB",
+          "message": "HandoverAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_004",
+          "sequence": 4,
+          "time": "15:00:48.308",
+          "fromNe": "Source gNB",
+          "toNe": "UE",
+          "message": "RRCReconfiguration",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_005",
+          "sequence": 5,
+          "time": "15:00:56.143",
+          "fromNe": "UE",
+          "toNe": "Source gNB",
+          "message": "RRCReconfigurationComplete",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_006",
+          "sequence": 6,
+          "time": "15:00:59.865",
+          "fromNe": "Source gNB",
+          "toNe": "AMF",
+          "message": "PathSwitchRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_007",
+          "sequence": 7,
+          "time": "15:01:02.797",
           "fromNe": "AMF",
           "toNe": "SMF",
-          "messageName": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "status": "失败",
-          "causeCode": "0x4003",
-          "latencyMs": 69,
-          "timestamp": "2026-04-21 15:33:00"
+          "message": "Nsmf_PDUSession_UpdateSMContext",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S04",
-          "sequence": 4,
+          "id": "sig_008",
+          "sequence": 8,
+          "time": "15:01:06.881",
           "fromNe": "SMF",
-          "toNe": "UPF",
-          "messageName": "5G周期Mr",
-          "messageNameCn": "5G周期Mr",
-          "status": "失败",
-          "causeCode": "0x2001",
-          "latencyMs": 58,
-          "timestamp": "2026-04-21 15:34:00"
+          "toNe": "AMF",
+          "message": "Nsmf_PDUSession_UpdateSMContext_RSP",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S05",
-          "sequence": 5,
-          "fromNe": "UPF",
-          "toNe": "DN",
-          "messageName": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 29,
-          "timestamp": "2026-04-21 15:35:00"
+          "id": "sig_009",
+          "sequence": 9,
+          "time": "15:01:13.887",
+          "fromNe": "AMF",
+          "toNe": "Source gNB",
+          "message": "PathSwitchAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        }
+      ],
+      "qualityEvents": [
+        {
+          "eventId": "EVT_WO01084_001",
+          "time": "15:30:40",
+          "lng": 121.435645,
+          "lat": 31.310305,
+          "type": "CCE资源不足",
+          "cell": "CUDU0002693金轩大酒店(联通)-5G_2",
+          "metrics": {
+            "rsrp": -117.1,
+            "sinr": 0.4,
+            "rlcDelay": 34.8
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01084_002",
+          "time": "15:33:26",
+          "lng": 121.436063,
+          "lat": 31.310653,
+          "type": "CCE资源不足",
+          "cell": "CUDU0002693金轩大酒店(联通)-5G_2",
+          "metrics": {
+            "rsrp": -114.3,
+            "sinr": 3.3,
+            "rlcDelay": 34.3
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01084_003",
+          "time": "15:36:57",
+          "lng": 121.434059,
+          "lat": 31.313906,
+          "type": "CCE资源不足",
+          "cell": "CUDU0002693金轩大酒店(联通)-5G_2",
+          "metrics": {
+            "rsrp": -106.3,
+            "sinr": 0.3,
+            "rlcDelay": 40.1
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
         }
       ],
       "cio": [
         {
-          "param": "DLINITMCS",
-          "mo": "NRDUCELLPDCCH",
-          "current": "6",
-          "suggested": "-103",
-          "evidence": 0.6092277196781843
-        },
-        {
-          "param": "TrafficPriority",
-          "mo": "NRDUCELLPDCCHALGO",
+          "param": "InterRatHoA1RsrpThld",
+          "mo": "NRCellFreqRelation",
           "current": "-105",
           "suggested": "-103",
-          "evidence": 0.6918582924927454
+          "evidence": 0.8322421973563315
         },
         {
-          "param": "CoverageScenario",
-          "mo": "NRCellInterRHoMeaGrp",
+          "param": "DLRANK4DECSPCTEFFTHLD",
+          "mo": "NRDUCELLPDSCH",
           "current": "9",
-          "suggested": "5",
-          "evidence": 0.6802745844169615
-        }
-      ],
-      "strategies": [
-        {
-          "name": "RF覆盖调整",
-          "desc": "调整下倾角与方位角，增强主瓣覆盖",
-          "risk": "低",
-          "status": "待审核"
-        },
-        {
-          "name": "切换参数优化",
-          "desc": "优化A3/A5门限，减少乒乓切换",
-          "risk": "中",
-          "status": "已加入草案"
-        },
-        {
-          "name": "容量扩容",
-          "desc": "周边小区负载均衡参数调整",
-          "risk": "中",
-          "status": "待审核"
-        },
-        {
-          "name": "上行功率控制",
-          "desc": "提升PUSCH发射功率偏移量",
-          "risk": "低",
-          "status": "已加入草案"
-        },
-        {
-          "name": "SRS权值优化",
-          "desc": "开启上行弱覆盖频选调度",
-          "risk": "低",
-          "status": "待审核"
-        },
-        {
-          "name": "PCI混淆核查",
-          "desc": "核查同频同PCI干扰",
-          "risk": "高",
-          "status": "待审核"
-        }
-      ],
-      "guards": [
-        {
-          "suggestionId": "7e1121fc",
-          "rootCauseType": "RF参数不合理",
-          "affectedCellPair": "CUDU0001977长宝地-3.5G_2|邻区",
-          "parameterName": "UESATPWROFFSETTHLD",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.77,
-          "riskLevel": "高",
-          "status": "待审核"
-        },
-        {
-          "suggestionId": "0c0b1a3c",
-          "rootCauseType": "上行弱覆盖增强参数问题",
-          "affectedCellPair": "CUDU0001977长宝地-3.5G_2|邻区",
-          "parameterName": "CoverageScenario",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.83,
-          "riskLevel": "低",
-          "status": "待审核"
-        },
-        {
-          "suggestionId": "430aa5cb",
-          "rootCauseType": "上行干扰增强参数问题",
-          "affectedCellPair": "CUDU0001977长宝地-3.5G_2|邻区",
-          "parameterName": "Tilt",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.87,
-          "riskLevel": "中",
-          "status": "已加入草案"
-        }
-      ],
-      "summary": {
-        "problemDesc": "场中路3117弄小区区域下行弱覆盖问题突出，质差事件686起，质差比例7.42%",
-        "tags": [
-          "下行弱覆盖",
-          "上行弱覆盖增强参数问题",
-          "5QI业务保障"
-        ],
-        "evidenceChain": [
-          "RSRP均值低于门限(-108.3dBm)",
-          "SINR均值3.2dB",
-          "信令成功"
-        ],
-        "riskLevel": "高"
-      }
-    },
-    "WO01055": {
-      "trend": [
-        {
-          "time": "15:30",
-          "rsrp": -87.3,
-          "sinr": 9.4,
-          "rlcDelay": 32.9
-        },
-        {
-          "time": "15:31",
-          "rsrp": -93.7,
-          "sinr": 11.1,
-          "rlcDelay": 40.0
-        },
-        {
-          "time": "15:32",
-          "rsrp": -94.0,
-          "sinr": 10.2,
-          "rlcDelay": 31.5
-        },
-        {
-          "time": "15:33",
-          "rsrp": -87.8,
-          "sinr": 8.9,
-          "rlcDelay": 23.8
-        },
-        {
-          "time": "15:34",
-          "rsrp": -98.5,
-          "sinr": 7.5,
-          "rlcDelay": 28.4
-        },
-        {
-          "time": "15:35",
-          "rsrp": -97.6,
-          "sinr": 5.2,
-          "rlcDelay": 31.2
-        },
-        {
-          "time": "15:36",
-          "rsrp": -89.8,
-          "sinr": 6.2,
-          "rlcDelay": 25.3
-        },
-        {
-          "time": "15:37",
-          "rsrp": -92.7,
-          "sinr": 10.6,
-          "rlcDelay": 30.4
-        },
-        {
-          "time": "15:38",
-          "rsrp": -89.8,
-          "sinr": 7.5,
-          "rlcDelay": 37.3
-        },
-        {
-          "time": "15:39",
-          "rsrp": -89.3,
-          "sinr": 9.8,
-          "rlcDelay": 38.0
-        },
-        {
-          "time": "15:40",
-          "rsrp": -92.5,
-          "sinr": 6.6,
-          "rlcDelay": 40.2
-        },
-        {
-          "time": "15:41",
-          "rsrp": -93.9,
-          "sinr": 7.1,
-          "rlcDelay": 36.0
-        },
-        {
-          "time": "15:42",
-          "rsrp": -91.2,
-          "sinr": 11.7,
-          "rlcDelay": 23.6
-        },
-        {
-          "time": "15:43",
-          "rsrp": -98.6,
-          "sinr": 10.1,
-          "rlcDelay": 31.0
-        },
-        {
-          "time": "15:44",
-          "rsrp": -89.2,
-          "sinr": 10.0,
-          "rlcDelay": 35.5
-        },
-        {
-          "time": "15:45",
-          "rsrp": -96.1,
-          "sinr": 10.3,
-          "rlcDelay": 31.4
-        },
-        {
-          "time": "15:46",
-          "rsrp": -96.1,
-          "sinr": 6.6,
-          "rlcDelay": 19.8
-        },
-        {
-          "time": "15:47",
-          "rsrp": -97.9,
-          "sinr": 6.0,
-          "rlcDelay": 29.5
-        },
-        {
-          "time": "15:48",
-          "rsrp": -93.7,
-          "sinr": 10.7,
-          "rlcDelay": 30.4
-        },
-        {
-          "time": "15:49",
-          "rsrp": -95.5,
-          "sinr": 6.3,
-          "rlcDelay": 42.3
-        }
-      ],
-      "signalTrace": [
-        {
-          "stepId": "S01",
-          "sequence": 1,
-          "fromNe": "UE",
-          "toNe": "gNB",
-          "messageName": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 31,
-          "timestamp": "2026-04-21 15:31:00"
-        },
-        {
-          "stepId": "S02",
-          "sequence": 2,
-          "fromNe": "gNB",
-          "toNe": "AMF",
-          "messageName": "PRIVATE_HO_IN",
-          "messageNameCn": "PRIVATE_HO_IN",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 117,
-          "timestamp": "2026-04-21 15:32:00"
-        },
-        {
-          "stepId": "S03",
-          "sequence": 3,
-          "fromNe": "AMF",
-          "toNe": "SMF",
-          "messageName": "5G周期Mr",
-          "messageNameCn": "5G周期Mr",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 28,
-          "timestamp": "2026-04-21 15:33:00"
-        },
-        {
-          "stepId": "S04",
-          "sequence": 4,
-          "fromNe": "SMF",
-          "toNe": "UPF",
-          "messageName": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 60,
-          "timestamp": "2026-04-21 15:34:00"
-        },
-        {
-          "stepId": "S05",
-          "sequence": 5,
-          "fromNe": "UPF",
-          "toNe": "DN",
-          "messageName": "PRIVATE_HO_IN",
-          "messageNameCn": "PRIVATE_HO_IN",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 132,
-          "timestamp": "2026-04-21 15:35:00"
-        }
-      ],
-      "cio": [
-        {
-          "param": "A3InterFreqHoA2RsrpThld",
-          "mo": "NRCellEutranNFreq",
-          "current": "0",
-          "suggested": "-103",
-          "evidence": 0.8952412047438274
-        },
-        {
-          "param": "CoverageScenario",
-          "mo": "NRCellEutranNFreq",
-          "current": "0",
           "suggested": "8",
-          "evidence": 0.6249846431621698
+          "evidence": 0.9412435409040331
         },
         {
-          "param": "CovInterFreqA1RsrpThld",
-          "mo": "NRCellFreqRelation",
+          "param": "FreqPriInterFA2RsrpThld",
+          "mo": "NRDUCELLCHNPWR",
+          "current": "6",
+          "suggested": "8",
+          "evidence": 0.6472902177970096
+        },
+        {
+          "param": "SPECUERSSISATOFFSET",
+          "mo": "NRDUCELLCHNCOVALGO",
           "current": "-100",
-          "suggested": "5",
-          "evidence": 0.8860377533998496
-        },
-        {
-          "param": "DLRANK3INCSPCTEFFTHLD",
-          "mo": "NRDUCELLTRPBEAM",
-          "current": "-105",
-          "suggested": "-98",
-          "evidence": 0.7346792647237246
-        },
-        {
-          "param": "A3InterFreqHoA2RsrpThld",
-          "mo": "CELL",
-          "current": "-105",
-          "suggested": "-98",
-          "evidence": 0.7612921223592979
-        }
-      ],
-      "strategies": [
-        {
-          "name": "RF覆盖调整",
-          "desc": "调整下倾角与方位角，增强主瓣覆盖",
-          "risk": "低",
-          "status": "待审核"
-        },
-        {
-          "name": "切换参数优化",
-          "desc": "优化A3/A5门限，减少乒乓切换",
-          "risk": "中",
-          "status": "已加入草案"
-        },
-        {
-          "name": "容量扩容",
-          "desc": "周边小区负载均衡参数调整",
-          "risk": "中",
-          "status": "待审核"
-        },
-        {
-          "name": "上行功率控制",
-          "desc": "提升PUSCH发射功率偏移量",
-          "risk": "低",
-          "status": "已加入草案"
-        },
-        {
-          "name": "SRS权值优化",
-          "desc": "开启上行弱覆盖频选调度",
-          "risk": "低",
-          "status": "待审核"
-        },
-        {
-          "name": "PCI混淆核查",
-          "desc": "核查同频同PCI干扰",
-          "risk": "高",
-          "status": "待审核"
-        }
-      ],
-      "guards": [
-        {
-          "suggestionId": "0fe4488b",
-          "rootCauseType": "RF参数不合理",
-          "affectedCellPair": "CUDU0001977长宝地-3.5G_2|邻区",
-          "parameterName": "DLRANK2INCSPCTEFFTHLD",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.72,
-          "riskLevel": "高",
-          "status": "待审核"
-        },
-        {
-          "suggestionId": "798ff880",
-          "rootCauseType": "上行弱覆盖增强参数问题",
-          "affectedCellPair": "CUDU0001977长宝地-3.5G_2|邻区",
-          "parameterName": "CovInterFreqA1RsrpThld",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.8,
-          "riskLevel": "中",
-          "status": "已加入草案"
-        },
-        {
-          "suggestionId": "c4831e25",
-          "rootCauseType": "上行干扰增强参数问题",
-          "affectedCellPair": "CUDU0001977长宝地-3.5G_2|邻区",
-          "parameterName": "FreqSpecificOffset",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.86,
-          "riskLevel": "低",
-          "status": "待审核"
-        }
-      ],
-      "summary": {
-        "problemDesc": "场中路3117弄小区区域上行SRS弱覆盖问题突出，质差事件686起，质差比例7.42%",
-        "tags": [
-          "上行SRS弱覆盖",
-          "上行弱覆盖增强参数问题",
-          "5QI业务保障"
-        ],
-        "evidenceChain": [
-          "RSRP均值低于门限(-91.6dBm)",
-          "SINR均值10.1dB",
-          "信令成功"
-        ],
-        "riskLevel": "中"
-      }
-    },
-    "WO01056": {
-      "trend": [
-        {
-          "time": "15:30",
-          "rsrp": -95.8,
-          "sinr": -0.9,
-          "rlcDelay": 66.1
-        },
-        {
-          "time": "15:31",
-          "rsrp": -98.8,
-          "sinr": -0.0,
-          "rlcDelay": 67.4
-        },
-        {
-          "time": "15:32",
-          "rsrp": -103.4,
-          "sinr": -1.7,
-          "rlcDelay": 83.0
-        },
-        {
-          "time": "15:33",
-          "rsrp": -106.9,
-          "sinr": -2.3,
-          "rlcDelay": 82.8
-        },
-        {
-          "time": "15:34",
-          "rsrp": -100.9,
-          "sinr": 2.1,
-          "rlcDelay": 72.5
-        },
-        {
-          "time": "15:35",
-          "rsrp": -105.9,
-          "sinr": -1.4,
-          "rlcDelay": 65.5
-        },
-        {
-          "time": "15:36",
-          "rsrp": -99.0,
-          "sinr": 4.8,
-          "rlcDelay": 88.2
-        },
-        {
-          "time": "15:37",
-          "rsrp": -98.9,
-          "sinr": -2.1,
-          "rlcDelay": 79.4
-        },
-        {
-          "time": "15:38",
-          "rsrp": -97.9,
-          "sinr": 3.7,
-          "rlcDelay": 66.4
-        },
-        {
-          "time": "15:39",
-          "rsrp": -104.0,
-          "sinr": 5.2,
-          "rlcDelay": 83.0
-        },
-        {
-          "time": "15:40",
-          "rsrp": -97.2,
-          "sinr": 3.8,
-          "rlcDelay": 74.2
-        },
-        {
-          "time": "15:41",
-          "rsrp": -104.5,
-          "sinr": 2.9,
-          "rlcDelay": 72.2
-        },
-        {
-          "time": "15:42",
-          "rsrp": -105.3,
-          "sinr": 4.6,
-          "rlcDelay": 75.4
-        },
-        {
-          "time": "15:43",
-          "rsrp": -101.3,
-          "sinr": -0.3,
-          "rlcDelay": 80.7
-        },
-        {
-          "time": "15:44",
-          "rsrp": -104.6,
-          "sinr": -1.1,
-          "rlcDelay": 71.9
-        },
-        {
-          "time": "15:45",
-          "rsrp": -97.5,
-          "sinr": -0.4,
-          "rlcDelay": 84.0
-        },
-        {
-          "time": "15:46",
-          "rsrp": -95.1,
-          "sinr": 1.8,
-          "rlcDelay": 65.0
-        },
-        {
-          "time": "15:47",
-          "rsrp": -105.0,
-          "sinr": -0.3,
-          "rlcDelay": 69.8
-        },
-        {
-          "time": "15:48",
-          "rsrp": -102.3,
-          "sinr": -2.6,
-          "rlcDelay": 79.2
-        },
-        {
-          "time": "15:49",
-          "rsrp": -102.1,
-          "sinr": -1.1,
-          "rlcDelay": 63.7
-        }
-      ],
-      "signalTrace": [
-        {
-          "stepId": "S01",
-          "sequence": 1,
-          "fromNe": "UE",
-          "toNe": "gNB",
-          "messageName": "PRIVATE_HO_IN",
-          "messageNameCn": "PRIVATE_HO_IN",
-          "status": "失败",
-          "causeCode": "0x2001",
-          "latencyMs": 87,
-          "timestamp": "2026-04-21 15:31:00"
-        },
-        {
-          "stepId": "S02",
-          "sequence": 2,
-          "fromNe": "gNB",
-          "toNe": "AMF",
-          "messageName": "5G周期Mr",
-          "messageNameCn": "5G周期Mr",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 142,
-          "timestamp": "2026-04-21 15:32:00"
-        },
-        {
-          "stepId": "S03",
-          "sequence": 3,
-          "fromNe": "AMF",
-          "toNe": "SMF",
-          "messageName": "PUBLIC_INFORMATION",
-          "messageNameCn": "PUBLIC_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 132,
-          "timestamp": "2026-04-21 15:33:00"
-        },
-        {
-          "stepId": "S04",
-          "sequence": 4,
-          "fromNe": "SMF",
-          "toNe": "UPF",
-          "messageName": "PRIVATE_MEASUREMENT_REPORT",
-          "messageNameCn": "PRIVATE_MEASUREMENT_REPORT",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 77,
-          "timestamp": "2026-04-21 15:34:00"
-        },
-        {
-          "stepId": "S05",
-          "sequence": 5,
-          "fromNe": "UPF",
-          "toNe": "DN",
-          "messageName": "PRIVATE_HO_IN",
-          "messageNameCn": "PRIVATE_HO_IN",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 87,
-          "timestamp": "2026-04-21 15:35:00"
-        }
-      ],
-      "cio": [
-        {
-          "param": "Mech-Azimuth",
-          "mo": "NRDUCELLPDCCHALGO",
-          "current": "-105",
-          "suggested": "-103",
-          "evidence": 0.892317675264402
-        },
-        {
-          "param": "CoverageScenario",
-          "mo": "NRCellFreqRelation",
-          "current": "-105",
-          "suggested": "-98",
-          "evidence": 0.6374693089714616
-        },
-        {
-          "param": "CovHoToEutranB2RsrpThld1",
-          "mo": "NRCellInterFHoMeaGrp",
-          "current": "-105",
           "suggested": "3",
-          "evidence": 0.8246130838446679
+          "evidence": 0.8091544695927961
         }
       ],
       "strategies": [
@@ -20601,10 +20983,21 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "d14f211f",
+          "suggestionId": "cc84325d",
           "rootCauseType": "RF参数不合理",
-          "affectedCellPair": "CUDU0001977长宝地-3.5G_2|邻区",
-          "parameterName": "TrafficPriority",
+          "affectedCellPair": "CUDU0002693金轩大酒店(联通)-5G_2|邻区",
+          "parameterName": "PhyCellId",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.89,
+          "riskLevel": "高",
+          "status": "已加入草案"
+        },
+        {
+          "suggestionId": "4db6ceec",
+          "rootCauseType": "上行弱覆盖增强参数问题",
+          "affectedCellPair": "CUDU0002693金轩大酒店(联通)-5G_2|邻区",
+          "parameterName": "InterRatHoA1RsrpThld",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
           "evidenceScore": 0.86,
@@ -20612,263 +21005,903 @@ const SRCON_DATA = {
           "status": "已加入草案"
         },
         {
-          "suggestionId": "79e808a8",
-          "rootCauseType": "上行弱覆盖增强参数问题",
-          "affectedCellPair": "CUDU0001977长宝地-3.5G_2|邻区",
-          "parameterName": "Tilt",
+          "suggestionId": "8c4ae36c",
+          "rootCauseType": "上行干扰增强参数问题",
+          "affectedCellPair": "CUDU0002693金轩大酒店(联通)-5G_2|邻区",
+          "parameterName": "DLINITMCS",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
           "evidenceScore": 0.79,
           "riskLevel": "高",
           "status": "待审核"
-        },
-        {
-          "suggestionId": "e6aadea7",
-          "rootCauseType": "上行干扰增强参数问题",
-          "affectedCellPair": "CUDU0001977长宝地-3.5G_2|邻区",
-          "parameterName": "Azimuth",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.93,
-          "riskLevel": "低",
-          "status": "已加入草案"
         }
       ],
       "summary": {
-        "problemDesc": "场中路3117弄小区区域上行DMRS弱覆盖问题突出，质差事件686起，质差比例7.42%",
+        "problemDesc": "三泉前进公寓区域CCE资源不足问题突出，质差事件698起，质差比例7.68%",
+        "tags": [
+          "CCE资源不足",
+          "RF参数不合理",
+          "5QI业务保障"
+        ],
+        "evidenceChain": [
+          "RSRP均值低于门限(-108.3dBm)",
+          "SINR均值3.2dB",
+          "信令success"
+        ],
+        "riskLevel": "中"
+      }
+    },
+    "WO01085": {
+      "trend": [
+        {
+          "time": "15:30",
+          "rsrp": -115.2,
+          "sinr": 6.3,
+          "rlcDelay": 38.3
+        },
+        {
+          "time": "15:31",
+          "rsrp": -113.5,
+          "sinr": 4.4,
+          "rlcDelay": 32.7
+        },
+        {
+          "time": "15:32",
+          "rsrp": -106.4,
+          "sinr": 6.0,
+          "rlcDelay": 38.2
+        },
+        {
+          "time": "15:33",
+          "rsrp": -111.4,
+          "sinr": 8.2,
+          "rlcDelay": 39.3
+        },
+        {
+          "time": "15:34",
+          "rsrp": -107.5,
+          "sinr": 8.4,
+          "rlcDelay": 33.0
+        },
+        {
+          "time": "15:35",
+          "rsrp": -112.9,
+          "sinr": 9.1,
+          "rlcDelay": 30.3
+        },
+        {
+          "time": "15:36",
+          "rsrp": -112.1,
+          "sinr": 7.8,
+          "rlcDelay": 35.5
+        },
+        {
+          "time": "15:37",
+          "rsrp": -104.5,
+          "sinr": 3.8,
+          "rlcDelay": 21.3
+        },
+        {
+          "time": "15:38",
+          "rsrp": -107.2,
+          "sinr": 6.2,
+          "rlcDelay": 39.3
+        },
+        {
+          "time": "15:39",
+          "rsrp": -107.3,
+          "sinr": 7.6,
+          "rlcDelay": 26.1
+        },
+        {
+          "time": "15:40",
+          "rsrp": -106.9,
+          "sinr": 6.3,
+          "rlcDelay": 26.1
+        },
+        {
+          "time": "15:41",
+          "rsrp": -112.9,
+          "sinr": 2.6,
+          "rlcDelay": 22.8
+        },
+        {
+          "time": "15:42",
+          "rsrp": -113.9,
+          "sinr": 5.7,
+          "rlcDelay": 30.7
+        },
+        {
+          "time": "15:43",
+          "rsrp": -106.2,
+          "sinr": 6.0,
+          "rlcDelay": 27.4
+        },
+        {
+          "time": "15:44",
+          "rsrp": -113.3,
+          "sinr": 9.8,
+          "rlcDelay": 19.9
+        },
+        {
+          "time": "15:45",
+          "rsrp": -102.7,
+          "sinr": 4.3,
+          "rlcDelay": 22.5
+        },
+        {
+          "time": "15:46",
+          "rsrp": -109.6,
+          "sinr": 2.1,
+          "rlcDelay": 21.6
+        },
+        {
+          "time": "15:47",
+          "rsrp": -115.1,
+          "sinr": 3.8,
+          "rlcDelay": 29.8
+        },
+        {
+          "time": "15:48",
+          "rsrp": -105.1,
+          "sinr": 6.1,
+          "rlcDelay": 28.6
+        },
+        {
+          "time": "15:49",
+          "rsrp": -106.2,
+          "sinr": 2.3,
+          "rlcDelay": 21.3
+        }
+      ],
+      "signalTrace": [
+        {
+          "id": "sig_001",
+          "sequence": 1,
+          "time": "15:00:33.177",
+          "fromNe": "UE",
+          "toNe": "Source gNB",
+          "message": "MeasurementReport",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_002",
+          "sequence": 2,
+          "time": "15:00:37.914",
+          "fromNe": "Source gNB",
+          "toNe": "Target gNB",
+          "message": "HandoverRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_003",
+          "sequence": 3,
+          "time": "15:00:42.193",
+          "fromNe": "Target gNB",
+          "toNe": "Source gNB",
+          "message": "HandoverAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_004",
+          "sequence": 4,
+          "time": "15:00:48.601",
+          "fromNe": "Source gNB",
+          "toNe": "UE",
+          "message": "RRCReconfiguration",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_005",
+          "sequence": 5,
+          "time": "15:00:51.316",
+          "fromNe": "UE",
+          "toNe": "Source gNB",
+          "message": "RRCReconfigurationComplete",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_006",
+          "sequence": 6,
+          "time": "15:00:59.376",
+          "fromNe": "Source gNB",
+          "toNe": "AMF",
+          "message": "PathSwitchRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_007",
+          "sequence": 7,
+          "time": "15:01:07.510",
+          "fromNe": "AMF",
+          "toNe": "SMF",
+          "message": "Nsmf_PDUSession_UpdateSMContext",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_008",
+          "sequence": 8,
+          "time": "15:01:15.132",
+          "fromNe": "SMF",
+          "toNe": "AMF",
+          "message": "Nsmf_PDUSession_UpdateSMContext_RSP",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_009",
+          "sequence": 9,
+          "time": "15:01:17.906",
+          "fromNe": "AMF",
+          "toNe": "Source gNB",
+          "message": "PathSwitchAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        }
+      ],
+      "qualityEvents": [
+        {
+          "eventId": "EVT_WO01085_001",
+          "time": "15:30:57",
+          "lng": 121.438321,
+          "lat": 31.311342,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0002693金轩大酒店(联通)-5G_2",
+          "metrics": {
+            "rsrp": -115.6,
+            "sinr": 7.2,
+            "rlcDelay": 32.1
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01085_002",
+          "time": "15:33:23",
+          "lng": 121.435191,
+          "lat": 31.314236,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0002693金轩大酒店(联通)-5G_2",
+          "metrics": {
+            "rsrp": -108.3,
+            "sinr": 1.8,
+            "rlcDelay": 41.0
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01085_003",
+          "time": "15:36:12",
+          "lng": 121.436822,
+          "lat": 31.313444,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0002693金轩大酒店(联通)-5G_2",
+          "metrics": {
+            "rsrp": -114.6,
+            "sinr": 3.7,
+            "rlcDelay": 39.5
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01085_004",
+          "time": "15:39:33",
+          "lng": 121.437679,
+          "lat": 31.315329,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0002693金轩大酒店(联通)-5G_2",
+          "metrics": {
+            "rsrp": -117.5,
+            "sinr": 4.9,
+            "rlcDelay": 26.3
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01085_005",
+          "time": "15:42:30",
+          "lng": 121.432444,
+          "lat": 31.314913,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0002693金轩大酒店(联通)-5G_2",
+          "metrics": {
+            "rsrp": -116.0,
+            "sinr": 2.0,
+            "rlcDelay": 39.7
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01085_006",
+          "time": "15:45:12",
+          "lng": 121.43584,
+          "lat": 31.314292,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0002693金轩大酒店(联通)-5G_2",
+          "metrics": {
+            "rsrp": -110.5,
+            "sinr": 4.2,
+            "rlcDelay": 24.1
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01085_007",
+          "time": "15:48:25",
+          "lng": 121.4333,
+          "lat": 31.310695,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0002693金轩大酒店(联通)-5G_2",
+          "metrics": {
+            "rsrp": -109.0,
+            "sinr": 2.3,
+            "rlcDelay": 45.2
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01085_008",
+          "time": "15:51:50",
+          "lng": 121.432714,
+          "lat": 31.31228,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0002693金轩大酒店(联通)-5G_2",
+          "metrics": {
+            "rsrp": -110.0,
+            "sinr": 8.5,
+            "rlcDelay": 54.2
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        }
+      ],
+      "cio": [
+        {
+          "param": "SPECUERSSISATOFFSET",
+          "mo": "NRDUCELLCHNCOVALGO",
+          "current": "-105",
+          "suggested": "-98",
+          "evidence": 0.770745008673043
+        },
+        {
+          "param": "CovBasedHoB1RsrpThld",
+          "mo": "NRDUCELLCHNCOVALGO",
+          "current": "0",
+          "suggested": "8",
+          "evidence": 0.8566160911138195
+        },
+        {
+          "param": "Azimuth",
+          "mo": "NRDUCELLQCIBEARER",
+          "current": "0",
+          "suggested": "-98",
+          "evidence": 0.6877436843852107
+        },
+        {
+          "param": "Tilt",
+          "mo": "NRDUCELLPDCCH",
+          "current": "9",
+          "suggested": "3",
+          "evidence": 0.7031501087543139
+        }
+      ],
+      "strategies": [
+        {
+          "name": "RF覆盖调整",
+          "desc": "调整下倾角与方位角，增强主瓣覆盖",
+          "risk": "低",
+          "status": "待审核"
+        },
+        {
+          "name": "切换参数优化",
+          "desc": "优化A3/A5门限，减少乒乓切换",
+          "risk": "中",
+          "status": "已加入草案"
+        },
+        {
+          "name": "容量扩容",
+          "desc": "周边小区负载均衡参数调整",
+          "risk": "中",
+          "status": "待审核"
+        },
+        {
+          "name": "上行功率控制",
+          "desc": "提升PUSCH发射功率偏移量",
+          "risk": "低",
+          "status": "已加入草案"
+        },
+        {
+          "name": "SRS权值优化",
+          "desc": "开启上行弱覆盖频选调度",
+          "risk": "低",
+          "status": "待审核"
+        },
+        {
+          "name": "PCI混淆核查",
+          "desc": "核查同频同PCI干扰",
+          "risk": "高",
+          "status": "待审核"
+        }
+      ],
+      "guards": [
+        {
+          "suggestionId": "0ce187f1",
+          "rootCauseType": "RF参数不合理",
+          "affectedCellPair": "CUDU0002693金轩大酒店(联通)-5G_2|邻区",
+          "parameterName": "SPECUERSSISATOFFSET",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.82,
+          "riskLevel": "高",
+          "status": "待审核"
+        },
+        {
+          "suggestionId": "6fbde4fc",
+          "rootCauseType": "上行弱覆盖增强参数问题",
+          "affectedCellPair": "CUDU0002693金轩大酒店(联通)-5G_2|邻区",
+          "parameterName": "FreqPriInterFA2RsrpThld",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.79,
+          "riskLevel": "高",
+          "status": "已加入草案"
+        },
+        {
+          "suggestionId": "8327aea1",
+          "rootCauseType": "上行干扰增强参数问题",
+          "affectedCellPair": "CUDU0002693金轩大酒店(联通)-5G_2|邻区",
+          "parameterName": "CovInterFreqA5RsrpThld2",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.92,
+          "riskLevel": "高",
+          "status": "待审核"
+        }
+      ],
+      "summary": {
+        "problemDesc": "三泉前进公寓区域上行DMRS弱覆盖问题突出，质差事件698起，质差比例7.68%",
         "tags": [
           "上行DMRS弱覆盖",
           "RF参数不合理",
           "5QI业务保障"
         ],
         "evidenceChain": [
-          "RSRP均值低于门限(-99.0dBm)",
-          "SINR均值2.4dB",
-          "信令成功"
+          "RSRP均值低于门限(-107.3dBm)",
+          "SINR均值7.1dB",
+          "信令success"
         ],
-        "riskLevel": "中"
+        "riskLevel": "高"
       }
     },
-    "WO01022": {
+    "WO01179": {
       "trend": [
         {
           "time": "15:30",
-          "rsrp": -90.8,
-          "sinr": -2.3,
-          "rlcDelay": 52.7
+          "rsrp": -114.4,
+          "sinr": -0.5,
+          "rlcDelay": 41.8
         },
         {
           "time": "15:31",
-          "rsrp": -93.8,
-          "sinr": 0.9,
-          "rlcDelay": 50.1
+          "rsrp": -114.2,
+          "sinr": 1.0,
+          "rlcDelay": 26.3
         },
         {
           "time": "15:32",
-          "rsrp": -102.4,
-          "sinr": -5.1,
-          "rlcDelay": 51.1
+          "rsrp": -108.0,
+          "sinr": 5.7,
+          "rlcDelay": 31.8
         },
         {
           "time": "15:33",
-          "rsrp": -90.7,
-          "sinr": 2.0,
-          "rlcDelay": 45.9
+          "rsrp": -109.8,
+          "sinr": 4.8,
+          "rlcDelay": 39.3
         },
         {
           "time": "15:34",
-          "rsrp": -93.5,
-          "sinr": -1.4,
-          "rlcDelay": 48.2
+          "rsrp": -114.1,
+          "sinr": 3.7,
+          "rlcDelay": 38.2
         },
         {
           "time": "15:35",
-          "rsrp": -96.1,
-          "sinr": -3.7,
-          "rlcDelay": 59.1
+          "rsrp": -112.0,
+          "sinr": 4.4,
+          "rlcDelay": 33.9
         },
         {
           "time": "15:36",
-          "rsrp": -100.6,
-          "sinr": 0.3,
-          "rlcDelay": 53.9
+          "rsrp": -110.8,
+          "sinr": 0.4,
+          "rlcDelay": 38.9
         },
         {
           "time": "15:37",
-          "rsrp": -101.6,
-          "sinr": -0.6,
-          "rlcDelay": 52.4
+          "rsrp": -118.3,
+          "sinr": 6.2,
+          "rlcDelay": 29.0
         },
         {
           "time": "15:38",
-          "rsrp": -97.0,
-          "sinr": -0.3,
-          "rlcDelay": 65.6
+          "rsrp": -107.8,
+          "sinr": 1.1,
+          "rlcDelay": 37.9
         },
         {
           "time": "15:39",
-          "rsrp": -100.8,
-          "sinr": -4.2,
-          "rlcDelay": 53.5
+          "rsrp": -117.8,
+          "sinr": 4.1,
+          "rlcDelay": 46.7
         },
         {
           "time": "15:40",
-          "rsrp": -98.6,
-          "sinr": -4.4,
-          "rlcDelay": 68.4
+          "rsrp": -110.6,
+          "sinr": 3.7,
+          "rlcDelay": 43.3
         },
         {
           "time": "15:41",
-          "rsrp": -97.2,
-          "sinr": -2.8,
-          "rlcDelay": 51.4
+          "rsrp": -115.8,
+          "sinr": 2.4,
+          "rlcDelay": 40.9
         },
         {
           "time": "15:42",
-          "rsrp": -90.1,
-          "sinr": -3.1,
-          "rlcDelay": 52.8
+          "rsrp": -118.2,
+          "sinr": 6.9,
+          "rlcDelay": 31.0
         },
         {
           "time": "15:43",
-          "rsrp": -93.0,
-          "sinr": -2.2,
-          "rlcDelay": 61.6
+          "rsrp": -112.7,
+          "sinr": 6.6,
+          "rlcDelay": 27.8
         },
         {
           "time": "15:44",
-          "rsrp": -95.1,
-          "sinr": -1.2,
-          "rlcDelay": 48.8
+          "rsrp": -108.7,
+          "sinr": -0.0,
+          "rlcDelay": 39.8
         },
         {
           "time": "15:45",
-          "rsrp": -93.0,
-          "sinr": 1.7,
-          "rlcDelay": 49.8
+          "rsrp": -106.9,
+          "sinr": 2.8,
+          "rlcDelay": 35.0
         },
         {
           "time": "15:46",
-          "rsrp": -90.5,
-          "sinr": -2.1,
-          "rlcDelay": 53.4
+          "rsrp": -109.9,
+          "sinr": 6.1,
+          "rlcDelay": 32.4
         },
         {
           "time": "15:47",
-          "rsrp": -93.5,
-          "sinr": 2.2,
-          "rlcDelay": 58.4
+          "rsrp": -118.6,
+          "sinr": 0.1,
+          "rlcDelay": 33.4
         },
         {
           "time": "15:48",
-          "rsrp": -96.2,
-          "sinr": 2.3,
-          "rlcDelay": 51.0
+          "rsrp": -106.8,
+          "sinr": 7.2,
+          "rlcDelay": 28.2
         },
         {
           "time": "15:49",
-          "rsrp": -99.1,
-          "sinr": -3.9,
-          "rlcDelay": 64.9
+          "rsrp": -109.7,
+          "sinr": 3.8,
+          "rlcDelay": 30.5
         }
       ],
       "signalTrace": [
         {
-          "stepId": "S01",
+          "id": "sig_001",
           "sequence": 1,
+          "time": "15:00:33.703",
           "fromNe": "UE",
-          "toNe": "gNB",
-          "messageName": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "status": "失败",
-          "causeCode": "0x4003",
-          "latencyMs": 75,
-          "timestamp": "2026-04-21 15:31:00"
+          "toNe": "Source gNB",
+          "message": "MeasurementReport",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S02",
+          "id": "sig_002",
           "sequence": 2,
-          "fromNe": "gNB",
-          "toNe": "AMF",
-          "messageName": "PRIVATE_MEASUREMENT_REPORT",
-          "messageNameCn": "PRIVATE_MEASUREMENT_REPORT",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 44,
-          "timestamp": "2026-04-21 15:32:00"
+          "time": "15:00:40.303",
+          "fromNe": "Source gNB",
+          "toNe": "Target gNB",
+          "message": "HandoverRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S03",
+          "id": "sig_003",
           "sequence": 3,
+          "time": "15:00:46.887",
+          "fromNe": "Target gNB",
+          "toNe": "Source gNB",
+          "message": "HandoverAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_004",
+          "sequence": 4,
+          "time": "15:00:52.545",
+          "fromNe": "Source gNB",
+          "toNe": "UE",
+          "message": "RRCReconfiguration",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_005",
+          "sequence": 5,
+          "time": "15:00:59.228",
+          "fromNe": "UE",
+          "toNe": "Source gNB",
+          "message": "RRCReconfigurationComplete",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_006",
+          "sequence": 6,
+          "time": "15:01:07.773",
+          "fromNe": "Source gNB",
+          "toNe": "AMF",
+          "message": "PathSwitchRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_007",
+          "sequence": 7,
+          "time": "15:01:13.486",
           "fromNe": "AMF",
           "toNe": "SMF",
-          "messageName": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 96,
-          "timestamp": "2026-04-21 15:33:00"
+          "message": "Nsmf_PDUSession_UpdateSMContext",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S04",
-          "sequence": 4,
+          "id": "sig_008",
+          "sequence": 8,
+          "time": "15:01:20.589",
           "fromNe": "SMF",
-          "toNe": "UPF",
-          "messageName": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 98,
-          "timestamp": "2026-04-21 15:34:00"
+          "toNe": "AMF",
+          "message": "Nsmf_PDUSession_UpdateSMContext_RSP",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S05",
-          "sequence": 5,
-          "fromNe": "UPF",
-          "toNe": "DN",
-          "messageName": "PRIVATE_MEASUREMENT_REPORT",
-          "messageNameCn": "PRIVATE_MEASUREMENT_REPORT",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 70,
-          "timestamp": "2026-04-21 15:35:00"
+          "id": "sig_009",
+          "sequence": 9,
+          "time": "15:01:27.801",
+          "fromNe": "AMF",
+          "toNe": "Source gNB",
+          "message": "PathSwitchAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        }
+      ],
+      "qualityEvents": [
+        {
+          "eventId": "EVT_WO01179_001",
+          "time": "15:30:35",
+          "lng": 121.442554,
+          "lat": 31.311688,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0003361长昭化(联通)-5G_3",
+          "metrics": {
+            "rsrp": -109.9,
+            "sinr": -0.2,
+            "rlcDelay": 28.0
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01179_002",
+          "time": "15:33:30",
+          "lng": 121.442826,
+          "lat": 31.313724,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0003361长昭化(联通)-5G_3",
+          "metrics": {
+            "rsrp": -115.1,
+            "sinr": 3.3,
+            "rlcDelay": 58.1
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01179_003",
+          "time": "15:36:56",
+          "lng": 121.441467,
+          "lat": 31.309187,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0003361长昭化(联通)-5G_3",
+          "metrics": {
+            "rsrp": -110.5,
+            "sinr": 1.8,
+            "rlcDelay": 46.1
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01179_004",
+          "time": "15:39:57",
+          "lng": 121.441051,
+          "lat": 31.313513,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0003361长昭化(联通)-5G_3",
+          "metrics": {
+            "rsrp": -114.9,
+            "sinr": 1.5,
+            "rlcDelay": 42.8
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01179_005",
+          "time": "15:42:28",
+          "lng": 121.443101,
+          "lat": 31.310849,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0003361长昭化(联通)-5G_3",
+          "metrics": {
+            "rsrp": -116.4,
+            "sinr": 1.7,
+            "rlcDelay": 49.9
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01179_006",
+          "time": "15:45:24",
+          "lng": 121.440815,
+          "lat": 31.309632,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0003361长昭化(联通)-5G_3",
+          "metrics": {
+            "rsrp": -108.2,
+            "sinr": 0.9,
+            "rlcDelay": 32.8
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
         }
       ],
       "cio": [
         {
-          "param": "Mech-Tilt",
-          "mo": "NRDUCELLULPCCONFIG",
-          "current": "9",
-          "suggested": "3",
-          "evidence": 0.9212586311705637
-        },
-        {
-          "param": "UESATPWROFFSETTHLD",
-          "mo": "NRCellInterRHoMeaGrp",
-          "current": "0",
-          "suggested": "8",
-          "evidence": 0.6605158717997128
-        },
-        {
-          "param": "DLRANK3INCSPCTEFFTHLD",
-          "mo": "NRDUCELLULPCCONFIG",
-          "current": "-105",
-          "suggested": "3",
-          "evidence": 0.824789118060005
-        },
-        {
-          "param": "Tilt",
-          "mo": "NRDUCELLULPCCONFIG",
-          "current": "9",
-          "suggested": "-103",
-          "evidence": 0.8730426678029667
-        },
-        {
           "param": "DLINITMCS",
-          "mo": "NRDUCELLPDSCH",
+          "mo": "NRDUCELLCHNCOVALGO",
+          "current": "6",
+          "suggested": "3",
+          "evidence": 0.7997338717734281
+        },
+        {
+          "param": "A3InterFreqHoA1RsrpThld",
+          "mo": "NRCellHoEutranMeaGrp",
+          "current": "-105",
+          "suggested": "-103",
+          "evidence": 0.7611294319814407
+        },
+        {
+          "param": "CoverageScenario",
+          "mo": "NRCellHoEutranMeaGrp",
           "current": "0",
-          "suggested": "8",
-          "evidence": 0.7457825994162718
+          "suggested": "5",
+          "evidence": 0.9113688733708448
+        },
+        {
+          "param": "CovInterFreqA2RsrpThld",
+          "mo": "CELL",
+          "current": "0",
+          "suggested": "5",
+          "evidence": 0.6321667924498804
+        },
+        {
+          "param": "TrafficPriority",
+          "mo": "NRDUCELLULPCCONFIG",
+          "current": "-100",
+          "suggested": "-103",
+          "evidence": 0.8532531843605802
         }
       ],
       "strategies": [
@@ -20911,242 +21944,292 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "a3f946bb",
+          "suggestionId": "f6620a04",
           "rootCauseType": "RF参数不合理",
-          "affectedCellPair": "CUDU0003827淮陕(联通)-5G_3|邻区",
-          "parameterName": "DLRANK4DECSPCTEFFTHLD",
+          "affectedCellPair": "CUDU0003361长昭化(联通)-5G_3|邻区",
+          "parameterName": "DLRANK3DECSPCTEFFTHLD",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.73,
-          "riskLevel": "低",
+          "evidenceScore": 0.82,
+          "riskLevel": "中",
           "status": "待审核"
         },
         {
-          "suggestionId": "753f1eb3",
+          "suggestionId": "f623e8c1",
           "rootCauseType": "上行弱覆盖增强参数问题",
-          "affectedCellPair": "CUDU0003827淮陕(联通)-5G_3|邻区",
-          "parameterName": "PhyCellId",
+          "affectedCellPair": "CUDU0003361长昭化(联通)-5G_3|邻区",
+          "parameterName": "InterFreqHoSwitch.FREQ_PRIORITY_BASED_HO",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.89,
-          "riskLevel": "中",
-          "status": "待审核"
+          "evidenceScore": 0.86,
+          "riskLevel": "低",
+          "status": "已加入草案"
         },
         {
-          "suggestionId": "2a97fb97",
+          "suggestionId": "5f061da1",
           "rootCauseType": "上行干扰增强参数问题",
-          "affectedCellPair": "CUDU0003827淮陕(联通)-5G_3|邻区",
-          "parameterName": "InterRatHoA2RsrpThld",
+          "affectedCellPair": "CUDU0003361长昭化(联通)-5G_3|邻区",
+          "parameterName": "Mech-Tilt",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.83,
+          "evidenceScore": 0.9,
           "riskLevel": "中",
-          "status": "待审核"
+          "status": "已加入草案"
         }
       ],
       "summary": {
-        "problemDesc": "牛奶棚食品厂区域下行弱覆盖问题突出，质差事件676起，质差比例4.54%",
+        "problemDesc": "彭浦新村第五幼儿园区域上行DMRS弱覆盖问题突出，质差事件695起，质差比例5.34%",
         "tags": [
-          "下行弱覆盖",
+          "上行DMRS弱覆盖",
           "上行弱覆盖增强参数问题",
           "5QI业务保障"
         ],
         "evidenceChain": [
-          "RSRP均值低于门限(-95.0dBm)",
-          "SINR均值-0.7dB",
-          "信令成功"
+          "RSRP均值低于门限(-111.1dBm)",
+          "SINR均值4.5dB",
+          "信令success"
         ],
-        "riskLevel": "高"
+        "riskLevel": "中"
       }
     },
-    "WO01166": {
+    "WO01180": {
       "trend": [
         {
           "time": "15:30",
-          "rsrp": -92.6,
-          "sinr": 4.1,
-          "rlcDelay": 69.2
+          "rsrp": -90.0,
+          "sinr": 2.4,
+          "rlcDelay": 79.4
         },
         {
           "time": "15:31",
-          "rsrp": -98.1,
-          "sinr": -2.9,
-          "rlcDelay": 61.2
-        },
-        {
-          "time": "15:32",
-          "rsrp": -95.3,
-          "sinr": -2.4,
-          "rlcDelay": 58.8
-        },
-        {
-          "time": "15:33",
-          "rsrp": -99.4,
-          "sinr": 2.3,
-          "rlcDelay": 64.1
-        },
-        {
-          "time": "15:34",
-          "rsrp": -102.1,
-          "sinr": -0.4,
-          "rlcDelay": 61.3
-        },
-        {
-          "time": "15:35",
-          "rsrp": -96.5,
-          "sinr": 2.5,
-          "rlcDelay": 62.4
-        },
-        {
-          "time": "15:36",
-          "rsrp": -103.0,
-          "sinr": -0.5,
-          "rlcDelay": 64.7
-        },
-        {
-          "time": "15:37",
-          "rsrp": -98.3,
-          "sinr": 4.3,
-          "rlcDelay": 63.5
-        },
-        {
-          "time": "15:38",
-          "rsrp": -102.4,
-          "sinr": -1.5,
-          "rlcDelay": 61.2
-        },
-        {
-          "time": "15:39",
-          "rsrp": -96.7,
-          "sinr": 1.0,
-          "rlcDelay": 53.2
-        },
-        {
-          "time": "15:40",
-          "rsrp": -100.2,
-          "sinr": -0.7,
-          "rlcDelay": 55.2
-        },
-        {
-          "time": "15:41",
-          "rsrp": -101.1,
-          "sinr": 1.6,
-          "rlcDelay": 69.7
-        },
-        {
-          "time": "15:42",
-          "rsrp": -103.4,
-          "sinr": -0.8,
-          "rlcDelay": 71.0
-        },
-        {
-          "time": "15:43",
-          "rsrp": -95.1,
-          "sinr": 1.4,
-          "rlcDelay": 61.4
-        },
-        {
-          "time": "15:44",
-          "rsrp": -93.5,
-          "sinr": -1.8,
-          "rlcDelay": 67.6
-        },
-        {
-          "time": "15:45",
-          "rsrp": -103.5,
-          "sinr": 2.2,
-          "rlcDelay": 52.6
-        },
-        {
-          "time": "15:46",
-          "rsrp": -95.9,
-          "sinr": -1.7,
-          "rlcDelay": 65.9
-        },
-        {
-          "time": "15:47",
-          "rsrp": -103.6,
-          "sinr": 3.0,
+          "rsrp": -91.5,
+          "sinr": 0.7,
           "rlcDelay": 57.6
         },
         {
+          "time": "15:32",
+          "rsrp": -92.9,
+          "sinr": -1.8,
+          "rlcDelay": 70.3
+        },
+        {
+          "time": "15:33",
+          "rsrp": -95.5,
+          "sinr": 1.2,
+          "rlcDelay": 60.1
+        },
+        {
+          "time": "15:34",
+          "rsrp": -91.0,
+          "sinr": 3.6,
+          "rlcDelay": 80.5
+        },
+        {
+          "time": "15:35",
+          "rsrp": -90.0,
+          "sinr": 0.3,
+          "rlcDelay": 58.5
+        },
+        {
+          "time": "15:36",
+          "rsrp": -94.1,
+          "sinr": 1.9,
+          "rlcDelay": 59.9
+        },
+        {
+          "time": "15:37",
+          "rsrp": -95.4,
+          "sinr": -0.5,
+          "rlcDelay": 74.9
+        },
+        {
+          "time": "15:38",
+          "rsrp": -92.6,
+          "sinr": -2.2,
+          "rlcDelay": 66.2
+        },
+        {
+          "time": "15:39",
+          "rsrp": -94.1,
+          "sinr": 1.2,
+          "rlcDelay": 75.3
+        },
+        {
+          "time": "15:40",
+          "rsrp": -93.5,
+          "sinr": -2.8,
+          "rlcDelay": 66.1
+        },
+        {
+          "time": "15:41",
+          "rsrp": -92.3,
+          "sinr": 0.1,
+          "rlcDelay": 81.2
+        },
+        {
+          "time": "15:42",
+          "rsrp": -92.9,
+          "sinr": -2.4,
+          "rlcDelay": 62.9
+        },
+        {
+          "time": "15:43",
+          "rsrp": -94.2,
+          "sinr": 1.1,
+          "rlcDelay": 70.6
+        },
+        {
+          "time": "15:44",
+          "rsrp": -98.3,
+          "sinr": -1.0,
+          "rlcDelay": 65.4
+        },
+        {
+          "time": "15:45",
+          "rsrp": -97.3,
+          "sinr": -1.6,
+          "rlcDelay": 72.6
+        },
+        {
+          "time": "15:46",
+          "rsrp": -89.7,
+          "sinr": -3.0,
+          "rlcDelay": 65.0
+        },
+        {
+          "time": "15:47",
+          "rsrp": -89.1,
+          "sinr": 2.1,
+          "rlcDelay": 71.8
+        },
+        {
           "time": "15:48",
-          "rsrp": -101.1,
-          "sinr": 2.8,
-          "rlcDelay": 58.0
+          "rsrp": -94.0,
+          "sinr": 3.0,
+          "rlcDelay": 62.1
         },
         {
           "time": "15:49",
-          "rsrp": -99.4,
-          "sinr": -1.0,
-          "rlcDelay": 68.9
+          "rsrp": -90.8,
+          "sinr": -3.1,
+          "rlcDelay": 74.4
         }
       ],
       "signalTrace": [
         {
-          "stepId": "S01",
+          "id": "sig_001",
           "sequence": 1,
+          "time": "15:00:37.175",
           "fromNe": "UE",
-          "toNe": "gNB",
-          "messageName": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 138,
-          "timestamp": "2026-04-21 15:31:00"
+          "toNe": "Source gNB",
+          "message": "MeasurementReport",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S02",
+          "id": "sig_002",
           "sequence": 2,
-          "fromNe": "gNB",
-          "toNe": "AMF",
-          "messageName": "PRIVATE_HO_IN",
-          "messageNameCn": "PRIVATE_HO_IN",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 41,
-          "timestamp": "2026-04-21 15:32:00"
+          "time": "15:00:43.271",
+          "fromNe": "Source gNB",
+          "toNe": "Target gNB",
+          "message": "HandoverRequest",
+          "status": "failure",
+          "abnormal": true,
+          "reason": "Resource Unavailable"
         },
         {
-          "stepId": "S03",
+          "id": "sig_003",
           "sequence": 3,
-          "fromNe": "AMF",
-          "toNe": "SMF",
-          "messageName": "5G周期Mr",
-          "messageNameCn": "5G周期Mr",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 9,
-          "timestamp": "2026-04-21 15:33:00"
+          "time": "15:00:51.972",
+          "fromNe": "Target gNB",
+          "toNe": "Source gNB",
+          "message": "HandoverFailure",
+          "status": "failure",
+          "abnormal": true,
+          "reason": "Prepare Failure"
         },
         {
-          "stepId": "S04",
+          "id": "sig_004",
           "sequence": 4,
-          "fromNe": "SMF",
-          "toNe": "UPF",
-          "messageName": "PUBLIC_INFORMATION",
-          "messageNameCn": "PUBLIC_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 139,
-          "timestamp": "2026-04-21 15:34:00"
+          "time": "15:00:59.414",
+          "fromNe": "Source gNB",
+          "toNe": "UE",
+          "message": "RRCReconfiguration",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        }
+      ],
+      "qualityEvents": [
+        {
+          "eventId": "EVT_WO01180_001",
+          "time": "15:30:40",
+          "lng": 121.439662,
+          "lat": 31.308997,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0003361长昭化(联通)-5G_3",
+          "metrics": {
+            "rsrp": -98.6,
+            "sinr": 1.1,
+            "rlcDelay": 63.4
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
         },
         {
-          "stepId": "S05",
-          "sequence": 5,
-          "fromNe": "UPF",
-          "toNe": "DN",
-          "messageName": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 20,
-          "timestamp": "2026-04-21 15:35:00"
+          "eventId": "EVT_WO01180_002",
+          "time": "15:33:26",
+          "lng": 121.442819,
+          "lat": 31.311481,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0003361长昭化(联通)-5G_3",
+          "metrics": {
+            "rsrp": -95.7,
+            "sinr": -3.7,
+            "rlcDelay": 72.2
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01180_003",
+          "time": "15:36:34",
+          "lng": 121.443024,
+          "lat": 31.311724,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0003361长昭化(联通)-5G_3",
+          "metrics": {
+            "rsrp": -88.9,
+            "sinr": 0.2,
+            "rlcDelay": 78.0
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
         }
       ],
       "cio": [
         {
-          "param": "CovHoToEutranB2RsrpThld1",
+          "param": "CovInterFreqA5RsrpThld2",
+          "mo": "NRCellFreqRelation",
+          "current": "-105",
+          "suggested": "5",
+          "evidence": 0.6702436199502346
+        },
+        {
+          "param": "SPECUERSSISATOFFSET",
           "mo": "NRDUCELLFEATURESW",
           "current": "0",
           "suggested": "-103",
@@ -21158,27 +22241,6 @@ const SRCON_DATA = {
           "current": "9",
           "suggested": "5",
           "evidence": 0.8320435725020544
-        },
-        {
-          "param": "DLINITMCS",
-          "mo": "NRDUCELLPDSCHPRECODE",
-          "current": "-105",
-          "suggested": "-103",
-          "evidence": 0.7023734521388534
-        },
-        {
-          "param": "DLINITIALMCSADJVALUE",
-          "mo": "NRDUCELLQCIBEARER",
-          "current": "-100",
-          "suggested": "8",
-          "evidence": 0.7779891162500842
-        },
-        {
-          "param": "SPECUERSSISATOFFSET",
-          "mo": "NRCellInterFHoMeaGrp",
-          "current": "0",
-          "suggested": "8",
-          "evidence": 0.9033704609348419
         }
       ],
       "strategies": [
@@ -21221,36 +22283,3018 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "46fe924c",
+          "suggestionId": "16ff8cd5",
           "rootCauseType": "RF参数不合理",
-          "affectedCellPair": "CUDU0001214联汇川(联通)-5G_3|邻区",
-          "parameterName": "FreqPriInterFA2RsrpThld",
+          "affectedCellPair": "CUDU0003361长昭化(联通)-5G_3|邻区",
+          "parameterName": "DLINITMCS",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.72,
-          "riskLevel": "低",
-          "status": "已加入草案"
-        },
-        {
-          "suggestionId": "d7827788",
-          "rootCauseType": "上行弱覆盖增强参数问题",
-          "affectedCellPair": "CUDU0001214联汇川(联通)-5G_3|邻区",
-          "parameterName": "FreqPriInterFA2RsrpThld",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.93,
+          "evidenceScore": 0.87,
           "riskLevel": "低",
           "status": "待审核"
         },
         {
-          "suggestionId": "81025a1f",
+          "suggestionId": "14ab645e",
+          "rootCauseType": "上行弱覆盖增强参数问题",
+          "affectedCellPair": "CUDU0003361长昭化(联通)-5G_3|邻区",
+          "parameterName": "InterRatHoA2RsrpThld",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.92,
+          "riskLevel": "高",
+          "status": "已加入草案"
+        },
+        {
+          "suggestionId": "48c97d9f",
           "rootCauseType": "上行干扰增强参数问题",
-          "affectedCellPair": "CUDU0001214联汇川(联通)-5G_3|邻区",
+          "affectedCellPair": "CUDU0003361长昭化(联通)-5G_3|邻区",
           "parameterName": "CovInterFreqA2RsrpThld",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.93,
+          "evidenceScore": 0.94,
+          "riskLevel": "高",
+          "status": "待审核"
+        }
+      ],
+      "summary": {
+        "problemDesc": "彭浦新村第五幼儿园区域上行DMRS弱覆盖问题突出，质差事件695起，质差比例5.34%",
+        "tags": [
+          "上行DMRS弱覆盖",
+          "上行弱覆盖增强参数问题",
+          "5QI业务保障"
+        ],
+        "evidenceChain": [
+          "RSRP均值低于门限(-91.7dBm)",
+          "SINR均值0.7dB",
+          "信令failure"
+        ],
+        "riskLevel": "中"
+      }
+    },
+    "WO01053": {
+      "trend": [
+        {
+          "time": "15:30",
+          "rsrp": -94.8,
+          "sinr": 8.4,
+          "rlcDelay": 44.3
+        },
+        {
+          "time": "15:31",
+          "rsrp": -101.1,
+          "sinr": 6.7,
+          "rlcDelay": 34.4
+        },
+        {
+          "time": "15:32",
+          "rsrp": -97.0,
+          "sinr": 7.8,
+          "rlcDelay": 25.1
+        },
+        {
+          "time": "15:33",
+          "rsrp": -96.8,
+          "sinr": 7.5,
+          "rlcDelay": 36.8
+        },
+        {
+          "time": "15:34",
+          "rsrp": -98.3,
+          "sinr": 12.5,
+          "rlcDelay": 33.7
+        },
+        {
+          "time": "15:35",
+          "rsrp": -90.8,
+          "sinr": 9.7,
+          "rlcDelay": 43.2
+        },
+        {
+          "time": "15:36",
+          "rsrp": -89.8,
+          "sinr": 11.2,
+          "rlcDelay": 21.9
+        },
+        {
+          "time": "15:37",
+          "rsrp": -94.1,
+          "sinr": 6.9,
+          "rlcDelay": 25.0
+        },
+        {
+          "time": "15:38",
+          "rsrp": -89.7,
+          "sinr": 9.9,
+          "rlcDelay": 23.4
+        },
+        {
+          "time": "15:39",
+          "rsrp": -96.4,
+          "sinr": 12.4,
+          "rlcDelay": 36.5
+        },
+        {
+          "time": "15:40",
+          "rsrp": -93.2,
+          "sinr": 6.5,
+          "rlcDelay": 27.2
+        },
+        {
+          "time": "15:41",
+          "rsrp": -99.3,
+          "sinr": 12.5,
+          "rlcDelay": 43.9
+        },
+        {
+          "time": "15:42",
+          "rsrp": -97.0,
+          "sinr": 9.0,
+          "rlcDelay": 26.4
+        },
+        {
+          "time": "15:43",
+          "rsrp": -99.5,
+          "sinr": 9.0,
+          "rlcDelay": 41.2
+        },
+        {
+          "time": "15:44",
+          "rsrp": -90.1,
+          "sinr": 7.2,
+          "rlcDelay": 38.8
+        },
+        {
+          "time": "15:45",
+          "rsrp": -94.5,
+          "sinr": 5.8,
+          "rlcDelay": 46.1
+        },
+        {
+          "time": "15:46",
+          "rsrp": -88.6,
+          "sinr": 5.9,
+          "rlcDelay": 44.5
+        },
+        {
+          "time": "15:47",
+          "rsrp": -89.4,
+          "sinr": 7.2,
+          "rlcDelay": 35.1
+        },
+        {
+          "time": "15:48",
+          "rsrp": -89.0,
+          "sinr": 5.6,
+          "rlcDelay": 29.1
+        },
+        {
+          "time": "15:49",
+          "rsrp": -89.9,
+          "sinr": 10.5,
+          "rlcDelay": 40.3
+        }
+      ],
+      "signalTrace": [
+        {
+          "id": "sig_001",
+          "sequence": 1,
+          "time": "15:00:35.541",
+          "fromNe": "UE",
+          "toNe": "Source gNB",
+          "message": "MeasurementReport",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_002",
+          "sequence": 2,
+          "time": "15:00:39.573",
+          "fromNe": "Source gNB",
+          "toNe": "Target gNB",
+          "message": "HandoverRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_003",
+          "sequence": 3,
+          "time": "15:00:46.961",
+          "fromNe": "Target gNB",
+          "toNe": "Source gNB",
+          "message": "HandoverAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_004",
+          "sequence": 4,
+          "time": "15:00:53.876",
+          "fromNe": "Source gNB",
+          "toNe": "UE",
+          "message": "RRCReconfiguration",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_005",
+          "sequence": 5,
+          "time": "15:00:57.275",
+          "fromNe": "UE",
+          "toNe": "Source gNB",
+          "message": "RRCReconfigurationComplete",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_006",
+          "sequence": 6,
+          "time": "15:01:05.312",
+          "fromNe": "Source gNB",
+          "toNe": "AMF",
+          "message": "PathSwitchRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_007",
+          "sequence": 7,
+          "time": "15:01:07.254",
+          "fromNe": "AMF",
+          "toNe": "SMF",
+          "message": "Nsmf_PDUSession_UpdateSMContext",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_008",
+          "sequence": 8,
+          "time": "15:01:10.146",
+          "fromNe": "SMF",
+          "toNe": "AMF",
+          "message": "Nsmf_PDUSession_UpdateSMContext_RSP",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_009",
+          "sequence": 9,
+          "time": "15:01:18.746",
+          "fromNe": "AMF",
+          "toNe": "Source gNB",
+          "message": "PathSwitchAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        }
+      ],
+      "qualityEvents": [
+        {
+          "eventId": "EVT_WO01053_001",
+          "time": "15:30:24",
+          "lng": 121.426944,
+          "lat": 31.304199,
+          "type": "CCE资源不足",
+          "cell": "CUDU0001977长宝地-3.5G_2",
+          "metrics": {
+            "rsrp": -101.3,
+            "sinr": 8.2,
+            "rlcDelay": 25.4
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        },
+        {
+          "eventId": "EVT_WO01053_002",
+          "time": "15:33:48",
+          "lng": 121.428372,
+          "lat": 31.307939,
+          "type": "CCE资源不足",
+          "cell": "CUDU0001977长宝地-3.5G_2",
+          "metrics": {
+            "rsrp": -104.1,
+            "sinr": 9.9,
+            "rlcDelay": 21.5
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        },
+        {
+          "eventId": "EVT_WO01053_003",
+          "time": "15:36:20",
+          "lng": 121.426719,
+          "lat": 31.304235,
+          "type": "CCE资源不足",
+          "cell": "CUDU0001977长宝地-3.5G_2",
+          "metrics": {
+            "rsrp": -102.6,
+            "sinr": 6.8,
+            "rlcDelay": 35.1
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        },
+        {
+          "eventId": "EVT_WO01053_004",
+          "time": "15:39:36",
+          "lng": 121.426894,
+          "lat": 31.30807,
+          "type": "CCE资源不足",
+          "cell": "CUDU0001977长宝地-3.5G_2",
+          "metrics": {
+            "rsrp": -93.9,
+            "sinr": 3.8,
+            "rlcDelay": 27.0
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        },
+        {
+          "eventId": "EVT_WO01053_005",
+          "time": "15:42:38",
+          "lng": 121.430762,
+          "lat": 31.306982,
+          "type": "CCE资源不足",
+          "cell": "CUDU0001977长宝地-3.5G_2",
+          "metrics": {
+            "rsrp": -102.3,
+            "sinr": 5.3,
+            "rlcDelay": 23.3
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        },
+        {
+          "eventId": "EVT_WO01053_006",
+          "time": "15:45:35",
+          "lng": 121.430216,
+          "lat": 31.30769,
+          "type": "CCE资源不足",
+          "cell": "CUDU0001977长宝地-3.5G_2",
+          "metrics": {
+            "rsrp": -100.5,
+            "sinr": 7.4,
+            "rlcDelay": 26.1
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        },
+        {
+          "eventId": "EVT_WO01053_007",
+          "time": "15:48:57",
+          "lng": 121.428991,
+          "lat": 31.307259,
+          "type": "CCE资源不足",
+          "cell": "CUDU0001977长宝地-3.5G_2",
+          "metrics": {
+            "rsrp": -93.0,
+            "sinr": 9.5,
+            "rlcDelay": 32.0
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        }
+      ],
+      "cio": [
+        {
+          "param": "InterRatHoA1RsrpThld",
+          "mo": "NRCellInterFHoMeaGrp",
+          "current": "9",
+          "suggested": "8",
+          "evidence": 0.8894535355807724
+        },
+        {
+          "param": "Tilt",
+          "mo": "CELL",
+          "current": "6",
+          "suggested": "3",
+          "evidence": 0.7384639188225621
+        },
+        {
+          "param": "UESATPWROFFSETTHLD",
+          "mo": "NRCellEutranNFreq",
+          "current": "6",
+          "suggested": "8",
+          "evidence": 0.7806443390831794
+        }
+      ],
+      "strategies": [
+        {
+          "name": "RF覆盖调整",
+          "desc": "调整下倾角与方位角，增强主瓣覆盖",
+          "risk": "低",
+          "status": "待审核"
+        },
+        {
+          "name": "切换参数优化",
+          "desc": "优化A3/A5门限，减少乒乓切换",
+          "risk": "中",
+          "status": "已加入草案"
+        },
+        {
+          "name": "容量扩容",
+          "desc": "周边小区负载均衡参数调整",
+          "risk": "中",
+          "status": "待审核"
+        },
+        {
+          "name": "上行功率控制",
+          "desc": "提升PUSCH发射功率偏移量",
+          "risk": "低",
+          "status": "已加入草案"
+        },
+        {
+          "name": "SRS权值优化",
+          "desc": "开启上行弱覆盖频选调度",
+          "risk": "低",
+          "status": "待审核"
+        },
+        {
+          "name": "PCI混淆核查",
+          "desc": "核查同频同PCI干扰",
+          "risk": "高",
+          "status": "待审核"
+        }
+      ],
+      "guards": [
+        {
+          "suggestionId": "d494510d",
+          "rootCauseType": "RF参数不合理",
+          "affectedCellPair": "CUDU0001977长宝地-3.5G_2|邻区",
+          "parameterName": "PhyCellId",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.94,
+          "riskLevel": "低",
+          "status": "已加入草案"
+        },
+        {
+          "suggestionId": "550f1cac",
+          "rootCauseType": "上行弱覆盖增强参数问题",
+          "affectedCellPair": "CUDU0001977长宝地-3.5G_2|邻区",
+          "parameterName": "A3InterFreqHoA2RsrpThld",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.8,
           "riskLevel": "中",
+          "status": "已加入草案"
+        },
+        {
+          "suggestionId": "62263872",
+          "rootCauseType": "上行干扰增强参数问题",
+          "affectedCellPair": "CUDU0001977长宝地-3.5G_2|邻区",
+          "parameterName": "A3InterFreqHoA2RsrpThld",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.74,
+          "riskLevel": "中",
+          "status": "待审核"
+        }
+      ],
+      "summary": {
+        "problemDesc": "场中路3117弄小区区域CCE资源不足问题突出，质差事件686起，质差比例7.42%",
+        "tags": [
+          "CCE资源不足",
+          "上行干扰增强参数问题",
+          "5QI业务保障"
+        ],
+        "evidenceChain": [
+          "RSRP均值低于门限(-93.3dBm)",
+          "SINR均值9.7dB",
+          "信令success"
+        ],
+        "riskLevel": "高"
+      }
+    },
+    "WO01054": {
+      "trend": [
+        {
+          "time": "15:30",
+          "rsrp": -99.2,
+          "sinr": 7.2,
+          "rlcDelay": 53.3
+        },
+        {
+          "time": "15:31",
+          "rsrp": -92.8,
+          "sinr": 10.4,
+          "rlcDelay": 62.4
+        },
+        {
+          "time": "15:32",
+          "rsrp": -95.3,
+          "sinr": 5.8,
+          "rlcDelay": 49.4
+        },
+        {
+          "time": "15:33",
+          "rsrp": -94.5,
+          "sinr": 10.4,
+          "rlcDelay": 71.2
+        },
+        {
+          "time": "15:34",
+          "rsrp": -88.9,
+          "sinr": 3.9,
+          "rlcDelay": 56.9
+        },
+        {
+          "time": "15:35",
+          "rsrp": -92.0,
+          "sinr": 8.9,
+          "rlcDelay": 52.9
+        },
+        {
+          "time": "15:36",
+          "rsrp": -90.9,
+          "sinr": 3.9,
+          "rlcDelay": 66.4
+        },
+        {
+          "time": "15:37",
+          "rsrp": -92.2,
+          "sinr": 3.9,
+          "rlcDelay": 66.4
+        },
+        {
+          "time": "15:38",
+          "rsrp": -91.0,
+          "sinr": 11.0,
+          "rlcDelay": 64.1
+        },
+        {
+          "time": "15:39",
+          "rsrp": -98.3,
+          "sinr": 7.6,
+          "rlcDelay": 49.9
+        },
+        {
+          "time": "15:40",
+          "rsrp": -98.2,
+          "sinr": 5.9,
+          "rlcDelay": 70.5
+        },
+        {
+          "time": "15:41",
+          "rsrp": -89.2,
+          "sinr": 4.5,
+          "rlcDelay": 52.4
+        },
+        {
+          "time": "15:42",
+          "rsrp": -90.4,
+          "sinr": 3.6,
+          "rlcDelay": 56.5
+        },
+        {
+          "time": "15:43",
+          "rsrp": -90.9,
+          "sinr": 10.9,
+          "rlcDelay": 56.0
+        },
+        {
+          "time": "15:44",
+          "rsrp": -98.1,
+          "sinr": 10.4,
+          "rlcDelay": 72.8
+        },
+        {
+          "time": "15:45",
+          "rsrp": -100.4,
+          "sinr": 9.3,
+          "rlcDelay": 49.1
+        },
+        {
+          "time": "15:46",
+          "rsrp": -93.9,
+          "sinr": 7.2,
+          "rlcDelay": 69.0
+        },
+        {
+          "time": "15:47",
+          "rsrp": -92.5,
+          "sinr": 7.1,
+          "rlcDelay": 54.2
+        },
+        {
+          "time": "15:48",
+          "rsrp": -91.8,
+          "sinr": 6.8,
+          "rlcDelay": 59.8
+        },
+        {
+          "time": "15:49",
+          "rsrp": -92.6,
+          "sinr": 3.3,
+          "rlcDelay": 70.8
+        }
+      ],
+      "signalTrace": [
+        {
+          "id": "sig_001",
+          "sequence": 1,
+          "time": "15:00:37.690",
+          "fromNe": "UE",
+          "toNe": "Source gNB",
+          "message": "MeasurementReport",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_002",
+          "sequence": 2,
+          "time": "15:00:39.309",
+          "fromNe": "Source gNB",
+          "toNe": "Target gNB",
+          "message": "HandoverRequest",
+          "status": "failure",
+          "abnormal": true,
+          "reason": "Resource Unavailable"
+        },
+        {
+          "id": "sig_003",
+          "sequence": 3,
+          "time": "15:00:42.176",
+          "fromNe": "Target gNB",
+          "toNe": "Source gNB",
+          "message": "HandoverFailure",
+          "status": "failure",
+          "abnormal": true,
+          "reason": "Prepare Failure"
+        },
+        {
+          "id": "sig_004",
+          "sequence": 4,
+          "time": "15:00:49.477",
+          "fromNe": "Source gNB",
+          "toNe": "UE",
+          "message": "RRCReconfiguration",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        }
+      ],
+      "qualityEvents": [
+        {
+          "eventId": "EVT_WO01054_001",
+          "time": "15:30:48",
+          "lng": 121.42735,
+          "lat": 31.309564,
+          "type": "下行弱覆盖",
+          "cell": "CUDU0001977长宝地-3.5G_2",
+          "metrics": {
+            "rsrp": -102.2,
+            "sinr": 2.5,
+            "rlcDelay": 66.9
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01054_002",
+          "time": "15:33:53",
+          "lng": 121.427265,
+          "lat": 31.308008,
+          "type": "下行弱覆盖",
+          "cell": "CUDU0001977长宝地-3.5G_2",
+          "metrics": {
+            "rsrp": -103.7,
+            "sinr": 5.5,
+            "rlcDelay": 50.9
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        },
+        {
+          "eventId": "EVT_WO01054_003",
+          "time": "15:36:39",
+          "lng": 121.430055,
+          "lat": 31.306203,
+          "type": "下行弱覆盖",
+          "cell": "CUDU0001977长宝地-3.5G_2",
+          "metrics": {
+            "rsrp": -93.9,
+            "sinr": 6.8,
+            "rlcDelay": 66.3
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        }
+      ],
+      "cio": [
+        {
+          "param": "Mech-Tilt",
+          "mo": "NRDUCELLDLRANK",
+          "current": "0",
+          "suggested": "5",
+          "evidence": 0.9141354216831086
+        },
+        {
+          "param": "DLRANK3INCSPCTEFFTHLD",
+          "mo": "NRCellInterRHoMeaGrp",
+          "current": "9",
+          "suggested": "3",
+          "evidence": 0.6227240532822269
+        },
+        {
+          "param": "CovInterFreqA1RsrpThld",
+          "mo": "NRCellHoEutranMeaGrp",
+          "current": "-105",
+          "suggested": "5",
+          "evidence": 0.7152229844366643
+        }
+      ],
+      "strategies": [
+        {
+          "name": "RF覆盖调整",
+          "desc": "调整下倾角与方位角，增强主瓣覆盖",
+          "risk": "低",
+          "status": "待审核"
+        },
+        {
+          "name": "切换参数优化",
+          "desc": "优化A3/A5门限，减少乒乓切换",
+          "risk": "中",
+          "status": "已加入草案"
+        },
+        {
+          "name": "容量扩容",
+          "desc": "周边小区负载均衡参数调整",
+          "risk": "中",
+          "status": "待审核"
+        },
+        {
+          "name": "上行功率控制",
+          "desc": "提升PUSCH发射功率偏移量",
+          "risk": "低",
+          "status": "已加入草案"
+        },
+        {
+          "name": "SRS权值优化",
+          "desc": "开启上行弱覆盖频选调度",
+          "risk": "低",
+          "status": "待审核"
+        },
+        {
+          "name": "PCI混淆核查",
+          "desc": "核查同频同PCI干扰",
+          "risk": "高",
+          "status": "待审核"
+        }
+      ],
+      "guards": [
+        {
+          "suggestionId": "f70f8294",
+          "rootCauseType": "RF参数不合理",
+          "affectedCellPair": "CUDU0001977长宝地-3.5G_2|邻区",
+          "parameterName": "FreqPriInterFA4RsrpThld",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.83,
+          "riskLevel": "高",
+          "status": "待审核"
+        },
+        {
+          "suggestionId": "30b0b9c0",
+          "rootCauseType": "上行弱覆盖增强参数问题",
+          "affectedCellPair": "CUDU0001977长宝地-3.5G_2|邻区",
+          "parameterName": "InterFreqHoSwitch.FREQ_PRIORITY_BASED_HO",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.71,
+          "riskLevel": "高",
+          "status": "待审核"
+        },
+        {
+          "suggestionId": "7edabd4f",
+          "rootCauseType": "上行干扰增强参数问题",
+          "affectedCellPair": "CUDU0001977长宝地-3.5G_2|邻区",
+          "parameterName": "CovInterFreqA1RsrpThld",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.88,
+          "riskLevel": "高",
+          "status": "已加入草案"
+        }
+      ],
+      "summary": {
+        "problemDesc": "场中路3117弄小区区域下行弱覆盖问题突出，质差事件686起，质差比例7.42%",
+        "tags": [
+          "下行弱覆盖",
+          "上行弱覆盖增强参数问题",
+          "5QI业务保障"
+        ],
+        "evidenceChain": [
+          "RSRP均值低于门限(-92.4dBm)",
+          "SINR均值8.2dB",
+          "信令failure"
+        ],
+        "riskLevel": "高"
+      }
+    },
+    "WO01055": {
+      "trend": [
+        {
+          "time": "15:30",
+          "rsrp": -93.7,
+          "sinr": 6.1,
+          "rlcDelay": 59.9
+        },
+        {
+          "time": "15:31",
+          "rsrp": -95.4,
+          "sinr": 4.5,
+          "rlcDelay": 57.0
+        },
+        {
+          "time": "15:32",
+          "rsrp": -91.3,
+          "sinr": 5.8,
+          "rlcDelay": 50.3
+        },
+        {
+          "time": "15:33",
+          "rsrp": -98.0,
+          "sinr": 0.3,
+          "rlcDelay": 47.5
+        },
+        {
+          "time": "15:34",
+          "rsrp": -95.8,
+          "sinr": 5.1,
+          "rlcDelay": 62.9
+        },
+        {
+          "time": "15:35",
+          "rsrp": -99.1,
+          "sinr": 3.6,
+          "rlcDelay": 54.9
+        },
+        {
+          "time": "15:36",
+          "rsrp": -101.2,
+          "sinr": 1.5,
+          "rlcDelay": 64.7
+        },
+        {
+          "time": "15:37",
+          "rsrp": -99.0,
+          "sinr": 3.8,
+          "rlcDelay": 61.8
+        },
+        {
+          "time": "15:38",
+          "rsrp": -98.5,
+          "sinr": -0.7,
+          "rlcDelay": 52.0
+        },
+        {
+          "time": "15:39",
+          "rsrp": -94.7,
+          "sinr": 4.8,
+          "rlcDelay": 47.4
+        },
+        {
+          "time": "15:40",
+          "rsrp": -97.5,
+          "sinr": 1.9,
+          "rlcDelay": 58.7
+        },
+        {
+          "time": "15:41",
+          "rsrp": -89.3,
+          "sinr": 5.4,
+          "rlcDelay": 49.4
+        },
+        {
+          "time": "15:42",
+          "rsrp": -91.0,
+          "sinr": 6.1,
+          "rlcDelay": 56.5
+        },
+        {
+          "time": "15:43",
+          "rsrp": -95.6,
+          "sinr": -1.0,
+          "rlcDelay": 47.9
+        },
+        {
+          "time": "15:44",
+          "rsrp": -99.8,
+          "sinr": 2.4,
+          "rlcDelay": 66.1
+        },
+        {
+          "time": "15:45",
+          "rsrp": -90.2,
+          "sinr": 2.4,
+          "rlcDelay": 64.9
+        },
+        {
+          "time": "15:46",
+          "rsrp": -89.7,
+          "sinr": -0.8,
+          "rlcDelay": 57.5
+        },
+        {
+          "time": "15:47",
+          "rsrp": -94.5,
+          "sinr": 4.1,
+          "rlcDelay": 58.4
+        },
+        {
+          "time": "15:48",
+          "rsrp": -101.6,
+          "sinr": 3.3,
+          "rlcDelay": 52.8
+        },
+        {
+          "time": "15:49",
+          "rsrp": -89.9,
+          "sinr": 5.1,
+          "rlcDelay": 46.2
+        }
+      ],
+      "signalTrace": [
+        {
+          "id": "sig_001",
+          "sequence": 1,
+          "time": "15:00:38.151",
+          "fromNe": "UE",
+          "toNe": "Source gNB",
+          "message": "MeasurementReport",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_002",
+          "sequence": 2,
+          "time": "15:00:43.761",
+          "fromNe": "Source gNB",
+          "toNe": "Target gNB",
+          "message": "HandoverRequest",
+          "status": "timeout",
+          "abnormal": true,
+          "reason": "HO Failure / TimeOut"
+        },
+        {
+          "id": "sig_003",
+          "sequence": 3,
+          "time": "15:00:49.982",
+          "fromNe": "Target gNB",
+          "toNe": "Source gNB",
+          "message": "HandoverFailure",
+          "status": "failure",
+          "abnormal": true,
+          "reason": "Prepare Failure"
+        },
+        {
+          "id": "sig_004",
+          "sequence": 4,
+          "time": "15:00:52.704",
+          "fromNe": "Source gNB",
+          "toNe": "UE",
+          "message": "RRCReconfiguration",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        }
+      ],
+      "qualityEvents": [
+        {
+          "eventId": "EVT_WO01055_001",
+          "time": "15:30:58",
+          "lng": 121.427409,
+          "lat": 31.309189,
+          "type": "上行SRS弱覆盖",
+          "cell": "CUDU0001977长宝地-3.5G_2",
+          "metrics": {
+            "rsrp": -100.0,
+            "sinr": 2.5,
+            "rlcDelay": 74.1
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01055_002",
+          "time": "15:33:25",
+          "lng": 121.427789,
+          "lat": 31.309019,
+          "type": "上行SRS弱覆盖",
+          "cell": "CUDU0001977长宝地-3.5G_2",
+          "metrics": {
+            "rsrp": -95.2,
+            "sinr": -0.1,
+            "rlcDelay": 43.0
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01055_003",
+          "time": "15:36:33",
+          "lng": 121.430269,
+          "lat": 31.308709,
+          "type": "上行SRS弱覆盖",
+          "cell": "CUDU0001977长宝地-3.5G_2",
+          "metrics": {
+            "rsrp": -101.3,
+            "sinr": 1.9,
+            "rlcDelay": 46.5
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01055_004",
+          "time": "15:39:40",
+          "lng": 121.430989,
+          "lat": 31.304966,
+          "type": "上行SRS弱覆盖",
+          "cell": "CUDU0001977长宝地-3.5G_2",
+          "metrics": {
+            "rsrp": -92.1,
+            "sinr": 1.3,
+            "rlcDelay": 40.5
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01055_005",
+          "time": "15:42:29",
+          "lng": 121.430212,
+          "lat": 31.304902,
+          "type": "上行SRS弱覆盖",
+          "cell": "CUDU0001977长宝地-3.5G_2",
+          "metrics": {
+            "rsrp": -100.7,
+            "sinr": 1.6,
+            "rlcDelay": 74.5
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01055_006",
+          "time": "15:45:53",
+          "lng": 121.431515,
+          "lat": 31.305273,
+          "type": "上行SRS弱覆盖",
+          "cell": "CUDU0001977长宝地-3.5G_2",
+          "metrics": {
+            "rsrp": -92.7,
+            "sinr": 4.3,
+            "rlcDelay": 77.0
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        },
+        {
+          "eventId": "EVT_WO01055_007",
+          "time": "15:48:17",
+          "lng": 121.425584,
+          "lat": 31.309636,
+          "type": "上行SRS弱覆盖",
+          "cell": "CUDU0001977长宝地-3.5G_2",
+          "metrics": {
+            "rsrp": -105.3,
+            "sinr": 0.8,
+            "rlcDelay": 74.1
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        }
+      ],
+      "cio": [
+        {
+          "param": "CovBasedHoB1RsrpThld",
+          "mo": "NRDUCELLUEPWRSAVING",
+          "current": "-105",
+          "suggested": "-103",
+          "evidence": 0.7822021992367734
+        },
+        {
+          "param": "MAXUESATPWROFFSET",
+          "mo": "NRDUCELLDLRANK",
+          "current": "-105",
+          "suggested": "3",
+          "evidence": 0.865472837233916
+        },
+        {
+          "param": "PhyCellId",
+          "mo": "NRCellAlgoSwitch",
+          "current": "0",
+          "suggested": "-98",
+          "evidence": 0.6673909738682104
+        }
+      ],
+      "strategies": [
+        {
+          "name": "RF覆盖调整",
+          "desc": "调整下倾角与方位角，增强主瓣覆盖",
+          "risk": "低",
+          "status": "待审核"
+        },
+        {
+          "name": "切换参数优化",
+          "desc": "优化A3/A5门限，减少乒乓切换",
+          "risk": "中",
+          "status": "已加入草案"
+        },
+        {
+          "name": "容量扩容",
+          "desc": "周边小区负载均衡参数调整",
+          "risk": "中",
+          "status": "待审核"
+        },
+        {
+          "name": "上行功率控制",
+          "desc": "提升PUSCH发射功率偏移量",
+          "risk": "低",
+          "status": "已加入草案"
+        },
+        {
+          "name": "SRS权值优化",
+          "desc": "开启上行弱覆盖频选调度",
+          "risk": "低",
+          "status": "待审核"
+        },
+        {
+          "name": "PCI混淆核查",
+          "desc": "核查同频同PCI干扰",
+          "risk": "高",
+          "status": "待审核"
+        }
+      ],
+      "guards": [
+        {
+          "suggestionId": "61766be5",
+          "rootCauseType": "RF参数不合理",
+          "affectedCellPair": "CUDU0001977长宝地-3.5G_2|邻区",
+          "parameterName": "CovInterFreqA5RsrpThld2",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.83,
+          "riskLevel": "中",
+          "status": "待审核"
+        },
+        {
+          "suggestionId": "057a0ba5",
+          "rootCauseType": "上行弱覆盖增强参数问题",
+          "affectedCellPair": "CUDU0001977长宝地-3.5G_2|邻区",
+          "parameterName": "CovInterFreqA5RsrpThld2",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.74,
+          "riskLevel": "中",
+          "status": "待审核"
+        },
+        {
+          "suggestionId": "fc28d588",
+          "rootCauseType": "上行干扰增强参数问题",
+          "affectedCellPair": "CUDU0001977长宝地-3.5G_2|邻区",
+          "parameterName": "Azimuth",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.94,
+          "riskLevel": "高",
+          "status": "待审核"
+        }
+      ],
+      "summary": {
+        "problemDesc": "场中路3117弄小区区域上行SRS弱覆盖问题突出，质差事件686起，质差比例7.42%",
+        "tags": [
+          "上行SRS弱覆盖",
+          "RF参数不合理",
+          "5QI业务保障"
+        ],
+        "evidenceChain": [
+          "RSRP均值低于门限(-93.8dBm)",
+          "SINR均值3.7dB",
+          "信令timeout"
+        ],
+        "riskLevel": "高"
+      }
+    },
+    "WO01056": {
+      "trend": [
+        {
+          "time": "15:30",
+          "rsrp": -105.1,
+          "sinr": 2.3,
+          "rlcDelay": 24.6
+        },
+        {
+          "time": "15:31",
+          "rsrp": -113.3,
+          "sinr": 4.9,
+          "rlcDelay": 27.0
+        },
+        {
+          "time": "15:32",
+          "rsrp": -108.5,
+          "sinr": 1.0,
+          "rlcDelay": 30.3
+        },
+        {
+          "time": "15:33",
+          "rsrp": -105.5,
+          "sinr": 0.9,
+          "rlcDelay": 19.8
+        },
+        {
+          "time": "15:34",
+          "rsrp": -108.7,
+          "sinr": 1.4,
+          "rlcDelay": 33.4
+        },
+        {
+          "time": "15:35",
+          "rsrp": -106.5,
+          "sinr": 6.7,
+          "rlcDelay": 36.0
+        },
+        {
+          "time": "15:36",
+          "rsrp": -106.2,
+          "sinr": 2.5,
+          "rlcDelay": 38.9
+        },
+        {
+          "time": "15:37",
+          "rsrp": -105.0,
+          "sinr": 5.4,
+          "rlcDelay": 31.8
+        },
+        {
+          "time": "15:38",
+          "rsrp": -101.6,
+          "sinr": 6.1,
+          "rlcDelay": 30.1
+        },
+        {
+          "time": "15:39",
+          "rsrp": -112.5,
+          "sinr": 6.5,
+          "rlcDelay": 41.5
+        },
+        {
+          "time": "15:40",
+          "rsrp": -108.2,
+          "sinr": 3.7,
+          "rlcDelay": 35.6
+        },
+        {
+          "time": "15:41",
+          "rsrp": -105.0,
+          "sinr": 3.7,
+          "rlcDelay": 24.3
+        },
+        {
+          "time": "15:42",
+          "rsrp": -111.3,
+          "sinr": 6.9,
+          "rlcDelay": 33.9
+        },
+        {
+          "time": "15:43",
+          "rsrp": -102.4,
+          "sinr": 3.1,
+          "rlcDelay": 36.0
+        },
+        {
+          "time": "15:44",
+          "rsrp": -105.6,
+          "sinr": 6.3,
+          "rlcDelay": 40.6
+        },
+        {
+          "time": "15:45",
+          "rsrp": -108.3,
+          "sinr": 0.2,
+          "rlcDelay": 30.4
+        },
+        {
+          "time": "15:46",
+          "rsrp": -109.7,
+          "sinr": 3.7,
+          "rlcDelay": 22.8
+        },
+        {
+          "time": "15:47",
+          "rsrp": -104.3,
+          "sinr": 4.8,
+          "rlcDelay": 21.7
+        },
+        {
+          "time": "15:48",
+          "rsrp": -112.9,
+          "sinr": 6.5,
+          "rlcDelay": 38.4
+        },
+        {
+          "time": "15:49",
+          "rsrp": -110.0,
+          "sinr": 5.2,
+          "rlcDelay": 38.3
+        }
+      ],
+      "signalTrace": [
+        {
+          "id": "sig_001",
+          "sequence": 1,
+          "time": "15:00:35.724",
+          "fromNe": "UE",
+          "toNe": "Source gNB",
+          "message": "MeasurementReport",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_002",
+          "sequence": 2,
+          "time": "15:00:40.364",
+          "fromNe": "Source gNB",
+          "toNe": "Target gNB",
+          "message": "HandoverRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_003",
+          "sequence": 3,
+          "time": "15:00:46.369",
+          "fromNe": "Target gNB",
+          "toNe": "Source gNB",
+          "message": "HandoverAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_004",
+          "sequence": 4,
+          "time": "15:00:52.282",
+          "fromNe": "Source gNB",
+          "toNe": "UE",
+          "message": "RRCReconfiguration",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_005",
+          "sequence": 5,
+          "time": "15:00:57.513",
+          "fromNe": "UE",
+          "toNe": "Source gNB",
+          "message": "RRCReconfigurationComplete",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_006",
+          "sequence": 6,
+          "time": "15:00:59.468",
+          "fromNe": "Source gNB",
+          "toNe": "AMF",
+          "message": "PathSwitchRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_007",
+          "sequence": 7,
+          "time": "15:01:02.953",
+          "fromNe": "AMF",
+          "toNe": "SMF",
+          "message": "Nsmf_PDUSession_UpdateSMContext",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_008",
+          "sequence": 8,
+          "time": "15:01:09.725",
+          "fromNe": "SMF",
+          "toNe": "AMF",
+          "message": "Nsmf_PDUSession_UpdateSMContext_RSP",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_009",
+          "sequence": 9,
+          "time": "15:01:14.923",
+          "fromNe": "AMF",
+          "toNe": "Source gNB",
+          "message": "PathSwitchAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        }
+      ],
+      "qualityEvents": [
+        {
+          "eventId": "EVT_WO01056_001",
+          "time": "15:30:21",
+          "lng": 121.429535,
+          "lat": 31.304509,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0001977长宝地-3.5G_2",
+          "metrics": {
+            "rsrp": -109.7,
+            "sinr": 1.7,
+            "rlcDelay": 41.3
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01056_002",
+          "time": "15:33:47",
+          "lng": 121.429135,
+          "lat": 31.305994,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0001977长宝地-3.5G_2",
+          "metrics": {
+            "rsrp": -104.3,
+            "sinr": 3.6,
+            "rlcDelay": 33.0
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        },
+        {
+          "eventId": "EVT_WO01056_003",
+          "time": "15:36:35",
+          "lng": 121.425977,
+          "lat": 31.304694,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0001977长宝地-3.5G_2",
+          "metrics": {
+            "rsrp": -116.8,
+            "sinr": 2.6,
+            "rlcDelay": 25.8
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01056_004",
+          "time": "15:39:41",
+          "lng": 121.429429,
+          "lat": 31.304411,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0001977长宝地-3.5G_2",
+          "metrics": {
+            "rsrp": -106.0,
+            "sinr": 5.2,
+            "rlcDelay": 28.6
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01056_005",
+          "time": "15:42:58",
+          "lng": 121.429376,
+          "lat": 31.304043,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0001977长宝地-3.5G_2",
+          "metrics": {
+            "rsrp": -115.0,
+            "sinr": 0.1,
+            "rlcDelay": 36.7
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01056_006",
+          "time": "15:45:34",
+          "lng": 121.429252,
+          "lat": 31.306725,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0001977长宝地-3.5G_2",
+          "metrics": {
+            "rsrp": -116.0,
+            "sinr": 0.2,
+            "rlcDelay": 34.7
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        }
+      ],
+      "cio": [
+        {
+          "param": "MAXUESATPWROFFSET",
+          "mo": "NRDUCELLPDSCH",
+          "current": "0",
+          "suggested": "3",
+          "evidence": 0.8780213309051207
+        },
+        {
+          "param": "MAXUESATPWROFFSET",
+          "mo": "NRDUCELLDLRANK",
+          "current": "9",
+          "suggested": "5",
+          "evidence": 0.9466012398246719
+        },
+        {
+          "param": "A3InterFreqHoA1RsrpThld",
+          "mo": "NRDUCELLTRPBEAM",
+          "current": "6",
+          "suggested": "3",
+          "evidence": 0.7414690956225459
+        },
+        {
+          "param": "CoverageScenario",
+          "mo": "NRDUCELLDLRANK",
+          "current": "-105",
+          "suggested": "5",
+          "evidence": 0.9153764932759836
+        }
+      ],
+      "strategies": [
+        {
+          "name": "RF覆盖调整",
+          "desc": "调整下倾角与方位角，增强主瓣覆盖",
+          "risk": "低",
+          "status": "待审核"
+        },
+        {
+          "name": "切换参数优化",
+          "desc": "优化A3/A5门限，减少乒乓切换",
+          "risk": "中",
+          "status": "已加入草案"
+        },
+        {
+          "name": "容量扩容",
+          "desc": "周边小区负载均衡参数调整",
+          "risk": "中",
+          "status": "待审核"
+        },
+        {
+          "name": "上行功率控制",
+          "desc": "提升PUSCH发射功率偏移量",
+          "risk": "低",
+          "status": "已加入草案"
+        },
+        {
+          "name": "SRS权值优化",
+          "desc": "开启上行弱覆盖频选调度",
+          "risk": "低",
+          "status": "待审核"
+        },
+        {
+          "name": "PCI混淆核查",
+          "desc": "核查同频同PCI干扰",
+          "risk": "高",
+          "status": "待审核"
+        }
+      ],
+      "guards": [
+        {
+          "suggestionId": "2cd1e995",
+          "rootCauseType": "RF参数不合理",
+          "affectedCellPair": "CUDU0001977长宝地-3.5G_2|邻区",
+          "parameterName": "Tilt",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.7,
+          "riskLevel": "高",
+          "status": "已加入草案"
+        },
+        {
+          "suggestionId": "867aabea",
+          "rootCauseType": "上行弱覆盖增强参数问题",
+          "affectedCellPair": "CUDU0001977长宝地-3.5G_2|邻区",
+          "parameterName": "Mech-Azimuth",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.92,
+          "riskLevel": "低",
+          "status": "待审核"
+        },
+        {
+          "suggestionId": "008ba6c7",
+          "rootCauseType": "上行干扰增强参数问题",
+          "affectedCellPair": "CUDU0001977长宝地-3.5G_2|邻区",
+          "parameterName": "FreqPriInterFA4RsrpThld",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.88,
+          "riskLevel": "中",
+          "status": "已加入草案"
+        }
+      ],
+      "summary": {
+        "problemDesc": "场中路3117弄小区区域上行DMRS弱覆盖问题突出，质差事件686起，质差比例7.42%",
+        "tags": [
+          "上行DMRS弱覆盖",
+          "上行干扰增强参数问题",
+          "5QI业务保障"
+        ],
+        "evidenceChain": [
+          "RSRP均值低于门限(-106.2dBm)",
+          "SINR均值5.0dB",
+          "信令success"
+        ],
+        "riskLevel": "中"
+      }
+    },
+    "WO01022": {
+      "trend": [
+        {
+          "time": "15:30",
+          "rsrp": -110.6,
+          "sinr": 3.7,
+          "rlcDelay": 36.6
+        },
+        {
+          "time": "15:31",
+          "rsrp": -101.9,
+          "sinr": 5.5,
+          "rlcDelay": 33.1
+        },
+        {
+          "time": "15:32",
+          "rsrp": -109.1,
+          "sinr": 9.6,
+          "rlcDelay": 25.8
+        },
+        {
+          "time": "15:33",
+          "rsrp": -112.7,
+          "sinr": 7.8,
+          "rlcDelay": 26.3
+        },
+        {
+          "time": "15:34",
+          "rsrp": -101.3,
+          "sinr": 7.8,
+          "rlcDelay": 47.0
+        },
+        {
+          "time": "15:35",
+          "rsrp": -111.1,
+          "sinr": 3.7,
+          "rlcDelay": 42.8
+        },
+        {
+          "time": "15:36",
+          "rsrp": -101.7,
+          "sinr": 9.7,
+          "rlcDelay": 40.1
+        },
+        {
+          "time": "15:37",
+          "rsrp": -100.8,
+          "sinr": 7.6,
+          "rlcDelay": 34.0
+        },
+        {
+          "time": "15:38",
+          "rsrp": -107.3,
+          "sinr": 9.1,
+          "rlcDelay": 32.3
+        },
+        {
+          "time": "15:39",
+          "rsrp": -109.9,
+          "sinr": 6.0,
+          "rlcDelay": 22.9
+        },
+        {
+          "time": "15:40",
+          "rsrp": -106.4,
+          "sinr": 8.4,
+          "rlcDelay": 40.5
+        },
+        {
+          "time": "15:41",
+          "rsrp": -109.3,
+          "sinr": 10.0,
+          "rlcDelay": 37.1
+        },
+        {
+          "time": "15:42",
+          "rsrp": -112.4,
+          "sinr": 2.9,
+          "rlcDelay": 34.8
+        },
+        {
+          "time": "15:43",
+          "rsrp": -108.1,
+          "sinr": 7.2,
+          "rlcDelay": 46.7
+        },
+        {
+          "time": "15:44",
+          "rsrp": -111.8,
+          "sinr": 8.4,
+          "rlcDelay": 35.8
+        },
+        {
+          "time": "15:45",
+          "rsrp": -101.7,
+          "sinr": 8.6,
+          "rlcDelay": 29.7
+        },
+        {
+          "time": "15:46",
+          "rsrp": -106.1,
+          "sinr": 6.8,
+          "rlcDelay": 37.9
+        },
+        {
+          "time": "15:47",
+          "rsrp": -109.7,
+          "sinr": 7.6,
+          "rlcDelay": 39.3
+        },
+        {
+          "time": "15:48",
+          "rsrp": -104.2,
+          "sinr": 8.0,
+          "rlcDelay": 36.2
+        },
+        {
+          "time": "15:49",
+          "rsrp": -105.3,
+          "sinr": 7.5,
+          "rlcDelay": 45.3
+        }
+      ],
+      "signalTrace": [
+        {
+          "id": "sig_001",
+          "sequence": 1,
+          "time": "15:00:32.600",
+          "fromNe": "UE",
+          "toNe": "Source gNB",
+          "message": "MeasurementReport",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_002",
+          "sequence": 2,
+          "time": "15:00:37.644",
+          "fromNe": "Source gNB",
+          "toNe": "Target gNB",
+          "message": "HandoverRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_003",
+          "sequence": 3,
+          "time": "15:00:42.707",
+          "fromNe": "Target gNB",
+          "toNe": "Source gNB",
+          "message": "HandoverAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_004",
+          "sequence": 4,
+          "time": "15:00:49.459",
+          "fromNe": "Source gNB",
+          "toNe": "UE",
+          "message": "RRCReconfiguration",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_005",
+          "sequence": 5,
+          "time": "15:00:54.481",
+          "fromNe": "UE",
+          "toNe": "Source gNB",
+          "message": "RRCReconfigurationComplete",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_006",
+          "sequence": 6,
+          "time": "15:01:02.421",
+          "fromNe": "Source gNB",
+          "toNe": "AMF",
+          "message": "PathSwitchRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_007",
+          "sequence": 7,
+          "time": "15:01:06.291",
+          "fromNe": "AMF",
+          "toNe": "SMF",
+          "message": "Nsmf_PDUSession_UpdateSMContext",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_008",
+          "sequence": 8,
+          "time": "15:01:08.831",
+          "fromNe": "SMF",
+          "toNe": "AMF",
+          "message": "Nsmf_PDUSession_UpdateSMContext_RSP",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_009",
+          "sequence": 9,
+          "time": "15:01:14.887",
+          "fromNe": "AMF",
+          "toNe": "Source gNB",
+          "message": "PathSwitchAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        }
+      ],
+      "qualityEvents": [
+        {
+          "eventId": "EVT_WO01022_001",
+          "time": "15:30:40",
+          "lng": 121.431931,
+          "lat": 31.310163,
+          "type": "下行弱覆盖",
+          "cell": "CUDU0003827淮陕(联通)-5G_3",
+          "metrics": {
+            "rsrp": -105.9,
+            "sinr": 6.1,
+            "rlcDelay": 20.1
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01022_002",
+          "time": "15:33:11",
+          "lng": 121.430183,
+          "lat": 31.307221,
+          "type": "下行弱覆盖",
+          "cell": "CUDU0003827淮陕(联通)-5G_3",
+          "metrics": {
+            "rsrp": -107.0,
+            "sinr": 3.9,
+            "rlcDelay": 47.2
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01022_003",
+          "time": "15:36:18",
+          "lng": 121.432157,
+          "lat": 31.308377,
+          "type": "下行弱覆盖",
+          "cell": "CUDU0003827淮陕(联通)-5G_3",
+          "metrics": {
+            "rsrp": -109.3,
+            "sinr": 8.4,
+            "rlcDelay": 28.8
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01022_004",
+          "time": "15:39:47",
+          "lng": 121.432896,
+          "lat": 31.310681,
+          "type": "下行弱覆盖",
+          "cell": "CUDU0003827淮陕(联通)-5G_3",
+          "metrics": {
+            "rsrp": -113.0,
+            "sinr": 7.5,
+            "rlcDelay": 41.8
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01022_005",
+          "time": "15:42:25",
+          "lng": 121.431372,
+          "lat": 31.311522,
+          "type": "下行弱覆盖",
+          "cell": "CUDU0003827淮陕(联通)-5G_3",
+          "metrics": {
+            "rsrp": -111.3,
+            "sinr": 3.0,
+            "rlcDelay": 49.0
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        }
+      ],
+      "cio": [
+        {
+          "param": "CovBasedHoB1RsrpThld",
+          "mo": "NRCellInterRHoMeaGrp",
+          "current": "-100",
+          "suggested": "3",
+          "evidence": 0.9268796491444358
+        },
+        {
+          "param": "CoverageScenario",
+          "mo": "NRDUCELLPDCCH",
+          "current": "9",
+          "suggested": "8",
+          "evidence": 0.6832816036882515
+        },
+        {
+          "param": "A3InterFreqHoA2RsrpThld",
+          "mo": "NRCellFreqRelation",
+          "current": "-100",
+          "suggested": "3",
+          "evidence": 0.857026388828766
+        }
+      ],
+      "strategies": [
+        {
+          "name": "RF覆盖调整",
+          "desc": "调整下倾角与方位角，增强主瓣覆盖",
+          "risk": "低",
+          "status": "待审核"
+        },
+        {
+          "name": "切换参数优化",
+          "desc": "优化A3/A5门限，减少乒乓切换",
+          "risk": "中",
+          "status": "已加入草案"
+        },
+        {
+          "name": "容量扩容",
+          "desc": "周边小区负载均衡参数调整",
+          "risk": "中",
+          "status": "待审核"
+        },
+        {
+          "name": "上行功率控制",
+          "desc": "提升PUSCH发射功率偏移量",
+          "risk": "低",
+          "status": "已加入草案"
+        },
+        {
+          "name": "SRS权值优化",
+          "desc": "开启上行弱覆盖频选调度",
+          "risk": "低",
+          "status": "待审核"
+        },
+        {
+          "name": "PCI混淆核查",
+          "desc": "核查同频同PCI干扰",
+          "risk": "高",
+          "status": "待审核"
+        }
+      ],
+      "guards": [
+        {
+          "suggestionId": "65a037d0",
+          "rootCauseType": "RF参数不合理",
+          "affectedCellPair": "CUDU0003827淮陕(联通)-5G_3|邻区",
+          "parameterName": "FreqPriInterFA1RsrpThld",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.71,
+          "riskLevel": "中",
+          "status": "待审核"
+        },
+        {
+          "suggestionId": "080ec90b",
+          "rootCauseType": "上行弱覆盖增强参数问题",
+          "affectedCellPair": "CUDU0003827淮陕(联通)-5G_3|邻区",
+          "parameterName": "Tilt",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.74,
+          "riskLevel": "中",
+          "status": "已加入草案"
+        },
+        {
+          "suggestionId": "ed57b145",
+          "rootCauseType": "上行干扰增强参数问题",
+          "affectedCellPair": "CUDU0003827淮陕(联通)-5G_3|邻区",
+          "parameterName": "InterRatHoA2RsrpThld",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.82,
+          "riskLevel": "高",
+          "status": "待审核"
+        }
+      ],
+      "summary": {
+        "problemDesc": "牛奶棚食品厂区域下行弱覆盖问题突出，质差事件676起，质差比例4.54%",
+        "tags": [
+          "下行弱覆盖",
+          "上行弱覆盖增强参数问题",
+          "5QI业务保障"
+        ],
+        "evidenceChain": [
+          "RSRP均值低于门限(-104.8dBm)",
+          "SINR均值7.6dB",
+          "信令success"
+        ],
+        "riskLevel": "高"
+      }
+    },
+    "WO01166": {
+      "trend": [
+        {
+          "time": "15:30",
+          "rsrp": -94.0,
+          "sinr": 3.5,
+          "rlcDelay": 41.9
+        },
+        {
+          "time": "15:31",
+          "rsrp": -99.5,
+          "sinr": 8.9,
+          "rlcDelay": 42.8
+        },
+        {
+          "time": "15:32",
+          "rsrp": -96.5,
+          "sinr": 3.8,
+          "rlcDelay": 41.7
+        },
+        {
+          "time": "15:33",
+          "rsrp": -97.1,
+          "sinr": 11.1,
+          "rlcDelay": 29.5
+        },
+        {
+          "time": "15:34",
+          "rsrp": -93.4,
+          "sinr": 10.3,
+          "rlcDelay": 27.1
+        },
+        {
+          "time": "15:35",
+          "rsrp": -101.9,
+          "sinr": 4.2,
+          "rlcDelay": 35.1
+        },
+        {
+          "time": "15:36",
+          "rsrp": -100.3,
+          "sinr": 9.6,
+          "rlcDelay": 37.4
+        },
+        {
+          "time": "15:37",
+          "rsrp": -95.8,
+          "sinr": 8.2,
+          "rlcDelay": 23.6
+        },
+        {
+          "time": "15:38",
+          "rsrp": -101.0,
+          "sinr": 9.0,
+          "rlcDelay": 23.2
+        },
+        {
+          "time": "15:39",
+          "rsrp": -98.2,
+          "sinr": 8.8,
+          "rlcDelay": 39.5
+        },
+        {
+          "time": "15:40",
+          "rsrp": -105.2,
+          "sinr": 4.2,
+          "rlcDelay": 21.3
+        },
+        {
+          "time": "15:41",
+          "rsrp": -99.6,
+          "sinr": 5.2,
+          "rlcDelay": 25.8
+        },
+        {
+          "time": "15:42",
+          "rsrp": -102.8,
+          "sinr": 3.6,
+          "rlcDelay": 21.0
+        },
+        {
+          "time": "15:43",
+          "rsrp": -93.2,
+          "sinr": 8.7,
+          "rlcDelay": 39.6
+        },
+        {
+          "time": "15:44",
+          "rsrp": -93.0,
+          "sinr": 8.5,
+          "rlcDelay": 36.4
+        },
+        {
+          "time": "15:45",
+          "rsrp": -103.8,
+          "sinr": 10.3,
+          "rlcDelay": 22.0
+        },
+        {
+          "time": "15:46",
+          "rsrp": -96.8,
+          "sinr": 10.6,
+          "rlcDelay": 32.9
+        },
+        {
+          "time": "15:47",
+          "rsrp": -92.8,
+          "sinr": 10.6,
+          "rlcDelay": 36.1
+        },
+        {
+          "time": "15:48",
+          "rsrp": -102.1,
+          "sinr": 7.2,
+          "rlcDelay": 42.1
+        },
+        {
+          "time": "15:49",
+          "rsrp": -97.1,
+          "sinr": 10.8,
+          "rlcDelay": 25.6
+        }
+      ],
+      "signalTrace": [
+        {
+          "id": "sig_001",
+          "sequence": 1,
+          "time": "15:00:37.908",
+          "fromNe": "UE",
+          "toNe": "Source gNB",
+          "message": "MeasurementReport",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_002",
+          "sequence": 2,
+          "time": "15:00:45.451",
+          "fromNe": "Source gNB",
+          "toNe": "Target gNB",
+          "message": "HandoverRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_003",
+          "sequence": 3,
+          "time": "15:00:49.285",
+          "fromNe": "Target gNB",
+          "toNe": "Source gNB",
+          "message": "HandoverAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_004",
+          "sequence": 4,
+          "time": "15:00:57.195",
+          "fromNe": "Source gNB",
+          "toNe": "UE",
+          "message": "RRCReconfiguration",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_005",
+          "sequence": 5,
+          "time": "15:01:01.915",
+          "fromNe": "UE",
+          "toNe": "Source gNB",
+          "message": "RRCReconfigurationComplete",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_006",
+          "sequence": 6,
+          "time": "15:01:03.511",
+          "fromNe": "Source gNB",
+          "toNe": "AMF",
+          "message": "PathSwitchRequest",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_007",
+          "sequence": 7,
+          "time": "15:01:08.460",
+          "fromNe": "AMF",
+          "toNe": "SMF",
+          "message": "Nsmf_PDUSession_UpdateSMContext",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_008",
+          "sequence": 8,
+          "time": "15:01:10.384",
+          "fromNe": "SMF",
+          "toNe": "AMF",
+          "message": "Nsmf_PDUSession_UpdateSMContext_RSP",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_009",
+          "sequence": 9,
+          "time": "15:01:18.391",
+          "fromNe": "AMF",
+          "toNe": "Source gNB",
+          "message": "PathSwitchAck",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        }
+      ],
+      "qualityEvents": [
+        {
+          "eventId": "EVT_WO01166_001",
+          "time": "15:30:49",
+          "lng": 121.432812,
+          "lat": 31.309326,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0001214联汇川(联通)-5G_3",
+          "metrics": {
+            "rsrp": -102.8,
+            "sinr": 6.4,
+            "rlcDelay": 50.9
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        },
+        {
+          "eventId": "EVT_WO01166_002",
+          "time": "15:33:49",
+          "lng": 121.434316,
+          "lat": 31.310929,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0001214联汇川(联通)-5G_3",
+          "metrics": {
+            "rsrp": -107.7,
+            "sinr": 6.8,
+            "rlcDelay": 31.0
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01166_003",
+          "time": "15:36:46",
+          "lng": 121.434821,
+          "lat": 31.310116,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0001214联汇川(联通)-5G_3",
+          "metrics": {
+            "rsrp": -98.6,
+            "sinr": 3.3,
+            "rlcDelay": 16.6
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        },
+        {
+          "eventId": "EVT_WO01166_004",
+          "time": "15:39:10",
+          "lng": 121.436053,
+          "lat": 31.309441,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0001214联汇川(联通)-5G_3",
+          "metrics": {
+            "rsrp": -109.1,
+            "sinr": 6.4,
+            "rlcDelay": 39.8
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        }
+      ],
+      "cio": [
+        {
+          "param": "CoverageScenario",
+          "mo": "NRDUCELLPDSCH",
+          "current": "9",
+          "suggested": "3",
+          "evidence": 0.6012963140784505
+        },
+        {
+          "param": "SPECUERSSISATOFFSET",
+          "mo": "NRDUCELLPDCCH",
+          "current": "9",
+          "suggested": "8",
+          "evidence": 0.7413694630966872
+        },
+        {
+          "param": "UESATPWROFFSETTHLD",
+          "mo": "NRCellInterRHoMeaGrp",
+          "current": "6",
+          "suggested": "-98",
+          "evidence": 0.6011575761031237
+        },
+        {
+          "param": "SPECUERSSISATOFFSET",
+          "mo": "NRDUCELLPDCCH",
+          "current": "-105",
+          "suggested": "3",
+          "evidence": 0.7873564267699775
+        },
+        {
+          "param": "FreqPriInterFA1RsrpThld",
+          "mo": "NRDUCELLPDSCH",
+          "current": "0",
+          "suggested": "8",
+          "evidence": 0.6193181356139137
+        }
+      ],
+      "strategies": [
+        {
+          "name": "RF覆盖调整",
+          "desc": "调整下倾角与方位角，增强主瓣覆盖",
+          "risk": "低",
+          "status": "待审核"
+        },
+        {
+          "name": "切换参数优化",
+          "desc": "优化A3/A5门限，减少乒乓切换",
+          "risk": "中",
+          "status": "已加入草案"
+        },
+        {
+          "name": "容量扩容",
+          "desc": "周边小区负载均衡参数调整",
+          "risk": "中",
+          "status": "待审核"
+        },
+        {
+          "name": "上行功率控制",
+          "desc": "提升PUSCH发射功率偏移量",
+          "risk": "低",
+          "status": "已加入草案"
+        },
+        {
+          "name": "SRS权值优化",
+          "desc": "开启上行弱覆盖频选调度",
+          "risk": "低",
+          "status": "待审核"
+        },
+        {
+          "name": "PCI混淆核查",
+          "desc": "核查同频同PCI干扰",
+          "risk": "高",
+          "status": "待审核"
+        }
+      ],
+      "guards": [
+        {
+          "suggestionId": "615385fa",
+          "rootCauseType": "RF参数不合理",
+          "affectedCellPair": "CUDU0001214联汇川(联通)-5G_3|邻区",
+          "parameterName": "PhyCellId",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.72,
+          "riskLevel": "高",
+          "status": "已加入草案"
+        },
+        {
+          "suggestionId": "ad9a1efc",
+          "rootCauseType": "上行弱覆盖增强参数问题",
+          "affectedCellPair": "CUDU0001214联汇川(联通)-5G_3|邻区",
+          "parameterName": "Mech-Tilt",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.91,
+          "riskLevel": "中",
+          "status": "待审核"
+        },
+        {
+          "suggestionId": "423df117",
+          "rootCauseType": "上行干扰增强参数问题",
+          "affectedCellPair": "CUDU0001214联汇川(联通)-5G_3|邻区",
+          "parameterName": "FreqSpecificOffset",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.84,
+          "riskLevel": "中",
+          "status": "待审核"
+        }
+      ],
+      "summary": {
+        "problemDesc": "上海市三泉学校区域上行DMRS弱覆盖问题突出，质差事件664起，质差比例5.26%",
+        "tags": [
+          "上行DMRS弱覆盖",
+          "上行弱覆盖增强参数问题",
+          "5QI业务保障"
+        ],
+        "evidenceChain": [
+          "RSRP均值低于门限(-97.4dBm)",
+          "SINR均值8.4dB",
+          "信令success"
+        ],
+        "riskLevel": "高"
+      }
+    },
+    "WO01167": {
+      "trend": [
+        {
+          "time": "15:30",
+          "rsrp": -106.9,
+          "sinr": 2.4,
+          "rlcDelay": 62.3
+        },
+        {
+          "time": "15:31",
+          "rsrp": -110.8,
+          "sinr": -4.4,
+          "rlcDelay": 52.0
+        },
+        {
+          "time": "15:32",
+          "rsrp": -100.3,
+          "sinr": -2.7,
+          "rlcDelay": 61.0
+        },
+        {
+          "time": "15:33",
+          "rsrp": -102.9,
+          "sinr": 0.5,
+          "rlcDelay": 63.8
+        },
+        {
+          "time": "15:34",
+          "rsrp": -100.7,
+          "sinr": 1.8,
+          "rlcDelay": 75.5
+        },
+        {
+          "time": "15:35",
+          "rsrp": -113.0,
+          "sinr": -1.9,
+          "rlcDelay": 59.8
+        },
+        {
+          "time": "15:36",
+          "rsrp": -103.9,
+          "sinr": -1.4,
+          "rlcDelay": 56.6
+        },
+        {
+          "time": "15:37",
+          "rsrp": -104.7,
+          "sinr": -0.5,
+          "rlcDelay": 74.8
+        },
+        {
+          "time": "15:38",
+          "rsrp": -101.9,
+          "sinr": -0.4,
+          "rlcDelay": 69.9
+        },
+        {
+          "time": "15:39",
+          "rsrp": -110.2,
+          "sinr": -4.1,
+          "rlcDelay": 69.7
+        },
+        {
+          "time": "15:40",
+          "rsrp": -106.9,
+          "sinr": -4.5,
+          "rlcDelay": 74.0
+        },
+        {
+          "time": "15:41",
+          "rsrp": -105.2,
+          "sinr": -2.7,
+          "rlcDelay": 67.6
+        },
+        {
+          "time": "15:42",
+          "rsrp": -113.1,
+          "sinr": 0.4,
+          "rlcDelay": 73.9
+        },
+        {
+          "time": "15:43",
+          "rsrp": -102.6,
+          "sinr": -3.9,
+          "rlcDelay": 66.6
+        },
+        {
+          "time": "15:44",
+          "rsrp": -102.4,
+          "sinr": -4.1,
+          "rlcDelay": 71.8
+        },
+        {
+          "time": "15:45",
+          "rsrp": -111.8,
+          "sinr": 0.1,
+          "rlcDelay": 66.7
+        },
+        {
+          "time": "15:46",
+          "rsrp": -112.4,
+          "sinr": -3.0,
+          "rlcDelay": 59.8
+        },
+        {
+          "time": "15:47",
+          "rsrp": -102.4,
+          "sinr": 1.3,
+          "rlcDelay": 61.4
+        },
+        {
+          "time": "15:48",
+          "rsrp": -111.7,
+          "sinr": 0.8,
+          "rlcDelay": 65.0
+        },
+        {
+          "time": "15:49",
+          "rsrp": -109.1,
+          "sinr": 3.1,
+          "rlcDelay": 56.7
+        }
+      ],
+      "signalTrace": [
+        {
+          "id": "sig_001",
+          "sequence": 1,
+          "time": "15:00:33.463",
+          "fromNe": "UE",
+          "toNe": "Source gNB",
+          "message": "MeasurementReport",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        },
+        {
+          "id": "sig_002",
+          "sequence": 2,
+          "time": "15:00:35.400",
+          "fromNe": "Source gNB",
+          "toNe": "Target gNB",
+          "message": "HandoverRequest",
+          "status": "failure",
+          "abnormal": true,
+          "reason": "Resource Unavailable"
+        },
+        {
+          "id": "sig_003",
+          "sequence": 3,
+          "time": "15:00:38.895",
+          "fromNe": "Target gNB",
+          "toNe": "Source gNB",
+          "message": "HandoverFailure",
+          "status": "failure",
+          "abnormal": true,
+          "reason": "Prepare Failure"
+        },
+        {
+          "id": "sig_004",
+          "sequence": 4,
+          "time": "15:00:43.292",
+          "fromNe": "Source gNB",
+          "toNe": "UE",
+          "message": "RRCReconfiguration",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        }
+      ],
+      "qualityEvents": [
+        {
+          "eventId": "EVT_WO01167_001",
+          "time": "15:30:47",
+          "lng": 121.4307,
+          "lat": 31.306053,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0001214联汇川(联通)-5G_3",
+          "metrics": {
+            "rsrp": -111.7,
+            "sinr": -4.3,
+            "rlcDelay": 56.1
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01167_002",
+          "time": "15:33:11",
+          "lng": 121.435734,
+          "lat": 31.305937,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0001214联汇川(联通)-5G_3",
+          "metrics": {
+            "rsrp": -104.5,
+            "sinr": -0.8,
+            "rlcDelay": 77.4
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01167_003",
+          "time": "15:36:47",
+          "lng": 121.435777,
+          "lat": 31.30795,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0001214联汇川(联通)-5G_3",
+          "metrics": {
+            "rsrp": -117.1,
+            "sinr": 1.8,
+            "rlcDelay": 74.6
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01167_004",
+          "time": "15:39:23",
+          "lng": 121.431315,
+          "lat": 31.307079,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0001214联汇川(联通)-5G_3",
+          "metrics": {
+            "rsrp": -105.1,
+            "sinr": 0.5,
+            "rlcDelay": 74.0
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01167_005",
+          "time": "15:42:54",
+          "lng": 121.430682,
+          "lat": 31.306533,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0001214联汇川(联通)-5G_3",
+          "metrics": {
+            "rsrp": -110.5,
+            "sinr": -3.7,
+            "rlcDelay": 53.3
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01167_006",
+          "time": "15:45:29",
+          "lng": 121.432543,
+          "lat": 31.30548,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0001214联汇川(联通)-5G_3",
+          "metrics": {
+            "rsrp": -109.7,
+            "sinr": 2.0,
+            "rlcDelay": 71.4
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01167_007",
+          "time": "15:48:16",
+          "lng": 121.43417,
+          "lat": 31.310629,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0001214联汇川(联通)-5G_3",
+          "metrics": {
+            "rsrp": -113.7,
+            "sinr": -4.7,
+            "rlcDelay": 67.5
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01167_008",
+          "time": "15:51:50",
+          "lng": 121.434412,
+          "lat": 31.307112,
+          "type": "上行DMRS弱覆盖",
+          "cell": "CUDU0001214联汇川(联通)-5G_3",
+          "metrics": {
+            "rsrp": -102.4,
+            "sinr": -1.6,
+            "rlcDelay": 64.9
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        }
+      ],
+      "cio": [
+        {
+          "param": "Mech-Azimuth",
+          "mo": "NRCellHoEutranMeaGrp",
+          "current": "9",
+          "suggested": "8",
+          "evidence": 0.6617133360796857
+        },
+        {
+          "param": "MAXUESATPWROFFSET",
+          "mo": "NRCellEutranNFreq",
+          "current": "-105",
+          "suggested": "5",
+          "evidence": 0.6997725820046395
+        },
+        {
+          "param": "FreqPriInterFA4RsrpThld",
+          "mo": "NRDUCELLCHNPWR",
+          "current": "0",
+          "suggested": "3",
+          "evidence": 0.8818037860954393
+        },
+        {
+          "param": "DLRANK2INCSPCTEFFTHLD",
+          "mo": "NRDUCELLUEPWRSAVING",
+          "current": "-105",
+          "suggested": "-103",
+          "evidence": 0.8591459096845969
+        }
+      ],
+      "strategies": [
+        {
+          "name": "RF覆盖调整",
+          "desc": "调整下倾角与方位角，增强主瓣覆盖",
+          "risk": "低",
+          "status": "待审核"
+        },
+        {
+          "name": "切换参数优化",
+          "desc": "优化A3/A5门限，减少乒乓切换",
+          "risk": "中",
+          "status": "已加入草案"
+        },
+        {
+          "name": "容量扩容",
+          "desc": "周边小区负载均衡参数调整",
+          "risk": "中",
+          "status": "待审核"
+        },
+        {
+          "name": "上行功率控制",
+          "desc": "提升PUSCH发射功率偏移量",
+          "risk": "低",
+          "status": "已加入草案"
+        },
+        {
+          "name": "SRS权值优化",
+          "desc": "开启上行弱覆盖频选调度",
+          "risk": "低",
+          "status": "待审核"
+        },
+        {
+          "name": "PCI混淆核查",
+          "desc": "核查同频同PCI干扰",
+          "risk": "高",
+          "status": "待审核"
+        }
+      ],
+      "guards": [
+        {
+          "suggestionId": "f2f2ec2f",
+          "rootCauseType": "RF参数不合理",
+          "affectedCellPair": "CUDU0001214联汇川(联通)-5G_3|邻区",
+          "parameterName": "DLINITMCS",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.83,
+          "riskLevel": "低",
+          "status": "待审核"
+        },
+        {
+          "suggestionId": "47d3046d",
+          "rootCauseType": "上行弱覆盖增强参数问题",
+          "affectedCellPair": "CUDU0001214联汇川(联通)-5G_3|邻区",
+          "parameterName": "CovInterFreqA1RsrpThld",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.83,
+          "riskLevel": "低",
+          "status": "待审核"
+        },
+        {
+          "suggestionId": "5d6277b3",
+          "rootCauseType": "上行干扰增强参数问题",
+          "affectedCellPair": "CUDU0001214联汇川(联通)-5G_3|邻区",
+          "parameterName": "UESATPWROFFSETTHLD",
+          "currentValue": "DB0",
+          "suggestedValue": "DB3",
+          "evidenceScore": 0.81,
+          "riskLevel": "高",
           "status": "已加入草案"
         }
       ],
@@ -21262,319 +25306,9 @@ const SRCON_DATA = {
           "5QI业务保障"
         ],
         "evidenceChain": [
-          "RSRP均值低于门限(-97.6dBm)",
-          "SINR均值1.4dB",
-          "信令成功"
-        ],
-        "riskLevel": "中"
-      }
-    },
-    "WO01167": {
-      "trend": [
-        {
-          "time": "15:30",
-          "rsrp": -99.8,
-          "sinr": -4.2,
-          "rlcDelay": 76.0
-        },
-        {
-          "time": "15:31",
-          "rsrp": -91.7,
-          "sinr": -4.4,
-          "rlcDelay": 52.6
-        },
-        {
-          "time": "15:32",
-          "rsrp": -101.0,
-          "sinr": -3.5,
-          "rlcDelay": 76.1
-        },
-        {
-          "time": "15:33",
-          "rsrp": -91.5,
-          "sinr": 1.0,
-          "rlcDelay": 74.8
-        },
-        {
-          "time": "15:34",
-          "rsrp": -101.5,
-          "sinr": -3.9,
-          "rlcDelay": 60.9
-        },
-        {
-          "time": "15:35",
-          "rsrp": -102.6,
-          "sinr": -0.8,
-          "rlcDelay": 64.1
-        },
-        {
-          "time": "15:36",
-          "rsrp": -95.6,
-          "sinr": 0.4,
-          "rlcDelay": 68.2
-        },
-        {
-          "time": "15:37",
-          "rsrp": -99.0,
-          "sinr": -2.0,
-          "rlcDelay": 61.7
-        },
-        {
-          "time": "15:38",
-          "rsrp": -100.3,
-          "sinr": -1.8,
-          "rlcDelay": 62.3
-        },
-        {
-          "time": "15:39",
-          "rsrp": -102.7,
-          "sinr": -1.4,
-          "rlcDelay": 65.6
-        },
-        {
-          "time": "15:40",
-          "rsrp": -95.5,
-          "sinr": -5.0,
-          "rlcDelay": 54.5
-        },
-        {
-          "time": "15:41",
-          "rsrp": -95.4,
-          "sinr": 0.6,
-          "rlcDelay": 73.8
-        },
-        {
-          "time": "15:42",
-          "rsrp": -98.8,
-          "sinr": 0.7,
-          "rlcDelay": 70.3
-        },
-        {
-          "time": "15:43",
-          "rsrp": -95.9,
-          "sinr": -2.1,
-          "rlcDelay": 55.0
-        },
-        {
-          "time": "15:44",
-          "rsrp": -103.5,
-          "sinr": -2.3,
-          "rlcDelay": 69.0
-        },
-        {
-          "time": "15:45",
-          "rsrp": -102.0,
-          "sinr": 0.1,
-          "rlcDelay": 54.7
-        },
-        {
-          "time": "15:46",
-          "rsrp": -104.0,
-          "sinr": -4.0,
-          "rlcDelay": 75.4
-        },
-        {
-          "time": "15:47",
-          "rsrp": -91.9,
-          "sinr": -4.2,
-          "rlcDelay": 69.7
-        },
-        {
-          "time": "15:48",
-          "rsrp": -93.7,
-          "sinr": -1.5,
-          "rlcDelay": 69.5
-        },
-        {
-          "time": "15:49",
-          "rsrp": -102.4,
-          "sinr": -5.1,
-          "rlcDelay": 54.3
-        }
-      ],
-      "signalTrace": [
-        {
-          "stepId": "S01",
-          "sequence": 1,
-          "fromNe": "UE",
-          "toNe": "gNB",
-          "messageName": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "status": "失败",
-          "causeCode": "0x4003",
-          "latencyMs": 73,
-          "timestamp": "2026-04-21 15:31:00"
-        },
-        {
-          "stepId": "S02",
-          "sequence": 2,
-          "fromNe": "gNB",
-          "toNe": "AMF",
-          "messageName": "PRIVATE_MEASUREMENT_REPORT",
-          "messageNameCn": "PRIVATE_MEASUREMENT_REPORT",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 64,
-          "timestamp": "2026-04-21 15:32:00"
-        },
-        {
-          "stepId": "S03",
-          "sequence": 3,
-          "fromNe": "AMF",
-          "toNe": "SMF",
-          "messageName": "PRIVATE_MEASUREMENT_REPORT",
-          "messageNameCn": "PRIVATE_MEASUREMENT_REPORT",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 11,
-          "timestamp": "2026-04-21 15:33:00"
-        },
-        {
-          "stepId": "S04",
-          "sequence": 4,
-          "fromNe": "SMF",
-          "toNe": "UPF",
-          "messageName": "PRIVATE_HO_IN",
-          "messageNameCn": "PRIVATE_HO_IN",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 127,
-          "timestamp": "2026-04-21 15:34:00"
-        },
-        {
-          "stepId": "S05",
-          "sequence": 5,
-          "fromNe": "UPF",
-          "toNe": "DN",
-          "messageName": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_DU_CAPABILITY_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 125,
-          "timestamp": "2026-04-21 15:35:00"
-        }
-      ],
-      "cio": [
-        {
-          "param": "FreqSpecificOffset",
-          "mo": "NRDUCELLQCIBEARER",
-          "current": "9",
-          "suggested": "8",
-          "evidence": 0.6481294528195651
-        },
-        {
-          "param": "CovHoToEutranB2RsrpThld1",
-          "mo": "CELL",
-          "current": "-105",
-          "suggested": "8",
-          "evidence": 0.8675885989448822
-        },
-        {
-          "param": "Azimuth",
-          "mo": "NRDUCELLCHNPWR",
-          "current": "9",
-          "suggested": "-98",
-          "evidence": 0.8598283315820148
-        },
-        {
-          "param": "CovHoToEutranB2RsrpThld1",
-          "mo": "NRCellAlgoSwitch",
-          "current": "-105",
-          "suggested": "-98",
-          "evidence": 0.9244861221622278
-        },
-        {
-          "param": "A3InterFreqHoA2RsrpThld",
-          "mo": "NRDUCELLFEATURESW",
-          "current": "9",
-          "suggested": "5",
-          "evidence": 0.9033712168048376
-        }
-      ],
-      "strategies": [
-        {
-          "name": "RF覆盖调整",
-          "desc": "调整下倾角与方位角，增强主瓣覆盖",
-          "risk": "低",
-          "status": "待审核"
-        },
-        {
-          "name": "切换参数优化",
-          "desc": "优化A3/A5门限，减少乒乓切换",
-          "risk": "中",
-          "status": "已加入草案"
-        },
-        {
-          "name": "容量扩容",
-          "desc": "周边小区负载均衡参数调整",
-          "risk": "中",
-          "status": "待审核"
-        },
-        {
-          "name": "上行功率控制",
-          "desc": "提升PUSCH发射功率偏移量",
-          "risk": "低",
-          "status": "已加入草案"
-        },
-        {
-          "name": "SRS权值优化",
-          "desc": "开启上行弱覆盖频选调度",
-          "risk": "低",
-          "status": "待审核"
-        },
-        {
-          "name": "PCI混淆核查",
-          "desc": "核查同频同PCI干扰",
-          "risk": "高",
-          "status": "待审核"
-        }
-      ],
-      "guards": [
-        {
-          "suggestionId": "3b2ab50a",
-          "rootCauseType": "RF参数不合理",
-          "affectedCellPair": "CUDU0001214联汇川(联通)-5G_3|邻区",
-          "parameterName": "DLINITIALMCSADJVALUE",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.76,
-          "riskLevel": "中",
-          "status": "待审核"
-        },
-        {
-          "suggestionId": "dc8ea240",
-          "rootCauseType": "上行弱覆盖增强参数问题",
-          "affectedCellPair": "CUDU0001214联汇川(联通)-5G_3|邻区",
-          "parameterName": "InterFreqHoSwitch.FREQ_PRIORITY_BASED_HO",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.88,
-          "riskLevel": "中",
-          "status": "已加入草案"
-        },
-        {
-          "suggestionId": "551c8af0",
-          "rootCauseType": "上行干扰增强参数问题",
-          "affectedCellPair": "CUDU0001214联汇川(联通)-5G_3|邻区",
-          "parameterName": "TrafficPriority",
-          "currentValue": "DB0",
-          "suggestedValue": "DB3",
-          "evidenceScore": 0.85,
-          "riskLevel": "高",
-          "status": "待审核"
-        }
-      ],
-      "summary": {
-        "problemDesc": "上海市三泉学校区域上行DMRS弱覆盖问题突出，质差事件664起，质差比例5.26%",
-        "tags": [
-          "上行DMRS弱覆盖",
-          "上行干扰增强参数问题",
-          "5QI业务保障"
-        ],
-        "evidenceChain": [
-          "RSRP均值低于门限(-96.4dBm)",
-          "SINR均值-1.6dB",
-          "信令成功"
+          "RSRP均值低于门限(-105.2dBm)",
+          "SINR均值0.3dB",
+          "信令failure"
         ],
         "riskLevel": "低"
       }
@@ -21583,229 +25317,291 @@ const SRCON_DATA = {
       "trend": [
         {
           "time": "15:30",
-          "rsrp": -98.8,
-          "sinr": 15.3,
-          "rlcDelay": 22.4
+          "rsrp": -102.9,
+          "sinr": 14.6,
+          "rlcDelay": 29.7
         },
         {
           "time": "15:31",
-          "rsrp": -102.2,
-          "sinr": 15.7,
-          "rlcDelay": 25.4
+          "rsrp": -99.0,
+          "sinr": 14.4,
+          "rlcDelay": 46.1
         },
         {
           "time": "15:32",
-          "rsrp": -103.5,
-          "sinr": 11.6,
-          "rlcDelay": 19.8
+          "rsrp": -103.4,
+          "sinr": 17.4,
+          "rlcDelay": 25.2
         },
         {
           "time": "15:33",
-          "rsrp": -106.5,
-          "sinr": 13.6,
-          "rlcDelay": 33.2
+          "rsrp": -98.7,
+          "sinr": 14.5,
+          "rlcDelay": 39.0
         },
         {
           "time": "15:34",
-          "rsrp": -105.7,
-          "sinr": 14.6,
-          "rlcDelay": 27.9
-        },
-        {
-          "time": "15:35",
-          "rsrp": -111.0,
-          "sinr": 15.3,
-          "rlcDelay": 16.1
-        },
-        {
-          "time": "15:36",
-          "rsrp": -100.9,
-          "sinr": 14.8,
-          "rlcDelay": 30.6
-        },
-        {
-          "time": "15:37",
-          "rsrp": -110.2,
-          "sinr": 17.4,
-          "rlcDelay": 36.0
-        },
-        {
-          "time": "15:38",
-          "rsrp": -102.7,
-          "sinr": 12.3,
-          "rlcDelay": 22.9
-        },
-        {
-          "time": "15:39",
-          "rsrp": -105.8,
-          "sinr": 12.6,
-          "rlcDelay": 27.3
-        },
-        {
-          "time": "15:40",
-          "rsrp": -102.4,
-          "sinr": 12.8,
-          "rlcDelay": 23.9
-        },
-        {
-          "time": "15:41",
-          "rsrp": -108.5,
-          "sinr": 16.7,
+          "rsrp": -102.0,
+          "sinr": 15.8,
           "rlcDelay": 35.2
         },
         {
-          "time": "15:42",
-          "rsrp": -101.4,
-          "sinr": 16.9,
-          "rlcDelay": 15.6
+          "time": "15:35",
+          "rsrp": -101.8,
+          "sinr": 15.6,
+          "rlcDelay": 30.5
         },
         {
-          "time": "15:43",
-          "rsrp": -110.2,
-          "sinr": 14.8,
-          "rlcDelay": 21.6
+          "time": "15:36",
+          "rsrp": -100.0,
+          "sinr": 13.0,
+          "rlcDelay": 38.0
         },
         {
-          "time": "15:44",
-          "rsrp": -104.9,
-          "sinr": 14.3,
-          "rlcDelay": 32.3
-        },
-        {
-          "time": "15:45",
-          "rsrp": -105.1,
-          "sinr": 18.8,
-          "rlcDelay": 22.0
-        },
-        {
-          "time": "15:46",
-          "rsrp": -106.8,
-          "sinr": 17.3,
+          "time": "15:37",
+          "rsrp": -100.7,
+          "sinr": 13.7,
           "rlcDelay": 35.4
         },
         {
-          "time": "15:47",
-          "rsrp": -104.4,
+          "time": "15:38",
+          "rsrp": -98.9,
+          "sinr": 18.8,
+          "rlcDelay": 29.3
+        },
+        {
+          "time": "15:39",
+          "rsrp": -100.5,
+          "sinr": 14.0,
+          "rlcDelay": 43.7
+        },
+        {
+          "time": "15:40",
+          "rsrp": -91.9,
+          "sinr": 20.0,
+          "rlcDelay": 38.3
+        },
+        {
+          "time": "15:41",
+          "rsrp": -97.1,
+          "sinr": 14.6,
+          "rlcDelay": 34.1
+        },
+        {
+          "time": "15:42",
+          "rsrp": -97.5,
+          "sinr": 19.7,
+          "rlcDelay": 29.2
+        },
+        {
+          "time": "15:43",
+          "rsrp": -98.2,
           "sinr": 16.5,
-          "rlcDelay": 16.3
+          "rlcDelay": 24.2
+        },
+        {
+          "time": "15:44",
+          "rsrp": -98.8,
+          "sinr": 19.7,
+          "rlcDelay": 30.0
+        },
+        {
+          "time": "15:45",
+          "rsrp": -98.7,
+          "sinr": 14.5,
+          "rlcDelay": 47.0
+        },
+        {
+          "time": "15:46",
+          "rsrp": -92.0,
+          "sinr": 20.1,
+          "rlcDelay": 46.3
+        },
+        {
+          "time": "15:47",
+          "rsrp": -98.9,
+          "sinr": 13.1,
+          "rlcDelay": 48.6
         },
         {
           "time": "15:48",
-          "rsrp": -100.4,
-          "sinr": 12.6,
-          "rlcDelay": 30.3
+          "rsrp": -94.8,
+          "sinr": 16.8,
+          "rlcDelay": 34.4
         },
         {
           "time": "15:49",
-          "rsrp": -106.3,
-          "sinr": 13.7,
-          "rlcDelay": 31.8
+          "rsrp": -99.2,
+          "sinr": 19.2,
+          "rlcDelay": 41.2
         }
       ],
       "signalTrace": [
         {
-          "stepId": "S01",
+          "id": "sig_001",
           "sequence": 1,
+          "time": "15:00:35.366",
           "fromNe": "UE",
-          "toNe": "gNB",
-          "messageName": "PUBLIC_INFORMATION",
-          "messageNameCn": "PUBLIC_INFORMATION",
-          "status": "成功",
-          "causeCode": "0",
-          "latencyMs": 51,
-          "timestamp": "2026-04-21 15:31:00"
+          "toNe": "Source gNB",
+          "message": "MeasurementReport",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
         },
         {
-          "stepId": "S02",
+          "id": "sig_002",
           "sequence": 2,
-          "fromNe": "gNB",
-          "toNe": "AMF",
-          "messageName": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "messageNameCn": "PRIVATE_UE_CAPABILITY_INFORMATION",
-          "status": "失败",
-          "causeCode": "0x2001",
-          "latencyMs": 5,
-          "timestamp": "2026-04-21 15:32:00"
+          "time": "15:00:41.891",
+          "fromNe": "Source gNB",
+          "toNe": "Target gNB",
+          "message": "HandoverRequest",
+          "status": "failure",
+          "abnormal": true,
+          "reason": "Resource Unavailable"
         },
         {
-          "stepId": "S03",
+          "id": "sig_003",
           "sequence": 3,
-          "fromNe": "AMF",
-          "toNe": "SMF",
-          "messageName": "PRIVATE_MEASUREMENT_REPORT",
-          "messageNameCn": "PRIVATE_MEASUREMENT_REPORT",
-          "status": "失败",
-          "causeCode": "0x2001",
-          "latencyMs": 122,
-          "timestamp": "2026-04-21 15:33:00"
+          "time": "15:00:43.829",
+          "fromNe": "Target gNB",
+          "toNe": "Source gNB",
+          "message": "HandoverFailure",
+          "status": "failure",
+          "abnormal": true,
+          "reason": "Prepare Failure"
         },
         {
-          "stepId": "S04",
+          "id": "sig_004",
           "sequence": 4,
-          "fromNe": "SMF",
-          "toNe": "UPF",
-          "messageName": "PUBLIC_INFORMATION",
-          "messageNameCn": "PUBLIC_INFORMATION",
-          "status": "失败",
-          "causeCode": "0x4003",
-          "latencyMs": 6,
-          "timestamp": "2026-04-21 15:34:00"
+          "time": "15:00:50.536",
+          "fromNe": "Source gNB",
+          "toNe": "UE",
+          "message": "RRCReconfiguration",
+          "status": "success",
+          "abnormal": false,
+          "reason": ""
+        }
+      ],
+      "qualityEvents": [
+        {
+          "eventId": "EVT_WO01060_001",
+          "time": "15:30:15",
+          "lng": 121.432849,
+          "lat": 31.31108,
+          "type": "CCE资源不足",
+          "cell": "CUDU0007368斡徐青之-3.5G_3",
+          "metrics": {
+            "rsrp": -106.3,
+            "sinr": 14.1,
+            "rlcDelay": 44.7
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
         },
         {
-          "stepId": "S05",
-          "sequence": 5,
-          "fromNe": "UPF",
-          "toNe": "DN",
-          "messageName": "PRIVATE_MEASUREMENT_REPORT",
-          "messageNameCn": "PRIVATE_MEASUREMENT_REPORT",
-          "status": "失败",
-          "causeCode": "0x2001",
-          "latencyMs": 60,
-          "timestamp": "2026-04-21 15:35:00"
+          "eventId": "EVT_WO01060_002",
+          "time": "15:33:47",
+          "lng": 121.432899,
+          "lat": 31.309795,
+          "type": "CCE资源不足",
+          "cell": "CUDU0007368斡徐青之-3.5G_3",
+          "metrics": {
+            "rsrp": -105.9,
+            "sinr": 15.4,
+            "rlcDelay": 41.6
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
+        },
+        {
+          "eventId": "EVT_WO01060_003",
+          "time": "15:36:33",
+          "lng": 121.436514,
+          "lat": 31.311289,
+          "type": "CCE资源不足",
+          "cell": "CUDU0007368斡徐青之-3.5G_3",
+          "metrics": {
+            "rsrp": -96.7,
+            "sinr": 18.8,
+            "rlcDelay": 35.0
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": false
+        },
+        {
+          "eventId": "EVT_WO01060_004",
+          "time": "15:39:54",
+          "lng": 121.43475,
+          "lat": 31.307262,
+          "type": "CCE资源不足",
+          "cell": "CUDU0007368斡徐青之-3.5G_3",
+          "metrics": {
+            "rsrp": -108.3,
+            "sinr": 16.8,
+            "rlcDelay": 34.2
+          },
+          "thresholds": {
+            "rsrp": -105,
+            "sinr": 3,
+            "rlcDelay": 100
+          },
+          "abnormal": true
         }
       ],
       "cio": [
         {
-          "param": "A3InterFreqHoA2RsrpThld",
-          "mo": "NRDUCELLALGOSWITCH",
-          "current": "9",
+          "param": "DLRANK2INCSPCTEFFTHLD",
+          "mo": "NRDUCELLCHNPWR",
+          "current": "6",
+          "suggested": "3",
+          "evidence": 0.8013302786504295
+        },
+        {
+          "param": "CovHoToEutranB2RsrpThld1",
+          "mo": "NRCellInterRHoMeaGrp",
+          "current": "6",
+          "suggested": "5",
+          "evidence": 0.8575162747970606
+        },
+        {
+          "param": "Tilt",
+          "mo": "NRDUCELLPDCCHALGO",
+          "current": "0",
           "suggested": "-103",
-          "evidence": 0.8104257982971946
+          "evidence": 0.6388382903042007
         },
         {
-          "param": "Azimuth",
-          "mo": "CELL",
+          "param": "FreqPriInterFA1RsrpThld",
+          "mo": "NRDUCELLUEPWRSAVING",
           "current": "6",
-          "suggested": "5",
-          "evidence": 0.8169181136043548
+          "suggested": "-103",
+          "evidence": 0.7279499003905918
         },
         {
-          "param": "FreqPriInterFA2RsrpThld",
-          "mo": "NRCellAlgoSwitch",
+          "param": "FreqSpecificOffset",
+          "mo": "NRDUCELLCHNCOVALGO",
           "current": "-105",
+          "suggested": "3",
+          "evidence": 0.8482679975833849
+        },
+        {
+          "param": "CovHoToEutranB2RsrpThld1",
+          "mo": "NRCellHoEutranMeaGrp",
+          "current": "0",
           "suggested": "-98",
-          "evidence": 0.6518896588628916
-        },
-        {
-          "param": "PhyCellId",
-          "mo": "NRDUCELLPDSCHPRECODE",
-          "current": "-105",
-          "suggested": "-98",
-          "evidence": 0.8988402505319657
-        },
-        {
-          "param": "MAXUESATPWROFFSET",
-          "mo": "NRDUCELLULPCCONFIG",
-          "current": "6",
-          "suggested": "5",
-          "evidence": 0.7158888807306785
-        },
-        {
-          "param": "Mech-Tilt",
-          "mo": "NRCellEutranNFreq",
-          "current": "-105",
-          "suggested": "8",
-          "evidence": 0.9478073132215956
+          "evidence": 0.7888718391935914
         }
       ],
       "strategies": [
@@ -21848,36 +25644,36 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "465601ba",
+          "suggestionId": "c0ca2327",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0007368斡徐青之-3.5G_3|邻区",
-          "parameterName": "FreqSpecificOffset",
+          "parameterName": "PhyCellId",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.87,
+          "evidenceScore": 0.82,
           "riskLevel": "高",
           "status": "待审核"
         },
         {
-          "suggestionId": "5b64173f",
+          "suggestionId": "0b57e03c",
           "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0007368斡徐青之-3.5G_3|邻区",
-          "parameterName": "A3InterFreqHoA2RsrpThld",
+          "parameterName": "DLRANK2INCSPCTEFFTHLD",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
           "evidenceScore": 0.89,
-          "riskLevel": "中",
-          "status": "待审核"
+          "riskLevel": "低",
+          "status": "已加入草案"
         },
         {
-          "suggestionId": "d793bb7a",
+          "suggestionId": "c079f6cc",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0007368斡徐青之-3.5G_3|邻区",
-          "parameterName": "Mech-Tilt",
+          "parameterName": "FreqPriInterFA1RsrpThld",
           "currentValue": "DB0",
           "suggestedValue": "DB3",
-          "evidenceScore": 0.89,
-          "riskLevel": "中",
+          "evidenceScore": 0.92,
+          "riskLevel": "高",
           "status": "已加入草案"
         }
       ],
@@ -21889,9 +25685,9 @@ const SRCON_DATA = {
           "5QI业务保障"
         ],
         "evidenceChain": [
-          "RSRP均值低于门限(-103.7dBm)",
-          "SINR均值16.2dB",
-          "信令失败"
+          "RSRP均值低于门限(-96.3dBm)",
+          "SINR均值17.8dB",
+          "信令failure"
         ],
         "riskLevel": "低"
       }
@@ -21900,24 +25696,24 @@ const SRCON_DATA = {
   "agentContent": {
     "business": {
       "title": "智能板业务质差解读",
-      "conclusion": "当前5QI业务质差分布中，CCE资源不足占比最高，建议优先处理相关区域。",
+      "conclusion": "当前5QI业务质差分布中，下行弱覆盖占比最高，建议优先处理相关区域。",
       "evidence": [
-        "CCE资源不足事件占整体质差事件的35%",
+        "下行弱覆盖事件占整体质差事件的35%",
         "涉及小区数达42个",
         "主要集中在17:00-18:00时段"
       ],
-      "audit": "已自动识别CCE资源不足相关参数6项，建议纳入审核队列。",
-      "detail": "从五元组聚合结果看，CCE资源不足与无线环境强相关，RSRP低于-105dBm区域占比62%。"
+      "audit": "已自动识别下行弱覆盖相关参数6项，建议纳入审核队列。",
+      "detail": "从五元组聚合结果看，下行弱覆盖与无线环境强相关，RSRP低于-105dBm区域占比62%。"
     },
     "abnormal": {
       "title": "异常模式类型解读",
-      "conclusion": "异常模式识别显示，CCE资源不足与下行弱覆盖存在强关联，需综合优化。",
+      "conclusion": "异常模式识别显示，下行弱覆盖与上行DMRS弱覆盖存在强关联，需综合优化。",
       "evidence": [
-        "CCE资源不足与下行弱覆盖共现率达到28%",
+        "下行弱覆盖与上行DMRS弱覆盖共现率达到28%",
         "同一对象反复触发次数>3次占比15%",
         "信令面异常先于用户面异常出现"
       ],
-      "audit": "建议对CCE资源不足和下行弱覆盖合并建立专项优化工单。",
+      "audit": "建议对下行弱覆盖和上行DMRS弱覆盖合并建立专项优化工单。",
       "detail": "根因定位显示两者共享同一覆盖短板，调整方位角与下倾角可同时缓解。"
     },
     "rootcause": {
@@ -21936,7 +25732,7 @@ const SRCON_DATA = {
       "conclusion": "基于真实Polygon优化策略库，已提取30项参数建议。",
       "evidence": [
         "涉及小区数：50",
-        "待审核策略：9项",
+        "待审核策略：20项",
         "RF优化与参数优化占比约6:4"
       ],
       "audit": "所有策略均处于草案/待审核状态，未自动下发。",
@@ -21944,6 +25740,3 @@ const SRCON_DATA = {
     }
   }
 };
-
-SRCON_DATA.getFilteredGrids = function(district,group){var g=this.grids;if(group&&group!=='all')g=g.filter(function(x){return x.stats[group]});if(district&&district!=='all')g=g.filter(function(x){return x.district===district});return g;};
-SRCON_DATA.aggregateKPI = function(district,qk){var g=this.grids;if(district&&district!=='all')g=g.filter(function(x){return x.district===district});var t=0,u=new Set(),q=0;g.forEach(function(x){var s=x.stats[qk];if(s){t+=s.events;u.add(x.id);q+=s.qualityEvents}});return{events:t,users:u.size,qualityEvents:q,rate:t>0?parseFloat((q/t*100).toFixed(2)):0}};

@@ -6,9 +6,10 @@
   <title>质差分析 - Agentic 网优数字员工</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="js/config.js"></script>
   <script>
     window._AMapSecurityConfig = {
-      securityJsCode: '266d9c2ee335d6ca802428e502c320c1'
+      securityJsCode: SRCON_CONFIG.amapSecurityCode
     };
   </script>
   <script src="https://webapi.amap.com/loader.js"></script>
@@ -25,7 +26,7 @@
           <path d="M14 7L21 10.5V17.5L14 21L7 17.5V10.5L14 7Z" fill="#0a1628" fill-opacity="0.8"/>
           <defs><linearGradient id="logoGrad2" x1="2" y1="2" x2="26" y2="26"><stop stop-color="#3b82f6"/><stop offset="1" stop-color="#2563eb"/></linearGradient></defs>
         </svg>
-        <span>体验运营管家</span>
+        <span>Agentic 网优数字员工</span>
       </div>
     </div>
     <div class="header-center">
@@ -100,7 +101,7 @@
           <div class="replay-chart-body" id="chartDelay"></div>
         </div>
         <div class="replay-legend">
-          <span class="rl-dot" style="background:#8b5cf6;"></span> 异常事件
+          <span class="rl-dot" style="background:#38bdf8;"></span> 异常事件
         </div>
       </div>
     </aside>
@@ -151,7 +152,7 @@
       </div>
 
       <button class="gen-script-btn" id="genScriptBtn">
-        <i class="fas fa-file-code"></i> 生成脚本
+        <i class="fas fa-file-code"></i> 加入脚本草案
       </button>
 
       <div class="biz-strategy">
@@ -160,7 +161,7 @@
           <!-- Dynamic -->
         </div>
         <button class="gen-strategy-btn" id="genStrategyBtn">
-          <i class="fas fa-magic"></i> 生成策略
+          <i class="fas fa-magic"></i> 生成策略草案
         </button>
       </div>
     </aside>
@@ -298,7 +299,8 @@
     </div>
   </div>
 
-  <script src="js/data.js"></script>
+  <script src="js/data/raw-data.js"></script>
+  <script src="js/data/selectors.js"></script>
   <script src="js/common.js"></script>
   <script src="js/assurance.js"></script>
 </body>
