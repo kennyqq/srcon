@@ -12984,7 +12984,7 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "e3ff0a58",
+          "suggestionId": "431f64ec",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0003410徐虹北(联通)-5G_2|邻区",
           "parameterName": "A3InterFreqHoA2RsrpThld",
@@ -12995,7 +12995,7 @@ const SRCON_DATA = {
           "status": "已加入草案"
         },
         {
-          "suggestionId": "e44a67ce",
+          "suggestionId": "301c1169",
           "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0003410徐虹北(联通)-5G_2|邻区",
           "parameterName": "SPECUERSSISATOFFSET",
@@ -13006,7 +13006,7 @@ const SRCON_DATA = {
           "status": "已加入草案"
         },
         {
-          "suggestionId": "8bbc978c",
+          "suggestionId": "6ae4e6d4",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0003410徐虹北(联通)-5G_2|邻区",
           "parameterName": "InterFreqHoSwitch.FREQ_PRIORITY_BASED_HO",
@@ -13294,7 +13294,7 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "31a841fc",
+          "suggestionId": "735446cc",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0003410徐虹北(联通)-5G_2|邻区",
           "parameterName": "InterRatHoA2RsrpThld",
@@ -13305,7 +13305,7 @@ const SRCON_DATA = {
           "status": "已加入草案"
         },
         {
-          "suggestionId": "4e71488d",
+          "suggestionId": "220e80fb",
           "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0003410徐虹北(联通)-5G_2|邻区",
           "parameterName": "A3InterFreqHoA1RsrpThld",
@@ -13316,7 +13316,7 @@ const SRCON_DATA = {
           "status": "已加入草案"
         },
         {
-          "suggestionId": "7f7fe37f",
+          "suggestionId": "9828425f",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0003410徐虹北(联通)-5G_2|邻区",
           "parameterName": "CovInterFreqA2RsrpThld",
@@ -13604,7 +13604,7 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "f09674be",
+          "suggestionId": "781daee6",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0003850徐襄阳-3.5G_1|邻区",
           "parameterName": "DLINITMCS",
@@ -13615,7 +13615,7 @@ const SRCON_DATA = {
           "status": "待审核"
         },
         {
-          "suggestionId": "d00818be",
+          "suggestionId": "68ecb0cf",
           "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0003850徐襄阳-3.5G_1|邻区",
           "parameterName": "InterRatHoA1RsrpThld",
@@ -13626,7 +13626,7 @@ const SRCON_DATA = {
           "status": "待审核"
         },
         {
-          "suggestionId": "5d6e5746",
+          "suggestionId": "afcdf555",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0003850徐襄阳-3.5G_1|邻区",
           "parameterName": "DLRANK2INCSPCTEFFTHLD",
@@ -13900,7 +13900,7 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "183c873c",
+          "suggestionId": "0577e2f3",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0005687联长万宝(联通)-5G_1|邻区",
           "parameterName": "DLRANK3DECSPCTEFFTHLD",
@@ -13911,7 +13911,7 @@ const SRCON_DATA = {
           "status": "待审核"
         },
         {
-          "suggestionId": "55ca2a5a",
+          "suggestionId": "d88c81bd",
           "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0005687联长万宝(联通)-5G_1|邻区",
           "parameterName": "FreqPriInterFA1RsrpThld",
@@ -13922,7 +13922,7 @@ const SRCON_DATA = {
           "status": "已加入草案"
         },
         {
-          "suggestionId": "834b643e",
+          "suggestionId": "ed15d1d7",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0005687联长万宝(联通)-5G_1|邻区",
           "parameterName": "FreqSpecificOffset",
@@ -14196,7 +14196,7 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "6c487716",
+          "suggestionId": "e4f849f6",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0001214联汇川(联通)-5G_3|邻区",
           "parameterName": "DLRANK3DECSPCTEFFTHLD",
@@ -14207,7 +14207,7 @@ const SRCON_DATA = {
           "status": "已加入草案"
         },
         {
-          "suggestionId": "38b4b1ba",
+          "suggestionId": "40cbcf0a",
           "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0001214联汇川(联通)-5G_3|邻区",
           "parameterName": "A3InterFreqHoA1RsrpThld",
@@ -14218,7 +14218,7 @@ const SRCON_DATA = {
           "status": "已加入草案"
         },
         {
-          "suggestionId": "fb5057aa",
+          "suggestionId": "c4de7238",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0001214联汇川(联通)-5G_3|邻区",
           "parameterName": "FreqPriInterFA2RsrpThld",
@@ -14506,7 +14506,7 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "a6f75bba",
+          "suggestionId": "356fe4ce",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0001214联汇川(联通)-5G_3|邻区",
           "parameterName": "CovInterFreqA1RsrpThld",
@@ -14517,7 +14517,7 @@ const SRCON_DATA = {
           "status": "待审核"
         },
         {
-          "suggestionId": "0a390334",
+          "suggestionId": "e0da2c56",
           "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0001214联汇川(联通)-5G_3|邻区",
           "parameterName": "FreqPriInterFA2RsrpThld",
@@ -14528,7 +14528,7 @@ const SRCON_DATA = {
           "status": "待审核"
         },
         {
-          "suggestionId": "38ba2d65",
+          "suggestionId": "16fa04e2",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0001214联汇川(联通)-5G_3|邻区",
           "parameterName": "FreqSpecificOffset",
@@ -14823,7 +14823,7 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "dde04e97",
+          "suggestionId": "1e9daf14",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0001214联汇川(联通)-5G_3|邻区",
           "parameterName": "DLRANK4DECSPCTEFFTHLD",
@@ -14834,7 +14834,7 @@ const SRCON_DATA = {
           "status": "待审核"
         },
         {
-          "suggestionId": "db0eecdf",
+          "suggestionId": "647e337e",
           "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0001214联汇川(联通)-5G_3|邻区",
           "parameterName": "Tilt",
@@ -14845,7 +14845,7 @@ const SRCON_DATA = {
           "status": "待审核"
         },
         {
-          "suggestionId": "bc5dd789",
+          "suggestionId": "075c7b8a",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0001214联汇川(联通)-5G_3|邻区",
           "parameterName": "Mech-Azimuth",
@@ -15126,7 +15126,7 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "ec745313",
+          "suggestionId": "6d08cc9d",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0001977长宝地(联通)-3.5G_2|邻区",
           "parameterName": "Azimuth",
@@ -15137,7 +15137,7 @@ const SRCON_DATA = {
           "status": "待审核"
         },
         {
-          "suggestionId": "d8b2a3d2",
+          "suggestionId": "125fa52f",
           "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0001977长宝地(联通)-3.5G_2|邻区",
           "parameterName": "DLRANK3DECSPCTEFFTHLD",
@@ -15148,7 +15148,7 @@ const SRCON_DATA = {
           "status": "已加入草案"
         },
         {
-          "suggestionId": "3c1ced7b",
+          "suggestionId": "243d0de6",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0001977长宝地(联通)-3.5G_2|邻区",
           "parameterName": "FreqPriInterFA4RsrpThld",
@@ -15422,7 +15422,7 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "87d9d3f7",
+          "suggestionId": "dd8665c5",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0001977长宝地(联通)-3.5G_2|邻区",
           "parameterName": "UESATPWROFFSETTHLD",
@@ -15433,7 +15433,7 @@ const SRCON_DATA = {
           "status": "已加入草案"
         },
         {
-          "suggestionId": "a7b12547",
+          "suggestionId": "713f17fb",
           "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0001977长宝地(联通)-3.5G_2|邻区",
           "parameterName": "A3InterFreqHoA1RsrpThld",
@@ -15444,7 +15444,7 @@ const SRCON_DATA = {
           "status": "待审核"
         },
         {
-          "suggestionId": "2cc09575",
+          "suggestionId": "2c0c9336",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0001977长宝地(联通)-3.5G_2|邻区",
           "parameterName": "CoverageScenario",
@@ -15725,7 +15725,7 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "4058cea9",
+          "suggestionId": "b37661f4",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0003783长汉森-5G_2|邻区",
           "parameterName": "Tilt",
@@ -15736,7 +15736,7 @@ const SRCON_DATA = {
           "status": "已加入草案"
         },
         {
-          "suggestionId": "757164e3",
+          "suggestionId": "aaf45256",
           "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0003783长汉森-5G_2|邻区",
           "parameterName": "DLRANK3INCSPCTEFFTHLD",
@@ -15747,7 +15747,7 @@ const SRCON_DATA = {
           "status": "待审核"
         },
         {
-          "suggestionId": "d8a47940",
+          "suggestionId": "9525df14",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0003783长汉森-5G_2|邻区",
           "parameterName": "TrafficPriority",
@@ -16035,7 +16035,7 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "ffcfd443",
+          "suggestionId": "000ea6a4",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0007368斡徐青之(联通)-3.5G_1|邻区",
           "parameterName": "DLINITMCS",
@@ -16046,7 +16046,7 @@ const SRCON_DATA = {
           "status": "待审核"
         },
         {
-          "suggestionId": "f5a17fb0",
+          "suggestionId": "9f225e90",
           "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0007368斡徐青之(联通)-3.5G_1|邻区",
           "parameterName": "MAXUESATPWROFFSET",
@@ -16057,7 +16057,7 @@ const SRCON_DATA = {
           "status": "已加入草案"
         },
         {
-          "suggestionId": "04439955",
+          "suggestionId": "e7e7e7d3",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0007368斡徐青之(联通)-3.5G_1|邻区",
           "parameterName": "InterRatHoA2RsrpThld",
@@ -16338,7 +16338,7 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "c65d2151",
+          "suggestionId": "91767093",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0007368斡徐青之(联通)-3.5G_1|邻区",
           "parameterName": "MAXUESATPWROFFSET",
@@ -16349,7 +16349,7 @@ const SRCON_DATA = {
           "status": "已加入草案"
         },
         {
-          "suggestionId": "4cc6f130",
+          "suggestionId": "cf0280f0",
           "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0007368斡徐青之(联通)-3.5G_1|邻区",
           "parameterName": "FreqSpecificOffset",
@@ -16360,7 +16360,7 @@ const SRCON_DATA = {
           "status": "已加入草案"
         },
         {
-          "suggestionId": "204de6df",
+          "suggestionId": "cc8517ed",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0007368斡徐青之(联通)-3.5G_1|邻区",
           "parameterName": "FreqSpecificOffset",
@@ -16641,7 +16641,7 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "3f7d159c",
+          "suggestionId": "cbc66bbd",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0007368斡徐青之(联通)-3.5G_1|邻区",
           "parameterName": "InterFreqHoSwitch.FREQ_PRIORITY_BASED_HO",
@@ -16652,7 +16652,7 @@ const SRCON_DATA = {
           "status": "已加入草案"
         },
         {
-          "suggestionId": "626602d3",
+          "suggestionId": "08a68af5",
           "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0007368斡徐青之(联通)-3.5G_1|邻区",
           "parameterName": "CovHoToEutranB2RsrpThld1",
@@ -16663,7 +16663,7 @@ const SRCON_DATA = {
           "status": "已加入草案"
         },
         {
-          "suggestionId": "f06a196f",
+          "suggestionId": "d9d948eb",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0007368斡徐青之(联通)-3.5G_1|邻区",
           "parameterName": "DLRANK2INCSPCTEFFTHLD",
@@ -16944,7 +16944,7 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "db668e1b",
+          "suggestionId": "2b4b4f89",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0001065斡徐上影-5G_2|邻区",
           "parameterName": "A3InterFreqHoA1RsrpThld",
@@ -16955,7 +16955,7 @@ const SRCON_DATA = {
           "status": "待审核"
         },
         {
-          "suggestionId": "1d746820",
+          "suggestionId": "d75544d2",
           "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0001065斡徐上影-5G_2|邻区",
           "parameterName": "MAXUESATPWROFFSET",
@@ -16966,7 +16966,7 @@ const SRCON_DATA = {
           "status": "已加入草案"
         },
         {
-          "suggestionId": "e980d091",
+          "suggestionId": "cca02dd7",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0001065斡徐上影-5G_2|邻区",
           "parameterName": "InterRatHoA1RsrpThld",
@@ -17254,7 +17254,7 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "6be1376a",
+          "suggestionId": "08b3380d",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0001065斡徐上影-5G_2|邻区",
           "parameterName": "Tilt",
@@ -17265,7 +17265,7 @@ const SRCON_DATA = {
           "status": "待审核"
         },
         {
-          "suggestionId": "ab23632d",
+          "suggestionId": "0ffd41bf",
           "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0001065斡徐上影-5G_2|邻区",
           "parameterName": "Tilt",
@@ -17276,7 +17276,7 @@ const SRCON_DATA = {
           "status": "已加入草案"
         },
         {
-          "suggestionId": "14b8c13e",
+          "suggestionId": "8d0dfacc",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0001065斡徐上影-5G_2|邻区",
           "parameterName": "TrafficPriority",
@@ -17571,7 +17571,7 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "3a930fd1",
+          "suggestionId": "d4b285ea",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0001977长宝地(联通)-3.5G_2|邻区",
           "parameterName": "MAXUESATPWROFFSET",
@@ -17582,7 +17582,7 @@ const SRCON_DATA = {
           "status": "待审核"
         },
         {
-          "suggestionId": "4ccf6819",
+          "suggestionId": "53c08808",
           "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0001977长宝地(联通)-3.5G_2|邻区",
           "parameterName": "DLRANK3INCSPCTEFFTHLD",
@@ -17593,7 +17593,7 @@ const SRCON_DATA = {
           "status": "待审核"
         },
         {
-          "suggestionId": "f9d8b0ef",
+          "suggestionId": "3418d36c",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0001977长宝地(联通)-3.5G_2|邻区",
           "parameterName": "Azimuth",
@@ -17874,7 +17874,7 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "7173958f",
+          "suggestionId": "b017f759",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0002693金轩大酒店(联通)-5G_2|邻区",
           "parameterName": "InterFreqHoSwitch.FREQ_PRIORITY_BASED_HO",
@@ -17885,7 +17885,7 @@ const SRCON_DATA = {
           "status": "已加入草案"
         },
         {
-          "suggestionId": "4da2a375",
+          "suggestionId": "168eb002",
           "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0002693金轩大酒店(联通)-5G_2|邻区",
           "parameterName": "DLRANK3INCSPCTEFFTHLD",
@@ -17896,7 +17896,7 @@ const SRCON_DATA = {
           "status": "待审核"
         },
         {
-          "suggestionId": "70bb716a",
+          "suggestionId": "1d1040c8",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0002693金轩大酒店(联通)-5G_2|邻区",
           "parameterName": "CovHoToEutranB2RsrpThld1",
@@ -18170,7 +18170,7 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "6b9309a2",
+          "suggestionId": "3eaa4afd",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0002693金轩大酒店(联通)-5G_2|邻区",
           "parameterName": "DLRANK3DECSPCTEFFTHLD",
@@ -18181,7 +18181,7 @@ const SRCON_DATA = {
           "status": "待审核"
         },
         {
-          "suggestionId": "b68917ee",
+          "suggestionId": "79d511d3",
           "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0002693金轩大酒店(联通)-5G_2|邻区",
           "parameterName": "FreqSpecificOffset",
@@ -18192,7 +18192,7 @@ const SRCON_DATA = {
           "status": "待审核"
         },
         {
-          "suggestionId": "cbc65e6d",
+          "suggestionId": "0536e329",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0002693金轩大酒店(联通)-5G_2|邻区",
           "parameterName": "FreqPriInterFA4RsrpThld",
@@ -18480,7 +18480,7 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "433c1988",
+          "suggestionId": "fb118f33",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0002693金轩大酒店(联通)-5G_2|邻区",
           "parameterName": "InterFreqHoSwitch.FREQ_PRIORITY_BASED_HO",
@@ -18491,7 +18491,7 @@ const SRCON_DATA = {
           "status": "待审核"
         },
         {
-          "suggestionId": "e79f1578",
+          "suggestionId": "c9ac5f7c",
           "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0002693金轩大酒店(联通)-5G_2|邻区",
           "parameterName": "InterRatHoA2RsrpThld",
@@ -18502,7 +18502,7 @@ const SRCON_DATA = {
           "status": "已加入草案"
         },
         {
-          "suggestionId": "4a43216b",
+          "suggestionId": "4b5b9337",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0002693金轩大酒店(联通)-5G_2|邻区",
           "parameterName": "CovHoToEutranB2RsrpThld1",
@@ -18783,7 +18783,7 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "c3c38998",
+          "suggestionId": "95e6b312",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0002693金轩大酒店(联通)-5G_2|邻区",
           "parameterName": "FreqPriInterFA1RsrpThld",
@@ -18794,7 +18794,7 @@ const SRCON_DATA = {
           "status": "待审核"
         },
         {
-          "suggestionId": "d2f6e80c",
+          "suggestionId": "dd05553e",
           "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0002693金轩大酒店(联通)-5G_2|邻区",
           "parameterName": "Tilt",
@@ -18805,7 +18805,7 @@ const SRCON_DATA = {
           "status": "待审核"
         },
         {
-          "suggestionId": "7d7c04c0",
+          "suggestionId": "88a8ab4a",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0002693金轩大酒店(联通)-5G_2|邻区",
           "parameterName": "SPECUERSSISATOFFSET",
@@ -19079,7 +19079,7 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "2c0a84f7",
+          "suggestionId": "65e13e23",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0003361长昭化(联通)-5G_3|邻区",
           "parameterName": "DLINITIALMCSADJVALUE",
@@ -19090,7 +19090,7 @@ const SRCON_DATA = {
           "status": "已加入草案"
         },
         {
-          "suggestionId": "b52bef07",
+          "suggestionId": "c296e85e",
           "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0003361长昭化(联通)-5G_3|邻区",
           "parameterName": "InterRatHoA1RsrpThld",
@@ -19101,7 +19101,7 @@ const SRCON_DATA = {
           "status": "已加入草案"
         },
         {
-          "suggestionId": "8c14ea7f",
+          "suggestionId": "52d56809",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0003361长昭化(联通)-5G_3|邻区",
           "parameterName": "CovInterFreqA2RsrpThld",
@@ -19382,7 +19382,7 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "44906330",
+          "suggestionId": "b2c5c8ed",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0003361长昭化(联通)-5G_3|邻区",
           "parameterName": "Azimuth",
@@ -19393,7 +19393,7 @@ const SRCON_DATA = {
           "status": "待审核"
         },
         {
-          "suggestionId": "902cb1a0",
+          "suggestionId": "c6ccf629",
           "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0003361长昭化(联通)-5G_3|邻区",
           "parameterName": "FreqPriInterFA2RsrpThld",
@@ -19404,7 +19404,7 @@ const SRCON_DATA = {
           "status": "已加入草案"
         },
         {
-          "suggestionId": "e32932c0",
+          "suggestionId": "ea7fa005",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0003361长昭化(联通)-5G_3|邻区",
           "parameterName": "FreqPriInterFA1RsrpThld",
@@ -19699,7 +19699,7 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "a9437a9d",
+          "suggestionId": "3e91e8c8",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0001977长宝地-3.5G_2|邻区",
           "parameterName": "CovInterFreqA1RsrpThld",
@@ -19710,7 +19710,7 @@ const SRCON_DATA = {
           "status": "已加入草案"
         },
         {
-          "suggestionId": "fef30ae4",
+          "suggestionId": "7e6612ba",
           "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0001977长宝地-3.5G_2|邻区",
           "parameterName": "FreqPriInterFA1RsrpThld",
@@ -19721,7 +19721,7 @@ const SRCON_DATA = {
           "status": "已加入草案"
         },
         {
-          "suggestionId": "523859a6",
+          "suggestionId": "621658b7",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0001977长宝地-3.5G_2|邻区",
           "parameterName": "FreqSpecificOffset",
@@ -19995,7 +19995,7 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "67c28b7b",
+          "suggestionId": "7e1121fc",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0001977长宝地-3.5G_2|邻区",
           "parameterName": "UESATPWROFFSETTHLD",
@@ -20006,7 +20006,7 @@ const SRCON_DATA = {
           "status": "待审核"
         },
         {
-          "suggestionId": "d64056d0",
+          "suggestionId": "0c0b1a3c",
           "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0001977长宝地-3.5G_2|邻区",
           "parameterName": "CoverageScenario",
@@ -20017,7 +20017,7 @@ const SRCON_DATA = {
           "status": "待审核"
         },
         {
-          "suggestionId": "de421ab1",
+          "suggestionId": "430aa5cb",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0001977长宝地-3.5G_2|邻区",
           "parameterName": "Tilt",
@@ -20305,7 +20305,7 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "e86670c2",
+          "suggestionId": "0fe4488b",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0001977长宝地-3.5G_2|邻区",
           "parameterName": "DLRANK2INCSPCTEFFTHLD",
@@ -20316,7 +20316,7 @@ const SRCON_DATA = {
           "status": "待审核"
         },
         {
-          "suggestionId": "729369b6",
+          "suggestionId": "798ff880",
           "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0001977长宝地-3.5G_2|邻区",
           "parameterName": "CovInterFreqA1RsrpThld",
@@ -20327,7 +20327,7 @@ const SRCON_DATA = {
           "status": "已加入草案"
         },
         {
-          "suggestionId": "ba1e4377",
+          "suggestionId": "c4831e25",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0001977长宝地-3.5G_2|邻区",
           "parameterName": "FreqSpecificOffset",
@@ -20601,7 +20601,7 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "991faba0",
+          "suggestionId": "d14f211f",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0001977长宝地-3.5G_2|邻区",
           "parameterName": "TrafficPriority",
@@ -20612,7 +20612,7 @@ const SRCON_DATA = {
           "status": "已加入草案"
         },
         {
-          "suggestionId": "ce995369",
+          "suggestionId": "79e808a8",
           "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0001977长宝地-3.5G_2|邻区",
           "parameterName": "Tilt",
@@ -20623,7 +20623,7 @@ const SRCON_DATA = {
           "status": "待审核"
         },
         {
-          "suggestionId": "31647ef8",
+          "suggestionId": "e6aadea7",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0001977长宝地-3.5G_2|邻区",
           "parameterName": "Azimuth",
@@ -20911,7 +20911,7 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "6634539b",
+          "suggestionId": "a3f946bb",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0003827淮陕(联通)-5G_3|邻区",
           "parameterName": "DLRANK4DECSPCTEFFTHLD",
@@ -20922,7 +20922,7 @@ const SRCON_DATA = {
           "status": "待审核"
         },
         {
-          "suggestionId": "9263c6f6",
+          "suggestionId": "753f1eb3",
           "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0003827淮陕(联通)-5G_3|邻区",
           "parameterName": "PhyCellId",
@@ -20933,7 +20933,7 @@ const SRCON_DATA = {
           "status": "待审核"
         },
         {
-          "suggestionId": "5d6509b4",
+          "suggestionId": "2a97fb97",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0003827淮陕(联通)-5G_3|邻区",
           "parameterName": "InterRatHoA2RsrpThld",
@@ -21221,7 +21221,7 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "589ee442",
+          "suggestionId": "46fe924c",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0001214联汇川(联通)-5G_3|邻区",
           "parameterName": "FreqPriInterFA2RsrpThld",
@@ -21232,7 +21232,7 @@ const SRCON_DATA = {
           "status": "已加入草案"
         },
         {
-          "suggestionId": "3430cfb0",
+          "suggestionId": "d7827788",
           "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0001214联汇川(联通)-5G_3|邻区",
           "parameterName": "FreqPriInterFA2RsrpThld",
@@ -21243,7 +21243,7 @@ const SRCON_DATA = {
           "status": "待审核"
         },
         {
-          "suggestionId": "878ad3a8",
+          "suggestionId": "81025a1f",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0001214联汇川(联通)-5G_3|邻区",
           "parameterName": "CovInterFreqA2RsrpThld",
@@ -21531,7 +21531,7 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "c20d75d5",
+          "suggestionId": "3b2ab50a",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0001214联汇川(联通)-5G_3|邻区",
           "parameterName": "DLINITIALMCSADJVALUE",
@@ -21542,7 +21542,7 @@ const SRCON_DATA = {
           "status": "待审核"
         },
         {
-          "suggestionId": "79c4bdff",
+          "suggestionId": "dc8ea240",
           "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0001214联汇川(联通)-5G_3|邻区",
           "parameterName": "InterFreqHoSwitch.FREQ_PRIORITY_BASED_HO",
@@ -21553,7 +21553,7 @@ const SRCON_DATA = {
           "status": "已加入草案"
         },
         {
-          "suggestionId": "c0a46a15",
+          "suggestionId": "551c8af0",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0001214联汇川(联通)-5G_3|邻区",
           "parameterName": "TrafficPriority",
@@ -21848,7 +21848,7 @@ const SRCON_DATA = {
       ],
       "guards": [
         {
-          "suggestionId": "480e3d5a",
+          "suggestionId": "465601ba",
           "rootCauseType": "RF参数不合理",
           "affectedCellPair": "CUDU0007368斡徐青之-3.5G_3|邻区",
           "parameterName": "FreqSpecificOffset",
@@ -21859,7 +21859,7 @@ const SRCON_DATA = {
           "status": "待审核"
         },
         {
-          "suggestionId": "a6d4e30b",
+          "suggestionId": "5b64173f",
           "rootCauseType": "上行弱覆盖增强参数问题",
           "affectedCellPair": "CUDU0007368斡徐青之-3.5G_3|邻区",
           "parameterName": "A3InterFreqHoA2RsrpThld",
@@ -21870,7 +21870,7 @@ const SRCON_DATA = {
           "status": "待审核"
         },
         {
-          "suggestionId": "73cb7fd2",
+          "suggestionId": "d793bb7a",
           "rootCauseType": "上行干扰增强参数问题",
           "affectedCellPair": "CUDU0007368斡徐青之-3.5G_3|邻区",
           "parameterName": "Mech-Tilt",

@@ -1412,6 +1412,20 @@
 
 /* Responsive */
 @media (max-width: 1280px) {
+  .analysis-dashboard {
+    flex-direction: column;
+    height: auto;
+    overflow-y: auto;
+  }
+  .analysis-left,
+  .analysis-right {
+    width: 100%;
+    flex: none;
+  }
+  .analysis-center {
+    min-height: 400px;
+    order: -1;
+  }
   .evidence-grid {
     grid-template-columns: repeat(2, 1fr);
   }

@@ -156,11 +156,11 @@
   background: #111827;
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 12px;
-  padding: 16px 20px;
-  min-width: 320px;
+  padding: 16px 28px;
+  min-width: 420px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   flex: 1.2;
   transition: all 0.2s ease;
 }
@@ -176,12 +176,16 @@
   align-items: center;
   justify-content: center;
   flex: 1;
+  padding: 0 12px;
+  min-width: 80px;
 }
 
 .kpi-big-divider {
   width: 1px;
   height: 40px;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.15);
+  flex-shrink: 0;
+  margin: 0 4px;
 }
 
 .kpi-big-item .kpi-label {
@@ -998,4 +1002,41 @@
   color: #9ca3af !important;
   right: 8px !important;
   top: 8px !important;
+}
+
+/* Simple responsive */
+@media (max-width: 1200px) {
+  .top-metrics-row {
+    flex-wrap: wrap;
+    height: auto;
+    min-height: 180px;
+  }
+  .kpi-big-card {
+    min-width: 100%;
+    flex: none;
+    margin-bottom: 12px;
+  }
+  .mini-chart-card {
+    min-width: calc(50% - 6px);
+    flex: none;
+  }
+  .opt-summary-card {
+    min-width: calc(50% - 6px);
+    flex: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .dashboard {
+    flex-direction: column;
+    height: auto;
+  }
+  .filter-sidebar,
+  .work-order-sidebar {
+    width: 100%;
+    flex: none;
+  }
+  .map-area {
+    min-height: 400px;
+  }
 }

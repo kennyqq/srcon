@@ -5,13 +5,25 @@
 (function() {
   'use strict';
 
-  const DATA = window.SRCON_DATA;
+  let DATA = null;
   let amap = null;
   let chartProblem = null;
   let chartRSRP = null, chartSINR = null, chartDelay = null;
   let currentAssuranceData = null;
 
+  function getData() {
+    // const-declared globals don't attach to window, so check both safely
+    if (typeof window !== 'undefined' && window.SRCON_DATA) return window.SRCON_DATA;
+    if (typeof SRCON_DATA !== 'undefined') return SRCON_DATA;
+    return null;
+  }
+
   function init() {
+    DATA = getData();
+    if (!DATA) {
+      setTimeout(init, 150);
+      return;
+    }
     try {
       const params = new URLSearchParams(window.location.search);
       const orderId = params.get('caseId') || params.get('orderId');
@@ -40,9 +52,13 @@
     const rate = wo.rate || stats.rate || 0;
     document.getElementById('miniRate').textContent = rate + '%';
 
-    // Problem donut (mock from quality type distribution)
+    // Problem donut
     chartProblem = echarts.init(document.getElementById('chartProblem'));
     renderProblemDonut(wo, woList);
+
+    // Assurance detail data
+    const ad = DATA.assurance[wo.id] || {};
+    currentAssuranceData = ad;
 
     // Metrics replay
     chartRSRP = echarts.init(document.getElementById('chartRSRP'));
@@ -55,10 +71,6 @@
 
     // Map
     initMap(grid);
-
-    // Assurance detail data
-    const ad = DATA.assurance[wo.id] || {};
-    currentAssuranceData = ad;
 
     // Signaling
     renderTraceFlow(ad.signalTrace || []);
@@ -84,7 +96,10 @@
     });
     } catch (err) {
       console.error('Assurance init error:', err);
-      document.querySelector('.analysis-dashboard').innerHTML = '<div style="color:#ef4444;text-align:center;padding:60px;">页面加载异常，请刷新重试</div>';
+      const d = getData();
+      console.error('SRCON_DATA exists:', !!d);
+      console.error('workOrders exists:', d && d.workOrders ? 'yes' : 'no');
+      document.querySelector('.analysis-dashboard').innerHTML = '<div style="color:#ef4444;text-align:center;padding:60px;">页面加载异常：' + (err && err.message ? err.message : String(err)) + '</div>';
     }
   }
 

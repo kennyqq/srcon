@@ -166,7 +166,8 @@ function renderCharts() {
   const d = SRCON_DATA.homeCharts;
   const colors = ['#3b82f6', '#ef4444', '#f59e0b', '#10b981', '#8b5cf6', '#6b7280'];
 
-  const mkOpt = (data) => ({
+  const toArr = (obj) => Object.keys(obj).map(k => ({ name: k, value: obj[k] }));
+  const mkOpt = (dataArr) => ({
     backgroundColor: 'transparent',
     tooltip: {
       trigger: 'item',
@@ -183,10 +184,10 @@ function renderCharts() {
       itemHeight: 8,
       itemGap: 6,
       formatter: name => {
-        const item = data.find(x => x.name === name);
+        const item = dataArr.find(x => x.name === name);
         const v = item ? item.value : 0;
         const short = name.length > 8 ? name.substring(0, 7) + '…' : name;
-        return `${short}  ${v}%`;
+        return `${short}  ${v}`;
       }
     },
     series: [{
@@ -200,30 +201,18 @@ function renderCharts() {
         label: { show: true, fontSize: 12, fontWeight: 'bold', color: '#ffffff' }
       },
       labelLine: { show: false },
-      data: data.map((item, i) => ({ ...item, itemStyle: { color: colors[i % colors.length] } }))
+      data: dataArr.map((item, i) => ({ ...item, itemStyle: { color: colors[i % colors.length] } }))
     }]
   });
 
-  charts.business.setOption(mkOpt(d.business), true);
-  charts.abnormal.setOption(mkOpt(d.abnormal), true);
-  charts.rootcause.setOption(mkOpt(d.rootcause), true);
+  charts.business.setOption(mkOpt(toArr(d.business)), true);
+  charts.abnormal.setOption(mkOpt(toArr(d.abnormal)), true);
+  charts.rootcause.setOption(mkOpt(toArr(d.rootcause)), true);
 }
 
 // ============================================================
 // KPI
 // ============================================================
-function animateNumber(el, target, duration = 600, suffix = '') {
-  const start = performance.now();
-  const from = 0;
-  function step(now) {
-    const p = Math.min((now - start) / duration, 1);
-    const val = Math.floor(from + (target - from) * (1 - Math.pow(1 - p, 3)));
-    el.textContent = COMMON.formatNumber(val) + suffix;
-    if (p < 1) requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
-}
-
 function renderKPI() {
   const qk = currentFilter.group === 'all' ? '5qi8' : currentFilter.group;
   let grids = SRCON_DATA.getFilteredGrids(currentFilter.district, qk);
@@ -240,9 +229,9 @@ function renderKPI() {
     }
   });
   const rate = events > 0 ? parseFloat((qualityEvents / events * 100).toFixed(2)) : 0;
-  animateNumber(document.getElementById('kpiEvents'), events, 600);
-  animateNumber(document.getElementById('kpiUsers'), users.size, 600);
-  animateNumber(document.getElementById('kpiQualityEvents'), qualityEvents, 600);
+  document.getElementById('kpiEvents').textContent = COMMON.formatNumber(events);
+  document.getElementById('kpiUsers').textContent = COMMON.formatNumber(users.size);
+  document.getElementById('kpiQualityEvents').textContent = COMMON.formatNumber(qualityEvents);
   document.getElementById('kpiRate').textContent = rate + '%';
   const rateEl = document.getElementById('kpiRate');
   rateEl.style.color = getRateColor(rate);
