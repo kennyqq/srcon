@@ -316,7 +316,117 @@ input/
 
 ---
 
-## 六、附录：角色快速参考卡
+## 六、工程原则（采纳 Matt Pocock Skills）
+
+以下原则源自 [mattpocock/skills](https://github.com/mattpocock/skills)，已纳入本项目开发规范，作为多智能体协作的质量基线。
+
+### 6.1 深模块（Deep Modules）
+
+> **接口要小，实现要深。** 一个模块的价值体现在其接口背后的杠杆效应——用简单的调用约定封装大量复杂行为。
+
+- **深度** = 接口背后的行为密度。高深度 = 高杠杆。低深度 = 接口几乎和实现一样复杂。
+- **接缝（Seam）** = 接口所在的位置，行为可以在不修改原有代码的情况下被改变。
+- **删除测试**：想象删除一个模块。如果复杂度随之消失，它只是一个透传模块；如果复杂度分散到 N 个调用方，它正在发挥作用。
+- **一个适配器 = 假设的接缝；两个适配器 = 真实的接缝。**
+
+**在项目中的应用**：
+- `js/data/selectors.js` 是深模块：简单的 `getFilteredGrids(district, group)` 背后封装了过滤、统计、排序逻辑。
+- 避免在页面逻辑中重复展开数据过滤逻辑——通过接缝调用深模块。
+
+### 6.2 垂直切片 TDD（Tracer Bullets）
+
+> **不要水平切片（先写全部测试，再写全部实现）。** 这会产生测试想象行为而非实际行为的 crap tests。
+
+```
+WRONG (水平切片):
+  RED:   test1, test2, test3, test4, test5
+  GREEN: impl1, impl2, impl3, impl4, impl5
+
+RIGHT (垂直切片 / Tracer Bullet):
+  RED→GREEN: test1→impl1
+  RED→GREEN: test2→impl2
+  RED→GREEN: test3→impl3
+```
+
+**规则**：
+- 一次只写一个测试
+- 只写足够让当前测试通过的代码
+- 不要预测未来测试
+- 测试聚焦于可观察的行为，而非实现细节
+- **永远不要在没有到达 GREEN 时进行重构**
+
+**每轮循环检查清单**：
+- [ ] 测试描述的是行为，而非实现
+- [ ] 测试只使用公共接口
+- [ ] 测试在内部重构后仍能存活
+- [ ] 代码是当前测试所需的最小量
+- [ ] 没有添加推测性功能
+
+### 6.3 诊断的反馈循环（Feedback Loop First）
+
+> **先构建快速、确定性的 pass/fail 信号，再开始诊断。** 没有这个信号，再多的代码审查也救不了你。
+
+**构建反馈循环的优先级**（按 roughly this order）：
+1. 在触及 bug 的接缝处写一个失败测试
+2. 对运行中的 dev server 发起 curl / HTTP 脚本
+3. CLI 调用 + fixture 输入 + stdout diff
+4. Headless browser 脚本（Playwright / Puppeteer）
+5. 重放捕获的 trace（网络请求 / payload / 事件日志）
+6. 最小化 harness（一个服务 + mock 依赖）
+7. Property / fuzz loop（随机输入，寻找失败模式）
+8. Bisection harness（`git bisect run`）
+9. Differential loop（旧版本 vs 新版本 diff 输出）
+
+**诊断六阶段**（不可跳过，除非有明确理由）：
+1. **Build a feedback loop** — 最优先，最花精力
+2. **Reproduce** — 确认循环产生的失败模式与用户描述一致
+3. **Hypothesise** — 生成 3–5 个可证伪的排序假设
+4. **Instrument** — 一次只改变一个变量，映射到具体预测
+5. **Fix + regression test** — 先写回归测试（如果存在正确的接缝）
+6. **Cleanup + post-mortem** — 删除 `[DEBUG-...]` 日志，记录正确的假设到 commit message
+
+### 6.4 原型即一次性代码（Prototype = Throwaway）
+
+> 原型是**回答问题的临时代码**。问题决定形状，回答是唯一值得保留的东西。
+
+**规则**：
+- 从第一天起就标记为一次性，命名要明显（如 `prototype-ladder-diagram.html`）
+- 一条命令即可运行（`python -m http.server`、`npm run prototype`）
+- 默认无持久化，状态驻留内存
+- 跳过打磨：不写测试、不做异常处理、不做抽象
+- 每次操作后暴露完整状态，让用户看到变化
+- **用完即删或吸收**：回答完问题后，要么删除，要么将验证过的决策折叠到真实代码中
+
+### 6.5 领域语言一致性（Domain Language）
+
+> 使用项目领域词汇表中的术语。当术语冲突时，立即指出。
+
+- **术语冲突**："你的词汇表将 'cancellation' 定义为 X，但你似乎指的是 Y —— 到底是哪个？"
+- **模糊语言**："你说的 'account' 是指 Customer 还是 User？它们是不同的概念。"
+- **代码矛盾**："你的代码取消了整个 Order，但你刚才说支持部分取消 —— 哪个是对的？"
+- **CONTEXT.md 懒加载**：只在有东西可写时创建；术语解析后立即更新，不要批量处理
+- **ADR 节制**：只有当决策（1）难以逆转、（2）没有上下文会显得奇怪、（3）是真实权衡的结果时，才创建 ADR
+
+### 6.6 PRD 驱动与交接（PRD & Handoff）
+
+> 用 PRD 捕获决策，用交接文档避免上下文流失。
+
+**PRD 必须包含**：
+- Problem Statement（用户视角的问题）
+- Solution（用户视角的解决方案）
+- 详尽的 User Stories（As a... I want... so that...）
+- Implementation Decisions（模块、接口、架构决策、Schema 变更）
+- Testing Decisions（测试什么行为、哪些模块、先例参考）
+- Out of Scope（明确排除的内容）
+
+**交接文档（Handoff）**：
+- 当对话需要被新 Agent 接管时，生成 handoff 文档
+- 不重复 PRD/ADR/issue/commit/diff 中已有的内容，用路径或 URL 引用
+- 建议下一个 session 应使用的 skills
+
+---
+
+## 七、附录：角色快速参考卡
 
 | 角色 | 何时调用 | 绝不做什么 |
 |------|----------|------------|
